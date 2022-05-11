@@ -1,9 +1,9 @@
 NAME			=	ft_containers
 
-SRCS			=	main.cpp
+SRCS			=	main.cpp \
+					stack.cpp
 
-HEADERS			=	includes/vector.hpp \
-					includes/stack.hpp
+HEADERS			=	stack.hpp
 
 INC_FLD			=	includes/
 
@@ -23,7 +23,7 @@ ${NAME}		:	${OBJS}
 
 
 %.o			:	%.cpp ${HEADERS}
-	${CXX} ${CXXFLAGS} -I ${INC_FLD} -c $< -o ${<:.cpp=.o}
+			${CXX} ${CXXFLAGS} -I ${INC_FLD} -c $< -o ${<:.cpp=.o}
 #			${CXX} ${SANITIZE_FLAGS} -I ${INC_FLD} -c $< -o ${<:.cpp=.o}
 
 clean		:

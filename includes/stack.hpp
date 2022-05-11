@@ -2,6 +2,7 @@
 # define STACK_HPP
 
 # include <vector>
+# include <iostream>
 
 namespace ft
 {
@@ -18,12 +19,9 @@ namespace ft
 			public:
 			//	CONSTRUCTION / DESTRUCTION / ASSIGNATION
 			explicit	stack( const Container & cont = Container() ) :
-				c(cont)
-			{
-				return ;
-			}
+				c(cont)												{ return ; }
 
-			~stack(void)										{ this->c.~Container(); }
+			~stack(void)											{ is->c.~Container(); }
 
 			stack&		operator=( const stack& other )
 			{
@@ -32,12 +30,14 @@ namespace ft
 			}
 
 			//	MEMBER FUNCTIONS
-			bool		empty() const							{ return (this->c.empty()); }
-			size_type	size() const							{ return (this->c.size()); }
-			void		push( const value_type& value )			{ this->c.push_back(value); }
-			void		pop( void )								{ this->c.pop_back(); }
+			bool			empty() const							{ return (this->c.empty()); }
+			size_type		size() const							{ return (this->c.size()); }
+			void			push( const value_type & value )		{ this->c.push_back(value); }
+			void			pop( void )								{ this->c.pop_back(); }
+			reference		top( void )								{ return (this->c.back()); }
+			const_reference	top( void ) const						{ return (this->c.back()); }
 
-			//	OPPERATORS OVERLOAD
+			//	OPERATORS OVERLOAD
 			bool operator==(const stack<T, Container> & rhs )
 			{
 				if (this == &rhs) return (true);
