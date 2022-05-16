@@ -85,7 +85,20 @@ public:
 	}
 
 	//	copy (4)
-	vector (const vector& x);
+	/*
+	vector (const vector& src) :
+		_allocator(src.get_allocator()),
+		_begin(_allocator.allocate(src.size())),
+		_end(_begin + _src.size()),
+		_pastEnd(_end + 1)
+	{
+
+
+		for (pointer tmp = _begin ; tmp < _end ; tmp++)
+
+	}
+	*/
+
 
 	//	DESTRUCTOR
 	~vector(void)
@@ -95,14 +108,20 @@ public:
 
 	
 	//	CAPACITY
-	bool		empty(void) const
+	bool			empty(void) const
 	{
 		return (_begin == _end);
 	}
 
-	size_type	size(void) const
+	size_type		size(void) const
 	{
 		return (_end - _begin);
+	}
+
+	//	ALLOCATOR
+	allocator_type	get_allocator(void) const
+	{
+		return (this->_allocator);
 	}
 
 private:
