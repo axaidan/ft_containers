@@ -1,9 +1,9 @@
 NAME			=	ft_containers
 
-SRCS			=	main.cpp \
-					stack.cpp
+SRCS			=	main.cpp
 
-HEADERS			=	stack.hpp
+HEADERS			=	${INC_FLD}stack.hpp \
+					${INC_FLD}vector.hpp
 
 INC_FLD			=	includes/
 
