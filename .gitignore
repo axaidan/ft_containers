@@ -1,4 +1,5 @@
 *.o
 ft_containers
 *.swp
-
+gtest/*
+gtest_bin
