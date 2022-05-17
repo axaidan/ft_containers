@@ -2,7 +2,6 @@
 #include "stack.hpp"
 #include <vector>
 #include <iostream>
-#include <gtest/gtest.h>
 
 int main(void)
 {

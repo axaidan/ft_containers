@@ -1,37 +1,100 @@
 #include "vector.hpp"
 #include "stack.hpp"
+
 #include <vector>
 #include <iostream>
+#include <list>
+
 #include <gtest/gtest.h>
 
-int main(void)
+// CAPACITY
+TEST(vectorCapacity, defaultCnst)
 {
-	// EMPTY
-	ft::vector<int>			m;
-	std::vector<int>		s;
+	ft::vector<int>		f1;
+	std::vector<int>	s1;
+	EXPECT_EQ(f1.size(), s1.size()) << "size() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.empty(), s1.empty()) << "empty() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.max_size(), s1.max_size()) << "max_size() differ: "
+		<< f1.max_size() << "\t" << s1.max_size();
+	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "
+		<< f1.capacity() << "\t" << s1.capacity();
+}
 
-	std::cout << std::boolalpha;
+TEST(vectorCapacity, fillCnst1Param)
+{
+	ft::vector<int>		f1(100);
+	std::vector<int>	s1(100);
+	EXPECT_EQ(f1.size(), s1.size()) << "size() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.empty(), s1.empty()) << "empty() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.max_size(), s1.max_size()) << "max_size() differ: "
+		<< f1.max_size() << "\t" << s1.max_size();
+	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "
+		<< f1.capacity() << "\t" << s1.capacity();
+}
 
-	std::cout << "m.size()\t=\t" << m.size() << std::endl;
-	std::cout << "s.size()\t=\t" << s.size() << std::endl;
-	std::cout << "m.empty()\t=\t" << m.empty() << std::endl;
-	std::cout << "s.empty()\t=\t" << s.empty() << std::endl;
+TEST(vectorCapacity, rangeCnst2Param)
+{
+	std::list<int>		refList(20);
+	ft::vector<int>		f1(refList.begin(), refList.end());
+	std::vector<int>	s1(refList.begin(), refList.end());
+	EXPECT_EQ(f1.size(), s1.size()) << "size() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.empty(), s1.empty()) << "empty() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.max_size(), s1.max_size()) << "max_size() differ: "
+		<< f1.max_size() << "\t" << s1.max_size();
+	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "
+		<< f1.capacity() << "\t" << s1.capacity();
+	f1.reserve(25);
+	s1.reserve(25);
+	EXPECT_EQ(f1.size(), s1.size()) << "size() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.empty(), s1.empty()) << "empty() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.max_size(), s1.max_size()) << "max_size() differ: "
+		<< f1.max_size() << "\t" << s1.max_size();
+	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "
+		<< f1.capacity() << "\t" << s1.capacity();
+	f1.resize(5);
+	s1.resize(5);
+	EXPECT_EQ(f1.size(), s1.size()) << "size() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.empty(), s1.empty()) << "empty() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.max_size(), s1.max_size()) << "max_size() differ: "
+		<< f1.max_size() << "\t" << s1.max_size();
+	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "
+		<< f1.capacity() << "\t" << s1.capacity();
+	f1.resize(10, 5);
+	s1.resize(10, 5);
+	EXPECT_EQ(f1.size(), s1.size()) << "size() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.empty(), s1.empty()) << "empty() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.max_size(), s1.max_size()) << "max_size() differ: "
+		<< f1.max_size() << "\t" << s1.max_size();
+	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "
+		<< f1.capacity() << "\t" << s1.capacity();
+	f1.resize(500, 10);
+	s1.resize(500, 10);
+	EXPECT_EQ(f1.size(), s1.size()) << "size() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.empty(), s1.empty()) << "empty() differ: "
+		<< f1.size() << "\t" << s1.size();
+	EXPECT_EQ(f1.max_size(), s1.max_size()) << "max_size() differ: "
+		<< f1.max_size() << "\t" << s1.max_size();
+	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "
+		<< f1.capacity() << "\t" << s1.capacity();
 
-	ft::vector<int>		m2(10);
-	std::vector<int>	s2(10);
 
-	std::cout << "m2.size()\t=\t" << m2.size() << std::endl;
-	std::cout << "s2.size()\t=\t" << s2.size() << std::endl;
-	std::cout << "m2.empty()\t=\t" << m2.empty() << std::endl;
-	std::cout << "s2.empty()\t=\t" << s2.empty() << std::endl;
+}
 
-	ft::vector<int>		m3(s2.begin(), s2.end());
-	std::vector<int>	s3(s2.begin(), s2.end());
-
-	std::cout << "m3.size()\t=\t" << m3.size() << std::endl;
-	std::cout << "s3.size()\t=\t" << s3.size() << std::endl;
-	std::cout << "m3.empty()\t=\t" << m3.empty() << std::endl;
-	std::cout << "s3.empty()\t=\t" << s3.empty() << std::endl;
-
-	
+int main(int argc, char **argv)
+{
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
 }
