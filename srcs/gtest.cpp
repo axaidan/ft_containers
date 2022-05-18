@@ -89,8 +89,6 @@ TEST(vectorCapacity, rangeCnst2Param)
 		<< f1.max_size() << "\t" << s1.max_size();
 	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "
 		<< f1.capacity() << "\t" << s1.capacity();
-
-
 }
 
 int main(int argc, char **argv)

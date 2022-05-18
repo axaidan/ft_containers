@@ -7,7 +7,8 @@ GTEST_SRCS		=	srcs/gtest.cpp
 SRCS			=	main.cpp
 
 HEADERS			=	${INC_FLD}stack.hpp \
-					${INC_FLD}vector.hpp
+					${INC_FLD}vector.hpp \
+					${INC_FLD}type_utils.hpp
 
 INC_FLD			=	includes/
 

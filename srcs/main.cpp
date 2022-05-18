@@ -2,6 +2,48 @@
 #include "stack.hpp"
 #include <vector>
 #include <iostream>
+#include <string>
+
+template<class T>
+void	compareCapacityFunctions(ft::vector<T> &m, std::vector<T> &s,
+		std::string name)
+{
+	std::cout << std::boolalpha;
+
+	std::cout << "=== FOR " << name << std::endl;
+	if (m.size() == s.size())
+		std::cout << "=== size() are equal" << std::endl;
+	else
+		std::cout << "=== size() are NOT equal" << std::endl
+			<< "m =\t" << m.size()
+			<< "\ts =\t" << s.size() << std::endl;
+	if (m.empty() == s.empty())
+		std::cout << "=== empty() are equal" << std::endl;
+	else
+		std::cout << "=== empty() are NOT equal" << std::endl
+			<< "m =\t" << m.empty()
+			<< "\ts =\t" << s.empty() << std::endl;
+	if (m.max_size() == s.max_size())
+		std::cout << "=== max_size() are equal" << std::endl;
+	else
+		std::cout << "=== max_size() are NOT equal" << std::endl
+			<< "m =\t" << m.max_size()
+			<< "\ts =\t" << s.max_size() << std::endl;
+	if (m.capacity() == s.capacity())
+		std::cout << "=== capacity() are equal" << std::endl;
+	else
+		std::cout << "=== capacity() are NOT equal" << std::endl
+			<< "m =\t" << m.capacity()
+			<< "\ts =\t" << s.capacity() << std::endl;
+
+	std::cout << std::endl;
+}
+
+template<class T>
+bool	compareValues(ft::vector<T> m, std::vector<T> s);
+
+template<class T>
+bool	printVectorValues(ft::vector<T> m, std::vector<T> s);
 
 int main(void)
 {
@@ -9,28 +51,26 @@ int main(void)
 	ft::vector<int>			m;
 	std::vector<int>		s;
 
-	std::cout << std::boolalpha;
-
-	std::cout << "m.size()\t=\t" << m.size() << std::endl;
-	std::cout << "s.size()\t=\t" << s.size() << std::endl;
-	std::cout << "m.empty()\t=\t" << m.empty() << std::endl;
-	std::cout << "s.empty()\t=\t" << s.empty() << std::endl;
+	compareCapacityFunctions(m, s, "m");
 
 	ft::vector<int>		m2(10);
 	std::vector<int>	s2(10);
 
-	std::cout << "m2.size()\t=\t" << m2.size() << std::endl;
-	std::cout << "s2.size()\t=\t" << s2.size() << std::endl;
-	std::cout << "m2.empty()\t=\t" << m2.empty() << std::endl;
-	std::cout << "s2.empty()\t=\t" << s2.empty() << std::endl;
+	compareCapacityFunctions(m2, s2, "2");
 
 	ft::vector<int>		m3(s2.begin(), s2.end());
 	std::vector<int>	s3(s2.begin(), s2.end());
 
-	std::cout << "m3.size()\t=\t" << m3.size() << std::endl;
-	std::cout << "s3.size()\t=\t" << s3.size() << std::endl;
-	std::cout << "m3.empty()\t=\t" << m3.empty() << std::endl;
-	std::cout << "s3.empty()\t=\t" << s3.empty() << std::endl;
+	compareCapacityFunctions(m3, s3, "3");
+	m3.reserve(20);
+	s3.reserve(20);
+	m3.resize(5, 3);
+	s3.resize(5, 3);
+	compareCapacityFunctions(m3, s3, "3 after resize()");
 
-	
+	ft::vector<int>		m4(42, 42);
+	std::vector<int>	s4(42, 42);
+	m4.print_values();
+	compareCapacityFunctions(m4, s4, "4");
+
 }
