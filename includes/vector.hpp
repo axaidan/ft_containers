@@ -128,7 +128,7 @@ void			resize(size_type n, value_type val = value_type())
 	if (n < size())
 	{
 		for (tmp = _begin + n ; tmp < _end ; tmp++)
-			tmp->~value_type();
+			_allocator.destroy(tmp);
 		_end = _begin + n;
 		return ;
 	}
@@ -174,6 +174,29 @@ void			reserve(size_type n)
 	_end = tmpEnd;
 	_capacity = tmpCapacity;
 }
+
+//	ELEMENT ACCESS
+
+reference		at(size_type n)
+{
+	if (n >= size())
+		throw(std::out_of_range("vector::out_of_range"));
+	return (*(_begin + n));
+}
+
+const_reference at(size_type n) const
+{
+	if (n >= size())
+		throw(std::out_of_range("vector::out_of_range"));
+	return (*(_begin + n));
+}
+
+reference		operator[](size_type n)			{return (*(_begin + n));}
+const_reference	operator[](size_type n) const	{return (*(_begin + n));}
+reference		front(void)						{return (*_begin);}
+const_reference	front(void) const				{return (*_begin);}
+reference		back(void)				{return (*(_begin + size() - 1));}
+const_reference	back(void) const		{return (*(_begin + size() - 1));}
 
 //	ALLOCATOR
 allocator_type	get_allocator(void) const

@@ -71,6 +71,17 @@ int main(void)
 	ft::vector<int>		m4(42, 42);
 	std::vector<int>	s4(42, 42);
 	m4.print_values();
-	compareCapacityFunctions(m4, s4, "4");
-
+	std::cout << "modifying" << std::endl;
+	s4[41] = -1000;
+	m4[41] = -1000;
+	std::cout << "printing" << std::endl;
+	std::cout << "s[41] = " << s4[41] << std::endl;
+	std::cout << "m[41] = " << m4[41] << std::endl;
+	std::cout << "s.back() = " << s4.back() << std::endl;
+	std::cout << "m.back() = " << m4.back() << std::endl;
+	s4[0] = 2222;
+	m4[0] = 2222;
+	std::cout << "s.front() = " << s4.front() << std::endl;
+	std::cout << "m.front() = " << m4.front() << std::endl;
+//	compareCapacityFunctions(m4, s4, "4");
 }
