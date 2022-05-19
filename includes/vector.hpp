@@ -135,7 +135,7 @@ vector (const vector& src) :
 		_allocator.destroy(tmpBegin);
 		tmpBegin++;
 	}
-	//std::cerr << "VECTOR DESTRUCTOR, ABOUT TO deallocate()" << std::endl;
+	std::cerr << "VECTOR DESTRUCTOR, ABOUT TO deallocate()" << std::endl;
 	_allocator.deallocate(_begin, capacity());
 }
 
@@ -214,7 +214,8 @@ void			resize(size_type n, value_type val = value_type())
 	_end = _begin + n;
 	while(tmp < _end)
 	{
-		*tmp = val;
+		//*tmp = val;
+		_allocator.construct(tmp, val);
 		tmp++;
 	}
 }
