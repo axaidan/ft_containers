@@ -44,7 +44,7 @@ TEST(vectorCapacity, rangeCnst2Param)
 	EXPECT_EQ(f1.size(), s1.size()) << "size() differ: "
 		<< f1.size() << "\t" << s1.size();
 	EXPECT_EQ(f1.empty(), s1.empty()) << "empty() differ: "
-		<< f1.size() << "\t" << s1.size();
+		<< f1.empty() << "\t" << s1.empty();
 	EXPECT_EQ(f1.max_size(), s1.max_size()) << "max_size() differ: "
 		<< f1.max_size() << "\t" << s1.max_size();
 	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "
@@ -54,7 +54,7 @@ TEST(vectorCapacity, rangeCnst2Param)
 	EXPECT_EQ(f1.size(), s1.size()) << "size() differ: "
 		<< f1.size() << "\t" << s1.size();
 	EXPECT_EQ(f1.empty(), s1.empty()) << "empty() differ: "
-		<< f1.size() << "\t" << s1.size();
+		<< f1.empty() << "\t" << s1.empty();
 	EXPECT_EQ(f1.max_size(), s1.max_size()) << "max_size() differ: "
 		<< f1.max_size() << "\t" << s1.max_size();
 	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "
@@ -64,7 +64,7 @@ TEST(vectorCapacity, rangeCnst2Param)
 	EXPECT_EQ(f1.size(), s1.size()) << "size() differ: "
 		<< f1.size() << "\t" << s1.size();
 	EXPECT_EQ(f1.empty(), s1.empty()) << "empty() differ: "
-		<< f1.size() << "\t" << s1.size();
+		<< f1.empty() << "\t" << s1.empty();
 	EXPECT_EQ(f1.max_size(), s1.max_size()) << "max_size() differ: "
 		<< f1.max_size() << "\t" << s1.max_size();
 	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "
@@ -74,7 +74,7 @@ TEST(vectorCapacity, rangeCnst2Param)
 	EXPECT_EQ(f1.size(), s1.size()) << "size() differ: "
 		<< f1.size() << "\t" << s1.size();
 	EXPECT_EQ(f1.empty(), s1.empty()) << "empty() differ: "
-		<< f1.size() << "\t" << s1.size();
+		<< f1.empty() << "\t" << s1.empty();
 	EXPECT_EQ(f1.max_size(), s1.max_size()) << "max_size() differ: "
 		<< f1.max_size() << "\t" << s1.max_size();
 	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "
@@ -84,7 +84,7 @@ TEST(vectorCapacity, rangeCnst2Param)
 	EXPECT_EQ(f1.size(), s1.size()) << "size() differ: "
 		<< f1.size() << "\t" << s1.size();
 	EXPECT_EQ(f1.empty(), s1.empty()) << "empty() differ: "
-		<< f1.size() << "\t" << s1.size();
+		<< f1.empty() << "\t" << s1.empty();
 	EXPECT_EQ(f1.max_size(), s1.max_size()) << "max_size() differ: "
 		<< f1.max_size() << "\t" << s1.max_size();
 	EXPECT_EQ(f1.capacity(), s1.capacity()) << "capacity() differ: "

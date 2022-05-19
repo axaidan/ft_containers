@@ -48,6 +48,7 @@ explicit	vector(const allocator_type& alloc = allocator_type()) :
 	_end(NULL),
 	_capacity(NULL)
 {
+//	std::cerr << "VECTOR DEFAULT CONSTRUCTOR" << std::endl;
 	return ;
 }
 
@@ -59,6 +60,7 @@ explicit	vector(size_type n, const value_type& val = value_type(),
 	_end(_begin + n),
 	_capacity(_end)
 {
+//	std::cerr << "VECTOR FILL CONSTRUCTOR" << std::endl;
 	pointer	tmp;
 
 	tmp = _begin;
@@ -77,47 +79,121 @@ vector(typename ft::enable_if<!ft::is_integral<InpIt>::value, InpIt>::type first
 		const allocator_type& alloc = allocator_type()) :
 	_allocator(alloc)
 {
+//	std::cerr << "VECTOR RANGE CONSTRUCTOR" << std::endl;
+	pointer		tmp;
+	InpIt		bckpFirst;
 	size_type	size;
+	bckpFirst = first;
 	for (size = 0 ; first != last ; size++, first++)
 		;
-	_begin = _allocator.allocate(size);
+	tmp = _allocator.allocate(size);
+	first = bckpFirst;
+	size = 0;
+	while (first != last)
+	{
+		*(tmp + size) = *first;
+		size++;
+		first++;
+	}
+	_begin = tmp;
 	_end = _begin + size;
 	_capacity = _end;
 }
 
 //	copy (4)
-/*
 vector (const vector& src) :
 	_allocator(src.get_allocator()),
 	_begin(_allocator.allocate(src.size())),
-	_end(_begin + _src.size()),
+	_end(_begin + src.size()),
 	_capacity(_end + 1)
 {
+//	std::cerr << "VECTOR COPY CONSTRUCTOR" << std::endl;
+	const_iterator	it;
+	const_iterator	ite;
+	pointer			tmp;
 
-
-	for (pointer tmp = _begin ; tmp < _end ; tmp++)
-
+	it = src.begin();
+	ite = src.end();
+	tmp = _begin;
+	while (it != ite)
+	{
+		*tmp = *it;	
+		tmp++;
+		it++;
+	}
 }
-*/
 
 
 //	DESTRUCTOR
 ~vector(void)
 {
-	_allocator.deallocate(_begin, this->size());
+	pointer	tmpBegin;
+
+	tmpBegin = _begin;
+	while (tmpBegin < _end)
+	{
+		_allocator.destroy(tmpBegin);
+		tmpBegin++;
+	}
+	//std::cerr << "VECTOR DESTRUCTOR, ABOUT TO deallocate()" << std::endl;
+	_allocator.deallocate(_begin, capacity());
+}
+
+//	ITERATORS
+iterator				begin(void)
+{
+	iterator				it(_begin);
+	return (it);
+}
+
+const_iterator			begin(void) const
+{
+	const_iterator			it(_begin);
+	return (it);
+}
+
+iterator				end(void)
+{
+	iterator				it(_end);
+	return (it);
+}
+
+const_iterator			end(void) const
+{
+	const_iterator			it(_end);
+	return (it);
+}
+
+reverse_iterator		rbegin(void)
+{
+	reverse_iterator		it(_begin);
+	return (it);
+}
+
+const_reverse_iterator	rbegin(void) const
+{
+	const_reverse_iterator	it(_begin);
+	return (it);
+}
+
+reverse_iterator		rend(void)
+{
+	reverse_iterator		it(_end);
+	return (it);
+}
+
+const_reverse_iterator	rend(void) const
+{
+	const_reverse_iterator	it(_end);
+	return (it);
 }
 
 
 //	CAPACITY
-size_type		size(void) const
-{
-	return (_end - _begin);
-}
-
-size_type		max_size(void) const
-{
-	return (_allocator.max_size());
-}
+size_type		size(void)		const	{return (_end - _begin);}
+size_type		max_size(void)	const	{return (_allocator.max_size());}
+size_type		capacity(void)	const	{return (_capacity - _begin);}
+bool			empty(void)		const	{return (_begin == _end);}
 
 void			resize(size_type n, value_type val = value_type())
 {
@@ -141,16 +217,6 @@ void			resize(size_type n, value_type val = value_type())
 		*tmp = val;
 		tmp++;
 	}
-}
-
-size_type		capacity(void) const
-{
-	return (_capacity - _begin);
-}
-
-bool			empty(void) const
-{
-	return (_begin == _end);
 }
 
 void			reserve(size_type n)
@@ -193,16 +259,15 @@ const_reference at(size_type n) const
 
 reference		operator[](size_type n)			{return (*(_begin + n));}
 const_reference	operator[](size_type n) const	{return (*(_begin + n));}
+//	UNDEF BEHAV IF V IS EMPTY
 reference		front(void)						{return (*_begin);}
-const_reference	front(void) const				{return (*_begin);}
+const_reference	front(void)	const				{return (*_begin);}
+//	UNDEF BEHAV IF V IS EMPTY
 reference		back(void)				{return (*(_begin + size() - 1));}
-const_reference	back(void) const		{return (*(_begin + size() - 1));}
+const_reference	back(void)	const		{return (*(_begin + size() - 1));}
 
 //	ALLOCATOR
-allocator_type	get_allocator(void) const
-{
-	return (_allocator);
-}
+allocator_type	get_allocator(void) const	{return (_allocator);}
 
 //	DEBUG
 void			print_values(void) const
