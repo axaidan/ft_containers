@@ -47,6 +47,9 @@ bool	printVectorValues(ft::vector<T> m, std::vector<T> s);
 
 int main(void)
 {
+	std::vector<int>		test;
+	std::vector<int>::iterator ite = test.end();
+	std::cout << ite.mnode << std::endl; 	
 	// EMPTY
 	ft::vector<int>			m;
 	std::vector<int>		s;

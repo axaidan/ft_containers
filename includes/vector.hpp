@@ -40,7 +40,9 @@ private:
 	pointer			_capacity;
 
 public:
-//	CONSTRUCTORS
+/********************/
+/*	CONSTRUCTORS	*/
+/********************/
 //	default (1)
 explicit	vector(const allocator_type& alloc = allocator_type()) :
 	_allocator(alloc),
@@ -123,8 +125,36 @@ vector (const vector& src) :
 	}
 }
 
+vector&	operator=(const vector& rhs)
+{
+	const_iterator	rhsBegin;
+	const_iterator	rhsEnd;
+	pointer			tmpBegin;
+	pointer			tmpNewBegin;
 
-//	DESTRUCTOR
+
+	for (tmpBegin = _begin ; tmpBegin < _end ; tmpBegin++)
+		_allocator.destroy(tmpBegin);
+	if (rhs.size() > capacity())
+	{
+		tmpNewBegin = _allocator.allocate(rhs.size());
+		tmpBegin = tmpNewBegin;
+	}
+	else
+		tmpBegin = _begin;
+	for (rhsBegin = rhs.begin(), rhsEnd = rhs.end() ;
+			rhsBegin != rhsEnd ;
+			rhsBegin++, tmpBegin++)
+		_allocator.construct(tmpBegin, *rhsBegin);
+	_begin = tmpNewBegin;
+	_end = tmpNewBegin + rhs.size();
+	_capacity = _end;
+	return (*this);
+}
+
+/****************/
+/*	DESTRUCTOR	*/
+/****************/
 ~vector(void)
 {
 	pointer	tmpBegin;
@@ -135,11 +165,13 @@ vector (const vector& src) :
 		_allocator.destroy(tmpBegin);
 		tmpBegin++;
 	}
-	std::cerr << "VECTOR DESTRUCTOR, ABOUT TO deallocate()" << std::endl;
+	//std::cerr << "VECTOR DESTRUCTOR, ABOUT TO deallocate()" << std::endl;
 	_allocator.deallocate(_begin, capacity());
 }
 
-//	ITERATORS
+/****************/
+/*	ITERATORS	*/
+/****************/
 iterator				begin(void)
 {
 	iterator				it(_begin);
@@ -189,7 +221,10 @@ const_reverse_iterator	rend(void) const
 }
 
 
-//	CAPACITY
+/****************/
+/*	CAPACITY	*/
+/****************/
+
 size_type		size(void)		const	{return (_end - _begin);}
 size_type		max_size(void)	const	{return (_allocator.max_size());}
 size_type		capacity(void)	const	{return (_capacity - _begin);}
@@ -242,7 +277,9 @@ void			reserve(size_type n)
 	_capacity = tmpCapacity;
 }
 
-//	ELEMENT ACCESS
+/********************/
+/*	ELEMENTS ACCESS	*/
+/********************/
 
 reference		at(size_type n)
 {
@@ -267,10 +304,56 @@ const_reference	front(void)	const				{return (*_begin);}
 reference		back(void)				{return (*(_begin + size() - 1));}
 const_reference	back(void)	const		{return (*(_begin + size() - 1));}
 
-//	ALLOCATOR
+/****************/
+/*	MODIFIERS	*/
+/****************/
+
+iterator	insert(iterator position, const value_type& val)
+{
+	size_type	newSize;
+	iterator	tmpEnd;
+	size_type	insertIndex;
+	size_type	from;
+	size_type	to;
+
+	newSize = size() + 1;
+	insertIndex = position - begin();
+	if (newSize > capacity())
+		reserve(size() * 2);
+	for (to = newSize, from = size() ;
+			to != insertIndex ;
+			to--, from--)
+		*(_begin + to) = *(_begin + from);
+	_allocator.construct(_begin + insertIndex, val);
+	_end = _end + 1;
+	return (begin());
+}
+
+//	si n + size() > capacity
+//		double une fois
+//	si toujours pas la place
+//		capacity = n + size()
+void		insert(iterator position, size_type n, const value_type& val);
+template <class InputIterator>
+void		insert(iterator position, InputIterator first, InputIterator last);
+
+void			clear(void)
+{
+	pointer	tmpBegin;
+
+	for (tmpBegin = _begin ; tmpBegin != _end ; tmpBegin++)
+		_allocator.destroy(tmpBegin);
+	_end = _begin;
+}
+
+/****************/
+/*	ALLOCATOR	*/
+/****************/
 allocator_type	get_allocator(void) const	{return (_allocator);}
 
-//	DEBUG
+/************/
+/*	DEBUG	*/
+/************/
 void			print_values(void) const
 {
 	pointer	tmp;

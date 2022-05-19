@@ -6,19 +6,23 @@
 
 #ifdef INT
 	typedef int T;
-	#define VALUE 42
+	#define VALUE_ONE 42
+	#define VALUE_TWO -100
 #endif
 #ifdef STRING
 	typedef std::string T;
-	#define VALUE "quarante deux"
+	#define VALUE_ONE "quarante deux"
+	#define VALUE_TWO "moins cent"
 #endif
 #ifdef FLOAT
 	typedef float T;
-	#define VALUE 42.0f
+	#define VALUE_ONE 42.0f
+	#define VALUE_TWO 42.0f
 #endif
  
 ft::vector<T>		ft_v;
 std::vector<T>		std_v;
+ft::vector<T>		ft_v2;
 
 void	modifyCapacity(size_t reserveArg)
 {
@@ -115,13 +119,7 @@ class CapacityFunctions : public ::testing::Test
 				<< "std_v = " << *(std_v.end() - 1);
 			/*
 			EXPECT_EQ(*ft_v.rbegin(), *std_v.rbegin())
-				<< "=== rbegin(): "
-				<< "ft_v = " << *ft_v.rbegin()
-				<< "std_v = " << *std_v.rbegin();
 			EXPECT_EQ(*ft_v.rend(), *std_v.rend())
-				<< "=== rend(): "
-				<< "ft_v = " << *ft_v.rend()
-				<< "std_v = " << *std_v.rend();
 			*/
 			}
 			else
@@ -145,8 +143,8 @@ TEST_F(CapacityFunctions, empty)
 
 TEST_F(CapacityFunctions, reserve20)
 {
-	ft_v.reserve(20);
-	std_v.reserve(20);
+	ft_v.reserve(2);
+	std_v.reserve(2);
 	TEST_CAPACITY_FUNCTIONS();
 	TEST_EQUALITY();
 	TEST_ITERATORS_FUNCTIONS();
@@ -154,12 +152,38 @@ TEST_F(CapacityFunctions, reserve20)
 
 TEST_F(CapacityFunctions, resize5Value)
 {
-	ft_v.resize(5, VALUE);
-	std_v.resize(5, VALUE);
+	ft_v.resize(5, VALUE_ONE);
+	std_v.resize(5, VALUE_ONE);
 	TEST_CAPACITY_FUNCTIONS();
 	TEST_EQUALITY();
 	TEST_ACCESS_FUNCTIONS();
 	TEST_ITERATORS_FUNCTIONS();
+}
+
+/*
+class ModifyFunctions : public ::testing::Test
+{
+	protected:
+	void TEST_CAPACITY_FUNCTIONS(void)
+	{
+
+	}
+}
+*/
+
+TEST_F(CapacityFunctions, insertOneValue)
+{
+	ft_v.insert(ft_v.begin() + 1, VALUE_ONE);
+	std_v.insert(std_v.begin() + 1, VALUE_ONE);
+	ft_v.insert(ft_v.begin() + 1, VALUE_ONE);
+	std_v.insert(std_v.begin() + 1, VALUE_ONE);
+	ft_v.insert(ft_v.begin() + 1, VALUE_TWO);
+	std_v.insert(std_v.begin() + 1, VALUE_TWO);
+	ft_v.insert(ft_v.begin() + 1, VALUE_ONE);
+	std_v.insert(std_v.begin() + 1, VALUE_ONE);
+	TEST_CAPACITY_FUNCTIONS();
+	TEST_EQUALITY();
+	TEST_ACCESS_FUNCTIONS();
 }
 
 int main(int argc, char **argv)
