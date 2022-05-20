@@ -23,7 +23,7 @@
 	#define VALUE_THREE -1.0f
 #endif
 
-#define N 50
+#define N 50 
  
 ft::vector<T>		ft_v;
 std::vector<T>		std_v;
@@ -194,14 +194,20 @@ TEST_F(CapacityFunctions, insertOneValue)
 
 TEST_F(CapacityFunctions, insertFill)
 {
-	ft_v.insert(ft_v.begin(), N, VALUE_THREE);
-	std_v.insert(std_v.begin(), N, VALUE_THREE);
+	T val = T(VALUE_THREE);
+//	ft_v.print_values();
 
+	ft_v.insert(ft_v.begin(), 2, val);
+	std_v.insert(std_v.begin(), 2, val);
 	TEST_CAPACITY_FUNCTIONS();
-//	TEST_EQUALITY();
+	TEST_EQUALITY();
+
+	ft_v.insert(ft_v.end(), 80, val);
+	//ft_v.print_values();
+	std_v.insert(std_v.end(), 80, val);
+	TEST_CAPACITY_FUNCTIONS();
+	TEST_EQUALITY();
 }
-
-
 
 int main(int argc, char **argv)
 {

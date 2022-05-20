@@ -8,7 +8,8 @@ SRCS			=	main.cpp
 
 HEADERS			=	${INC_FLD}stack.hpp \
 					${INC_FLD}vector.hpp \
-					${INC_FLD}type_utils.hpp
+					${INC_FLD}type_utils.hpp \
+					${INC_FLD}ContainsAlloc.hpp
 
 INC_FLD			=	includes/
 
@@ -42,11 +43,19 @@ fclean		:	clean
 
 re			:	fclean all
 
-gtest		:	srcs/gtest.cpp
+vgtest		:	srcs/gtest.cpp includes/vector.hpp
 			${CXX} ${CXXFLAGS} -I ${INC_FLD} srcs/main.cpp -o srcs/main.o
 			rm -rf srcs/main.o
 			c++ -pthread -D${ARG} -I ${GTEST_FLD_INC} -I ${INC_FLD} -c -o srcs/gtest.o srcs/gtest.cpp
 			c++ -pthread -D${ARG} -o ${GTEST} srcs/gtest.o -L ${GTEST_FLD_LIB} -lgtest 
 			valgrind ./${GTEST}
+
+gtest		:	srcs/gtest.cpp includes/vector.hpp
+			${CXX} ${CXXFLAGS} -I ${INC_FLD} srcs/main.cpp -o srcs/main.o
+			rm -rf srcs/main.o
+			c++ -pthread -D${ARG} -I ${GTEST_FLD_INC} -I ${INC_FLD} -c -o srcs/gtest.o srcs/gtest.cpp
+			c++ -pthread -D${ARG} -o ${GTEST} srcs/gtest.o -L ${GTEST_FLD_LIB} -lgtest 
+			./${GTEST}
+
 
 .PHONY		:	all re clean fclean
