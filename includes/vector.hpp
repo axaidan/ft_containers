@@ -68,7 +68,8 @@ explicit	vector(size_type n, const value_type& val = value_type(),
 	tmp = _begin;
 	while (tmp < _end)
 	{
-		*tmp = val;
+		//*tmp = val;
+		_allocator.construct(tmp, val);
 		tmp++;
 	}
 	return ;
@@ -85,6 +86,7 @@ vector(typename ft::enable_if<!ft::is_integral<InpIt>::value, InpIt>::type first
 	pointer		tmp;
 	InpIt		bckpFirst;
 	size_type	size;
+
 	bckpFirst = first;
 	for (size = 0 ; first != last ; size++, first++)
 		;
@@ -93,10 +95,12 @@ vector(typename ft::enable_if<!ft::is_integral<InpIt>::value, InpIt>::type first
 	size = 0;
 	while (first != last)
 	{
-		*(tmp + size) = *first;
+//		*(tmp + size) = *first;
+		_allocator.construct(tmp + size, *first);
 		size++;
 		first++;
 	}
+//	first = bckpFirst;
 	_begin = tmp;
 	_end = _begin + size;
 	_capacity = _end;
@@ -157,14 +161,7 @@ vector&	operator=(const vector& rhs)
 /****************/
 ~vector(void)
 {
-	pointer	tmpBegin;
-
-	tmpBegin = _begin;
-	while (tmpBegin < _end)
-	{
-		_allocator.destroy(tmpBegin);
-		tmpBegin++;
-	}
+	clear();
 	//std::cerr << "VECTOR DESTRUCTOR, ABOUT TO deallocate()" << std::endl;
 	_allocator.deallocate(_begin, capacity());
 }
@@ -270,8 +267,10 @@ void			reserve(size_type n)
 	tmpEnd = tmpBegin + size();
 	tmpCapacity = tmpBegin + n;
 	for (i = 0 ; i < size() ; i++)
-		tmpBegin[i] = _begin[i];
+		_allocator.construct(tmpBegin + i, _begin[i]);
+	clear();
 	_allocator.deallocate(_begin, size());
+	std::cerr << "RESERVE - SF?" << std::endl;
 	_begin = tmpBegin;
 	_end = tmpEnd;
 	_capacity = tmpCapacity;
@@ -311,29 +310,61 @@ const_reference	back(void)	const		{return (*(_begin + size() - 1));}
 iterator	insert(iterator position, const value_type& val)
 {
 	size_type	newSize;
-	iterator	tmpEnd;
 	size_type	insertIndex;
 	size_type	from;
 	size_type	to;
 
-	newSize = size() + 1;
 	insertIndex = position - begin();
-	if (newSize > capacity())
-		reserve(size() * 2);
-	for (to = newSize, from = size() ;
-			to != insertIndex ;
-			to--, from--)
-		*(_begin + to) = *(_begin + from);
+	if (empty() == false)
+	{
+		newSize = size() + 1;
+		if (newSize > capacity())
+			reserve(capacity() * 2);
+		for (to = newSize, from = size() ;
+				to != insertIndex ;
+				to--, from--)
+		{
+			//*(_begin + to) = *(_begin + from);
+			
+			_allocator.construct((_begin + to), *(_begin + from));
+			_allocator.destroy(_begin + to);
+		}	
+	}
+	else
+		reserve(1);
 	_allocator.construct(_begin + insertIndex, val);
 	_end = _end + 1;
-	return (begin());
+	return (begin() + insertIndex);
 }
 
-//	si n + size() > capacity
-//		double une fois
-//	si toujours pas la place
-//		capacity = n + size()
-void		insert(iterator position, size_type n, const value_type& val);
+void		insert(iterator position, size_type n, const value_type& val)
+{
+	size_type	newSize;
+	size_type	insertionBegin;
+	size_type	insertionEnd;
+	size_type	copyFrom;
+	size_type	copyTo;
+
+	(void)n;
+	(void)position;
+	(void)val;
+	newSize = size() + n;
+	insertionBegin = position - begin();
+	insertionEnd = insertionBegin + n;
+	if (newSize > capacity())
+		reserve(capacity() * 2);
+	if (newSize > capacity())
+		reserve(newSize);
+	copyTo = newSize;
+	copyFrom = size();
+	//	MOVE EVERYTHING FROM copyFrom TO copyTo UNTIL insertionEnd
+	
+	//	CONSTRUCT val FROM copyFrom TO position UNTIL insertionBegin
+	
+	//	UPDATE POINTERS
+	_end = _begin + size() + n;
+}
+
 template <class InputIterator>
 void		insert(iterator position, InputIterator first, InputIterator last);
 

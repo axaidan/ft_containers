@@ -47,6 +47,6 @@ gtest		:	srcs/gtest.cpp
 			rm -rf srcs/main.o
 			c++ -pthread -D${ARG} -I ${GTEST_FLD_INC} -I ${INC_FLD} -c -o srcs/gtest.o srcs/gtest.cpp
 			c++ -pthread -D${ARG} -o ${GTEST} srcs/gtest.o -L ${GTEST_FLD_LIB} -lgtest 
-			./${GTEST}
+			valgrind ./${GTEST}
 
 .PHONY		:	all re clean fclean

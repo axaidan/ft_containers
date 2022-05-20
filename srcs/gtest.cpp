@@ -8,17 +8,22 @@
 	typedef int T;
 	#define VALUE_ONE 42
 	#define VALUE_TWO -100
+	#define VALUE_THREE -1
 #endif
 #ifdef STRING
 	typedef std::string T;
 	#define VALUE_ONE "quarante deux"
 	#define VALUE_TWO "moins cent"
+	#define VALUE_THREE "moins un"
 #endif
 #ifdef FLOAT
 	typedef float T;
 	#define VALUE_ONE 42.0f
-	#define VALUE_TWO 42.0f
+	#define VALUE_TWO -100.0f
+	#define VALUE_THREE -1.0f
 #endif
+
+#define N 50
  
 ft::vector<T>		ft_v;
 std::vector<T>		std_v;
@@ -181,10 +186,22 @@ TEST_F(CapacityFunctions, insertOneValue)
 	std_v.insert(std_v.begin() + 1, VALUE_TWO);
 	ft_v.insert(ft_v.begin() + 1, VALUE_ONE);
 	std_v.insert(std_v.begin() + 1, VALUE_ONE);
+
 	TEST_CAPACITY_FUNCTIONS();
 	TEST_EQUALITY();
 	TEST_ACCESS_FUNCTIONS();
 }
+
+TEST_F(CapacityFunctions, insertFill)
+{
+	ft_v.insert(ft_v.begin(), N, VALUE_THREE);
+	std_v.insert(std_v.begin(), N, VALUE_THREE);
+
+	TEST_CAPACITY_FUNCTIONS();
+//	TEST_EQUALITY();
+}
+
+
 
 int main(int argc, char **argv)
 {
