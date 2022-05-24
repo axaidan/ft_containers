@@ -52,54 +52,6 @@ bool	compareValues(ft::vector<T> m, std::vector<T> s);
 template<class T>
 bool	printVectorValues(ft::vector<T> m, std::vector<T> s);
 
-/*
-int main(void)
-{
-	// EMPTY
-	ft::vector<std::string>			m;
-	std::vector<std::string>		s;
-
-	compareCapacityFunctions(m, s, "m");
-
-	ft::vector<std::string>		m2(10);
-	std::vector<std::string>	s2(10);
-
-	compareCapacityFunctions(m2, s2, "2");
-
-	ft::vector<std::string>		m3(s2.begin(), s2.end());
-	std::vector<std::string>	s3(s2.begin(), s2.end());
-
-	compareCapacityFunctions(m3, s3, "3");
-	m3.reserve(20);
-	s3.reserve(20);
-	std::cerr << "SF?" << std::endl;
-	m3.resize(5, "3");
-	s3.resize(5, "3");
-	compareCapacityFunctions(m3, s3, "3 after resize()");
-
-	ft::vector<std::string>		m4(42, "quarante deux");
-	std::vector<std::string>	s4(42, "quarante deux");
-	m4.print_values();
-	std::cout << "modifying" << std::endl;
-	s4[41] = "-1000";
-	m4[41] = "-1000";
-	std::cout << "printing" << std::endl;
-	std::cout << "s[41] = " << s4[41] << std::endl;
-	std::cout << "m[41] = " << m4[41] << std::endl;
-	std::cout << "s.back() = " << s4.back() << std::endl;
-	std::cout << "m.back() = " << m4.back() << std::endl;
-	s4[0] = "2222";
-	m4[0] = "2222";
-	std::cout << "s.front() = " << s4.front() << std::endl;
-	std::cout << "m.front() = " << m4.front() << std::endl;
-//	compareCapacityFunctions(m4, s4, "4");
-	m.insert(m.begin(), "quarante deux");
-	s.insert(s.begin(), "quarante deux");
-	compareCapacityFunctions(m, s, "after insert(single)in empty");
-
-
-}
-*/
 int main(void)
 {
 	// EMPTY

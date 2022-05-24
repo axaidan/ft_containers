@@ -1,6 +1,8 @@
 #ifndef CONTAINS_ALLOC_HPP
 #define CONTAINS_ALLOC_HPP
 
+# include <cstring>
+
 class	ContainsAlloc
 {
 	private:
@@ -58,5 +60,14 @@ class	ContainsAlloc
 		{
 			return (_alloc);
 		}	
+		bool operator==(ContainsAlloc const &rhs) const
+		{
+			return (strcmp(_alloc, rhs.getAlloc()) == 0);
+		}
+		bool operator!=(ContainsAlloc const &rhs) const
+		{
+			return (strcmp(_alloc, rhs.getAlloc()) != 0);
+		}
+
 };
 #endif

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <gtest/gtest.h>
+#include "ContainsAlloc.hpp"
 
 #ifdef INT
 	typedef int T;
@@ -22,8 +23,21 @@
 	#define VALUE_TWO -100.0f
 	#define VALUE_THREE -1.0f
 #endif
+#ifdef CUSTOM
+	typedef ContainsAlloc T;
+	#define VALUE_ONE "quarante deux"
+	#define VALUE_TWO "moins cent"
+	#define VALUE_THREE "moins un"
+#endif
 
 #define N 50 
+
+std::ostream & operator<<(std::ostream &o, ContainsAlloc const & rhs)
+{
+    o << rhs.getAlloc();
+    return (o);
+}
+
  
 ft::vector<T>		ft_v;
 std::vector<T>		std_v;
@@ -41,6 +55,27 @@ bool	valuesAreEqual(size_t *j)
 	ft::vector<T>::iterator		ftIt = ft_v.begin();
 	std::vector<T>::iterator	stdItE = std_v.end();
 	ft::vector<T>::iterator		ftItE = ft_v.end();
+	size_t						i = 0;
+	while (ftIt != ftItE)
+	{
+		if (*ftIt != *stdIt)
+		{
+			*j = i;
+			return (false);
+		}			
+		i++;
+		stdIt++;
+		ftIt++;
+	}
+	return (true);
+}
+
+bool	valuesAreEqual(ft::vector<T> f, std::vector<T> s, size_t *j)
+{
+	std::vector<T>::iterator	stdIt = s.begin();
+	std::vector<T>::iterator	stdItE = s.end();
+	ft::vector<T>::iterator		ftIt = f.begin();
+	ft::vector<T>::iterator		ftItE = f.end();
 	size_t						i = 0;
 	while (ftIt != ftItE)
 	{
@@ -157,56 +192,101 @@ TEST_F(CapacityFunctions, reserve20)
 
 TEST_F(CapacityFunctions, resize5Value)
 {
-	ft_v.resize(5, VALUE_ONE);
-	std_v.resize(5, VALUE_ONE);
+	T	val(VALUE_ONE);
+
+	ft_v.resize(5, val);
+	std_v.resize(5, val);
 	TEST_CAPACITY_FUNCTIONS();
 	TEST_EQUALITY();
 	TEST_ACCESS_FUNCTIONS();
 	TEST_ITERATORS_FUNCTIONS();
 }
 
-/*
-class ModifyFunctions : public ::testing::Test
-{
-	protected:
-	void TEST_CAPACITY_FUNCTIONS(void)
-	{
-
-	}
-}
-*/
-
 TEST_F(CapacityFunctions, insertOneValue)
 {
-	ft_v.insert(ft_v.begin() + 1, VALUE_ONE);
-	std_v.insert(std_v.begin() + 1, VALUE_ONE);
-	ft_v.insert(ft_v.begin() + 1, VALUE_ONE);
-	std_v.insert(std_v.begin() + 1, VALUE_ONE);
-	ft_v.insert(ft_v.begin() + 1, VALUE_TWO);
-	std_v.insert(std_v.begin() + 1, VALUE_TWO);
-	ft_v.insert(ft_v.begin() + 1, VALUE_ONE);
-	std_v.insert(std_v.begin() + 1, VALUE_ONE);
+	T	val1(VALUE_ONE);
+	T	val2(VALUE_TWO);
 
+	ft_v.insert(ft_v.end(), val1);
+	std_v.insert(std_v.end(), val1);
+	ft_v.insert(ft_v.end(), val1);
+	std_v.insert(std_v.end(), val1);
+	ft_v.insert(ft_v.begin() + 1, val2);
+	std_v.insert(std_v.begin() + 1, val2);
+	ft_v.insert(ft_v.begin() + 1, val1);
+	std_v.insert(std_v.begin() + 1, val1);
 	TEST_CAPACITY_FUNCTIONS();
 	TEST_EQUALITY();
 	TEST_ACCESS_FUNCTIONS();
 }
 
+/*
 TEST_F(CapacityFunctions, insertFill)
 {
 	T val = T(VALUE_THREE);
-//	ft_v.print_values();
 
 	ft_v.insert(ft_v.begin(), 2, val);
 	std_v.insert(std_v.begin(), 2, val);
 	TEST_CAPACITY_FUNCTIONS();
 	TEST_EQUALITY();
 
+	std::cout << "=== IN MAIN - SF?" << std::endl;
 	ft_v.insert(ft_v.end(), 80, val);
-	//ft_v.print_values();
 	std_v.insert(std_v.end(), 80, val);
 	TEST_CAPACITY_FUNCTIONS();
 	TEST_EQUALITY();
+}
+*/
+
+TEST_F(CapacityFunctions, insertSingleEmpty)
+{
+	ft::vector<T>	ft_empty;
+	std::vector<T>	std_empty;
+	size_t			index;
+	T				val(VALUE_THREE);
+
+	ft_empty.insert(ft_empty.begin(), val);
+	std_empty.insert(std_empty.begin(), val);
+	EXPECT_EQ(ft_empty.size(), std_empty.size()) << "=== size() differ:"
+				<< "ft_empty = " << ft_empty.size()
+				<< "\tstd_empty= " << std_empty.size() ;
+	EXPECT_EQ(ft_empty.capacity(), std_empty.capacity()) << "=== capacity() differ:"
+				<< "ft_empty = " << ft_empty.capacity()
+				<< "\tstd_empty= " << std_empty.capacity() ;
+	EXPECT_EQ(ft_empty.empty(), std_empty.empty()) << "=== empty() differ:"
+				<< "ft_empty = " << ft_empty.empty()
+				<< "\tstd_empty= " << std_empty.empty() ;;
+	std::cerr << "=== IN MAIN - SF?" << std::endl;
+	EXPECT_EQ(valuesAreEqual(ft_empty, std_empty, &index), true)
+				<< "=== valuesAreEqual(): "
+				<< "at " << index
+				<< "\tft_v[i] = " << ft_v[index]
+				<< "\tstd_v[i] = " << std_v[index] ;
+}
+
+TEST_F(CapacityFunctions, insertFillEmpty)
+{
+	ft::vector<T>	ft_empty;
+	std::vector<T>	std_empty;
+	size_t			index;
+	T				val(VALUE_THREE);
+
+	ft_empty.insert(ft_empty.end(), 10, val);
+	std_empty.insert(std_empty.end(), 10, val);
+	EXPECT_EQ(ft_empty.size(), std_empty.size()) << "=== size() differ:"
+				<< "ft_empty = " << ft_empty.size()
+				<< "\tstd_empty= " << std_empty.size() ;
+	EXPECT_EQ(ft_empty.capacity(), std_empty.capacity()) << "=== capacity() differ:"
+				<< "ft_empty = " << ft_empty.capacity()
+				<< "\tstd_empty= " << std_empty.capacity() ;
+	EXPECT_EQ(ft_empty.empty(), std_empty.empty()) << "=== empty() differ:"
+				<< "ft_empty = " << ft_empty.empty()
+				<< "\tstd_empty= " << std_empty.empty() ;;
+	EXPECT_EQ(valuesAreEqual(ft_empty, std_empty, &index), true)
+				<< "=== valuesAreEqual(): "
+				<< "at " << index
+				<< "\tft_v[i] = " << ft_v[index]
+				<< "\tstd_v[i] = " << std_v[index] ;
 }
 
 int main(int argc, char **argv)

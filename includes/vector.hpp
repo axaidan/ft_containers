@@ -111,7 +111,7 @@ vector (const vector& src) :
 	_allocator(src.get_allocator()),
 	_begin(_allocator.allocate(src.size())),
 	_end(_begin + src.size()),
-	_capacity(_end + 1)
+	_capacity(_end)
 {
 //	std::cerr << "VECTOR COPY CONSTRUCTOR" << std::endl;
 	const_iterator	it;
@@ -123,7 +123,7 @@ vector (const vector& src) :
 	tmp = _begin;
 	while (it != ite)
 	{
-		*tmp = *it;	
+		_allocator.construct(tmp, *it);	
 		tmp++;
 		it++;
 	}
@@ -145,7 +145,10 @@ vector&	operator=(const vector& rhs)
 		tmpBegin = tmpNewBegin;
 	}
 	else
+	{
+		tmpNewBegin = _begin;
 		tmpBegin = _begin;
+	}
 	for (rhsBegin = rhs.begin(), rhsEnd = rhs.end() ;
 			rhsBegin != rhsEnd ;
 			rhsBegin++, tmpBegin++)
@@ -162,9 +165,9 @@ vector&	operator=(const vector& rhs)
 ~vector(void)
 {
 	clear();
-	std::cerr << "VECTOR DESTRUCTOR, ABOUT TO deallocate()" << std::endl;
+//	std::cerr << "VECTOR DESTRUCTOR, ABOUT TO deallocate()" << std::endl;
 	if (_begin != NULL)
-	_allocator.deallocate(_begin, capacity());
+		_allocator.deallocate(_begin, capacity());
 }
 
 /****************/
@@ -306,6 +309,78 @@ const_reference	back(void)	const		{return (*(_begin + size() - 1));}
 /*	MODIFIERS	*/
 /****************/
 
+void			clear(void)
+{
+	pointer	tmpBegin;
+
+	for (tmpBegin = _begin ; tmpBegin != _end ; tmpBegin++)
+		_allocator.destroy(tmpBegin);
+	_end = _begin;
+}
+
+template <class InpIt>
+void		assign(
+		typename ft::enable_if<!ft::is_integral<InpIt>::value, InpIt>::type first,
+		InpIt last)
+{
+	size_type		i;
+	size_type		newSize;
+	InpIt	tmp;
+
+	clear();
+	tmp = first;
+	newSize = 0;
+	while (tmp != last)
+	{
+		tmp++;
+		newSize++;
+	}
+	if (newSize > capacity())
+		reserve(newSize);
+	i = 0;
+	while (i < newSize)
+	{
+		_allocator.construct(_begin + i, *first);
+		first++;
+		i++;
+	}
+	_end = _begin + newSize;
+}
+
+void		assign(size_type n, const value_type& val)
+{
+	size_type	i;
+
+	clear();
+	if (n > capacity())
+		reserve(n);
+	i = 0;
+	while (i != n)
+	{
+		_allocator.construct(_begin + i, val);
+		i++;
+	}
+	_end = _begin + n;
+}
+
+void		push_back(const value_type& val)
+{
+	if (empty() == true)
+		reserve(1);
+	else if (size() + 1 > capacity())
+		reserve(size() * 2);
+	_allocator.construct(_end, val);
+	_end = _end + 1;
+}
+
+void		pop_back(void)
+{
+	if (empty() == true)
+		return ;
+	_allocator.destroy(_end - 1);
+	_end = _end - 1;
+}
+
 iterator	insert(iterator position, const value_type& val)
 {
 	size_type	newSize;
@@ -318,8 +393,8 @@ iterator	insert(iterator position, const value_type& val)
 	{
 		newSize = size() + 1;
 		if (newSize > capacity())
-			reserve(capacity() * 2);
-		for (to = newSize, from = size() ;
+			reserve(size() * 2);
+		for (to = newSize - 1, from = size() - 1 ;
 				to != insertIndex ;
 				to--, from--)
 		{
@@ -334,6 +409,7 @@ iterator	insert(iterator position, const value_type& val)
 	return (begin() + insertIndex);
 }
 
+//	!!! CASE insert(fill) IN EMMPTY VECTOR
 void		insert(iterator position, size_type n, const value_type& val)
 {
 	size_type	newSize;
@@ -345,72 +421,125 @@ void		insert(iterator position, size_type n, const value_type& val)
 	newSize = size() + n;
 	insertionBegin = position - begin();
 	insertionEnd = insertionBegin + n - 1;
-//	std::cerr << "=== size() = " << size() << std::endl
-//		<< "=== capacity() = " << capacity() << std::endl
-//		<< "=== newSize  = " << newSize << std::endl << std::endl;
 	if (newSize > capacity())
 	{
 		reserve(size() * 2);
-//		std::cerr << "=== doubled size to " << size() * 2 << std::endl;
-	if (newSize > capacity())
+		if (newSize > capacity())
+			reserve(newSize);
+	}
+	if (position != end())
 	{
-		reserve(newSize);
-//		std::cerr << "=== expanded size to " << newSize << std::endl;
+		copyTo = newSize - 1;
+		copyFrom = size() - 1;
+		while (copyTo != insertionEnd)
+		{
+			_allocator.construct(_begin + copyTo, *(_begin + copyFrom));
+			_allocator.destroy(_begin + copyFrom);
+			copyTo--;
+			copyFrom--;
+		}
 	}
-	}
-	copyTo = newSize - 1;
-	copyFrom = size() - 1;
-	//	MOVE EVERYTHING FROM copyFrom TO copyTo UNTIL insertionEnd
-//	std::cerr << "=== 1 - copyFrom = " << copyFrom << std::endl
-//		<< "=== 1 - copyTo = " << copyTo << std::endl
-//		<< "=== 1 - insertionEnd = " << insertionEnd << std::endl << std::endl;
-	for (copyTo = newSize - 1, copyFrom = size() - 1;
-			copyTo != insertionEnd;
-			copyTo--, copyFrom--)
-	{
-		_allocator.construct(_begin + copyTo, *(_begin + copyFrom));
-		_allocator.destroy(_begin + copyFrom);
-	}
-
-//	std::cerr << "=== 2 - copyFrom = " << copyFrom << std::endl
-//		<< "=== 2 - copyTo = " << copyTo << std::endl
-//		<< "=== 2 - insertionEnd = " << insertionEnd << std::endl << std::endl;
-	//	CONSTRUCT val FROM copyFrom TO position UNTIL insertionBegin
-//	std::cerr << "=== 3 - insertionEnd = " << insertionEnd << std::endl
-//		<< "=== 3 - insertionBegin = " << insertionBegin << std::endl<<std::endl;
-
 	while (insertionBegin <= insertionEnd)
 	{
 		_allocator.construct(_begin + insertionBegin, val);
 		insertionBegin++;
 	}
-//	std::cerr << "=== 4 - insertionEnd = " << insertionEnd << std::endl
-//		<< "=== 4 - insertionBegin = " << insertionBegin << std::endl<<std::endl;
-	//	UPDATE POINTERS
 	_end = _begin + newSize;
-//	std::cerr << "=== insertion fill end" << std::endl;
 }
-
-//vector(typename ft::enable_if<!ft::is_integral<InpIt>::value, InpIt>::type first,
 
 template <class InpIt>
 void	insert(iterator position,
 	typename ft::enable_if<!ft::is_integral<InpIt>::value, InpIt>::type first,
 	InpIt last)
 {
-	(void)position;
-	(void)first;
-	(void)last;
+	size_type	newSize;
+	size_type	insertionSize;
+	size_type	insertionBegin;
+	size_type	insertionEnd;
+	size_type	copyFrom;
+	size_type	copyTo;
+	InpIt		tmp;
+
+	tmp = first;
+	insertionSize = 0;
+	while (tmp != last)
+	{
+		tmp++;
+		insertionSize++;
+	}
+	newSize = size() + insertionSize;
+	insertionBegin = position - begin();
+	insertionEnd = insertionBegin + insertionSize - 1;
+	if (newSize > capacity())
+	{
+		reserve(size() * 2);
+		if (newSize > capacity())
+			reserve(newSize);
+	}
+	if (position != end())
+	{
+		copyTo = newSize - 1;
+		copyFrom = size() - 1;
+		while (copyTo != insertionEnd)
+		{
+			_allocator.construct(_begin + copyTo, *(_begin + copyFrom));
+			_allocator.destroy(_begin + copyFrom);
+			copyTo--;
+			copyFrom--;
+		}
+	}
+	while (insertionBegin <= insertionEnd)
+	{
+		_allocator.construct(_begin + insertionBegin, *first);
+		insertionBegin++;
+		first++;
+	}
+	_end = _begin + newSize;
 }
 
-void			clear(void)
+iterator		erase(iterator position)
 {
-	pointer	tmpBegin;
+	size_type	destroyIndex;
 
-	for (tmpBegin = _begin ; tmpBegin != _end ; tmpBegin++)
-		_allocator.destroy(tmpBegin);
-	_end = _begin;
+	destroyIndex = position - begin();
+	_allocator.destroy(_begin + destroyIndex);
+	while (destroyIndex < size() - 1)
+	{
+		_allocator.construct(_begin + destroyIndex, *(_begin + destroyIndex + 1));
+		_allocator.destroy(_begin + destroyIndex + 1);
+		destroyIndex++;
+	}
+	_end = _end - 1;
+	return (position);
 }
+
+iterator		erase(iterator first, iterator last)
+{
+	size_type	destroyBegin;
+	size_type	destroyEnd;
+	size_type	i;
+	size_type	sizeChange;
+
+	destroyBegin = first - begin();
+	destroyEnd = last - begin();
+	i = destroyBegin;
+	sizeChange = destroyEnd - destroyBegin;
+	while (i < destroyEnd)
+	{
+		_allocator.destroy(_begin + i);
+		i++;
+	}
+	while (i < size())
+	{
+		_allocator.construct(_begin + destroyBegin, *(_begin + i));
+		_allocator.destroy(_begin + i);
+		i++;
+		destroyBegin++;
+	}
+	_end = _end - sizeChange;
+	return (first);
+}
+
 
 /****************/
 /*	ALLOCATOR	*/
