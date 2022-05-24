@@ -540,6 +540,23 @@ iterator		erase(iterator first, iterator last)
 	return (first);
 }
 
+void	swap(vector &x)
+{
+	pointer	xTmpBegin;
+	pointer	xTmpEnd;
+	pointer	xTmpCapacity;
+
+	xTmpBegin = x._begin;
+	x._begin = _begin;
+	_begin = xTmpBegin;
+	xTmpEnd = x._end;
+	x._end = _end;
+	_end = xTmpEnd;
+	xTmpCapacity = x._capacity;
+	x._capacity = _capacity;
+	_capacity = xTmpCapacity;
+}
+
 
 /****************/
 /*	ALLOCATOR	*/
@@ -566,6 +583,12 @@ void			print_values(void) const
 }
 
 };
+}
+
+template	<class T, class Alloc>
+void		swap(ft::vector<T,Alloc>& x, ft::vector<T,Alloc>& y)
+{
+	x.swap(y);
 }
 
 #endif // VECTOR_HPP
