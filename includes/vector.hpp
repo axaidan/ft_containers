@@ -9,7 +9,9 @@
 # include <stdexcept>
 # include <iomanip>			// !!!
 # include <iostream>		// !!!
+
 # include "type_utils.hpp"
+# include "cmp_utils.hpp"
 
 namespace ft
 {
@@ -265,7 +267,7 @@ void			reserve(size_type n)
 	if (n <= capacity())
 		return ;
 	if (n > max_size())
-		throw std::length_error("vector::length_error");
+		throw std::length_error("vector::reserve");
 	tmpBegin = _allocator.allocate(n);
 	tmpEnd = tmpBegin + size();
 	tmpCapacity = tmpBegin + n;
@@ -583,6 +585,49 @@ void			print_values(void) const
 }
 
 };
+}	// namespace ft
+
+/****************************/
+/*	RELATIONAL OPERATORS	*/
+/****************************/
+
+template	<class T, class Alloc>
+bool		operator==(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
+{
+	if (lhs.size() != rhs.size())
+		return (false);
+	return (ft::equal(lhs.begin(), lhs.end(), rhs.begin()));
+}
+
+template	<class T, class Alloc>
+bool		operator!=(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
+{
+	return ((lhs == rhs) == false);
+}
+
+template	<class T, class Alloc>
+bool		operator<(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
+{
+	return (ft::lexicographical_compare(lhs.begin(), lhs.end(),
+				rhs.begin(), rhs.end()));
+}
+
+template	<class T, class Alloc>
+bool		operator<=(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
+{
+	return ((rhs < lhs) == false);
+}
+
+template	<class T, class Alloc>
+bool		operator>(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
+{
+	return (rhs < lhs);
+}
+
+template	<class T, class Alloc>
+bool		operator>=(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
+{
+	return ((lhs < rhs) == false);
 }
 
 template	<class T, class Alloc>
