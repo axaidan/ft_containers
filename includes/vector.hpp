@@ -12,6 +12,7 @@
 
 # include "type_utils.hpp"
 # include "cmp_utils.hpp"
+# include "vector_iterator.hpp"
 
 namespace ft
 {
