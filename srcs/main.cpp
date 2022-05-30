@@ -6,11 +6,13 @@
 #include <string>
 
 
-std::ostream & operator<<(std::ostream &o, ContainsAlloc const & rhs)
+/*
+std::ostream & operator<<(std::ostream &o, std::string const & rhs)
 {
-	o << rhs.getAlloc();
+	o << rhs.();
 	return (o);
 }
+*/
 
 template<class T>
 void	compareCapacityFunctions(ft::vector<T> &m, std::vector<T> &s,
@@ -55,19 +57,19 @@ bool	printVectorValues(ft::vector<T> m, std::vector<T> s);
 int main(void)
 {
 	// EMPTY
-	ft::vector<ContainsAlloc>			m;
-	std::vector<ContainsAlloc>		s;
+	ft::vector<std::string>			m;
+	std::vector<std::string>		s;
 
 
 	compareCapacityFunctions(m, s, "m");
 
-	ft::vector<ContainsAlloc>		m2(10);
-	std::vector<ContainsAlloc>		s2(10);
+	ft::vector<std::string>		m2(10);
+	std::vector<std::string>		s2(10);
 
 	compareCapacityFunctions(m2, s2, "2");
 
-	ft::vector<ContainsAlloc>		m3(s2.begin(), s2.end());
-	std::vector<ContainsAlloc>		s3(s2.begin(), s2.end());
+	ft::vector<std::string>		m3(s2.begin(), s2.end());
+	std::vector<std::string>		s3(s2.begin(), s2.end());
 
 	compareCapacityFunctions(m3, s3, "3");
 	m3.reserve(20);
@@ -80,8 +82,8 @@ int main(void)
 	std::cerr << "MAIN - SF AFTER STD?" << std::endl;
 	compareCapacityFunctions(m3, s3, "3 after resize()");
 
-	ft::vector<ContainsAlloc>		m4(42, "quarante deux");
-	std::vector<ContainsAlloc>		s4(42, "quarante deux");
+	ft::vector<std::string>		m4(42,"quarante deux");
+	std::vector<std::string>		s4(42, "quarante deux");
 	m4.print_values();
 	std::cout << "modifying" << std::endl;
 	s4[41] = "-1000";

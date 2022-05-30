@@ -30,11 +30,13 @@ public:
 	
 	typedef	size_t												size_type;
 	typedef ptrdiff_t											difference_type;
-	typedef typename std::vector<value_type>::iterator			iterator;
-	typedef typename std::vector<value_type>::const_iterator	const_iterator;
+//	typedef typename std::vector<value_type>::iterator			iterator;
+//	typedef typename std::vector<value_type>::const_iterator	const_iterator;
+	typedef ft::VectorIterator<value_type>			iterator;
+	typedef ft::VectorIterator<const value_type>	const_iterator;
 
-	typedef std::reverse_iterator<iterator>			reverse_iterator;
-	typedef std::reverse_iterator<const_iterator>	const_reverse_iterator;
+//	typedef std::reverse_iterator<iterator>			reverse_iterator;
+//	typedef std::reverse_iterator<const_iterator>	const_reverse_iterator;
 
 private:
 	allocator_type	_allocator;
