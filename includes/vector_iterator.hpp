@@ -21,6 +21,7 @@ class VectorIterator : ft::iterator<ft::random_access_iterator_tag, T>
 	*/
 class VectorIterator : public ft::iterator_traits<T*>
 {
+	public:
 	typedef typename ft::iterator_traits<T*>::difference_type		difference_type;
 	typedef typename ft::iterator_traits<T*>::value_type			value_type;
 	typedef typename ft::iterator_traits<T*>::pointer				pointer;
@@ -134,8 +135,30 @@ class VectorIterator : public ft::iterator_traits<T*>
 
 bool	operator==(const VectorIterator & rhs) const
 {
-	return (this->base() == rhs.base());
+	return (base() == rhs.base());
 }
+bool	operator!=(const VectorIterator & rhs) const
+{
+	return (base() != rhs.base());
+}
+bool	operator<(const VectorIterator & rhs) const
+{
+	return (base() < rhs.base());
+}
+bool	operator>(const VectorIterator & rhs) const
+{
+	return (base() > rhs.base());
+}
+bool	operator<=(const VectorIterator & rhs) const
+{
+	return (base() <= rhs.base());
+}
+bool	operator>=(const VectorIterator & rhs) const
+{
+	return (base() >= rhs.base());
+}
+
+
 
 }; // class VectorIterator
 
@@ -154,7 +177,6 @@ bool	operator==(const VectorIterator<TLeft> & lhs,
 {
 	return (lhs.base() == rhs.base());
 }
-*/
 template<class T>
 bool	operator!=(const VectorIterator<T> & lhs,
 		const VectorIterator<T> & rhs)
@@ -185,6 +207,7 @@ bool	operator>=(const VectorIterator<T> & lhs,
 {
 	return (lhs.base() >= rhs.base());
 }
+*/
 
 //	PASS ALL COMP OPERATORS IN CLASS DEF?
 

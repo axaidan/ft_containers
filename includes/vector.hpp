@@ -37,6 +37,9 @@ public:
 
 //	typedef std::reverse_iterator<iterator>			reverse_iterator;
 //	typedef std::reverse_iterator<const_iterator>	const_reverse_iterator;
+	typedef ft::reverse_iterator<iterator>			reverse_iterator;
+	typedef ft::reverse_iterator<const_iterator>	const_reverse_iterator;
+
 
 private:
 	allocator_type	_allocator;
@@ -203,31 +206,33 @@ const_iterator			end(void) const
 	return (it);
 }
 
-/*
 reverse_iterator		rbegin(void)
 {
-	reverse_iterator		it(_begin);
+//	reverse_iterator		it(_begin);
+	reverse_iterator		it(_end);
 	return (it);
 }
 
 const_reverse_iterator	rbegin(void) const
 {
-	const_reverse_iterator	it(_begin);
+	const_reverse_iterator	it(_end);
+//	const_reverse_iterator	it(_begin);
 	return (it);
 }
 
 reverse_iterator		rend(void)
 {
-	reverse_iterator		it(_end);
+//	reverse_iterator		it(_end);
+	reverse_iterator		it(_begin);
 	return (it);
 }
 
 const_reverse_iterator	rend(void) const
 {
-	const_reverse_iterator	it(_end);
+//	const_reverse_iterator	it(_end);
+	const_reverse_iterator	it(_begin);
 	return (it);
 }
-*/
 
 
 /****************/
@@ -252,8 +257,16 @@ void			resize(size_type n, value_type val = value_type())
 		_end = _begin + n;
 		return ;
 	}
+	/*
 	if (n > capacity())
 		reserve(n);
+	*/
+	if (n > capacity())
+	{
+		reserve(size() * 2);
+		if (n > capacity())
+			reserve(n);
+	}
 	tmp = _end;
 	_end = _begin + n;
 	while(tmp < _end)

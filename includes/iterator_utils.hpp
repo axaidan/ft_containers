@@ -72,7 +72,7 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 	typedef typename ft::iterator_traits<Iter>::reference			reference;
 	typedef typename ft::iterator_traits<Iter>::iterator_category	iterator_category;
 
-	private:
+	protected:
 	Iter	_iterator;
 
 	public:
@@ -88,9 +88,9 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 		_iterator(src)
 	{
 	}
-	reverse_iterator &	operator=(const revserse_iterator & rhs)
+	reverse_iterator &	operator=(const reverse_iterator & rhs)
 	{
-		_iterator = src._iterator;
+		_iterator = rhs._iterator;
 		return (*this);
 	}
 	Iter	base(void) const
@@ -107,24 +107,93 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 	{
 		return (&(operator*()));
 	}
-	reverse_iterator	operator++(void);
-	reverse_iterator &	operator++(int);
-	reverse_iterator	operator--(void);
-	reverse_iterator &	operator--(int);
-	reverse_iterator	operator+=(void);
-	reverse_iterator	operator-=(void);
-	reverse_iterator	operator+(difference_type n);
-	reverse_iterator	operator-(difference_type n);
-	difference_type		operator-(const reverse_iterator & rhs) const;
 
-	bool	operator==(const reverse_iterator & rhs) const;
-	bool	operator!=(const reverse_iterator & rhs) const;
-	bool	operator<(const reverse_iterator & rhs) const;
-	bool	operator>(const reverse_iterator & rhs) const;
-	bool	operator<=(const reverse_iterator & rhs) const;
-	bool	operator>=(const reverse_iterator & rhs) const;
+	/************************/
+	/*	MODIFYING OPERATORS	*/
+	/************************/
+	reverse_iterator	operator++(void)
+	{
+		reverse_iterator	tmp(*this);
+		--_iterator;
+		return (tmp);
+	}	
+	reverse_iterator &	operator++(int)
+	{
+		--_iterator;
+		return (*this);
+	}	
+	reverse_iterator	operator--(void)
+	{
+		reverse_iterator	tmp(*this);
+		_iterator++;
+		return (tmp);
+	}	
+	reverse_iterator &	operator--(int)
+	{
+		++_iterator;
+		return (*this);
+	}	
+	reverse_iterator	operator+(difference_type n)
+	{
+		reverse_iterator	tmp(*this);
+		tmp._iterator = tmp._iterator - n;
+		return (tmp);
+	}
+	reverse_iterator	operator-(difference_type n)
+	{
+		reverse_iterator	tmp(*this);
+		tmp._iterator = tmp._iterator + n;
+		return (tmp);
+	}
+	difference_type		operator-(const reverse_iterator & rhs) const
+	{
+		return (base() - rhs.base());
+	}
+	reverse_iterator	operator+=(difference_type n)
+	{
+		reverse_iterator	tmp(*this);
+		tmp._iterator -= n;
+		return (tmp);
+	}
+	reverse_iterator	operator-=(difference_type n)
+	{
+		reverse_iterator	tmp(*this);
+		tmp._iterator += n;
+		return (tmp);
+	}
 
-	reference	operator[](difference_type n) const;
+	/****************************/
+	/*	COMPARISON OPERATORS	*/
+	/****************************/
+	bool	operator==(const reverse_iterator & rhs) const
+	{
+		return (base() == rhs.base());
+	}
+	bool	operator!=(const reverse_iterator & rhs) const
+	{
+		return (base() != rhs.base());
+	}
+	bool	operator<(const reverse_iterator & rhs) const
+	{
+		return (base() > rhs.base());
+	}
+	bool	operator>(const reverse_iterator & rhs) const
+	{
+		return (base() < rhs.base());
+	}
+	bool	operator<=(const reverse_iterator & rhs) const
+	{
+		return (base() >= rhs.base());
+	}
+	bool	operator>=(const reverse_iterator & rhs) const
+	{
+		return (base() <= rhs.base());
+	}
+
+	reference	operator[](difference_type n) const
+	{
+		return (_iterator[-n - 1]);
+	}
 	
 
 
