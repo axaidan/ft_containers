@@ -37,13 +37,28 @@ bool 		lexicographical_compare (InpIt1 first1, InpIt1 last1,
 template	<class InpIt1, class InpIt2>
 bool		equal(InpIt1 first1, InpIt1 last1, InpIt2 first2)
 {
-	while (first1!=last1) {
+	while (first1 != last1)
+	{
+		if ((*first1 == *first2) == false)
+			return false;
+		++first1; ++first2;
+	}
+	return true;
+}
+
+/*
+template	<class InpIt1>
+bool		equal(InpIt1 first1, InpIt1 last1, InpIt1 first2)
+{
+	while (first1!=last1)
+	{
 		if (!(*first1 == *first2))
 			return false;
 		++first1; ++first2;
 	}
 	return true;
 }
+*/
 
 }	// namespace ft
 

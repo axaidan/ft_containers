@@ -127,6 +127,11 @@ class VectorIterator : public ft::iterator_traits<T*>
 		return (*(_ptr + n));
 	}
 
+	operator		VectorIterator<const T>(void) const
+    {
+		return (VectorIterator<const T>(this->_ptr));
+	}
+
 }; // class VectorIterator
 
 template<class T>

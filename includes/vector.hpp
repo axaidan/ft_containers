@@ -599,6 +599,8 @@ void			print_values(void) const
 template	<class T, class Alloc>
 bool		operator==(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
 {
+	if (&lhs == &rhs)
+		return (true);
 	if (lhs.size() != rhs.size())
 		return (false);
 	return (ft::equal(lhs.begin(), lhs.end(), rhs.begin()));
