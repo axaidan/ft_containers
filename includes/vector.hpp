@@ -141,7 +141,8 @@ vector&	operator=(const vector& rhs)
 	pointer			tmpBegin;
 	pointer			tmpNewBegin;
 
-
+	if (this == &rhs)
+		return (*this);
 	for (tmpBegin = _begin ; tmpBegin < _end ; tmpBegin++)
 		_allocator.destroy(tmpBegin);
 	if (rhs.size() > capacity())
@@ -590,20 +591,24 @@ void			print_values(void) const
 }
 
 };
-}	// namespace ft
 
 /****************************/
 /*	RELATIONAL OPERATORS	*/
 /****************************/
 
 template	<class T, class Alloc>
-bool		operator==(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
+//bool		operator==(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
+bool		operator==(const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 {
 	if (&lhs == &rhs)
 		return (true);
 	if (lhs.size() != rhs.size())
 		return (false);
 	return (ft::equal(lhs.begin(), lhs.end(), rhs.begin()));
+/*	for (typename ft::vector<T, Alloc>::size_type i = 0 ; i < lhs.size() ; i++)
+		if (lhs[i] != rhs[i])
+			return (false);*/
+	return (true);
 }
 
 template	<class T, class Alloc>
@@ -615,6 +620,8 @@ bool		operator!=(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
 template	<class T, class Alloc>
 bool		operator<(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
 {
+	if (&lhs == &rhs)
+		return (false);
 	return (ft::lexicographical_compare(lhs.begin(), lhs.end(),
 				rhs.begin(), rhs.end()));
 }
@@ -642,5 +649,7 @@ void		swap(ft::vector<T,Alloc>& x, ft::vector<T,Alloc>& y)
 {
 	x.swap(y);
 }
+
+}	// namespace ft
 
 #endif // VECTOR_HPP

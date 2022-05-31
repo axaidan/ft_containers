@@ -41,7 +41,8 @@ bool		equal(InpIt1 first1, InpIt1 last1, InpIt2 first2)
 	{
 		if ((*first1 == *first2) == false)
 			return false;
-		++first1; ++first2;
+		++first1;
+		++first2;
 	}
 	return true;
 }
