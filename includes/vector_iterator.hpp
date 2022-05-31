@@ -9,6 +9,7 @@ namespace ft {
 template<class T>
 //class random_access_iterator<ft::random_access_iterator_tag, T>
 //class VectorIterator<ft::random_access_iterator_tag, T>
+/*
 class VectorIterator : ft::iterator<ft::random_access_iterator_tag, T>
 {
 	public:
@@ -17,13 +18,15 @@ class VectorIterator : ft::iterator<ft::random_access_iterator_tag, T>
 	typedef	typename ft::iterator<ft::random_access_iterator_tag, T>::difference_type				difference_type;
 	typedef T*		pointer;
 	typedef T&		reference;
-	/*
-	typedef typename ft::iterator_traits<T>::difference_type		difference_type;
-	typedef typename ft::iterator_traits<T>::value_type			value_type;
-	typedef typename ft::iterator_traits<T>::pointer				pointer;
-	typedef typename ft::iterator_traits<T>::reference			reference;
-	typedef typename ft::iterator_traits<T>::iterator_category	iterator_category;
 	*/
+class VectorIterator : public ft::iterator_traits<T*>
+{
+	typedef typename ft::iterator_traits<T*>::difference_type		difference_type;
+	typedef typename ft::iterator_traits<T*>::value_type			value_type;
+	typedef typename ft::iterator_traits<T*>::pointer				pointer;
+	typedef typename ft::iterator_traits<T*>::reference			reference;
+	typedef typename ft::iterator_traits<T*>::iterator_category	iterator_category;
+
 
 	private:
 	pointer	_ptr;

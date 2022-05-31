@@ -202,6 +202,7 @@ const_iterator			end(void) const
 	return (it);
 }
 
+/*
 reverse_iterator		rbegin(void)
 {
 	reverse_iterator		it(_begin);
@@ -225,6 +226,7 @@ const_reverse_iterator	rend(void) const
 	const_reverse_iterator	it(_end);
 	return (it);
 }
+*/
 
 
 /****************/
