@@ -133,30 +133,30 @@ class VectorIterator : public ft::iterator_traits<T*>
 		return (VectorIterator<const T>(this->_ptr));
 	}
 
-bool	operator==(const VectorIterator & rhs) const
-{
-	return (base() == rhs.base());
-}
-bool	operator!=(const VectorIterator & rhs) const
-{
-	return (base() != rhs.base());
-}
-bool	operator<(const VectorIterator & rhs) const
-{
-	return (base() < rhs.base());
-}
-bool	operator>(const VectorIterator & rhs) const
-{
-	return (base() > rhs.base());
-}
-bool	operator<=(const VectorIterator & rhs) const
-{
-	return (base() <= rhs.base());
-}
-bool	operator>=(const VectorIterator & rhs) const
-{
-	return (base() >= rhs.base());
-}
+	bool	operator==(const VectorIterator<T> & rhs) const
+	{
+		return (base() == rhs.base());
+	}
+	bool	operator!=(const VectorIterator<T> & rhs) const
+	{
+		return (base() != rhs.base());
+	}
+	bool	operator<(const VectorIterator<T> & rhs) const
+	{
+		return (base() < rhs.base());
+	}
+	bool	operator>(const VectorIterator<T> & rhs) const
+	{
+		return (base() > rhs.base());
+	}
+	bool	operator<=(const VectorIterator<T> & rhs) const
+	{
+		return (base() <= rhs.base());
+	}
+	bool	operator>=(const VectorIterator<T> & rhs) const
+	{
+		return (base() >= rhs.base());
+	}
 
 
 
@@ -169,14 +169,12 @@ bool	operator==(const VectorIterator<T> & lhs,
 {
 	return (lhs.base() == rhs.base());
 }
-*/
-/*
-template<class TLeft, class TRight>
-bool	operator==(const VectorIterator<TLeft> & lhs,
-		const VectorIterator<TRight> & rhs)
-{
-	return (lhs.base() == rhs.base());
-}
+//template<class TLeft, class TRight>
+//bool	operator==(const VectorIterator<TLeft> & lhs,
+//		const VectorIterator<TRight> & rhs)
+//{
+//	return (lhs.base() == rhs.base());
+//}
 template<class T>
 bool	operator!=(const VectorIterator<T> & lhs,
 		const VectorIterator<T> & rhs)

@@ -439,6 +439,8 @@ void		insert(iterator position, size_type n, const value_type& val)
 	size_type	copyFrom;
 	size_type	copyTo;
 
+	if (n == 0)
+		return ;
 	newSize = size() + n;
 	insertionBegin = position - begin();
 	insertionEnd = insertionBegin + n - 1;
@@ -610,7 +612,6 @@ void			print_values(void) const
 /****************************/
 
 template	<class T, class Alloc>
-//bool		operator==(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
 bool		operator==(const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 {
 	if (&lhs == &rhs)
@@ -621,14 +622,12 @@ bool		operator==(const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 }
 
 template	<class T, class Alloc>
-//bool		operator!=(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
 bool		operator!=(const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 {
 	return ((lhs == rhs) == false);
 }
 
 template	<class T, class Alloc>
-//bool		operator<(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
 bool		operator<(const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 {
 	if (&lhs == &rhs)
@@ -638,21 +637,18 @@ bool		operator<(const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 }
 
 template	<class T, class Alloc>
-//bool		operator<=(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
 bool		operator<=(const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 {
 	return ((rhs < lhs) == false);
 }
 
 template	<class T, class Alloc>
-//bool		operator>(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
 bool		operator>(const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 {
 	return (rhs < lhs);
 }
 
 template	<class T, class Alloc>
-//bool		operator>=(const ft::vector<T,Alloc>& lhs, const ft::vector<T,Alloc>& rhs)
 bool		operator>=(const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 {
 	return ((lhs < rhs) == false);
