@@ -40,7 +40,7 @@ template< class T >
 struct iterator_traits<const T*>
 {
 	typedef std::ptrdiff_t							difference_type;
-	typedef T										value_type;
+	typedef const T									value_type;
 	typedef const T*								pointer;
 	typedef const T&								reference;
 	typedef typename ft::random_access_iterator_tag	iterator_category;
@@ -80,12 +80,18 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 		_iterator(NULL)
 	{
 	}
-	reverse_iterator(const reverse_iterator/*<Iter>*/ & src) :
-		_iterator(src._iterator)
-	{
-	}
+	//explicit reverse_iterator(const Iter & src) :
 	explicit reverse_iterator(const Iter & src) :
 		_iterator(src)
+	{
+	}
+	template<typename T>
+	reverse_iterator(const reverse_iterator<T> & src) :
+		_iterator(src.base())
+	{
+	}
+
+	~reverse_iterator(void)
 	{
 	}
 	reverse_iterator &	operator=(const reverse_iterator & rhs)
@@ -133,13 +139,13 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 		++_iterator;
 		return (*this);
 	}	
-	reverse_iterator	operator+(difference_type n)
+	reverse_iterator	operator+(difference_type n) const
 	{
 		reverse_iterator	tmp(*this);
 		tmp._iterator = tmp._iterator - n;
 		return (tmp);
 	}
-	reverse_iterator	operator-(difference_type n)
+	reverse_iterator	operator-(difference_type n) const
 	{
 		reverse_iterator	tmp(*this);
 		tmp._iterator = tmp._iterator + n;
@@ -147,7 +153,8 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 	}
 	difference_type		operator-(const reverse_iterator & rhs) const
 	{
-		return (base() - rhs.base());
+//		return (base() - rhs.base());
+		return (rhs.base() - base());
 	}
 	reverse_iterator	operator+=(difference_type n)
 	{
@@ -230,6 +237,25 @@ bool	operator>=(const reverse_iterator<T> & lhs, const reverse_iterator<T> & rhs
 	return (lhs.base() <= rhs.base());
 }
 */
+
+template<typename T>
+reverse_iterator<T>	operator+(typename reverse_iterator<T>::difference_type n, const reverse_iterator<T> & rit)
+{
+	return (rit + n);
+}
+
+template<typename T>
+typename reverse_iterator<T>::difference_type
+operator-(const reverse_iterator<T> & lhs, const reverse_iterator<T> & rhs)
+{
+//	return (lhs.base() - rhs.base());
+//	return (rhs.base() - lhs.base());
+	std::cerr << "NON MEMBER OPERATOR-() CALLED\n";
+	(void)rhs;
+	(void)lhs;
+	return (1000);
+
+}
 
 
 

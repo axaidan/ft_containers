@@ -662,5 +662,4 @@ void		swap(ft::vector<T,Alloc>& x, ft::vector<T,Alloc>& y)
 	x.swap(y);
 }
 
-
 #endif // VECTOR_HPP

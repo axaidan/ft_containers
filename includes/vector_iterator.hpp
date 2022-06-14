@@ -25,8 +25,9 @@ class VectorIterator : public ft::iterator_traits<T*>
 	typedef typename ft::iterator_traits<T*>::difference_type		difference_type;
 	typedef typename ft::iterator_traits<T*>::value_type			value_type;
 	typedef typename ft::iterator_traits<T*>::pointer				pointer;
-	typedef typename ft::iterator_traits<T*>::reference			reference;
-	typedef typename ft::iterator_traits<T*>::iterator_category	iterator_category;
+	typedef typename ft::iterator_traits<T*>::reference				reference;
+	typedef typename ft::iterator_traits<T*>::iterator_category		iterator_category;
+	typedef VectorIterator<const value_type>						const_iterator;
 
 
 	private:
@@ -133,6 +134,7 @@ class VectorIterator : public ft::iterator_traits<T*>
 		return (VectorIterator<const T>(this->_ptr));
 	}
 
+	/*
 	bool	operator==(const VectorIterator<T> & rhs) const
 	{
 		return (base() == rhs.base());
@@ -157,55 +159,62 @@ class VectorIterator : public ft::iterator_traits<T*>
 	{
 		return (base() >= rhs.base());
 	}
+	*/
 
 
 
 }; // class VectorIterator
 
-/*
-template<class T>
+template<class T, class U>
 bool	operator==(const VectorIterator<T> & lhs,
-		const VectorIterator<T> & rhs)
+		const VectorIterator<U> & rhs)
 {
 	return (lhs.base() == rhs.base());
 }
-//template<class TLeft, class TRight>
-//bool	operator==(const VectorIterator<TLeft> & lhs,
-//		const VectorIterator<TRight> & rhs)
-//{
-//	return (lhs.base() == rhs.base());
-//}
-template<class T>
+/*
+template<class TLeft, class TRight>
+bool	operator==(const VectorIterator<T> & lhs,
+		const VectorIterator<U> & rhs)
+{
+	return (lhs.base() == rhs.base());
+}
+*/
+template<class T, class U>
 bool	operator!=(const VectorIterator<T> & lhs,
-		const VectorIterator<T> & rhs)
+		const VectorIterator<U> & rhs)
 {
 	return (lhs.base() != rhs.base());
 }
-template<class T>
+template<class T, class U>
 bool	operator<(const VectorIterator<T> & lhs,
-		const VectorIterator<T> & rhs)
+		const VectorIterator<U> & rhs)
 {
 	return (lhs.base() < rhs.base());
 }
-template<class T>
+template<class T, class U>
 bool	operator>(const VectorIterator<T> & lhs,
-		const VectorIterator<T> & rhs)
+		const VectorIterator<U> & rhs)
 {
 	return (lhs.base() > rhs.base());
 }
-template<class T>
+template<class T, class U>
 bool	operator<=(const VectorIterator<T> & lhs,
-		const VectorIterator<T> & rhs)
+		const VectorIterator<U> & rhs)
 {
 	return (lhs.base() <= rhs.base());
 }
-template<class T>
+template<class T, class U>
 bool	operator>=(const VectorIterator<T> & lhs,
-		const VectorIterator<T> & rhs)
+		const VectorIterator<U> & rhs)
 {
 	return (lhs.base() >= rhs.base());
 }
-*/
+
+template<class T>
+VectorIterator<T>	operator+(typename VectorIterator<T>::difference_type n, const VectorIterator<T> & rhs)
+{
+	return (rhs + n);
+}
 
 //	PASS ALL COMP OPERATORS IN CLASS DEF?
 
