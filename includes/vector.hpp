@@ -208,30 +208,32 @@ const_iterator			end(void) const
 
 reverse_iterator		rbegin(void)
 {
-//	reverse_iterator		it(_begin);
 	reverse_iterator		it(_end);
 	return (it);
+//	return (reverse_iterator(--(end())));
 }
 
 const_reverse_iterator	rbegin(void) const
 {
-	const_reverse_iterator	it(_end);
-//	const_reverse_iterator	it(_begin);
-	return (it);
+	return (rbegin());
+//	return (rbegin());
 }
 
 reverse_iterator		rend(void)
 {
-//	reverse_iterator		it(_end);
 	reverse_iterator		it(_begin);
 	return (it);
+//	return (reverse_iterator(--(begin())));
+//	iterator	it(_begin + 1);
+//	return (reverse_iterator(it));
 }
 
 const_reverse_iterator	rend(void) const
 {
-//	const_reverse_iterator	it(_end);
-	const_reverse_iterator	it(_begin);
-	return (it);
+//	const_reverse_iterator	it(_begin);
+//	return (it);
+	return (rend());
+//	return (rend());
 }
 
 
