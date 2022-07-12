@@ -50,12 +50,17 @@ vgtest		:	srcs/gtest.cpp includes/vector.hpp
 			c++ -pthread -D${ARG} -o ${GTEST} srcs/gtest.o -L ${GTEST_FLD_LIB} -lgtest 
 			valgrind ./${GTEST}
 
-gtest		:	srcs/gtest.cpp includes/vector.hpp
+gtest_vector		:	srcs/gtest.cpp includes/vector.hpp
 			${CXX} ${CXXFLAGS} -I ${INC_FLD} srcs/main.cpp -o srcs/main.o
 			rm -rf srcs/main.o
 			c++ -pthread -D${ARG} -I ${GTEST_FLD_INC} -I ${INC_FLD} -c -o srcs/gtest.o srcs/gtest.cpp
 			c++ -pthread -D${ARG} -o ${GTEST} srcs/gtest.o -L ${GTEST_FLD_LIB} -lgtest 
 			./${GTEST}
+
+test_pair	:	includes/pair.hpp srcs/main_pair.cpp
+			${CXX} -D${ARG} ${CXXFLAGS} -I ${INC_FLD} srcs/main_pair.cpp -o test_pair
+			
+
 
 
 .PHONY		:	all re clean fclean
