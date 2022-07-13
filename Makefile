@@ -60,7 +60,4 @@ gtest_vector		:	srcs/gtest.cpp includes/vector.hpp
 test_pair	:	includes/pair.hpp srcs/main_pair.cpp
 			${CXX} -D${ARG} ${CXXFLAGS} -I ${INC_FLD} srcs/main_pair.cpp -o test_pair
 			
-
-
-
 .PHONY		:	all re clean fclean

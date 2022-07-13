@@ -68,6 +68,23 @@ class	ContainsAlloc
 		{
 			return (strcmp(_alloc, rhs.getAlloc()) != 0);
 		}
+		bool operator<(ContainsAlloc const &rhs) const
+		{
+			return (strcmp(_alloc, rhs.getAlloc()) < 0);
+		}
+		bool operator>(ContainsAlloc const &rhs) const
+		{
+			return (strcmp(_alloc, rhs.getAlloc()) > 0);
+		}
+		bool operator<=(ContainsAlloc const &rhs) const
+		{
+			return (strcmp(_alloc, rhs.getAlloc()) <= 0);
+		}
+		bool operator>=(ContainsAlloc const &rhs) const
+		{
+			return (strcmp(_alloc, rhs.getAlloc()) >= 0);
+		}
+	
 
 };
 #endif
