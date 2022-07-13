@@ -1,14 +1,13 @@
 #ifndef VECTOR_HPP
 # define VECTOR_HPP
 
-# include <cstdlib>
-# include <cstddef>
 # include <memory>
-# include <iterator>
-# include <vector>
 # include <stdexcept>
-# include <iomanip>			// !!!
-# include <iostream>		// !!!
+//# include <iomanip>			// !!!
+//# include <iostream>		// !!!
+//# include <cstdlib>
+//# include <cstddef>
+//# include <iterator>
 
 # include "type_utils.hpp"
 # include "cmp_utils.hpp"
