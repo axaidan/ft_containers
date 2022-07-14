@@ -4,7 +4,7 @@
 namespace ft {
 
 template	<class InpIt1, class InpIt2>
-bool		lexicographical_compare (InpIt1 first1, InpIt1 last1,
+bool	lexicographical_compare (InpIt1 first1, InpIt1 last1,
 		InpIt2 first2, InpIt2 last2)
 {
 	while (first1!=last1)
@@ -17,7 +17,7 @@ bool		lexicographical_compare (InpIt1 first1, InpIt1 last1,
 }
 
 template	<class InpIt1, class InpIt2, class Compare>
-bool 		lexicographical_compare (InpIt1 first1, InpIt1 last1,
+bool 	lexicographical_compare (InpIt1 first1, InpIt1 last1,
 		InpIt2 first2, InpIt2 last2,
 		Compare comp)
 {
@@ -35,7 +35,7 @@ bool 		lexicographical_compare (InpIt1 first1, InpIt1 last1,
 }
 
 template	<class InpIt1, class InpIt2>
-bool		equal(InpIt1 first1, InpIt1 last1, InpIt2 first2)
+bool	equal(InpIt1 first1, InpIt1 last1, InpIt2 first2)
 {
 	while (first1 != last1)
 	{
@@ -47,20 +47,6 @@ bool		equal(InpIt1 first1, InpIt1 last1, InpIt2 first2)
 	return true;
 }
 
-/*
-template	<class InpIt1>
-bool		equal(InpIt1 first1, InpIt1 last1, InpIt1 first2)
-{
-	while (first1!=last1)
-	{
-		if (!(*first1 == *first2))
-			return false;
-		++first1; ++first2;
-	}
-	return true;
-}
-*/
+}		// namespace ft
 
-}	// namespace ft
-
-#endif // CMP_UTILS_HPP
+#endif	// CMP_UTILS_HPP
