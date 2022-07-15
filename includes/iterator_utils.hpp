@@ -248,18 +248,20 @@ reverse_iterator<T>	operator+(typename reverse_iterator<T>::difference_type n, c
 	return (rit + n);
 }
 
+/*
 template<typename T>
 typename reverse_iterator<T>::difference_type
 operator-(const reverse_iterator<T> & lhs, const reverse_iterator<T> & rhs)
 {
 //	return (lhs.base() - rhs.base());
 //	return (rhs.base() - lhs.base());
-	std::cerr << "NON MEMBER OPERATOR-() CALLED\n";
+//	std::cerr << "NON MEMBER OPERATOR-() CALLED\n";
 	(void)rhs;
 	(void)lhs;
 	return (1000);
 
 }
+*/
 
 
 

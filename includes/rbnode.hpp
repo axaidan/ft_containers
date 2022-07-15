@@ -8,10 +8,10 @@ template<class T>
 class RBnode
 {
 public:
+	T							_value;
 	RBnode						*_parent;
 	RBnode						*_left;
 	RBnode						*_right;
-	T							_value;
 	bool						_color;
 
 	RBnode(void) :

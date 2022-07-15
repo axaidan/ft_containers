@@ -8,8 +8,6 @@
 namespace ft {
 	
 template<class T>
-//class random_access_iterator<ft::random_access_iterator_tag, T>
-//class VectorIterator<ft::random_access_iterator_tag, T>
 /*
 class VectorIterator : ft::iterator<ft::random_access_iterator_tag, T>
 {

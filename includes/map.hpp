@@ -10,15 +10,18 @@
 # include "cmp_utils.hpp"
 # include "pair.hpp"
 # include "rbnode.hpp"
+# include "map_iterator.hpp"
+
+# define BLK 0
+# define RED 1
 
 //	# include "rbtree.hpp"
-//	# include "map_iterator.hpp"
 
 namespace ft
 {
 
 template <
-class Key,								// map::key_type
+class Key,											// map::key_type
 class T,											// map::mapped_type
 class Compare = std::less<Key>,						// map::key_compare
 class Alloc = std::allocator<pair<const Key,T> >	// map::allocator_type
@@ -32,21 +35,17 @@ typedef	Key											key_type;
 typedef T											mapped_type;
 typedef	ft::pair<const key_type, mapped_type>		value_type;
 typedef	Compare										key_compare;
-
 typedef RBnode<value_type>							node;
 typedef std::allocator<node>						node_allocator;
-
 typedef	Alloc										allocator_type;
 typedef typename allocator_type::reference			reference;
 typedef typename allocator_type::const_reference	const_reference;
 typedef	typename allocator_type::pointer			pointer;
 typedef typename allocator_type::const_pointer		const_pointer;
-/*
-typedef xxx										iterator;
-typedef	xxx										const_iterator;
-typedef	reverse_iterator<iterator>				reverse_iterator;
-typedef	const_reverse_iterator<iterator>		const_reverse_iterator;
-*/
+typedef ft::MapIterator<value_type, node>			iterator;
+typedef ft::MapIterator<const value_type, node>		const_iterator;
+typedef	ft::reverse_iterator<iterator>				reverse_iterator;
+typedef	ft::reverse_iterator<const_iterator>		const_reverse_iterator;
 typedef	size_t										size_type;
 typedef ptrdiff_t									difference_type;
 
@@ -69,7 +68,7 @@ public:
 
 private:
 allocator_type			_pairAlloc;
-std::allocator<node>	_nodeAlloc;
+node_allocator			_nodeAlloc;
 key_compare				_keyComp;
 node					*_nil;
 node					*_root;
@@ -86,7 +85,46 @@ explicit	map(const key_compare & comp = key_compare(),
 	_size(0)
 {}
 
+ft::pair<iterator, bool>	insert(const value_type& val)
+{
+	// ALLOCATE AND CONSTRUCT z AT THE END OF FIRST LOOP
+	// USE val TO COMPARE
+	node *	x;
+	node *	y;
+	node *	z;
+
+	y = _nil;
+	x = _root;
+	z = _nodeAlloc.allocate(1);
+	_nodeAlloc.construct(z, val);
+	while (x != _nil)
+	{
+		if (x->_value.first == z->_value.first)
+			return (make_pair(x, false));
+		y = x;
+		if (_keyComp(z->_value.first, x->_value.first))
+		//if (z->_value.first < x->_value.first)
+			x = x->_left;
+		else
+			x = x->_right;
+	}
+	z->_parent = y;
+	if (y == _nil)
+		_root = z;
+	else if (_keyComp(z->_value.first, y->_value.first))
+		y->_left = z;
+	else
+		y->_right = z;
+	z->_left = _nil;
+	z->_right = _nil;
+	z->_color = RED;
+	return (make_pair(z, true));
+}
+
 key_compare	key_comp(void) const {return (key_compare());}
+
+private:
+void	insert_fixup(const map & m, node * n);
 
 };		// class map
 
