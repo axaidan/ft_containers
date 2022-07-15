@@ -1,32 +1,32 @@
 #ifndef RBNODE_HPP
 # define RBNODE_HPP
 
-# define B 0
-# define R 1
+# define BLK 0
+# define RED 1
 
 template<class T>
 class RBnode
 {
 public:
-	T							_value;
-	RBnode						*_parent;
-	RBnode						*_left;
-	RBnode						*_right;
-	bool						_color;
+	T							_pair;
+	RBnode						*_p;
+	RBnode						*_l;
+	RBnode						*_r;
+	bool						_col;
 
 	RBnode(void) :
-		_parent(NULL),
-		_left(NULL),
-		_right(NULL),
-		_color(R)
+		_p(NULL),
+		_l(NULL),
+		_r(NULL),
+		_col(RED)
 	{}
 
 	RBnode(T value) :
-		_value(value),
-		_parent(NULL),
-		_left(NULL),
-		_right(NULL),
-		_color(R)
+		_pair(value),
+		_p(NULL),
+		_l(NULL),
+		_r(NULL),
+		_col(RED)
 	{}
 
 };	// class RBnode
