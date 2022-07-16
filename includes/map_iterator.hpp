@@ -49,10 +49,15 @@ MapIterator(const MapIterator & src) :
 	_nil(src._nil),
 	_root(src._root)			{}
 
+/*
 MapIterator(node_ptr ptr, node_ptr nil, node_ptr root) :
 	_node_ptr(ptr),
 	_nil(nil),
 	_root(root)					{}
+*/
+MapIterator(node_ptr ptr) :
+	_node_ptr(ptr)				{}
+
 
 virtual ~MapIterator(void)		{}
 

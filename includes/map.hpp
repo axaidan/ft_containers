@@ -119,7 +119,8 @@ map &	operator=(const map & x);
 /****************/
 iterator					begin(void)
 {
-	iterator	it(tree_min(_root), _nil, _root);
+//	iterator	it(tree_min(_root), _nil, _root);
+	iterator	it(tree_min(_root));
 	return (it);
 }
 
