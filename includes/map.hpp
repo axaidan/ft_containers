@@ -41,8 +41,8 @@ typedef	Key											key_type;
 typedef T											mapped_type;
 typedef	ft::pair<const key_type, mapped_type>		value_type;
 typedef	Compare										key_compare;
-typedef RBnode<value_type>							node;
-typedef std::allocator<node>						node_allocator;
+typedef RBnode<value_type>							node;			//priv
+typedef std::allocator<node>						node_allocator;	//priv
 typedef	Alloc										allocator_type;
 typedef typename allocator_type::reference			reference;
 typedef typename allocator_type::const_reference	const_reference;
@@ -98,6 +98,7 @@ explicit	map(const key_compare & comp = key_compare(),
 	_root(_nil),
 	_size(0)
 {
+	// SHOULDN'T _nil'S _p, _r, _l ALSO BE _nil ?
 	_nodeAlloc.construct(_nil, ft::pair<const key_type, mapped_type>());
 	_nil->_col = BLK;
 }
@@ -107,15 +108,30 @@ map(InputIterator first, InputIterator last,
 	const key_compare& comp = key_compare(),
 	const allocator_type& alloc = allocator_type());
 map(const map& x);
-~map(void);
+
+~map(void)
+{}
+
 map &	operator=(const map & x);
 
 /****************/
 /*	2 ITERATORS	*/
 /****************/
-iterator					begin(void);
+iterator					begin(void)
+{
+	iterator	it(tree_min(_root), _nil, _root);
+	return (it);
+}
+
 const_iterator				begin(void) const;
+
+// 1:
+// _nil->_p == tree_max() ? 
+// 2:
+// RETURN _nil AND TO tree_max() WHEN --
+// => WHAT HAPPENS IN CASE OF revser_iterator ?
 iterator					end(void);
+
 const_iterator				end(void) const;
 reverse_iterator			rbegin(void);
 const_reverse_iterator		rbegin(void) const;
@@ -203,10 +219,10 @@ const_iterator	upper_bound(const key_type& k) const;
 pair<const_iterator, const_iterator>	equal_range(const key_type& k) const;
 pair<iterator, iterator>				equal_range(const key_type& k);
 
-private:
 /************************/
 /*	8 PRIVATE HELPERS	*/
 /************************/
+private:
 void	insert_fixup(node * z)
 {
 	node *	y;
@@ -318,7 +334,7 @@ void	print_node(char role, node * x, int depth)
 	if (x == _nil)
 		std::cout << "== NIL ==";
 	else
-		std::cout << x->_pair.first;
+		std::cout << std::left <<  x->_pair.first;
 	std::cout << "\033[0m";
 	std::cout << "]\t";
 }
@@ -353,6 +369,34 @@ void	graphic_visualization(node * x, int depth)
 		graphic_visualization(x->_l, depth + 1);
 	}
 }
+
+node *	tree_search(node * x, const key_type & key)
+{
+	while (x != _nil && key != x->_pair.first)
+	{
+		if (_keyComp(key, x->_pair.first))
+			x = x->_l;
+		else
+			x = x->_r;
+	}
+	return (x);
+}
+
+node *	tree_min(node * x)
+{
+	while (x->_l != _nil)
+		x = x->_l;
+	return (x);
+}
+
+node *	tree_max(node * x)
+{
+	while (x->_r != _nil)
+		x = x->_r;
+	return (x);
+}
+
+
 
 };		// class map
 

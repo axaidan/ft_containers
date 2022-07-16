@@ -13,6 +13,7 @@ public:
 	RBnode						*_l;
 	RBnode						*_r;
 	bool						_col;
+	
 
 	RBnode(void) :
 		_p(NULL),
