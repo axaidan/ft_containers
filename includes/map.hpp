@@ -119,12 +119,17 @@ map &	operator=(const map & x);
 /****************/
 iterator					begin(void)
 {
-//	iterator	it(tree_min(_root), _nil, _root);
-	iterator	it(tree_min(_root));
+//	iterator	it(tree_min(_root));
+	iterator	it(tree_min(_root), _nil, _root);
 	return (it);
 }
 
-const_iterator				begin(void) const;
+const_iterator				begin(void) const
+{
+//	iterator	it(tree_min(_root));
+	const_iterator	it(tree_min(_root), _nil, _root);
+	return (it);
+}
 
 // 1:
 // _nil->_p == tree_max() ? 
@@ -165,7 +170,7 @@ ft::pair<iterator, bool>	insert(const value_type& val)
 	while (x != _nil)
 	{
 		if (x->_pair.first == val.first)
-			return (make_pair(x, false));
+			return (make_pair(iterator(x, _nil, _root), false));
 		y = x;
 		if (_keyComp(val.first, x->_pair.first))
 			x = x->_l;
@@ -186,7 +191,7 @@ ft::pair<iterator, bool>	insert(const value_type& val)
 	z->_col = RED;
 	insert_fixup(z);
 	_size++;
-	return (make_pair(z, true));
+	return (make_pair(iterator(z, _nil, _root), true));
 }
 
 iterator	insert(iterator position, const value_type& val);

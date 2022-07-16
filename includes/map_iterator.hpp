@@ -2,18 +2,10 @@
 # define MAP_ITERATOR_HPP
 
 # include "iterator_utils.hpp"
+# include "pair.hpp"
 
 namespace ft
 {
-
-	/*
-template <
-class Key,											// map::key_type
-class T,											// map::mapped_type
-class Compare = std::less<Key>,						// map::key_compare
-class Alloc = std::allocator<pair<const Key,T> >	// map::allocator_type
->
-*/
 
 // IN map.hpp
 // typedef ft::MapIterator<value_type, node>			iterator;
@@ -31,7 +23,7 @@ typedef RBnode	*											node_ptr;
 //typedef MapIterator<const value_type, node>				const_iterator;
 
 private:
-node_ptr	_node_ptr;
+node_ptr	_node;
 node_ptr	_nil;		
 node_ptr	_root;		
 
@@ -40,23 +32,28 @@ node_ptr	_root;
 /************************************************/
 public:
 MapIterator(void) :
-	_node_ptr(NULL),
+	_node(NULL),
 	_nil(NULL),
-	_root(NULL)					{}
+	_root(NULL)
+{}
 
 MapIterator(const MapIterator & src) :
-	_node_ptr(src._node_ptr),
+	_node(src._node),
 	_nil(src._nil),
-	_root(src._root)			{}
+	_root(src._root)
+{}
+
+MapIterator(const node_ptr & ptr, const node_ptr & nil,
+		const node_ptr & root) :
+	_node(ptr),
+	_nil(nil),
+	_root(root)
+{}
 
 /*
-MapIterator(node_ptr ptr, node_ptr nil, node_ptr root) :
-	_node_ptr(ptr),
-	_nil(nil),
-	_root(root)					{}
-*/
 MapIterator(node_ptr ptr) :
-	_node_ptr(ptr)				{}
+	_node(ptr)				{}
+*/
 
 
 virtual ~MapIterator(void)		{}
@@ -66,22 +63,55 @@ virtual ~MapIterator(void)		{}
 /****************/
 MapIterator &	operator=(const MapIterator & rhs)
 {
-	_node_ptr = rhs._node_ptr;
+	_node = rhs._node;
+	_nil = rhs._nil;
+	_root = rhs._root;
 	return (*this);
 }
 
-reference		operator*(void) const	{return (_node_ptr->_pair);}
+reference		operator*(void) const	{return (_node->_pair);}
 
 pointer			operator->(void) const	{return (&(this->operator*()));}
 
 // ++it
-/*
 MapIterator &	operator++(void)
 {
-	if (_node_ptr->_r != _map._nil);
-}
-*/
+	node_ptr	y;
+	node_ptr	x;
 
+	if (_node->_r != _nil)
+	{
+		_node = tree_min(_node->_r);
+		return (*this);
+	}
+	x = _node;
+	y = _node->_p;
+	while (y != _nil && x == y->_r)
+	{
+		x = y;
+		y = y->_p;
+	}	
+	_node = y;
+	return (*this);
+}
+
+/********************/
+/*	PRIVATE HELPERS	*/
+/********************/
+private:
+node_ptr	tree_min(node_ptr x)
+{
+    while (x->_l != _nil)
+        x = x->_l;
+    return (x);
+}
+
+node_ptr	tree_max(node_ptr x)
+{
+    while (x->_r != _nil)
+        x = x->_r;
+    return (x);
+}
 
 
 

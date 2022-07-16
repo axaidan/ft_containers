@@ -37,12 +37,14 @@ int main(void)
 	it = test.begin();
 	std::cerr << "=== it = test.begin();" << std::endl;
 	std::cerr << "=== (*it).first\t\t=\t" << (*it).first << std::endl;
-	std::cerr << "=== (*it).second\t=\t" << (*it).second << std::endl;
-	std::cerr << "=== it->first\t\t=\t" << it->first << std::endl;
-	std::cerr << "=== it->second\t\t=\t" << it->second << std::endl;
+
+	++it;
+	std::cerr << "=== ++it :" << std::endl;
+	std::cerr << "=== (*it).first\t\t=\t" << (*it).first << std::endl;
 
 
 
+	test.graphic_visualization(test._root, 0);
 
 
 	return(0);
