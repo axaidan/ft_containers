@@ -7,6 +7,7 @@ int main(void)
 {
 	ft::map<int, float>								test;
 	ft::map<int, float>::iterator					it;
+	ft::map<int, float>::const_iterator					ite;
 	ft::pair<ft::map<int, float>::iterator, bool>	insert_ret;
 	node *											n;
 
@@ -41,10 +42,22 @@ int main(void)
 	++it;
 	std::cerr << "=== ++it :" << std::endl;
 	std::cerr << "=== (*it).first\t\t=\t" << (*it).first << std::endl;
-
-
+	int 	i;
+	for (i = 0, it = test.begin() ; i < 8 ; i++, ++it)
+		std::cerr << "=== (*it).first\t\t=\t" << (*it).first << std::endl;
 
 	test.graphic_visualization(test._root, 0);
+	
+
+	it = test.begin();
+	ite = test.end();
+	while (it != ite)
+	{
+		std::cerr << it->first << std::endl;
+		it++;
+	}
+
+
 
 
 	return(0);

@@ -136,9 +136,17 @@ const_iterator				begin(void) const
 // 2:
 // RETURN _nil AND TO tree_max() WHEN --
 // => WHAT HAPPENS IN CASE OF revser_iterator ?
-iterator					end(void);
+iterator					end(void)
+{
+	iterator	it(_nil, _nil, _root);
+	return (it);
+}
+const_iterator				end(void) const
+{
+	const_iterator	it(_nil, _nil, _root);
+	return (it);
+}
 
-const_iterator				end(void) const;
 reverse_iterator			rbegin(void);
 const_reverse_iterator		rbegin(void) const;
 reverse_iterator			rend(void);
