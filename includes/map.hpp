@@ -28,6 +28,7 @@ template <
 class Key,											// map::key_type
 class T,											// map::mapped_type
 class Compare = std::less<Key>,						// map::key_compare
+//class Compare = std::greater<Key>,						// map::key_compare
 class Alloc = std::allocator<pair<const Key,T> >	// map::allocator_type
 >
 class map
@@ -99,7 +100,7 @@ explicit	map(const key_compare & comp = key_compare(),
 	_size(0)
 {
 	// SHOULDN'T _nil'S _p, _r, _l ALSO BE _nil ?
-	_nodeAlloc.construct(_nil, ft::pair<const key_type, mapped_type>());
+	_nodeAlloc.construct(_nil, value_type());
 	_nil->_col = BLK;
 }
 
@@ -107,7 +108,11 @@ template <class InputIterator>
 map(InputIterator first, InputIterator last,
 	const key_compare& comp = key_compare(),
 	const allocator_type& alloc = allocator_type());
-map(const map& x);
+
+//	1 - ALLOCATE NEW _nil
+//	2 - insert(src.begin(), src.end())
+map(const map & src);
+
 
 ~map(void)
 {}
@@ -119,14 +124,12 @@ map &	operator=(const map & x);
 /****************/
 iterator					begin(void)
 {
-//	iterator	it(tree_min(_root));
 	iterator	it(tree_min(_root), _nil, _root);
 	return (it);
 }
 
 const_iterator				begin(void) const
 {
-//	iterator	it(tree_min(_root));
 	const_iterator	it(tree_min(_root), _nil, _root);
 	return (it);
 }
@@ -155,14 +158,20 @@ const_reverse_iterator		rend(void) const;
 /****************/
 /*	3 CAPACITY	*/
 /****************/
-bool						empty(void) const;
-size_type					size(void) const;
+bool						empty(void) const		{return (_root == _nil);}
+size_type					size(void) const		{return (_size);}
 size_type					max_size(void) const;
 
 /************************/
 /*	4 ELEMENT ACCESS	*/
 /************************/
-mapped_type&				operator[](const key_type& k);
+mapped_type&				operator[](const key_type& key)
+{
+	ft::pair<iterator, bool>	insert_ret;
+
+	insert_ret = insert(value_type(key, mapped_type()));
+	return (insert_ret.first->second);
+}
 
 /****************/
 /*	5 MODIFIERS	*/
@@ -214,24 +223,27 @@ void		swap(map& x);
 void		clear(void);
 
 /********************/
-/*	6 OBERSEVERS	*/
+/*	6 OBSERVERS		*/
 /************&*******/
-key_compare		key_comp(void) const {return (key_compare());}
-value_compare	value_comp(void) const {return (value_compare());}
-
+key_compare		key_comp(void) const	{return (key_compare());}
+value_compare	value_comp(void) const	{return (value_compare());}
 
 /****^^^^************/
 /*	7 OPERATIONS	*/
 /********************/
-iterator		find(const key_type& k);
-const_iterator	find(const key_type& k) const;
-size_type		count(const key_type& k) const;
-iterator		lower_bound(const key_type& k);
-const_iterator	lower_bound(const key_type& k) const;
-iterator		upper_bound(const key_type& k);
-const_iterator	upper_bound(const key_type& k) const;
-pair<const_iterator, const_iterator>	equal_range(const key_type& k) const;
-pair<iterator, iterator>				equal_range(const key_type& k);
+iterator		find(const key_type& key)
+{return (iterator(tree_search(_root, key), _nil, _root));}
+
+const_iterator	find(const key_type & key) const
+{return (const_iterator(tree_search(_root, key), _nil, _root));}
+
+size_type		count(const key_type & key) const;
+iterator		lower_bound(const key_type & key);
+const_iterator	lower_bound(const key_type & key) const;
+iterator		upper_bound(const key_type & key);
+const_iterator	upper_bound(const key_type & key) const;
+pair<const_iterator, const_iterator>	equal_range(const key_type & key) const;
+pair<iterator, iterator>				equal_range(const key_type & key);
 
 /************************/
 /*	8 PRIVATE HELPERS	*/
@@ -398,14 +410,14 @@ node *	tree_search(node * x, const key_type & key)
 
 node *	tree_min(node * x)
 {
-	while (x->_l != _nil)
+	while (x != _nil && x->_l != _nil)
 		x = x->_l;
 	return (x);
 }
 
 node *	tree_max(node * x)
 {
-	while (x->_r != _nil)
+	while (x != _nil && x->_r != _nil)
 		x = x->_r;
 	return (x);
 }

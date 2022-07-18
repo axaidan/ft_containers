@@ -34,30 +34,25 @@ public:
 MapIterator(void) :
 	_node(NULL),
 	_nil(NULL),
-	_root(NULL)
-{}
+	_root(NULL)					{}
 
 MapIterator(const MapIterator & src) :
 	_node(src._node),
 	_nil(src._nil),
-	_root(src._root)
-{}
+	_root(src._root)			{}
 
 MapIterator(const node_ptr & ptr, const node_ptr & nil,
 		const node_ptr & root) :
 	_node(ptr),
 	_nil(nil),
-	_root(root)
-{}
-
+	_root(root)					{}
 /*
 MapIterator(node_ptr ptr) :
 	_node(ptr)				{}
 */
-
-
 virtual ~MapIterator(void)		{}
 
+pointer			base(void) const		{return (&(_node->_pair));}
 /****************/
 /*	OPERATORS	*/
 /****************/
@@ -67,11 +62,6 @@ MapIterator &	operator=(const MapIterator & rhs)
 	_nil = rhs._nil;
 	_root = rhs._root;
 	return (*this);
-}
-
-pointer			base(void) const
-{
-	return (&(_node->_pair));
 }
 
 reference		operator*(void) const	{return (_node->_pair);}
@@ -148,7 +138,6 @@ operator        MapIterator<const T, RBnode>(void) const
 {
 	return (MapIterator<const T, RBnode>(_node, _nil, _root));
 }
-
 
 /********************/
 /*	PRIVATE HELPERS	*/

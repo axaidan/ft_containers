@@ -1,18 +1,29 @@
 #include "map.hpp"
 #include <iostream>
+#include "vector.hpp"
 
 typedef typename	ft::map<int, float>::node	node;
+
 
 int main(void)
 {
 	ft::map<int, float>								test;
 	ft::map<int, float>::iterator					it;
-	ft::map<int, float>::const_iterator					ite;
+	ft::map<int, float>::const_iterator				ite;
 	ft::pair<ft::map<int, float>::iterator, bool>	insert_ret;
 	node *											n;
 
 	std::cerr << std::boolalpha;
+
+	it = test.begin();
+	ite = test.end();
+	while (it != ite)
+	{
+		std::cerr << it->first << std::endl;
+		it++;
+	}
 	
+	test[-10] = 13.37f;
 	insert_ret = test.insert(ft::make_pair(1, 3.14));
 	std::cerr << "first insert status = " << insert_ret.second << "\n";
 	insert_ret = test.insert(ft::make_pair(1, 500.500));
@@ -56,6 +67,23 @@ int main(void)
 		std::cerr << it->first << std::endl;
 		it++;
 	}
+	it = test.find(10);
+	std::cerr << "=== it = test.find(10) :" << std::endl;
+	std::cerr << "=== (*it).first\t\t=\t" << (*it).first << std::endl;
+	it = test.find(99);
+	std::cerr << "=== it = test.find(99) :" << std::endl;
+	std::cerr << "=== (*it).first\t\t=\t" << (*it).first << std::endl;
+	std::cerr << "=== (it == test.end())\t=\t" << (it == test.end()) << std::endl;
+
+	std::cerr << "=== test[99] = 1000.0f :" << std::endl;
+	test[99] = 1000.0f;
+	std::cerr << "=== it = test.find(99) :" << std::endl;
+	it = test.find(99);
+	std::cerr << "=== (*it).first\t\t=\t" << (*it).first << std::endl;
+	std::cerr << "=== (*it).second\t=\t" << (*it).second << std::endl;
+	std::cerr << "=== (it == test.end())\t=\t" << (it == test.end()) << std::endl;
+	test.graphic_visualization(test._root, 0);
+
 
 
 
