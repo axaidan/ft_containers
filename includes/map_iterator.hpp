@@ -7,8 +7,8 @@
 namespace ft
 {
 
-template<class, class, class, class>
-class map;
+template	<class, class, class, class>
+class 		map;
 
 // IN map.hpp
 // typedef ft::MapIterator<value_type, node>			iterator;
@@ -16,8 +16,11 @@ template<class T, class RBnode>
 class MapIterator	: public ft::iterator_traits<T*>
 {
 
-template<class, class, class, class>
-friend class map;
+//	TO BE ABLE TO _get_node() FROM AN iterator 
+//	IN MAP FOR FUNCTIONS RECEIVING iteratorS
+//	AS ARGUMENTS
+template	<class, class, class, class>
+friend		class map;
 
 public:
 typedef typename ft::iterator_traits<T*>::difference_type	difference_type;
@@ -30,8 +33,8 @@ typedef RBnode	*											node_ptr;
 
 private:
 node_ptr	_node;
-node_ptr	_nil;		
-node_ptr	_root;		
+node_ptr	_nil;	//	FOR COMPARISON WITH map'S _nil		
+node_ptr	_root;	//	FOR tree_max() WHEN it = map.end(); it--;
 
 /************************************************/
 /*	CONSTRUCTION / DESTRUCTION / ASSIGNATION	*/
@@ -52,10 +55,12 @@ MapIterator(const node_ptr & ptr, const node_ptr & nil,
 	_node(ptr),
 	_nil(nil),
 	_root(root)					{}
+
 /*
 MapIterator(node_ptr ptr) :
-	_node(ptr)				{}
+	_node(ptr)					{}
 */
+
 virtual ~MapIterator(void)		{}
 
 pointer			base(void) const		{return (&(_node->_pair));}

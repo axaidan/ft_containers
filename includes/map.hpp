@@ -218,7 +218,55 @@ iterator	insert(iterator position, const value_type& val);
 template	<class InputIterator>
 void		insert(InputIterator first, InputIterator last);
 
-void		erase(iterator position);
+void		erase(iterator position)
+{
+	node *	x;
+	node *	y;
+	node *	z;
+	bool	y_orig_col;
+
+
+	z = position._get_node();
+	y = z;
+	y_orig_col = y->_col;
+	if (z->_l == _nil)
+	{
+		x = z->_r;
+		_transplant(z, z->_r);
+	}
+	else if (z->_r == _nil)
+	{
+		x = z->_l;
+		_transplant(z, z->_l);
+	}
+	else
+	{
+		y = _tree_min(z->_r);
+		y_orig_col = y->_col;
+		x = y->_r;
+		if (y->_p == z)
+			x->_p = y;
+		else
+		{
+			_transplant(y, y->_r);
+			y->_r = z->_r;
+			y->_r->_p = y;
+		}
+		_transplant(z, y);
+		y->_l = z->_l;
+		y->_l->_p = y;
+		y->_col = z->_col;
+	}
+	/*
+	print_node('N', z, 0);
+	print_node('P', z->_p, 0);
+	print_node('L', z->_l, 0);
+	print_node('R', z->_r, 0);
+	*/
+	if (y_orig_col == BLK)
+		_erase_fixup(x);
+}
+
 size_type	erase(const key_type & k);
 void		erase(iterator first, iterator last);
 
@@ -303,6 +351,78 @@ void	_insert_fixup(node * z)
 		}
 	}
 	_root->_col = BLK;
+}
+
+void	_erase_fixup(node * x)
+{
+	node *	w;
+
+	while (x != _root && x->_col == BLK)
+	{
+		if (x == x->_p->_l)
+		{
+			w = x->_p->_r;
+			if (w->_col == RED)
+			{
+/*1*/			w->_col = BLK;
+/*1*/			x->_p->_col = RED;
+/*1*/			_left_rotate(x->_p);
+/*1*/			w = x->_p->_r;
+			}
+			if (w->_l->_col == BLK && w->_r->_col == BLK)
+			{
+/*2*/			w->_col = RED;
+/*2*/			x = x->_p;
+			}
+			else 
+			{
+				if (w->_r->_col == BLK)
+				{
+/*3*/				w->_l->_col = BLK;
+/*3*/				w->_col = RED;
+/*3*/				_right_rotate(w);
+/*3*/				w = x->_p->_r;
+				}
+/*4*/			w->_col = x->_p->_col;
+/*4*/			x->_p->_col = BLK;
+/*4*/			w->_r->_col = BLK;
+/*4*/			_left_rotate(x->_p);
+/*4*/			x = _root;
+			}
+		}
+		else
+		{
+			w = x->_p->_l;
+			if (w->_col == RED)
+			{
+/*1*/			w->_col = BLK;
+/*1*/			x->_p->_col = RED;
+/*1*/			_right_rotate(x->_p);
+/*1*/			w = x->_p->_l;
+			}
+			if (w->_r->_col == BLK && w->_l->_col == BLK)
+			{
+/*2*/			w->_col = RED;
+/*2*/			x = x->_p;
+			}
+			else 
+			{
+				if (w->_l->_col == BLK)
+				{
+/*3*/				w->_r->_col = BLK;
+/*3*/				w->_col = RED;
+/*3*/				_left_rotate(w);
+/*3*/				w = x->_p->_l;
+				}
+/*4*/			w->_col = x->_p->_col;
+/*4*/			x->_p->_col = BLK;
+/*4*/			w->_l->_col = BLK;
+/*4*/			_right_rotate(x->_p);
+/*4*/			x = _root;
+			}
+		}
+	}
+	x->_col = BLK;
 }
 
 void	_left_rotate(node * x)

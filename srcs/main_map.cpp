@@ -98,6 +98,12 @@ int main(void)
 	node_ptr = test.test_friend_get_begin_node();
 	std::cerr << node_ptr->_pair.second << std::endl;
 
+	test.graphic_visualization(test._root, 0);
+	std::cerr << "test.erase(test.find(2)):" << std::endl;
+	test.erase(test.find(2));
+	test.graphic_visualization(test._root, 0);
+
+	
 
 	return(0);
 }
