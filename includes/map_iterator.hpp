@@ -7,11 +7,17 @@
 namespace ft
 {
 
+template<class, class, class, class>
+class map;
+
 // IN map.hpp
 // typedef ft::MapIterator<value_type, node>			iterator;
 template<class T, class RBnode>
 class MapIterator	: public ft::iterator_traits<T*>
 {
+
+template<class, class, class, class>
+friend class map;
 
 public:
 typedef typename ft::iterator_traits<T*>::difference_type	difference_type;
@@ -154,6 +160,12 @@ node_ptr	tree_max(node_ptr x)
         x = x->_r;
     return (x);
 }
+
+/************/
+/*	DEBUG	*/
+/************/
+node_ptr	_get_node(void) const
+{return (_node);}
 
 };		//	class MapIterator
 

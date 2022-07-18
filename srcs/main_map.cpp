@@ -93,7 +93,10 @@ int main(void)
 	std::cerr << "(test._root->_p == _nil) =\t" <<
 		(test._root->_p == test._nil) << std::endl;
 
-
+	std::cerr << "friend test : node = test.test_friend_get_begin_node()\n";
+	node *	node_ptr;
+	node_ptr = test.test_friend_get_begin_node();
+	std::cerr << node_ptr->_pair.second << std::endl;
 
 
 	return(0);

@@ -15,7 +15,6 @@
 # define BLK 0
 # define RED 1
 
-//	# include "rbtree.hpp"
 //	DEBUG HEADERS
 # include <iostream>
 # include <iomanip>
@@ -93,7 +92,8 @@ public:
 explicit	map(const key_compare & comp = key_compare(),
 				const allocator_type & alloc = allocator_type()) :
 	_pairAlloc(alloc),
-	_nodeAlloc(std::allocator<node>()),
+//	_nodeAlloc(std::allocator<node>()),
+	_nodeAlloc(node_allocator()),
 	_keyComp(comp),
 //	_nil(_nodeAlloc.allocate(1)),
 	_nil(_new_nil()),
@@ -113,7 +113,6 @@ map(InputIterator first, InputIterator last,
 //	1 - ALLOCATE NEW _nil
 //	2 - insert(src.begin(), src.end())
 map(const map & src);
-
 
 ~map(void)
 {}
@@ -390,7 +389,6 @@ node *	_new_nil(const value_type & val = value_type())
 	return (n);
 }
 
-
 public:		//	!!!
 node *	_tree_min(node * x)
 {
@@ -460,6 +458,13 @@ void	graphic_visualization(node * x, int depth)
 		std::cout << std::endl;
 		graphic_visualization(x->_l, depth + 1);
 	}
+}
+
+node *	test_friend_get_begin_node(void)
+{
+	iterator	it;
+	it = begin();
+	return (it._get_node());
 }
 
 };		// class map
