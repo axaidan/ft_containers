@@ -115,7 +115,10 @@ map(InputIterator first, InputIterator last,
 map(const map & src);
 
 ~map(void)
-{}
+{
+	clear();
+	_destroy_node(_nil);
+}
 
 map &	operator=(const map & x);
 
@@ -215,6 +218,7 @@ ft::pair<iterator, bool>	insert(const value_type& val)
 }
 
 iterator	insert(iterator position, const value_type& val);
+
 template	<class InputIterator>
 void		insert(InputIterator first, InputIterator last);
 
@@ -225,8 +229,9 @@ void		erase(iterator position)
 	node *	z;
 	bool	y_orig_col;
 
-
 	z = position._get_node();
+	if (z == _nil)
+		return ;
 	y = z;
 	y_orig_col = y->_col;
 	if (z->_l == _nil)
@@ -257,21 +262,45 @@ void		erase(iterator position)
 		y->_l->_p = y;
 		y->_col = z->_col;
 	}
-	/*
-	print_node('N', z, 0);
-	print_node('P', z->_p, 0);
-	print_node('L', z->_l, 0);
-	print_node('R', z->_r, 0);
-	*/
+	_destroy_node(z);
 	if (y_orig_col == BLK)
 		_erase_fixup(x);
+	_size--;
 }
 
-size_type	erase(const key_type & k);
-void		erase(iterator first, iterator last);
+size_type	erase(const key_type & k)
+{
+	iterator	it;
+
+	it = find(k);
+	if (it == end())
+		return (0);
+	else
+		erase(it);
+	return (1);
+}
+
+void		erase(iterator first, iterator last)
+{
+//	iterator	current;
+	iterator	next;
+
+	next = first;
+	while (first != last)
+	{
+		next++;
+		std::cerr << "destroying " << first._get_node()->_pair.first << std::endl;
+//		_destroy_node(first._get_node());
+		erase(first);
+		first = next;
+	}
+}
 
 void		swap(map& x);
-void		clear(void);
+void		clear(void)
+{
+	erase(begin(), end());
+}
 
 /********************/
 /*	6 OBSERVERS		*/
@@ -495,6 +524,12 @@ node *	_new_node(const value_type & val = value_type())
 	n->_r = _nil;
 	n->_col = RED;
 	return (n);
+}
+
+void	_destroy_node(node * n)
+{
+	_nodeAlloc.destroy(n);
+	_nodeAlloc.deallocate(n, 1);
 }
 
 node *	_new_nil(const value_type & val = value_type())

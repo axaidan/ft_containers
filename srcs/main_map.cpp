@@ -102,8 +102,10 @@ int main(void)
 	std::cerr << "test.erase(test.find(2)):" << std::endl;
 	test.erase(test.find(2));
 	test.graphic_visualization(test._root, 0);
-
-	
+	std::cerr << "test.erase(12):" << std::endl;
+	test.erase(12);
+	test.graphic_visualization(test._root, 0);
+	test.erase(test.begin(), test.end());
 
 	return(0);
 }
