@@ -135,9 +135,7 @@ MapIterator		operator--(int)
 }
 
 operator        MapIterator<const T, RBnode>(void) const
-{
-	return (MapIterator<const T, RBnode>(_node, _nil, _root));
-}
+{return (MapIterator<const T, RBnode>(_node, _nil, _root));}
 
 /********************/
 /*	PRIVATE HELPERS	*/
@@ -145,14 +143,14 @@ operator        MapIterator<const T, RBnode>(void) const
 private:
 node_ptr	tree_min(node_ptr x)
 {
-    while (/*x != _nil ||*/ x->_l != _nil)
+    while (x != _nil && x->_l != _nil)
         x = x->_l;
     return (x);
 }
 
 node_ptr	tree_max(node_ptr x)
 {
-    while (/*x != _nil ||*/ x->_r != _nil)
+    while (x != _nil && x->_r != _nil)
         x = x->_r;
     return (x);
 }
@@ -162,16 +160,12 @@ node_ptr	tree_max(node_ptr x)
 template<class T, class U, class Node>
 bool    operator==(const MapIterator<T, Node> & lhs,
         const MapIterator<U, Node> & rhs)
-{
-    return (lhs.base() == rhs.base());
-}
+{return (lhs.base() == rhs.base());}
+
 template<class T, class U, class Node>
 bool    operator!=(const MapIterator<T, Node> & lhs,
         const MapIterator<U, Node> & rhs)
-{
-    return (lhs.base() != rhs.base());
-}
-
+{return (lhs.base() != rhs.base());}
 
 }		//	namespace ft
 

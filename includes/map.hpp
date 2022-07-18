@@ -80,8 +80,8 @@ private:
 allocator_type			_pairAlloc;
 node_allocator			_nodeAlloc;
 key_compare				_keyComp;
-node					*_nil;
 public:
+node					*_nil;
 node					*_root;
 private:
 size_type				_size;
@@ -95,13 +95,14 @@ explicit	map(const key_compare & comp = key_compare(),
 	_pairAlloc(alloc),
 	_nodeAlloc(std::allocator<node>()),
 	_keyComp(comp),
-	_nil(_nodeAlloc.allocate(1)),
+//	_nil(_nodeAlloc.allocate(1)),
+	_nil(_new_nil()),
 	_root(_nil),
 	_size(0)
 {
 	// SHOULDN'T _nil'S _p, _r, _l ALSO BE _nil ?
-	_nodeAlloc.construct(_nil, value_type());
-	_nil->_col = BLK;
+//	_nodeAlloc.construct(_nil, value_type());
+//	_nil->_col = BLK;
 }
 
 template <class InputIterator>
@@ -124,20 +125,20 @@ map &	operator=(const map & x);
 /****************/
 iterator					begin(void)
 {
-	iterator	it(tree_min(_root), _nil, _root);
+	iterator	it(_tree_min(_root), _nil, _root);
 	return (it);
 }
 
 const_iterator				begin(void) const
 {
-	const_iterator	it(tree_min(_root), _nil, _root);
+	const_iterator	it(_tree_min(_root), _nil, _root);
 	return (it);
 }
 
 // 1:
-// _nil->_p == tree_max() ? 
+// _nil->_p == _tree_max() ? 
 // 2:
-// RETURN _nil AND TO tree_max() WHEN --
+// RETURN _nil AND TO _tree_max() WHEN --
 // => WHAT HAPPENS IN CASE OF revser_iterator ?
 iterator					end(void)
 {
@@ -194,8 +195,11 @@ ft::pair<iterator, bool>	insert(const value_type& val)
 		else
 			x = x->_r;
 	}
+	/*
 	z = _nodeAlloc.allocate(1);
 	_nodeAlloc.construct(z, val);
+	*/
+	z = _new_node(val);
 	z->_p = y;
 	if (y == _nil)
 		_root = z;
@@ -206,13 +210,13 @@ ft::pair<iterator, bool>	insert(const value_type& val)
 	z->_l = _nil;
 	z->_r = _nil;
 	z->_col = RED;
-	insert_fixup(z);
+	_insert_fixup(z);
 	_size++;
 	return (make_pair(iterator(z, _nil, _root), true));
 }
 
 iterator	insert(iterator position, const value_type& val);
-template<class InputIterator>
+template	<class InputIterator>
 void		insert(InputIterator first, InputIterator last);
 
 void		erase(iterator position);
@@ -232,10 +236,10 @@ value_compare	value_comp(void) const	{return (value_compare());}
 /*	7 OPERATIONS	*/
 /********************/
 iterator		find(const key_type& key)
-{return (iterator(tree_search(_root, key), _nil, _root));}
+{return (iterator(_tree_search(_root, key), _nil, _root));}
 
 const_iterator	find(const key_type & key) const
-{return (const_iterator(tree_search(_root, key), _nil, _root));}
+{return (const_iterator(_tree_search(_root, key), _nil, _root));}
 
 size_type		count(const key_type & key) const;
 iterator		lower_bound(const key_type & key);
@@ -249,7 +253,7 @@ pair<iterator, iterator>				equal_range(const key_type & key);
 /*	8 PRIVATE HELPERS	*/
 /************************/
 private:
-void	insert_fixup(node * z)
+void	_insert_fixup(node * z)
 {
 	node *	y;
 	while (z->_p->_col == RED)
@@ -269,11 +273,11 @@ void	insert_fixup(node * z)
 				if (z == z->_p->_r)
 				{
 					z = z->_p;
-					left_rotate(z);
+					_left_rotate(z);
 				}
 				z->_p->_col = BLK;
 				z->_p->_p->_col = RED;
-				right_rotate(z->_p->_p);
+				_right_rotate(z->_p->_p);
 			}
 		}
 		else
@@ -291,18 +295,18 @@ void	insert_fixup(node * z)
 				if (z == z->_p->_l)
 				{
 					z = z->_p;
-					right_rotate(z);
+					_right_rotate(z);
 				}
 				z->_p->_col = BLK;
 				z->_p->_p->_col = RED;
-				left_rotate(z->_p->_p);
+				_left_rotate(z->_p->_p);
 			}
 		}
 	}
 	_root->_col = BLK;
 }
 
-void	left_rotate(node * x)
+void	_left_rotate(node * x)
 {
 	node *	y;
 
@@ -321,7 +325,7 @@ void	left_rotate(node * x)
 	x->_p = y;
 }
 
-void	right_rotate(node * x)
+void	_right_rotate(node * x)
 {
 	node *	y;
 
@@ -340,10 +344,72 @@ void	right_rotate(node * x)
 	x->_p = y;
 }
 
-public:
+node *	_tree_search(node * x, const key_type & key)
+{
+	while (x != _nil && key != x->_pair.first)
+	{
+		if (_keyComp(key, x->_pair.first))
+			x = x->_l;
+		else
+			x = x->_r;
+	}
+	return (x);
+}
+void	_transplant(node * u, node *v)
+{
+	if (u->_p == _nil)
+		_root = v;
+	else if (u == u->_p->_l)
+		u->_p->_l = v;
+	else
+		u->_p->_r = v;
+	v->_p = u->_p;
+}
+
+node *	_new_node(const value_type & val = value_type())
+{
+	node *	n;
+	n = _nodeAlloc.allocate(1);
+	_nodeAlloc.construct(n, node(val));
+	n->_p = _nil;
+	n->_l = _nil;
+	n->_r = _nil;
+	n->_col = RED;
+	return (n);
+}
+
+node *	_new_nil(const value_type & val = value_type())
+{
+	node *	n;
+	n = _nodeAlloc.allocate(1);
+	_nodeAlloc.construct(n, node(val));
+	n->_p = _nil;
+	n->_l = _nil;
+	n->_r = _nil;
+	n->_col = BLK;
+	return (n);
+}
+
+
+public:		//	!!!
+node *	_tree_min(node * x)
+{
+	while (x != _nil && x->_l != _nil)
+		x = x->_l;
+	return (x);
+}
+
+node *	_tree_max(node * x)
+{
+	while (x != _nil && x->_r != _nil)
+		x = x->_r;
+	return (x);
+}
+
 /************/
 /*	9 DEBUG	*/
 /************/
+public:
 void	print_node(char role, node * x, int depth)
 {
 	(void)depth;
@@ -395,34 +461,6 @@ void	graphic_visualization(node * x, int depth)
 		graphic_visualization(x->_l, depth + 1);
 	}
 }
-
-node *	tree_search(node * x, const key_type & key)
-{
-	while (x != _nil && key != x->_pair.first)
-	{
-		if (_keyComp(key, x->_pair.first))
-			x = x->_l;
-		else
-			x = x->_r;
-	}
-	return (x);
-}
-
-node *	tree_min(node * x)
-{
-	while (x != _nil && x->_l != _nil)
-		x = x->_l;
-	return (x);
-}
-
-node *	tree_max(node * x)
-{
-	while (x != _nil && x->_r != _nil)
-		x = x->_r;
-	return (x);
-}
-
-
 
 };		// class map
 

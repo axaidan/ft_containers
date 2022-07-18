@@ -41,9 +41,9 @@ int main(void)
 	test.data_visualization(test._root);
 	test.graphic_visualization(test._root, 0);
 
-	n = test.tree_min(test._root);
+	n = test._tree_min(test._root);
 	std::cerr << "=== tree_min()'s key is :\t" << n->_pair.first << std::endl;
-	n = test.tree_max(test._root);
+	n = test._tree_max(test._root);
 	std::cerr << "=== tree_max()'s key is :\t" << n->_pair.first << std::endl;
 
 	it = test.begin();
@@ -84,6 +84,14 @@ int main(void)
 	std::cerr << "=== (it == test.end())\t=\t" << (it == test.end()) << std::endl;
 	test.graphic_visualization(test._root, 0);
 
+	/*
+	for (i = 0 ; i < 50 ; i++)
+		test.insert(ft::make_pair<int, float>(i, -0.99f));
+	test.graphic_visualization(test._root, 0);
+	*/
+
+	std::cerr << "(test._root->_p == _nil) =\t" <<
+		(test._root->_p == test._nil) << std::endl;
 
 
 

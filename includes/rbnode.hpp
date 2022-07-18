@@ -43,8 +43,6 @@ public:
 		_col = rhs._col;
 		return (*this);
 	}
+};		// class RBnode
 
-
-};	// class RBnode
-
-#endif // RBNODE_HPP
+#endif	// RBNODE_HPP
