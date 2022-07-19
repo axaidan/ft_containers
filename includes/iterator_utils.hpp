@@ -76,8 +76,8 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 	Iter	_iterator;
 
 	public:
-	reverse_iterator(void) :
-		_iterator(NULL)
+	reverse_iterator(void) //:
+//		_iterator(NULL)
 	{
 	}
 	//explicit reverse_iterator(const Iter & src) :

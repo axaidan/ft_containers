@@ -577,7 +577,6 @@ void	swap(vector &x)
 	_capacity = xTmpCapacity;
 }
 
-
 /****************/
 /*	ALLOCATOR	*/
 /****************/
@@ -653,10 +652,9 @@ bool		operator>=(const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 
 }	// namespace ft
 
+//	SHOULDN'T IT BE IN namespace ft ??? 
 template	<class T, class Alloc>
 void		swap(ft::vector<T,Alloc>& x, ft::vector<T,Alloc>& y)
-{
-	x.swap(y);
-}
+			{x.swap(y);}
 
 #endif // VECTOR_HPP
