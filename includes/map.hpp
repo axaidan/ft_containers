@@ -112,7 +112,16 @@ map(InputIterator first, InputIterator last,
 
 //	1 - ALLOCATE NEW _nil
 //	2 - insert(src.begin(), src.end())
-map(const map & src);
+map(const map & src) :
+	_pairAlloc(src._pairAlloc),
+	_nodeAlloc(src._nodeAlloc),
+	_keyComp(src._keyComp),
+	_nil(_new_nil()),
+	_root(_nil),
+	_size(0)
+{
+	insert(src.begin(), src.end());
+}
 
 ~map(void)
 {
@@ -120,7 +129,12 @@ map(const map & src);
 	_destroy_node(_nil);
 }
 
-map &	operator=(const map & x);
+map &	operator=(const map & x)
+{
+	clear();
+	insert(x.begin(), x.end());
+	return (*this);
+}
 
 /****************/
 /*	2 ITERATORS	*/
@@ -190,7 +204,7 @@ ft::pair<iterator, bool>	insert(const value_type& val)
 	while (x != _nil)
 	{
 		if (x->_pair.first == val.first)
-			return (make_pair(iterator(x, _nil, _root), false));
+			return (ft::make_pair(iterator(x, _nil, _root), false));
 		y = x;
 		if (_keyComp(val.first, x->_pair.first))
 			x = x->_l;
@@ -214,13 +228,24 @@ ft::pair<iterator, bool>	insert(const value_type& val)
 	z->_col = RED;
 	_insert_fixup(z);
 	_size++;
-	return (make_pair(iterator(z, _nil, _root), true));
+	return (ft::make_pair(iterator(z, _nil, _root), true));
 }
 
-iterator	insert(iterator position, const value_type& val);
+iterator	insert(iterator position, const value_type& val)
+{
+	(void)position;
+	return ((insert(val)).first);
+}
 
 template	<class InputIterator>
-void		insert(InputIterator first, InputIterator last);
+void		insert(InputIterator first, InputIterator last)
+{
+	while (first != last)
+	{
+		insert(*first);
+		first++;
+	}
+}
 
 void		erase(iterator position)
 {
@@ -282,25 +307,49 @@ size_type	erase(const key_type & k)
 
 void		erase(iterator first, iterator last)
 {
-//	iterator	current;
 	iterator	next;
 
 	next = first;
 	while (first != last)
 	{
 		next++;
-		std::cerr << "destroying " << first._get_node()->_pair.first << std::endl;
+//		std::cerr << "destroying " << first._get_node()->_pair.first << std::endl;
 //		_destroy_node(first._get_node());
 		erase(first);
 		first = next;
 	}
 }
 
-void		swap(map& x);
-void		clear(void)
+void		swap(map& x)
 {
-	erase(begin(), end());
+	map<Key, T, Compare, Alloc>	tmp;
+
+	if (&x == this)
+		return ;
+
+	tmp._pairAlloc = _pairAlloc;
+	tmp._nodeAlloc = _nodeAlloc;
+	tmp._keyComp = _keyComp;
+	tmp._nil = _nil;
+	tmp._root = _root;
+	tmp._size = _size;
+
+	_pairAlloc = x._pairAlloc;
+	_nodeAlloc = x._nodeAlloc;
+	_keyComp = x._keyComp;
+	_nil = x._nil;
+	_root = x._root;
+	_size = x._size;
+
+	x._pairAlloc = tmp._pairAlloc;
+	x._nodeAlloc = tmp._nodeAlloc;
+	x._keyComp = tmp._keyComp;
+	x._nil = tmp._nil;
+	x._root = tmp._root;
+	x._size = tmp._size;
 }
+
+void			clear(void)				{erase(begin(), end());}
 
 /********************/
 /*	6 OBSERVERS		*/
@@ -317,13 +366,78 @@ iterator		find(const key_type& key)
 const_iterator	find(const key_type & key) const
 {return (const_iterator(_tree_search(_root, key), _nil, _root));}
 
-size_type		count(const key_type & key) const;
-iterator		lower_bound(const key_type & key);
-const_iterator	lower_bound(const key_type & key) const;
-iterator		upper_bound(const key_type & key);
-const_iterator	upper_bound(const key_type & key) const;
-pair<const_iterator, const_iterator>	equal_range(const key_type & key) const;
-pair<iterator, iterator>				equal_range(const key_type & key);
+size_type		count(const key_type & key) const
+{return ((find(key) == end()) ? 0 : 1);}
+
+iterator		lower_bound(const key_type & key)
+{
+	iterator	it;
+	iterator	ite;
+
+	it = begin();
+	ite = end();
+	while (it != ite)
+	{
+		if (_keyComp(it->first, key) == false)
+			return (it);
+		it++;
+	}
+	return (it);
+}
+
+const_iterator	lower_bound(const key_type & key) const
+{
+	const_iterator	it;
+	const_iterator	ite;
+
+	it = begin();
+	ite = end();
+	while (it != ite)
+	{
+		if (_keyComp(it->first, key) == false)
+			return (it);
+		it++;
+	}
+	return (it);
+}
+
+iterator		upper_bound(const key_type & key)
+{
+	iterator	it;
+	iterator	ite;
+
+	it = begin();
+	ite = end();
+	while (it != ite)
+	{
+		if (_keyComp(key, it->first) == true)
+			return (it);
+		it++;
+	}
+	return (it);
+}
+
+const_iterator	upper_bound(const key_type & key) const
+{
+	const_iterator	it;
+	const_iterator	ite;
+
+	it = begin();
+	ite = end();
+	while (it != ite)
+	{
+		if (_keyComp(key, it->first) == true)
+			return (it);
+		it++;
+	}
+	return (it);
+}
+
+pair<iterator, iterator>				equal_range(const key_type & key)
+{return (pair<iterator, iterator>(lower_bound(key), upper_bound(key)));}
+
+pair<const_iterator, const_iterator>	equal_range(const key_type & key) const
+{return (pair<const_iterator, const_iterator>(lower_bound(key), upper_bound(key)));}
 
 /************************/
 /*	8 PRIVATE HELPERS	*/
@@ -492,7 +606,7 @@ void	_right_rotate(node * x)
 	x->_p = y;
 }
 
-node *	_tree_search(node * x, const key_type & key)
+node *	_tree_search(node * x, const key_type & key) const
 {
 	while (x != _nil && key != x->_pair.first)
 	{
@@ -545,14 +659,14 @@ node *	_new_nil(const value_type & val = value_type())
 }
 
 public:		//	!!!
-node *	_tree_min(node * x)
+node *	_tree_min(node * x)	const
 {
 	while (x != _nil && x->_l != _nil)
 		x = x->_l;
 	return (x);
 }
 
-node *	_tree_max(node * x)
+node *	_tree_max(node * x)	const
 {
 	while (x != _nil && x->_r != _nil)
 		x = x->_r;

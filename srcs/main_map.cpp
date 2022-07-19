@@ -15,6 +15,10 @@ int main(void)
 
 	std::cerr << std::boolalpha;
 
+	test.clear();
+	test[10] = 1.0f;
+	test.clear();
+
 	it = test.begin();
 	ite = test.end();
 	while (it != ite)
