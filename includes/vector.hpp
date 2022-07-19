@@ -3,11 +3,11 @@
 
 # include <memory>
 # include <stdexcept>
-//# include <iomanip>		// !!!
-//# include <iostream>		// !!!
-//# include <cstdlib>
-//# include <cstddef>
-//# include <iterator>
+# include <iomanip>		// !!!
+# include <iostream>	// !!!
+# include <cstdlib>		// !!!
+# include <cstddef>		// !!!
+# include <iterator>	// !!!
 
 # include "type_utils.hpp"
 # include "cmp_utils.hpp"

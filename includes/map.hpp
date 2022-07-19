@@ -108,7 +108,16 @@ explicit	map(const key_compare & comp = key_compare(),
 template <class InputIterator>
 map(InputIterator first, InputIterator last,
 	const key_compare& comp = key_compare(),
-	const allocator_type& alloc = allocator_type());
+	const allocator_type& alloc = allocator_type()) :
+	_pairAlloc(alloc),
+	_nodeAlloc(node_allocator()),
+	_keyComp(comp),
+	_nil(_new_nil()),
+	_root(_nil),
+	_size(0)
+{
+	insert(first, last);
+}
 
 //	1 - ALLOCATE NEW _nil
 //	2 - insert(src.begin(), src.end())
@@ -198,7 +207,7 @@ const_reverse_iterator		rend(void) const
 /****************/
 bool						empty(void) const		{return (_root == _nil);}
 size_type					size(void) const		{return (_size);}
-size_type					max_size(void) const	{return (_pairAlloc.max_size());}
+size_type					max_size(void) const	{return (_nodeAlloc.max_size());}
 
 /************************/
 /*	4 ELEMENT ACCESS	*/
@@ -232,10 +241,6 @@ ft::pair<iterator, bool>	insert(const value_type& val)
 		else
 			x = x->_r;
 	}
-	/*
-	z = _nodeAlloc.allocate(1);
-	_nodeAlloc.construct(z, val);
-	*/
 	z = _new_node(val);
 	z->_p = y;
 	if (y == _nil)
