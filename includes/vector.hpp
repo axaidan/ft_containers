@@ -205,30 +205,22 @@ reverse_iterator		rbegin(void)
 {
 	reverse_iterator		it(_end);
 	return (it);
-//	return (reverse_iterator(--(end())));
 }
 
 const_reverse_iterator	rbegin(void) const
 {
 	return (rbegin());
-//	return (rbegin());
 }
 
 reverse_iterator		rend(void)
 {
 	reverse_iterator		it(_begin);
 	return (it);
-//	return (reverse_iterator(--(begin())));
-//	iterator	it(_begin + 1);
-//	return (reverse_iterator(it));
 }
 
 const_reverse_iterator	rend(void) const
 {
-//	const_reverse_iterator	it(_begin);
-//	return (it);
 	return (rend());
-//	return (rend());
 }
 
 
@@ -601,7 +593,7 @@ void			print_values(void) const
 	std::cout << std::endl;
 }
 
-};
+};		// class MapIterator
 
 /****************************/
 /*	RELATIONAL OPERATORS	*/
@@ -650,11 +642,10 @@ bool		operator>=(const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	return ((lhs < rhs) == false);
 }
 
-}	// namespace ft
-
-//	SHOULDN'T IT BE IN namespace ft ??? 
 template	<class T, class Alloc>
 void		swap(ft::vector<T,Alloc>& x, ft::vector<T,Alloc>& y)
 			{x.swap(y);}
 
-#endif // VECTOR_HPP
+}		// namespace ft
+
+#endif	// VECTOR_HPP
