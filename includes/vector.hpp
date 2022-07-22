@@ -137,28 +137,36 @@ vector&	operator=(const vector& rhs)
 	const_iterator	rhsEnd;
 	pointer			tmpBegin;
 	pointer			tmpNewBegin;
+	pointer			tmpCapacity;
+	bool			reallocated;
 
 	if (this == &rhs)
 		return (*this);
 	for (tmpBegin = _begin ; tmpBegin < _end ; tmpBegin++)
 		_allocator.destroy(tmpBegin);
+	reallocated = false;
 	if (rhs.size() > capacity())
 	{
 		tmpNewBegin = _allocator.allocate(rhs.size());
 		tmpBegin = tmpNewBegin;
+		tmpCapacity = tmpNewBegin + rhs.size();	// !!!
+		reallocated = true;
 	}
 	else
 	{
 		tmpNewBegin = _begin;
 		tmpBegin = _begin;
+		tmpCapacity = _capacity;				// !!!
 	}
 	for (rhsBegin = rhs.begin(), rhsEnd = rhs.end() ;
 			rhsBegin != rhsEnd ;
 			rhsBegin++, tmpBegin++)
 		_allocator.construct(tmpBegin, *rhsBegin);
+	if (reallocated == true)
+		_allocator.deallocate(_begin, capacity());
 	_begin = tmpNewBegin;
 	_end = tmpNewBegin + rhs.size();
-	_capacity = _end;
+	_capacity = tmpCapacity;
 	return (*this);
 }
 
@@ -168,7 +176,6 @@ vector&	operator=(const vector& rhs)
 ~vector(void)
 {
 	clear();
-//	std::cerr << "VECTOR DESTRUCTOR, ABOUT TO deallocate()" << std::endl;
 	if (_begin != NULL)
 		_allocator.deallocate(_begin, capacity());
 }

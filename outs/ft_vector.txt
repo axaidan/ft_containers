@@ -1,3 +1,7 @@
+=========================================
+=	CONSTRUCTION/ASSIGNATION	=
+=========================================
+
 ===	display_capacity() :
 ===	CONTEXT : default constructed empty vector
 	===	v.empty()	=	true
@@ -17,7 +21,7 @@
 	===	v.max_size()	=	4611686018427387903
 
 ===	display_content() :
-===	CONTEXT : fill constructed 10 elens
+===	CONTEXT : fill constructed 10 elems
 	===	v[      0]	=	42
 	===	v[      1]	=	42
 	===	v[      2]	=	42
@@ -41,14 +45,14 @@
 	===	NO CONTENT
 
 ===	display_capacity() :
-===	CONTEXT : range constructed from v_fill1 begin/end
+===	CONTEXT : range constructed from v_fill1 begin/end - 2
 	===	v.empty()	=	false
-	===	v.size()	=	10
-	===	v.capacity()	=	10
+	===	v.size()	=	8
+	===	v.capacity()	=	8
 	===	v.max_size()	=	4611686018427387903
 
 ===	display_content() :
-===	CONTEXT : range constructed from v_fill1 begin/end
+===	CONTEXT : range constructed from v_fill1 begin/end - 2
 	===	v[      0]	=	42
 	===	v[      1]	=	42
 	===	v[      2]	=	42
@@ -57,8 +61,6 @@
 	===	v[      5]	=	42
 	===	v[      6]	=	42
 	===	v[      7]	=	42
-	===	v[      8]	=	42
-	===	v[      9]	=	42
 
 ===	display_capacity() :
 ===	CONTEXT : range constructed from v_fill1 begin/begin
@@ -90,4 +92,40 @@
 	===	v[      7]	=	42
 	===	v[      8]	=	42
 	===	v[      9]	=	42
+
+===	display_relationals() :
+===	CONTEXT : copy constructed from v_fill1
+	===	(v1 == v2)	=	true
+	===	(v1 != v2)	=	false
+	===	(v1 <  v2)	=	false
+	===	(v1 <= v2)	=	true
+	===	(v1 >  v2)	=	false
+	===	(v1 <= v2)	=	true
+
+===	display_capacity() :
+===	CONTEXT : v_copy = v_range1
+	===	v.empty()	=	false
+	===	v.size()	=	8
+	===	v.capacity()	=	10
+	===	v.max_size()	=	4611686018427387903
+
+===	display_content() :
+===	CONTEXT : v_copy = v_range1
+	===	v[      0]	=	42
+	===	v[      1]	=	42
+	===	v[      2]	=	42
+	===	v[      3]	=	42
+	===	v[      4]	=	42
+	===	v[      5]	=	42
+	===	v[      6]	=	42
+	===	v[      7]	=	42
+
+===	display_relationals() :
+===	CONTEXT : v_copy = v_range1
+	===	(v1 == v2)	=	true
+	===	(v1 != v2)	=	false
+	===	(v1 <  v2)	=	false
+	===	(v1 <= v2)	=	true
+	===	(v1 >  v2)	=	false
+	===	(v1 <= v2)	=	true
 

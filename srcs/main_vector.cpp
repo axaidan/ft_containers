@@ -56,31 +56,71 @@ void	display_content(::vector<T> & v, std::string context)
 	std::cout << std::endl;
 }
 
-int		main(void)
+void	display_relationals(vector<T> & v1, vector<T> & v2,
+		std::string context)
 {
+	std::cout << std::boolalpha;
+	std::cout << FORMAT1 << "display_relationals() :" << std::endl;
+	std::cout << FORMAT1 << "CONTEXT : " << context << std::endl;
+	std::cout << FORMAT2 << "(v1 == v2)\t=\t" << (v1 == v2) << std::endl;
+	std::cout << FORMAT2 << "(v1 != v2)\t=\t" << (v1 != v2) << std::endl;
+	std::cout << FORMAT2 << "(v1 <  v2)\t=\t" << (v1 < v2) << std::endl;
+	std::cout << FORMAT2 << "(v1 <= v2)\t=\t" << (v1 <= v2) << std::endl;
+	std::cout << FORMAT2 << "(v1 >  v2)\t=\t" << (v1 >  v2) << std::endl;
+	std::cout << FORMAT2 << "(v1 <= v2)\t=\t" << (v1 >= v2) << std::endl;
+	std::cout << std::endl;
+}
+
+void	construction_assignation(void)
+{
+	std::string	context;
+
+	std::cout << "=========================================" << std::endl;
+	std::cout << "=	CONSTRUCTION/ASSIGNATION	=" << std::endl;
+	std::cout << "=========================================" << std::endl;
+	std::cout << std::endl;
+
 	//	CONSTRUCTORS
 	//	vector(void)	
 	::vector<T>	v;
-	display_capacity(v, "default constructed empty vector");
-	display_content(v, "default constructed empty vector");
+ 	context = "default constructed empty vector";
+	display_capacity(v, context);
+	display_content(v, context);
 	//	vector(n, val)
 	::vector<T>	v_fill1(10, VAL1);
-	display_capacity(v_fill1, "fill constructed 10 elems");
-	display_content(v_fill1, "fill constructed 10 elens");
+	context = "fill constructed 10 elems";
+	display_capacity(v_fill1, context);
+	display_content(v_fill1, context);
 	::vector<T>	v_fill2(0, VAL1);
-	display_capacity(v_fill2, "fill constructed 0 elem");
-	display_content(v_fill2, "fill constructed 0 elem");
+	context = "fill constructed 0 elem";
+	display_capacity(v_fill2, context);
+	display_content(v_fill2, context);
 	//	vector(first, last)
-	::vector<T>	v_range1(v_fill1.begin(), v_fill1.end());
-	display_capacity(v_range1, "range constructed from v_fill1 begin/end");
-	display_content(v_range1, "range constructed from v_fill1 begin/end");
+	::vector<T>	v_range1(v_fill1.begin(), v_fill1.end() - 2);
+	context = "range constructed from v_fill1 begin/end - 2";
+	display_capacity(v_range1, context);
+	display_content(v_range1, context);
 	::vector<T>	v_range2(v_fill1.begin(), v_fill1.begin());
-	display_capacity(v_range2, "range constructed from v_fill1 begin/begin");
-	display_content(v_range2, "range constructed from v_fill1 begin/begin");
+	context = "range constructed from v_fill1 begin/begin";
+	display_capacity(v_range2, context);
+	display_content(v_range2, context);
 	::vector<T>	v_copy(v_fill1);
-	display_capacity(v_copy, "copy constructed from v_fill1");
-	display_content(v_copy, "copy constructed from v_fill1");
-	
+	context = "copy constructed from v_fill1";
+	display_capacity(v_copy, context);
+	display_content(v_copy, context);
+	display_relationals(v_fill1, v_copy, context);
+	//	ASSIGNATION
+	v_copy = v_range1;
+	context = "v_copy = v_range1";
+	display_capacity(v_copy, context);
+	display_content(v_copy, context);
+	display_relationals(v_copy, v_range1, context);
+}
 
+int		main(void)
+{
+
+	construction_assignation();
+	
 	return (0);
 }

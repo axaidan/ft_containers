@@ -82,7 +82,7 @@ vector		:	${HEADERS} srcs/main_vector.cpp
 			${CXX} ${CXXFLAGS} -I ${INC_FLD} -DSTD \
 				srcs/main_vector.cpp -o std_vector
 			./std_vector > outs/std_vector.txt
-			cat outs/ft_vector.txt
+			cat -n outs/ft_vector.txt
 			diff outs/std_vector.txt outs/ft_vector.txt
 
 			
