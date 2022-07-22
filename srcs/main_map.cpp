@@ -13,8 +13,10 @@ int main(void)
 	ft::pair<ft::map<int, float>::iterator, bool>	insert_ret;
 	node *											n;
 
+
 	std::cerr << std::boolalpha;
 
+	/*
 	test.clear();
 	test[10] = 1.0f;
 	test.clear();
@@ -88,11 +90,9 @@ int main(void)
 	std::cerr << "=== (it == test.end())\t=\t" << (it == test.end()) << std::endl;
 	test.graphic_visualization(test._root, 0);
 
-	/*
 	for (i = 0 ; i < 50 ; i++)
 		test.insert(ft::make_pair<int, float>(i, -0.99f));
 	test.graphic_visualization(test._root, 0);
-	*/
 
 	std::cerr << "(test._root->_p == _nil) =\t" <<
 		(test._root->_p == test._nil) << std::endl;
@@ -110,6 +110,86 @@ int main(void)
 	test.erase(12);
 	test.graphic_visualization(test._root, 0);
 	test.erase(test.begin(), test.end());
+	*/
+
+	(void)n;
+	int i	= 0;
+	int x;
+	while (i < 15)
+	{
+		test.insert(ft::make_pair(i * 2 % 6 + i * 3, 100.f));
+		i++;
+	}
+	x = 10;
+	test.insert(ft::make_pair(x, 100.f));
+	test.graphic_visualization(test._root, 0);
+	std::cerr << "erased " << x << "\n";
+	test.erase(x);
+	test.graphic_visualization(test._root, 0);
+	x = 8;
+	std::cerr << "insert " << x << "\n";
+	test.insert(ft::make_pair(x, 100.f));
+	test.graphic_visualization(test._root, 0);
+
+	x = 220;
+	std::cerr << "insert " << x << "\n";
+	test.insert(ft::make_pair(x, 100.f));
+	test.graphic_visualization(test._root, 0);
+	x = 51;
+	std::cerr << "insert " << x << "\n";
+	test.insert(ft::make_pair(x, 100.f));
+	test.graphic_visualization(test._root, 0);
+	x = 72;
+	std::cerr << "insert " << x << "\n";
+	test.insert(ft::make_pair(x, 100.f));
+	test.graphic_visualization(test._root, 0);
+	x = 23;
+	std::cerr << "insert " << x << "\n";
+	test.insert(ft::make_pair(x, 100.f));
+	x = 4;
+	std::cerr << "insert " << x << "\n";
+	test.insert(ft::make_pair(x, 100.f));
+	test.graphic_visualization(test._root, 0);
+	x = 9;
+	std::cerr << "insert " << x << "\n";
+	test.insert(ft::make_pair(x, 100.f));
+	test.graphic_visualization(test._root, 0);
+
+	x = 12;
+	std::cerr << "insert " << x << "\n";
+	test.insert(ft::make_pair(x, 100.f));
+	test.graphic_visualization(test._root, 0);
+	test.data_visualization(test._root);
+	x = 0;
+	int sign = 1;
+	while (x < 1000)
+	{
+		test.insert(ft::make_pair(x * sign, 100.f));
+		x++;
+		sign *= -1;
+	}
+	//test.graphic_visualization(test._root, 0);
+	while (x < 123098)
+	{
+		test.insert(ft::make_pair(x * x * x * x * sign, 100.f));
+		x++;
+		sign *= -1;
+	}
+	test.graphic_visualization(test._root, 0);
+	/*
+	while (x <  200)
+	{
+		test.insert(ft::make_pair(x * sign, 100.f));
+		x++;
+		sign *= -1;
+	}
+	test.graphic_visualization(test._root, 0);
+	*/
+
+
+
+
+
 
 	return(0);
 }

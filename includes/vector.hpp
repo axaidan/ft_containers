@@ -53,7 +53,6 @@ explicit	vector(const allocator_type& alloc = allocator_type()) :
 	_end(NULL),
 	_capacity(NULL)
 {
-//	std::cerr << "VECTOR DEFAULT CONSTRUCTOR" << std::endl;
 	return ;
 }
 

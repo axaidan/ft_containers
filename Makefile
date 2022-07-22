@@ -6,12 +6,21 @@ GTEST_SRCS		=	srcs/gtest.cpp
 
 SRCS			=	main.cpp
 
-HEADERS			=	${INC_FLD}stack.hpp \
-					${INC_FLD}vector.hpp \
-					${INC_FLD}type_utils.hpp \
-					${INC_FLD}ContainsAlloc.hpp
+HEADERS			=	${INC_FLD}/stack.hpp \
+					${INC_FLD}/vector.hpp \
+					${INC_FLD}/set.hpp \
+					${INC_FLD}/map.hpp \
+					${INC_FLD}/iterator_utils.hpp \
+					${INC_FLD}/vector_iterator.hpp \
+					${INC_FLD}/map_iterator.hpp \
+					${INC_FLD}/set_iterator.hpp \
+					${INC_FLD}/pair.hpp \
+					${INC_FLD}/rbnode.hpp \
+					${INC_FLD}/cmp_utils.hpp \
+					${INC_FLD}/type_utils.hpp \
+					${INC_FLD}/ContainsAlloc.hpp
 
-INC_FLD			=	includes/
+INC_FLD			=	includes
 
 GTEST_FLD_INC	=	.	
 
@@ -65,5 +74,18 @@ test_map	:	includes/map.hpp includes/rbnode.hpp srcs/main_map.cpp \
 			#${CXX} -D${ARG} ${CXXFLAGS} -I ${INC_FLD}
 			${CXX} ${CXXFLAGS} -I ${INC_FLD} \
 				srcs/main_map.cpp -o test_map
+
+vector		:	${HEADERS} srcs/main_vector.cpp
+			${CXX} ${CXXFLAGS} -I ${INC_FLD} \
+				srcs/main_vector.cpp -o ft_vector
+			./ft_vector > outs/ft_vector.txt
+			${CXX} ${CXXFLAGS} -I ${INC_FLD} -DSTD \
+				srcs/main_vector.cpp -o std_vector
+			./std_vector > outs/std_vector.txt
+			cat outs/ft_vector.txt
+			diff outs/std_vector.txt outs/ft_vector.txt
+
+			
+
 
 .PHONY		:	all re clean fclean

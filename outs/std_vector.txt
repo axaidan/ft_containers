@@ -1,0 +1,93 @@
+===	display_capacity() :
+===	CONTEXT : default constructed empty vector
+	===	v.empty()	=	true
+	===	v.size()	=	0
+	===	v.capacity()	=	0
+	===	v.max_size()	=	4611686018427387903
+
+===	display_content() :
+===	CONTEXT : default constructed empty vector
+	===	NO CONTENT
+
+===	display_capacity() :
+===	CONTEXT : fill constructed 10 elems
+	===	v.empty()	=	false
+	===	v.size()	=	10
+	===	v.capacity()	=	10
+	===	v.max_size()	=	4611686018427387903
+
+===	display_content() :
+===	CONTEXT : fill constructed 10 elens
+	===	v[      0]	=	42
+	===	v[      1]	=	42
+	===	v[      2]	=	42
+	===	v[      3]	=	42
+	===	v[      4]	=	42
+	===	v[      5]	=	42
+	===	v[      6]	=	42
+	===	v[      7]	=	42
+	===	v[      8]	=	42
+	===	v[      9]	=	42
+
+===	display_capacity() :
+===	CONTEXT : fill constructed 0 elem
+	===	v.empty()	=	true
+	===	v.size()	=	0
+	===	v.capacity()	=	0
+	===	v.max_size()	=	4611686018427387903
+
+===	display_content() :
+===	CONTEXT : fill constructed 0 elem
+	===	NO CONTENT
+
+===	display_capacity() :
+===	CONTEXT : range constructed from v_fill1 begin/end
+	===	v.empty()	=	false
+	===	v.size()	=	10
+	===	v.capacity()	=	10
+	===	v.max_size()	=	4611686018427387903
+
+===	display_content() :
+===	CONTEXT : range constructed from v_fill1 begin/end
+	===	v[      0]	=	42
+	===	v[      1]	=	42
+	===	v[      2]	=	42
+	===	v[      3]	=	42
+	===	v[      4]	=	42
+	===	v[      5]	=	42
+	===	v[      6]	=	42
+	===	v[      7]	=	42
+	===	v[      8]	=	42
+	===	v[      9]	=	42
+
+===	display_capacity() :
+===	CONTEXT : range constructed from v_fill1 begin/begin
+	===	v.empty()	=	true
+	===	v.size()	=	0
+	===	v.capacity()	=	0
+	===	v.max_size()	=	4611686018427387903
+
+===	display_content() :
+===	CONTEXT : range constructed from v_fill1 begin/begin
+	===	NO CONTENT
+
+===	display_capacity() :
+===	CONTEXT : copy constructed from v_fill1
+	===	v.empty()	=	false
+	===	v.size()	=	10
+	===	v.capacity()	=	10
+	===	v.max_size()	=	4611686018427387903
+
+===	display_content() :
+===	CONTEXT : copy constructed from v_fill1
+	===	v[      0]	=	42
+	===	v[      1]	=	42
+	===	v[      2]	=	42
+	===	v[      3]	=	42
+	===	v[      4]	=	42
+	===	v[      5]	=	42
+	===	v[      6]	=	42
+	===	v[      7]	=	42
+	===	v[      8]	=	42
+	===	v[      9]	=	42
+
