@@ -252,10 +252,6 @@ void			resize(size_type n, value_type val = value_type())
 		_end = _begin + n;
 		return ;
 	}
-	/*
-	if (n > capacity())
-		reserve(n);
-	*/
 	if (n > capacity())
 	{
 		reserve(size() * 2);
@@ -264,7 +260,7 @@ void			resize(size_type n, value_type val = value_type())
 	}
 	tmp = _end;
 	_end = _begin + n;
-	while(tmp < _end)
+	while (tmp < _end)
 	{
 		_allocator.construct(tmp, val);
 		tmp++;

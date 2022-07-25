@@ -47,7 +47,7 @@ void	rand_push_back(vector<T> & v)
 	}
 }
 
-void	display_capacity(::vector<T> & v, std::string context)
+void	display_capacity(const ::vector<T> & v, std::string context)
 {
 	std::cout << std::boolalpha;
 	std::cout << FORMAT1 << "display_capacity() :" << std::endl;
@@ -59,16 +59,19 @@ void	display_capacity(::vector<T> & v, std::string context)
 	std::cout << std::endl;
 }
 
-void	display_content(::vector<T> & v, std::string context)
+void	display_content(const ::vector<T> & v, std::string context)
 {
 	std::cout << FORMAT1 << "display_content() :" << std::endl;
 	std::cout << FORMAT1 << "CONTEXT : " << context << std::endl;
-	::vector<T>::iterator	it	=	v.begin();
-	::vector<T>::iterator	ite	=	v.end();
-	size_t					i	=	0;
+	::vector<T>::const_iterator	it	=	v.begin();
+	::vector<T>::const_iterator	ite	=	v.end();
+	size_t						i	=	0;
 
 	if (v.empty() == true)
-		std::cout << FORMAT2 << "NO CONTENT" << std::endl;
+	{
+		std::cout << FORMAT2 << "NO CONTENT" << std::endl << std::endl;
+		return ;
+	}
 	while (it != ite)
 	{
 		std::cout << FORMAT2 << "v[" << std::setw(7) << i 
@@ -79,7 +82,8 @@ void	display_content(::vector<T> & v, std::string context)
 	std::cout << std::endl;
 }
 
-void	display_relationals(vector<T> & v1, vector<T> & v2,
+void	display_relationals(const vector<T> & v1,
+		const vector<T> & v2,
 		std::string context)
 {
 	std::cout << std::boolalpha;
@@ -91,6 +95,29 @@ void	display_relationals(vector<T> & v1, vector<T> & v2,
 	std::cout << FORMAT2 << "(v1 <= v2)\t=\t" << (v1 <= v2) << std::endl;
 	std::cout << FORMAT2 << "(v1 >  v2)\t=\t" << (v1 >  v2) << std::endl;
 	std::cout << FORMAT2 << "(v1 >= v2)\t=\t" << (v1 >= v2) << std::endl;
+	std::cout << std::endl;
+}
+
+void	display_elem_access(const vector<T> & v,
+		std::string context)
+{
+	std::cout << std::boolalpha;
+	std::cout << FORMAT1 << "display_elem_access() :" << std::endl;
+	std::cout << FORMAT1 << "CONTEXT : " << context << std::endl;
+
+	if (v.empty() == true)
+	{
+		std::cout << FORMAT2 << "NO CONTENT" << std::endl << std::endl;
+		return ;
+	}
+	std::cout << FORMAT2 << "v.front()\t=\t" << v.front() << std::endl;
+	std::cout << FORMAT2 << "v.at(0)\t\t=\t" << v.at(0) << std::endl;
+	std::cout << FORMAT2 << "v[0]\t\t=\t" << v[0] << std::endl;
+	std::cout << FORMAT2 << "v.back()\t=\t" << v.back() << std::endl;
+	std::cout << FORMAT2 << "v.at(size()-1)\t=\t" << v.at(v.size() - 1)
+		<< std::endl;
+	std::cout << FORMAT2 << "v[v.size()-1]\t=\t" << v[v.size() - 1]
+		<< std::endl;
 	std::cout << std::endl;
 }
 
@@ -117,7 +144,6 @@ void	construction(void)
 	context = "fill constructed 0 elem";
 	display_capacity(v_fill2, context);
 	display_content(v_fill2, context);
-
 	//	vector(first, last)
 	::vector<T>	v_range1(v_fill1.begin(), v_fill1.end() - 2);
 	context = "range constructed from v_fill1 begin/end - 2";
@@ -182,6 +208,7 @@ void	capacity_changes(void)
 	std::cout << "=\tCAPACITY CHANGES\t=" << std::endl;
 	std::cout << "=================================" << std::endl;
 	std::cout << std::endl;
+
 	vector<T>	v;
 
 	rand_push_back(v);
@@ -192,30 +219,133 @@ void	capacity_changes(void)
 	context = "v.resize(v.size() / 2); resizing with (n < size)";
 	display_capacity(v, context);
 	display_content(v, context);
+	display_elem_access(v, context);
 	//		if n > size
 	v.resize(v.size() * 3, VAL2);
 	context = "v.resize(v.size() * 3); resizing with (n > size)";
 	display_capacity(v, context);
 	display_content(v, context);
+	display_elem_access(v, context);
 	//		if n > size && n > capacity
 	v.resize(v.capacity() + 3, VAL1);
 	context = "v.resize(v.capacity() * 2); resizing with (n > capacity)";
 	display_capacity(v, context);
 	display_content(v, context);
+	display_elem_access(v, context);
+
 	v.resize(N, VAL1);
 	std::cout << FORMAT1 << "v.resize(N);" << std::endl;
+
+	//		if n > capacity
 	v.reserve(v.capacity() + 1);
 	context = "v.reserve(v.capacity() + 1); reserving one more elem";
 	display_capacity(v, context);
 	display_content(v, context);
+	display_elem_access(v, context);
+	//		if n == capacity
 	v.reserve(v.capacity());
 	context = "v.reserve(v.capacity()); reserving same capacity";
 	display_capacity(v, context);
 	display_content(v, context);
+	display_elem_access(v, context);
+	//		if n < capacity
 	v.reserve(v.capacity());
 	context = "v.reserve(v.capacity() - 1); reserving lesser capacity";
 	display_capacity(v, context);
 	display_content(v, context);
+	display_elem_access(v, context);
+	//		if n > max_size()
+	try {
+		v.reserve(v.capacity());
+	}
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
+	context = "v.reserve(v.max_size() + 1); exception thrown";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+	
+}
+
+void	element_access(void)
+{
+	std::cout << "=========================" << std::endl;
+	std::cout << "=\tELEMENT ACCESS\t=" << std::endl;
+	std::cout << "=========================" << std::endl;
+	std::cout << std::endl;
+
+	vector<T>		v(N, VAL3);
+	vector<T>		bckp(v);
+	size_t			size;
+	T				copy;
+
+	copy = VAL2;
+	rand_push_back(v);
+	const vector<T>	const_v(v);
+	size = v.size();
+
+	//	operator[]
+	std::cout << FORMAT1 << "operator[] access / assignation" << std::endl;
+	for (size_t i = 0 ; i < size ; i++)
+	{
+		std::cout << FORMAT2 << v[i] << std::endl;
+		v[i] = copy;
+	}
+	std::cout << std::endl;
+
+	context = "v[i++] = copy; each member assigned";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+
+	for (size_t i = 0 ; i < size ; i++)
+	{
+		copy = const_v[i];
+//		const_v[i] = copy;	// 	WON'T COMPILE - const_reference
+	}
+
+	//	non-const access
+	copy = v.front();
+	v.front() = copy;
+	copy = v.back();
+	v.front() = copy;
+
+	//	const access
+	copy = const_v.front();
+//	const_v.front() = copy;	// 	WON'T COMPILE - const_reference
+	copy = const_v.back();
+//	const_v.front() = copy;	// 	WON'T COMPILE - const_reference
+
+	//	at() over-bounds exception test
+	try {
+		v.at(v.size());
+	}
+	catch (std::exception & e) {
+		std::cerr << e.what();
+	}
+
+	copy = VAL3;
+	v = const_v;
+	//	at() retrieval and assignation
+	std::cout << FORMAT1 << "at() access / assignation" << std::endl;
+	for (size_t i = 0 ; i < size ; i++)
+	{
+		copy = v.at(i);
+		v.at(i) = copy;
+		copy = const_v.at(i);
+		std::cout << FORMAT2 << copy << std::endl;
+//		const_v.at(i) = copy;	// 	WON'T COMPILE - const_reference
+
+	}
+	context = "after at() retrieval and assignation test";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+	context = "after at() retrieval and assignation test - const version";
+	display_capacity(const_v, context);
+	display_content(const_v, context);
+	display_elem_access(const_v, context);
 }
 
 int		main(void)
@@ -224,6 +354,7 @@ int		main(void)
 	construction();
 	assignation();
 	capacity_changes();
+	element_access();
 
 	
 	return (0);

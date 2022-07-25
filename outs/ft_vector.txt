@@ -278,6 +278,15 @@
 	===	v[      8]	=	42
 	===	v[      9]	=	-1
 
+===	display_elem_access() :
+===	CONTEXT : v.resize(v.size() / 2); resizing with (n < size)
+	===	v.front()	=	-1
+	===	v.at(0)		=	-1
+	===	v[0]		=	-1
+	===	v.back()	=	-1
+	===	v.at(size()-1)	=	-1
+	===	v[v.size()-1]	=	-1
+
 ===	display_capacity() :
 ===	CONTEXT : v.resize(v.size() * 3); resizing with (n > size)
 	===	v.empty()	=	false
@@ -317,6 +326,15 @@
 	===	v[     27]	=	1337
 	===	v[     28]	=	1337
 	===	v[     29]	=	1337
+
+===	display_elem_access() :
+===	CONTEXT : v.resize(v.size() * 3); resizing with (n > size)
+	===	v.front()	=	-1
+	===	v.at(0)		=	-1
+	===	v[0]		=	-1
+	===	v.back()	=	1337
+	===	v.at(size()-1)	=	1337
+	===	v[v.size()-1]	=	1337
 
 ===	display_capacity() :
 ===	CONTEXT : v.resize(v.capacity() * 2); resizing with (n > capacity)
@@ -363,6 +381,15 @@
 	===	v[     33]	=	42
 	===	v[     34]	=	42
 
+===	display_elem_access() :
+===	CONTEXT : v.resize(v.capacity() * 2); resizing with (n > capacity)
+	===	v.front()	=	-1
+	===	v.at(0)		=	-1
+	===	v[0]		=	-1
+	===	v.back()	=	42
+	===	v.at(size()-1)	=	42
+	===	v[v.size()-1]	=	42
+
 ===	v.resize(N);
 ===	display_capacity() :
 ===	CONTEXT : v.reserve(v.capacity() + 1); reserving one more elem
@@ -384,6 +411,15 @@
 	===	v[      8]	=	42
 	===	v[      9]	=	-1
 
+===	display_elem_access() :
+===	CONTEXT : v.reserve(v.capacity() + 1); reserving one more elem
+	===	v.front()	=	-1
+	===	v.at(0)		=	-1
+	===	v[0]		=	-1
+	===	v.back()	=	-1
+	===	v.at(size()-1)	=	-1
+	===	v[v.size()-1]	=	-1
+
 ===	display_capacity() :
 ===	CONTEXT : v.reserve(v.capacity()); reserving same capacity
 	===	v.empty()	=	false
@@ -404,6 +440,15 @@
 	===	v[      8]	=	42
 	===	v[      9]	=	-1
 
+===	display_elem_access() :
+===	CONTEXT : v.reserve(v.capacity()); reserving same capacity
+	===	v.front()	=	-1
+	===	v.at(0)		=	-1
+	===	v[0]		=	-1
+	===	v.back()	=	-1
+	===	v.at(size()-1)	=	-1
+	===	v[v.size()-1]	=	-1
+
 ===	display_capacity() :
 ===	CONTEXT : v.reserve(v.capacity() - 1); reserving lesser capacity
 	===	v.empty()	=	false
@@ -423,4 +468,256 @@
 	===	v[      7]	=	42
 	===	v[      8]	=	42
 	===	v[      9]	=	-1
+
+===	display_elem_access() :
+===	CONTEXT : v.reserve(v.capacity() - 1); reserving lesser capacity
+	===	v.front()	=	-1
+	===	v.at(0)		=	-1
+	===	v[0]		=	-1
+	===	v.back()	=	-1
+	===	v.at(size()-1)	=	-1
+	===	v[v.size()-1]	=	-1
+
+===	display_capacity() :
+===	CONTEXT : v.reserve(v.max_size() + 1); exception thrown
+	===	v.empty()	=	false
+	===	v.size()	=	10
+	===	v.capacity()	=	61
+	===	v.max_size()	=	4611686018427387903
+
+===	display_content() :
+===	CONTEXT : v.reserve(v.max_size() + 1); exception thrown
+	===	v[      0]	=	-1
+	===	v[      1]	=	42
+	===	v[      2]	=	42
+	===	v[      3]	=	42
+	===	v[      4]	=	42
+	===	v[      5]	=	1337
+	===	v[      6]	=	42
+	===	v[      7]	=	42
+	===	v[      8]	=	42
+	===	v[      9]	=	-1
+
+===	display_elem_access() :
+===	CONTEXT : v.reserve(v.max_size() + 1); exception thrown
+	===	v.front()	=	-1
+	===	v.at(0)		=	-1
+	===	v[0]		=	-1
+	===	v.back()	=	-1
+	===	v.at(size()-1)	=	-1
+	===	v[v.size()-1]	=	-1
+
+=========================
+=	ELEMENT ACCESS	=
+=========================
+
+===	operator[] access / assignation
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	42
+	===	1337
+	===	42
+	===	1337
+	===	-1
+	===	42
+	===	42
+	===	42
+	===	-1
+	===	-1
+	===	1337
+	===	-1
+	===	1337
+	===	42
+	===	1337
+	===	42
+	===	-1
+	===	-1
+	===	1337
+	===	1337
+
+===	display_capacity() :
+===	CONTEXT : v[i++] = copy; each member assigned
+	===	v.empty()	=	false
+	===	v.size()	=	30
+	===	v.capacity()	=	40
+	===	v.max_size()	=	4611686018427387903
+
+===	display_content() :
+===	CONTEXT : v[i++] = copy; each member assigned
+	===	v[      0]	=	1337
+	===	v[      1]	=	1337
+	===	v[      2]	=	1337
+	===	v[      3]	=	1337
+	===	v[      4]	=	1337
+	===	v[      5]	=	1337
+	===	v[      6]	=	1337
+	===	v[      7]	=	1337
+	===	v[      8]	=	1337
+	===	v[      9]	=	1337
+	===	v[     10]	=	1337
+	===	v[     11]	=	1337
+	===	v[     12]	=	1337
+	===	v[     13]	=	1337
+	===	v[     14]	=	1337
+	===	v[     15]	=	1337
+	===	v[     16]	=	1337
+	===	v[     17]	=	1337
+	===	v[     18]	=	1337
+	===	v[     19]	=	1337
+	===	v[     20]	=	1337
+	===	v[     21]	=	1337
+	===	v[     22]	=	1337
+	===	v[     23]	=	1337
+	===	v[     24]	=	1337
+	===	v[     25]	=	1337
+	===	v[     26]	=	1337
+	===	v[     27]	=	1337
+	===	v[     28]	=	1337
+	===	v[     29]	=	1337
+
+===	display_elem_access() :
+===	CONTEXT : v[i++] = copy; each member assigned
+	===	v.front()	=	1337
+	===	v.at(0)		=	1337
+	===	v[0]		=	1337
+	===	v.back()	=	1337
+	===	v.at(size()-1)	=	1337
+	===	v[v.size()-1]	=	1337
+
+===	at() access / assignation
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	-1
+	===	42
+	===	1337
+	===	42
+	===	1337
+	===	-1
+	===	42
+	===	42
+	===	42
+	===	-1
+	===	-1
+	===	1337
+	===	-1
+	===	1337
+	===	42
+	===	1337
+	===	42
+	===	-1
+	===	-1
+	===	1337
+	===	1337
+===	display_capacity() :
+===	CONTEXT : after at() retrieval and assignation test
+	===	v.empty()	=	false
+	===	v.size()	=	30
+	===	v.capacity()	=	40
+	===	v.max_size()	=	4611686018427387903
+
+===	display_content() :
+===	CONTEXT : after at() retrieval and assignation test
+	===	v[      0]	=	-1
+	===	v[      1]	=	-1
+	===	v[      2]	=	-1
+	===	v[      3]	=	-1
+	===	v[      4]	=	-1
+	===	v[      5]	=	-1
+	===	v[      6]	=	-1
+	===	v[      7]	=	-1
+	===	v[      8]	=	-1
+	===	v[      9]	=	-1
+	===	v[     10]	=	42
+	===	v[     11]	=	1337
+	===	v[     12]	=	42
+	===	v[     13]	=	1337
+	===	v[     14]	=	-1
+	===	v[     15]	=	42
+	===	v[     16]	=	42
+	===	v[     17]	=	42
+	===	v[     18]	=	-1
+	===	v[     19]	=	-1
+	===	v[     20]	=	1337
+	===	v[     21]	=	-1
+	===	v[     22]	=	1337
+	===	v[     23]	=	42
+	===	v[     24]	=	1337
+	===	v[     25]	=	42
+	===	v[     26]	=	-1
+	===	v[     27]	=	-1
+	===	v[     28]	=	1337
+	===	v[     29]	=	1337
+
+===	display_elem_access() :
+===	CONTEXT : after at() retrieval and assignation test
+	===	v.front()	=	-1
+	===	v.at(0)		=	-1
+	===	v[0]		=	-1
+	===	v.back()	=	1337
+	===	v.at(size()-1)	=	1337
+	===	v[v.size()-1]	=	1337
+
+===	display_capacity() :
+===	CONTEXT : after at() retrieval and assignation test - const version
+	===	v.empty()	=	false
+	===	v.size()	=	30
+	===	v.capacity()	=	30
+	===	v.max_size()	=	4611686018427387903
+
+===	display_content() :
+===	CONTEXT : after at() retrieval and assignation test - const version
+	===	v[      0]	=	-1
+	===	v[      1]	=	-1
+	===	v[      2]	=	-1
+	===	v[      3]	=	-1
+	===	v[      4]	=	-1
+	===	v[      5]	=	-1
+	===	v[      6]	=	-1
+	===	v[      7]	=	-1
+	===	v[      8]	=	-1
+	===	v[      9]	=	-1
+	===	v[     10]	=	42
+	===	v[     11]	=	1337
+	===	v[     12]	=	42
+	===	v[     13]	=	1337
+	===	v[     14]	=	-1
+	===	v[     15]	=	42
+	===	v[     16]	=	42
+	===	v[     17]	=	42
+	===	v[     18]	=	-1
+	===	v[     19]	=	-1
+	===	v[     20]	=	1337
+	===	v[     21]	=	-1
+	===	v[     22]	=	1337
+	===	v[     23]	=	42
+	===	v[     24]	=	1337
+	===	v[     25]	=	42
+	===	v[     26]	=	-1
+	===	v[     27]	=	-1
+	===	v[     28]	=	1337
+	===	v[     29]	=	1337
+
+===	display_elem_access() :
+===	CONTEXT : after at() retrieval and assignation test - const version
+	===	v.front()	=	-1
+	===	v.at(0)		=	-1
+	===	v[0]		=	-1
+	===	v.back()	=	1337
+	===	v.at(size()-1)	=	1337
+	===	v[v.size()-1]	=	1337
 
