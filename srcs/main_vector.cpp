@@ -336,7 +336,6 @@ void	element_access(void)
 		copy = const_v.at(i);
 		std::cout << FORMAT2 << copy << std::endl;
 //		const_v.at(i) = copy;	// 	WON'T COMPILE - const_reference
-
 	}
 	context = "after at() retrieval and assignation test";
 	display_capacity(v, context);
@@ -348,6 +347,23 @@ void	element_access(void)
 	display_elem_access(const_v, context);
 }
 
+/*
+void	modifiers(void)
+{
+	assign(first, last);
+	assign(n, val);
+	push_back();
+	pop_back();
+	insert(it pos, val);
+	insert(it pos, n, val);
+	insert(it pos, first, last);
+	erase(pos);
+	erase(first, last);
+	swap(vector x);
+	clear();
+}
+*/
+
 int		main(void)
 {
 	srand(N);
@@ -355,7 +371,7 @@ int		main(void)
 	assignation();
 	capacity_changes();
 	element_access();
-
-	
+//	modifiers();
+//	iterators();
 	return (0);
 }
