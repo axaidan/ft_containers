@@ -22,7 +22,8 @@
 #define FORMAT1	"===\t"
 #define FORMAT2	"\t===\t"
 
-#define N 10
+#define N 3	//	NOT 0 OR SEGFAULT
+				//	NOT < 0	OR LONG
 
 using namespace NAMESPACE;
 
@@ -189,10 +190,12 @@ void	assignation(void)
 	display_capacity(v3, context);
 	display_content(v3, context);
 	display_relationals(v1, v3, context);
-	v3 = v3;
+	/*
+//	v3 = v3;	//	WON'T COMPILE AT SCHOOL
 	context = "v3 = v3; self assignation test";
 	display_capacity(v3, context);
 	display_content(v3, context);
+	*/
 	v3 = v1 = v2;
 	context = "v3 = v2 = v1; multiple assignations test";
 	display_capacity(v3, context);
@@ -236,6 +239,7 @@ void	capacity_changes(void)
 	v.resize(N, VAL1);
 	std::cout << FORMAT1 << "v.resize(N);" << std::endl;
 
+	//	reserve(n)
 	//		if n > capacity
 	v.reserve(v.capacity() + 1);
 	context = "v.reserve(v.capacity() + 1); reserving one more elem";
@@ -347,22 +351,80 @@ void	element_access(void)
 	display_elem_access(const_v, context);
 }
 
-/*
 void	modifiers(void)
 {
-	assign(first, last);
-	assign(n, val);
-	push_back();
-	pop_back();
-	insert(it pos, val);
-	insert(it pos, n, val);
-	insert(it pos, first, last);
-	erase(pos);
-	erase(first, last);
-	swap(vector x);
-	clear();
+	std::cout << "=========================" << std::endl;
+	std::cout << "=\tMODIFIERS\t=" << std::endl;
+	std::cout << "=========================" << std::endl;
+	std::cout << std::endl;
+
+	vector<T>					v;
+	vector<T>::iterator			it;
+	vector<T>::const_iterator	cit;
+	int							i;
+	size_t						cpct;
+
+	//	push_back(val);
+	for (int i = 0 ; i < N * 2 ; i++)
+		v.push_back(i);
+	context = "pushed back N * 2 elements";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+
+	//	pop_back();	// undef behavior if v empty
+	for (int i = 0 ; i < N ; i++)
+		v.pop_back();
+	context = "pop_back()ed N last elements";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+
+	//	insert(it pos, val);
+	i = 0;
+	for (it = v.begin() ; it != v.end() ; it += 1, i++)
+		if (i % 2 == 0)
+			it = v.insert(it, VAL3); 
+	context = "inserted VAL3 between each element";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+
+	cpct = v.capacity();
+	while (v.size() < cpct + N)
+		v.insert(v.begin(), VAL2);
+	context = "inserted VAL3 until reallocation => while (v.size() < cpct + N)";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+
+	//	insert(it pos, n, val);
+	v.insert(v.end(), N, VAL1);
+	v.insert(v.end(), N, VAL2);
+	v.insert(v.end(), N, VAL3);
+	context = "inserted N*VAL1, N*VAL2, N*VAL3 at v.end()";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+
+	//	insert(it pos, first, last);
+	vector<T>		v2(v);
+	std::list<T>	l(v.begin(), v.end());
+//	v.insert(v.end() - v.size() / 2, l.begin(), l.end());
+	v.insert(v.end() - v.size() / 2, v.begin(), v.end());
+//	v.insert(v.end() - v.size() / 2, v.begin(), v.end() - v.size() / 2);
+//	v.insert(v.end() - v.size() / 2, v2.begin(), v2.end());
+	context = "inserted v in the middle of itself";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+	//	erase(it pos);
+	//	erase(first, last);
+	//	assign(first, last);
+	//	assign(n, val);
+	//	swap(vector x);
+	//	clear();
 }
-*/
 
 int		main(void)
 {
@@ -371,7 +433,7 @@ int		main(void)
 	assignation();
 	capacity_changes();
 	element_access();
-//	modifiers();
+	modifiers();
 //	iterators();
 	return (0);
 }

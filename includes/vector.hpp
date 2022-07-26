@@ -474,6 +474,15 @@ void	insert(iterator position,
 	size_type	copyTo;
 	InpIt		tmp;
 
+	if (first == last)
+		return ;
+	if (iterator_belongs_to_me(first))
+	{
+		vector<T>		copy(first, last);
+
+		insert(position, copy.begin(), copy.end());
+		return ;
+	}
 	tmp = first;
 	insertionSize = 0;
 	while (tmp != last)
@@ -593,6 +602,22 @@ void			print_values(void) const
 		tmp++;
 	}
 	std::cout << std::endl;
+}
+
+private:
+template	<class Iterator>
+bool		iterator_belongs_to_me(Iterator & other_it) const
+{
+	const_iterator	it = begin();
+	const_iterator	ite = end();
+
+	while (it != ite)
+	{
+		if (&(*it) == &(*other_it))
+			return (true);
+		it++;
+	}
+	return (false);
 }
 
 };		// class MapIterator
