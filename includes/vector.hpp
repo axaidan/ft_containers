@@ -214,7 +214,7 @@ reverse_iterator		rbegin(void)
 }
 
 const_reverse_iterator	rbegin(void) const
-{
+{	
 	return (rbegin());
 }
 

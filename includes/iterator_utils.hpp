@@ -1,7 +1,6 @@
 #ifndef ITERATOR_UTILS_HPP
 # define ITERATOR_UTILS_HPP
 
-# include <iterator>
 # include <cstddef> 
 namespace ft {
 
@@ -102,7 +101,7 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 		_iterator = rhs._iterator;
 		return (*this);
 	}
-	Iter	base(void) const
+	Iter				base(void) const
 	{
 		return (_iterator);
 	}

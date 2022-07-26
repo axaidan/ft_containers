@@ -22,7 +22,7 @@
 #define FORMAT1	"===\t"
 #define FORMAT2	"\t===\t"
 
-#define N 3	//	NOT 0 OR SEGFAULT
+#define N 11	//	NOT 0 OR SEGFAULT
 				//	NOT < 0	OR LONG
 
 using namespace NAMESPACE;
@@ -120,6 +120,18 @@ void	display_elem_access(const vector<T> & v,
 	std::cout << FORMAT2 << "v[v.size()-1]\t=\t" << v[v.size() - 1]
 		<< std::endl;
 	std::cout << std::endl;
+}
+
+void	display_iterator_functions(vector<T> & v,
+		std::string context)
+{
+	std::cout << std::boolalpha;
+	std::cout << FORMAT1 << "display_iterator_functions() :" << std::endl;
+	std::cout << FORMAT1 << "CONTEXT : " << context << std::endl;
+	std::cout << FORMAT2 << "*(v.begin())\t=\t" << *(v.begin()) << std::endl;
+	std::cout << FORMAT2 << "*(v.end() - 1)\t=\t" << *(v.end() - 1) << std::endl;
+	std::cout << FORMAT2 << "*(v.rbegin())\t=\t" << *(v.rbegin()) << std::endl;
+	std::cout << FORMAT2 << "*(v.rend() - 1)\t=\t" << *(v.rend() - 1) << std::endl;
 }
 
 void	construction(void)
@@ -363,6 +375,7 @@ void	modifiers(void)
 	vector<T>::const_iterator	cit;
 	int							i;
 	size_t						cpct;
+	std::list<T>				l;
 
 	//	push_back(val);
 	for (int i = 0 ; i < N * 2 ; i++)
@@ -409,21 +422,115 @@ void	modifiers(void)
 
 	//	insert(it pos, first, last);
 	vector<T>		v2(v);
-	std::list<T>	l(v.begin(), v.end());
-//	v.insert(v.end() - v.size() / 2, l.begin(), l.end());
 	v.insert(v.end() - v.size() / 2, v.begin(), v.end());
-//	v.insert(v.end() - v.size() / 2, v.begin(), v.end() - v.size() / 2);
-//	v.insert(v.end() - v.size() / 2, v2.begin(), v2.end());
 	context = "inserted v in the middle of itself";
 	display_capacity(v, context);
 	display_content(v, context);
 	display_elem_access(v, context);
+
+	for (int i = 1 ; i < N ; i++)
+		l.push_back(VAL1);
+	v.insert(v.end(), l.begin(), l.end());
+	context = "inserted a list l at the end of v";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+
 	//	erase(it pos);
+	v.erase(v.begin());
+	context = "erased v.begin()";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+
+	it = v.begin();
+	i = 0;
+	while (it != v.end())
+	{
+		if (i % 2 == 0)
+			v.erase(it);
+		i++;
+		it++;
+	}
+	context = "erased all pair indexes";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+	
 	//	erase(first, last);
+	v.erase(v.begin(), v.begin() + v.size() / 2);
+	context = "erased first half of vector";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+
+	vector<T>	copy(v);
+	
+	v.erase(v.begin(), v.end());
+	context = "erased all elements";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+
 	//	assign(first, last);
+	v.assign(copy.begin(), copy.end());
+	context = "assigned copy to v";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+	display_relationals(v, copy, context);
+
 	//	assign(n, val);
+	v.assign(N * 5, VAL1);
+	context = "assigned (N * 5) VAL1";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+
 	//	swap(vector x);
-	//	clear();
+	v.swap(copy);
+	context = "swapped v and copy";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+	display_relationals(v, copy, context);
+	
+	v.swap(v);
+	context = "v self swap";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+	
+	v.swap(copy);
+	copy.clear();
+	v.swap(copy);
+	context = "swapped v with cleared copy";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+}
+
+void	iterators(void)
+{
+	std::cout << "=========================" << std::endl;
+	std::cout << "=\tITERATORS\t=" << std::endl;
+	std::cout << "=========================" << std::endl;
+	std::cout << std::endl;
+
+	vector<T>					v;
+	vector<T>::iterator			it;
+	//vector<T>::iterator			ite;
+	vector<T>::const_iterator	cit;
+	//vector<T>::const_iterator	cite;
+
+	rand_push_back(v);
+	v.insert(v.end(), N, 999);
+	v.insert(v.end() - v.size() / 2, N, 8198733);
+	context = "created new vector";
+	display_capacity(v, context);
+	display_content(v, context);
+	display_elem_access(v, context);
+	display_iterator_functions(v, context);
 }
 
 int		main(void)
@@ -434,6 +541,6 @@ int		main(void)
 	capacity_changes();
 	element_access();
 	modifiers();
-//	iterators();
+	iterators();
 	return (0);
 }

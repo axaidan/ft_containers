@@ -26,6 +26,7 @@ class VectorIterator : public ft::iterator_traits<T*>
 	typedef typename ft::iterator_traits<T*>::pointer				pointer;
 	typedef typename ft::iterator_traits<T*>::reference				reference;
 	typedef typename ft::iterator_traits<T*>::iterator_category		iterator_category;
+//	typedef typename std::random_access_iterator_tag				iterator_category;
 	typedef VectorIterator<const value_type>						const_iterator;
 
 

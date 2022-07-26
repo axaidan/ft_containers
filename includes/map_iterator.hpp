@@ -29,7 +29,6 @@ typedef typename ft::iterator_traits<T*>::pointer			pointer;
 typedef typename ft::iterator_traits<T*>::reference			reference;
 typedef typename ft::iterator_traits<T*>::iterator_category	iterator_category;
 typedef RBnode	*											node_ptr;
-//typedef MapIterator<const value_type, node>				const_iterator;
 
 private:
 node_ptr	_node;
