@@ -14,15 +14,31 @@
  #include <vector>
 #endif
 
-#define T int
-#define VAL1 42
-#define VAL2 1337
-#define VAL3 -1
+#ifdef CONTAINS_ALLOC
+ #define T ContainsAlloc
+ #define VAL1 ContainsAlloc("quarante deux")
+ #define VAL2 ContainsAlloc("mille trois cent trente sept")
+ #define VAL3 ContainsAlloc("moins un")
+#else
+ #define T int
+ #define VAL1 42
+ #define VAL2 1337
+ #define VAL3 -1
+/*
+ #define T std::string
+ #define VAL1 std::string("42")
+ #define VAL2 std::string("1337")
+ #define VAL3 std::string("-1")
+*/
 
-#define FORMAT1	"===\t"
-#define FORMAT2	"\t===\t"
+#endif
 
-#define N 11	//	NOT 0 OR SEGFAULT
+
+#define FMT1	"===\t"
+#define FMT2	"\t===\t"
+
+//#define N 10000		//	NOT 0 OR SEGFAULT
+#define N 3		//	NOT 0 OR SEGFAULT
 				//	NOT < 0	OR LONG
 
 using namespace NAMESPACE;
@@ -51,31 +67,31 @@ void	rand_push_back(vector<T> & v)
 void	display_capacity(const ::vector<T> & v, std::string context)
 {
 	std::cout << std::boolalpha;
-	std::cout << FORMAT1 << "display_capacity() :" << std::endl;
-	std::cout << FORMAT1 << "CONTEXT : " << context << std::endl;
-	std::cout << FORMAT2 << "v.empty()\t=\t" << v.empty() << std::endl;
-	std::cout << FORMAT2 << "v.size()\t=\t" << v.size() << std::endl;
-	std::cout << FORMAT2 << "v.capacity()\t=\t" << v.capacity() << std::endl;
-	std::cout << FORMAT2 << "v.max_size()\t=\t" << v.max_size() << std::endl;
+	std::cout << FMT1 << "display_capacity() :" << std::endl;
+	std::cout << FMT1 << "CONTEXT : " << context << std::endl;
+	std::cout << FMT2 << "v.empty()\t=\t" << v.empty() << std::endl;
+	std::cout << FMT2 << "v.size()\t=\t" << v.size() << std::endl;
+	std::cout << FMT2 << "v.capacity()\t=\t" << v.capacity() << std::endl;
+	std::cout << FMT2 << "v.max_size()\t=\t" << v.max_size() << std::endl;
 	std::cout << std::endl;
 }
 
 void	display_content(const ::vector<T> & v, std::string context)
 {
-	std::cout << FORMAT1 << "display_content() :" << std::endl;
-	std::cout << FORMAT1 << "CONTEXT : " << context << std::endl;
+	std::cout << FMT1 << "display_content() :" << std::endl;
+	std::cout << FMT1 << "CONTEXT : " << context << std::endl;
 	::vector<T>::const_iterator	it	=	v.begin();
 	::vector<T>::const_iterator	ite	=	v.end();
 	size_t						i	=	0;
 
 	if (v.empty() == true)
 	{
-		std::cout << FORMAT2 << "NO CONTENT" << std::endl << std::endl;
+		std::cout << FMT2 << "NO CONTENT" << std::endl << std::endl;
 		return ;
 	}
 	while (it != ite)
 	{
-		std::cout << FORMAT2 << "v[" << std::setw(7) << i 
+		std::cout << FMT2 << "v[" << std::setw(7) << i 
 			<< "]\t=\t" << v[i] << std::endl;
 		it++;
 		i++;
@@ -83,19 +99,26 @@ void	display_content(const ::vector<T> & v, std::string context)
 	std::cout << std::endl;
 }
 
+template<class U>
+/*
 void	display_relationals(const vector<T> & v1,
 		const vector<T> & v2,
 		std::string context)
+*/
+void	display_relationals(const U & v1,
+		const U & v2,
+		std::string context)
+
 {
 	std::cout << std::boolalpha;
-	std::cout << FORMAT1 << "display_relationals() :" << std::endl;
-	std::cout << FORMAT1 << "CONTEXT : " << context << std::endl;
-	std::cout << FORMAT2 << "(v1 == v2)\t=\t" << (v1 == v2) << std::endl;
-	std::cout << FORMAT2 << "(v1 != v2)\t=\t" << (v1 != v2) << std::endl;
-	std::cout << FORMAT2 << "(v1 <  v2)\t=\t" << (v1 < v2) << std::endl;
-	std::cout << FORMAT2 << "(v1 <= v2)\t=\t" << (v1 <= v2) << std::endl;
-	std::cout << FORMAT2 << "(v1 >  v2)\t=\t" << (v1 >  v2) << std::endl;
-	std::cout << FORMAT2 << "(v1 >= v2)\t=\t" << (v1 >= v2) << std::endl;
+	std::cout << FMT1 << "display_relationals() :" << std::endl;
+	std::cout << FMT1 << "CONTEXT : " << context << std::endl;
+	std::cout << FMT2 << "(v1 == v2)\t=\t" << (v1 == v2) << std::endl;
+	std::cout << FMT2 << "(v1 != v2)\t=\t" << (v1 != v2) << std::endl;
+	std::cout << FMT2 << "(v1 <  v2)\t=\t" << (v1 < v2) << std::endl;
+	std::cout << FMT2 << "(v1 <= v2)\t=\t" << (v1 <= v2) << std::endl;
+	std::cout << FMT2 << "(v1 >  v2)\t=\t" << (v1 >  v2) << std::endl;
+	std::cout << FMT2 << "(v1 >= v2)\t=\t" << (v1 >= v2) << std::endl;
 	std::cout << std::endl;
 }
 
@@ -103,21 +126,21 @@ void	display_elem_access(const vector<T> & v,
 		std::string context)
 {
 	std::cout << std::boolalpha;
-	std::cout << FORMAT1 << "display_elem_access() :" << std::endl;
-	std::cout << FORMAT1 << "CONTEXT : " << context << std::endl;
+	std::cout << FMT1 << "display_elem_access() :" << std::endl;
+	std::cout << FMT1 << "CONTEXT : " << context << std::endl;
 
 	if (v.empty() == true)
 	{
-		std::cout << FORMAT2 << "NO CONTENT" << std::endl << std::endl;
+		std::cout << FMT2 << "NO CONTENT" << std::endl << std::endl;
 		return ;
 	}
-	std::cout << FORMAT2 << "v.front()\t=\t" << v.front() << std::endl;
-	std::cout << FORMAT2 << "v.at(0)\t\t=\t" << v.at(0) << std::endl;
-	std::cout << FORMAT2 << "v[0]\t\t=\t" << v[0] << std::endl;
-	std::cout << FORMAT2 << "v.back()\t=\t" << v.back() << std::endl;
-	std::cout << FORMAT2 << "v.at(size()-1)\t=\t" << v.at(v.size() - 1)
+	std::cout << FMT2 << "v.front()\t=\t" << v.front() << std::endl;
+	std::cout << FMT2 << "v.at(0)\t\t=\t" << v.at(0) << std::endl;
+	std::cout << FMT2 << "v[0]\t\t=\t" << v[0] << std::endl;
+	std::cout << FMT2 << "v.back()\t=\t" << v.back() << std::endl;
+	std::cout << FMT2 << "v.at(size()-1)\t=\t" << v.at(v.size() - 1)
 		<< std::endl;
-	std::cout << FORMAT2 << "v[v.size()-1]\t=\t" << v[v.size() - 1]
+	std::cout << FMT2 << "v[v.size()-1]\t=\t" << v[v.size() - 1]
 		<< std::endl;
 	std::cout << std::endl;
 }
@@ -125,13 +148,15 @@ void	display_elem_access(const vector<T> & v,
 void	display_iterator_functions(vector<T> & v,
 		std::string context)
 {
+	//	UNDEFINED IF EMPTY VECTOR
 	std::cout << std::boolalpha;
-	std::cout << FORMAT1 << "display_iterator_functions() :" << std::endl;
-	std::cout << FORMAT1 << "CONTEXT : " << context << std::endl;
-	std::cout << FORMAT2 << "*(v.begin())\t=\t" << *(v.begin()) << std::endl;
-	std::cout << FORMAT2 << "*(v.end() - 1)\t=\t" << *(v.end() - 1) << std::endl;
-	std::cout << FORMAT2 << "*(v.rbegin())\t=\t" << *(v.rbegin()) << std::endl;
-	std::cout << FORMAT2 << "*(v.rend() - 1)\t=\t" << *(v.rend() - 1) << std::endl;
+	std::cout << FMT1 << "display_iterator_functions() :" << std::endl;
+	std::cout << FMT1 << "CONTEXT : " << context << std::endl;
+	std::cout << FMT2 << "*(v.begin())\t=\t" << *(v.begin()) << std::endl;
+	std::cout << FMT2 << "*(v.end() - 1)\t=\t" << *(v.end() - 1) << std::endl;
+	std::cout << FMT2 << "*(v.rbegin())\t=\t" << *(v.rbegin()) << std::endl;
+	std::cout << FMT2 << "*(v.rend() - 1)\t=\t" << *(v.rend() - 1) << std::endl;
+	std::cout << std::endl;
 }
 
 void	construction(void)
@@ -227,7 +252,7 @@ void	capacity_changes(void)
 	vector<T>	v;
 
 	rand_push_back(v);
-	std::cout << FORMAT1 << "vector<T> v; rand_push_back(v);" << std::endl;
+	std::cout << FMT1 << "vector<T> v; rand_push_back(v);" << std::endl;
 	//	resize
 	//		if n < size
 	v.resize(v.size() / 2);
@@ -249,7 +274,7 @@ void	capacity_changes(void)
 	display_elem_access(v, context);
 
 	v.resize(N, VAL1);
-	std::cout << FORMAT1 << "v.resize(N);" << std::endl;
+	std::cout << FMT1 << "v.resize(N);" << std::endl;
 
 	//	reserve(n)
 	//		if n > capacity
@@ -302,10 +327,10 @@ void	element_access(void)
 	size = v.size();
 
 	//	operator[]
-	std::cout << FORMAT1 << "operator[] access / assignation" << std::endl;
+	std::cout << FMT1 << "operator[] access / assignation" << std::endl;
 	for (size_t i = 0 ; i < size ; i++)
 	{
-		std::cout << FORMAT2 << v[i] << std::endl;
+		std::cout << FMT2 << v[i] << std::endl;
 		v[i] = copy;
 	}
 	std::cout << std::endl;
@@ -344,13 +369,13 @@ void	element_access(void)
 	copy = VAL3;
 	v = const_v;
 	//	at() retrieval and assignation
-	std::cout << FORMAT1 << "at() access / assignation" << std::endl;
+	std::cout << FMT1 << "at() access / assignation" << std::endl;
 	for (size_t i = 0 ; i < size ; i++)
 	{
 		copy = v.at(i);
 		v.at(i) = copy;
 		copy = const_v.at(i);
-		std::cout << FORMAT2 << copy << std::endl;
+		std::cout << FMT2 << copy << std::endl;
 //		const_v.at(i) = copy;	// 	WON'T COMPILE - const_reference
 	}
 	context = "after at() retrieval and assignation test";
@@ -373,13 +398,11 @@ void	modifiers(void)
 	vector<T>					v;
 	vector<T>::iterator			it;
 	vector<T>::const_iterator	cit;
-	int							i;
-	size_t						cpct;
 	std::list<T>				l;
 
 	//	push_back(val);
 	for (int i = 0 ; i < N * 2 ; i++)
-		v.push_back(i);
+		v.push_back(VAL2);
 	context = "pushed back N * 2 elements";
 	display_capacity(v, context);
 	display_content(v, context);
@@ -394,6 +417,7 @@ void	modifiers(void)
 	display_elem_access(v, context);
 
 	//	insert(it pos, val);
+	int							i;
 	i = 0;
 	for (it = v.begin() ; it != v.end() ; it += 1, i++)
 		if (i % 2 == 0)
@@ -403,6 +427,7 @@ void	modifiers(void)
 	display_content(v, context);
 	display_elem_access(v, context);
 
+	size_t						cpct;
 	cpct = v.capacity();
 	while (v.size() < cpct + N)
 		v.insert(v.begin(), VAL2);
@@ -510,27 +535,157 @@ void	modifiers(void)
 	display_elem_access(v, context);
 }
 
-void	iterators(void)
+void	iterator_functions(void)
 {
 	std::cout << "=========================" << std::endl;
 	std::cout << "=\tITERATORS\t=" << std::endl;
 	std::cout << "=========================" << std::endl;
 	std::cout << std::endl;
 
-	vector<T>					v;
-	vector<T>::iterator			it;
-	//vector<T>::iterator			ite;
-	vector<T>::const_iterator	cit;
-	//vector<T>::const_iterator	cite;
+	vector<T>								v;
+	//	CONSTRUCTION
+	vector<T>::iterator						it;
+	vector<T>::iterator						ite(it);
+	vector<T>::const_iterator				cit;
+	vector<T>::const_iterator				cite(cit);
+	vector<T>::reverse_iterator				rit;
+	vector<T>::reverse_iterator				rite(rit);
+	vector<T>::const_reverse_iterator		crit;
+	vector<T>::const_reverse_iterator		crite(crit);
 
 	rand_push_back(v);
-	v.insert(v.end(), N, 999);
-	v.insert(v.end() - v.size() / 2, N, 8198733);
+	v.insert(v.end(), N, VAL1);
+	v.insert(v.end() - v.size() / 2, N, VAL2);
 	context = "created new vector";
 	display_capacity(v, context);
 	display_content(v, context);
 	display_elem_access(v, context);
 	display_iterator_functions(v, context);
+
+	//	ITERATION / DEREFERENCING
+	std::cout << FMT1 << "iterator iteration" << std::endl;
+	it = v.begin();
+	cite = v.end();
+	while (it != cite)
+	{
+		std::cout << FMT2 << *it << std::endl;
+		it++;
+	}
+	std::cout << std::endl;
+	std::cout << FMT1 << "reverse_iterator iteration" << std::endl;
+	rit = v.rbegin();
+	crite = v.rend();
+	while (rit != crite)
+	{
+		std::cout << FMT2 << *rit << std::endl;
+		rit++;
+	}
+	std::cout << std::endl;
+	std::cout << FMT1 << "const_iterator iteration" << std::endl;
+	cit = v.begin();
+	cite = v.end();
+	while (cit != cite)
+	{
+		std::cout << FMT2 << *cit << std::endl;
+		cit++;
+	}
+	std::cout << std::endl;
+	std::cout << FMT1 << "const_reverse_iterator iteration" << std::endl;
+	crit = v.rbegin();
+	crite = v.rend();
+	while (crit != crite)
+	{
+		std::cout << FMT2 << *crit << std::endl;
+		crit++;
+	}
+	std::cout << std::endl;
+
+	//	RELATIONALS
+	ite = it;
+	context = "ite = it; it and ite relationals";
+	display_relationals(it, ite, context);
+	it--;
+	context = "it--; it and ite relationals";
+	display_relationals(it, ite, context);
+	cite = cit;
+	context = "cite = cit; cit and cite relationals";
+	display_relationals(cit, cite, context);
+	cit--;
+	context = "cit--; cit and cite relationals";
+	display_relationals(cit, cite, context);
+
+	rite = rit;
+	context = "rite = rit; rit and rite relationals";
+	display_relationals(rit, rite, context);
+	rit--;
+	context = "rit--; rit and rite relationals";
+	display_relationals(rit, rite, context);
+	crite = crit;
+	context = "crite = crit; crit and crite relationals";
+	display_relationals(crit, crite, context);
+	crit--;
+	context = "crit--; crit and crite relationals";
+	display_relationals(crit, crite, context);
+
+	//	ASSIGNATION
+	it = v.begin();
+	cit = v.begin();
+	rit = v.rbegin();
+	crit = v.rbegin();
+
+	ite = it;
+	*it = VAL3;
+	std::cout << FMT1 << "ite = it; *it = VAL3;" << std::endl;
+	std::cout << FMT1 << "(*ite == VAL3)\t=\t" << (*ite == VAL3) << std::endl;
+	std::cout << FMT1 << "(ite == it)\t=\t" << (ite == it) << std::endl;
+	std::cout << std::endl;
+	rite = rit;
+	*rit = VAL1;
+	std::cout << FMT1 << "rite = rit; *rit = VAL1;" << std::endl;
+	std::cout << FMT1 << "(*rite == VAL1)\t=\t" << (*rite == VAL1) << std::endl;
+	std::cout << FMT1 << "(rite == rit)\t=\t" << (rite == rit) << std::endl;
+	std::cout << std::endl;
+	cite = cit;
+	//*cit = VAL3;	// WON'T COMPILE
+	std::cout << FMT1 << "cite = cit;" << std::endl;
+	std::cout << FMT1 << "(cite == cit)\t=\t" << (cite == cit) << std::endl;
+	std::cout << std::endl;
+	crite = crit;
+	//*crit = VAL1;	// WON'T COMPILE
+	std::cout << FMT1 << "crite = crit;" << std::endl;
+	std::cout << FMT1 << "(cite == crit)\t=\t" << (crite == crit) << std::endl;
+	std::cout << std::endl;
+	
+	//	PRE/POST WEIRD ITERATION
+	std::cout << FMT1 << "weird iteration" << std::endl;
+	it = v.begin();
+	ite = v.end();
+	while (it != ite)
+	{
+		std::cout << FMT2 << "*(it++)\t=\t" << *(it++) << std::endl;
+		std::cout << FMT2 << "*(--it)\t=\t" << *(--it) << std::endl;
+		std::cout << FMT2 << "*(++it)\t=\t" << *(++it) << std::endl;
+		std::cout << FMT2 << "*(it--)\t=\t" << *(it--) << std::endl;
+//		std::cout << FMT2 << "*(it++)\t=\t" << *(it++) << std::endl;
+		it++;
+	}
+	std::cout << std::endl;
+
+	std::cout << FMT1 << "reverse weird iteration" << std::endl;
+	rit = v.rbegin();
+	rite = v.rend();
+	while (rit != rite)
+	{
+		std::cout << FMT2 << "*(rit++)\t=\t" << *(rit++) << std::endl;
+		std::cout << FMT2 << "*(--rit)\t=\t" << *(--rit) << std::endl;
+		std::cout << FMT2 << "*(rit--)\t=\t" << *(rit--) << std::endl;
+		std::cout << FMT2 << "*(++rit)\t=\t" << *(++rit) << std::endl;
+//		std::cout << FMT2 << "*(rit++)\t=\t" << *(rit++) << std::endl;
+		rit++;
+	}
+	std::cout << std::endl;
+
+	
 }
 
 int		main(void)
@@ -541,6 +696,6 @@ int		main(void)
 	capacity_changes();
 	element_access();
 	modifiers();
-	iterators();
+//	iterator_functions();
 	return (0);
 }

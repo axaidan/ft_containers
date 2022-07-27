@@ -411,7 +411,8 @@ iterator	insert(iterator position, const value_type& val)
 				to--, from--)
 		{
 			_allocator.construct((_begin + to), *(_begin + from));
-			_allocator.destroy(_begin + to);
+//			_allocator.destroy(_begin + to);
+			_allocator.destroy(_begin + from); //	!!!
 		}	
 	}
 	else
@@ -532,6 +533,7 @@ iterator		erase(iterator position)
 		_allocator.destroy(_begin + destroyIndex + 1);
 		destroyIndex++;
 	}
+//	_allocator.destroy(_end - 1);	// !!!
 	_end = _end - 1;
 	return (position);
 }

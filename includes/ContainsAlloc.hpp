@@ -2,6 +2,7 @@
 #define CONTAINS_ALLOC_HPP
 
 # include <cstring>
+# include <iostream>
 
 class	ContainsAlloc
 {
@@ -43,16 +44,23 @@ class	ContainsAlloc
 		}
 		ContainsAlloc &operator=(ContainsAlloc const &rhs)
 		{
+			if (&rhs == this)
+				return (*this);
+
+			char *	_tmp = new char[100];
+
 			char *rhsAlloc = rhs.getAlloc();
 			for (int i = 0 ; i < 100 ; i++)
 			{
-				if (i == 100)
-					_alloc[i] = '\0';
+				if (i == 100 - 1)
+					_tmp[i] = '\0';
 				else if (rhsAlloc[i] != '\0')
-					_alloc[i] = rhsAlloc[i];
+					_tmp[i] = rhsAlloc[i];
 				else 
-					_alloc[i] = '\0';
+					_tmp[i] = '\0';
 			}
+			delete [] _alloc;
+			_alloc = _tmp;
 			return (*this);
 		}
 		~ContainsAlloc(void) {delete [] _alloc;}
@@ -84,7 +92,12 @@ class	ContainsAlloc
 		{
 			return (strcmp(_alloc, rhs.getAlloc()) >= 0);
 		}
-	
 
 };
+
+std::ostream &	operator<<(std::ostream & o, ContainsAlloc const & rhs);
+//	FUNCTION OVERLOAD TO '<<' OPERATOR
+
+
+
 #endif
