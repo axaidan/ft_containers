@@ -14,31 +14,38 @@
  #include <vector>
 #endif
 
+/*
 #ifdef CONTAINS_ALLOC
  #define T ContainsAlloc
  #define VAL1 ContainsAlloc("quarante deux")
  #define VAL2 ContainsAlloc("mille trois cent trente sept")
  #define VAL3 ContainsAlloc("moins un")
 #else
- #define T int
- #define VAL1 42
- #define VAL2 1337
- #define VAL3 -1
-/*
- #define T std::string
- #define VAL1 std::string("42")
- #define VAL2 std::string("1337")
- #define VAL3 std::string("-1")
+	#ifdef STRING
+	 #define T std::string
+	 #define VAL1 std::string("42")
+	 #define VAL2 std::string("1337")
+	 #define VAL3 std::string("-1")
+	#else
+	 #define T int
+	 #define VAL1 42
+	 #define VAL2 1337
+	 #define VAL3 -1
+	#endif
+#endif
 */
 
-#endif
+#define T std::string
+#define VAL1 std::string("quarante deux")
+#define VAL2 std::string("mille trois cent")
+#define VAL3 std::string("moins un")
 
 
 #define FMT1	"===\t"
 #define FMT2	"\t===\t"
 
 //#define N 10000		//	NOT 0 OR SEGFAULT
-#define N 3		//	NOT 0 OR SEGFAULT
+#define N 15 		//	NOT 0 OR SEGFAULT
 				//	NOT < 0	OR LONG
 
 using namespace NAMESPACE;
@@ -660,27 +667,21 @@ void	iterator_functions(void)
 	std::cout << FMT1 << "weird iteration" << std::endl;
 	it = v.begin();
 	ite = v.end();
-	while (it != ite)
-	{
-		std::cout << FMT2 << "*(it++)\t=\t" << *(it++) << std::endl;
-		std::cout << FMT2 << "*(--it)\t=\t" << *(--it) << std::endl;
-		std::cout << FMT2 << "*(++it)\t=\t" << *(++it) << std::endl;
-		std::cout << FMT2 << "*(it--)\t=\t" << *(it--) << std::endl;
-		it++;
-	}
+	std::cout << FMT2 << "*(it++)\t=\t" << *(it++) << std::endl;
+	std::cout << FMT2 << "*(--it)\t=\t" << *(--it) << std::endl;
+	std::cout << FMT2 << "*(++it)\t=\t" << *(++it) << std::endl;
+	std::cout << FMT2 << "*(it--)\t=\t" << *(it--) << std::endl;
+	it++;
 	std::cout << std::endl;
 
 	std::cout << FMT1 << "reverse weird iteration" << std::endl;
 	rit = v.rbegin();
 	rite = v.rend();
-	while (rit != rite)
-	{
-		std::cout << FMT2 << "*(rit++)\t=\t" << *(rit++) << std::endl;
-		std::cout << FMT2 << "*(--rit)\t=\t" << *(--rit) << std::endl;
-		std::cout << FMT2 << "*(rit--)\t=\t" << *(rit--) << std::endl;
-		std::cout << FMT2 << "*(++rit)\t=\t" << *(++rit) << std::endl;
-		rit++;
-	}
+	std::cout << FMT2 << "*(rit++)\t=\t" << *(rit++) << std::endl;
+	std::cout << FMT2 << "*(--rit)\t=\t" << *(--rit) << std::endl;
+	std::cout << FMT2 << "*(++rit)\t=\t" << *(++rit) << std::endl;
+	std::cout << FMT2 << "*(rit--)\t=\t" << *(rit--) << std::endl;
+	rit++;
 	std::cout << std::endl;
 
 	//	it + n
@@ -699,8 +700,11 @@ void	iterator_functions(void)
 	std::cout << std::endl;
 	//	it[]
 	it = v.begin();
-	int i = 0;
-	while (it != v.end())
+	ite = v.end();
+	size_t	i	= 0;
+	display_capacity(v, "debug");
+
+	while (i < v.size())
 	{
 		if (i % 3 == 0)
 			it[i] = VAL1;
@@ -708,9 +712,8 @@ void	iterator_functions(void)
 			it[i] = VAL2;
 		else
 			it[i] = VAL3;
-		std::cout << "it[" << std::setw(8) << i << "]\t=\t" << it[i] << std::endl;
+		std::cout << FMT1 << "it["/* << std::setw(8)*/ << i << "]\t=\t" << it[i] << std::endl;
 		i++;
-		it++;
 	}
 }
 

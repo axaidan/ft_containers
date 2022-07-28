@@ -7,7 +7,7 @@
 	===	v.empty()	=	true
 	===	v.size()	=	0
 	===	v.capacity()	=	0
-	===	v.max_size()	=	2305843009213693951
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : default constructed empty vector
@@ -18,27 +18,27 @@
 	===	v.empty()	=	false
 	===	v.size()	=	10
 	===	v.capacity()	=	10
-	===	v.max_size()	=	2305843009213693951
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : fill constructed 10 elems
-	===	v[      0]	=	42
-	===	v[      1]	=	42
-	===	v[      2]	=	42
-	===	v[      3]	=	42
-	===	v[      4]	=	42
-	===	v[      5]	=	42
-	===	v[      6]	=	42
-	===	v[      7]	=	42
-	===	v[      8]	=	42
-	===	v[      9]	=	42
+	===	v[      0]	=	quarante deux
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	quarante deux
+	===	v[      4]	=	quarante deux
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	quarante deux
+	===	v[      7]	=	quarante deux
+	===	v[      8]	=	quarante deux
+	===	v[      9]	=	quarante deux
 
 ===	display_capacity() :
 ===	CONTEXT : fill constructed 0 elem
 	===	v.empty()	=	true
 	===	v.size()	=	0
 	===	v.capacity()	=	0
-	===	v.max_size()	=	2305843009213693951
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : fill constructed 0 elem
@@ -49,25 +49,25 @@
 	===	v.empty()	=	false
 	===	v.size()	=	8
 	===	v.capacity()	=	8
-	===	v.max_size()	=	2305843009213693951
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : range constructed from v_fill1 begin/end - 2
-	===	v[      0]	=	42
-	===	v[      1]	=	42
-	===	v[      2]	=	42
-	===	v[      3]	=	42
-	===	v[      4]	=	42
-	===	v[      5]	=	42
-	===	v[      6]	=	42
-	===	v[      7]	=	42
+	===	v[      0]	=	quarante deux
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	quarante deux
+	===	v[      4]	=	quarante deux
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	quarante deux
+	===	v[      7]	=	quarante deux
 
 ===	display_capacity() :
 ===	CONTEXT : range constructed from v_fill1 begin/begin
 	===	v.empty()	=	true
 	===	v.size()	=	0
 	===	v.capacity()	=	0
-	===	v.max_size()	=	2305843009213693951
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : range constructed from v_fill1 begin/begin
@@ -78,20 +78,20 @@
 	===	v.empty()	=	false
 	===	v.size()	=	10
 	===	v.capacity()	=	10
-	===	v.max_size()	=	2305843009213693951
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : copy constructed from v_fill1
-	===	v[      0]	=	42
-	===	v[      1]	=	42
-	===	v[      2]	=	42
-	===	v[      3]	=	42
-	===	v[      4]	=	42
-	===	v[      5]	=	42
-	===	v[      6]	=	42
-	===	v[      7]	=	42
-	===	v[      8]	=	42
-	===	v[      9]	=	42
+	===	v[      0]	=	quarante deux
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	quarante deux
+	===	v[      4]	=	quarante deux
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	quarante deux
+	===	v[      7]	=	quarante deux
+	===	v[      8]	=	quarante deux
+	===	v[      9]	=	quarante deux
 
 ===	display_relationals() :
 ===	CONTEXT : copy constructed from v_fill1
@@ -109,15 +109,27 @@
 ===	display_capacity() :
 ===	CONTEXT : vector<T> v1(N, VAL3); v2 = v1; with v1 bigger than v2
 	===	v.empty()	=	false
-	===	v.size()	=	3
-	===	v.capacity()	=	3
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	15
+	===	v.capacity()	=	15
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : vector<T> v1(N, VAL3); v2 = v1; with v1 bigger than v2
-	===	v[      0]	=	-1
-	===	v[      1]	=	-1
-	===	v[      2]	=	-1
+	===	v[      0]	=	moins un
+	===	v[      1]	=	moins un
+	===	v[      2]	=	moins un
+	===	v[      3]	=	moins un
+	===	v[      4]	=	moins un
+	===	v[      5]	=	moins un
+	===	v[      6]	=	moins un
+	===	v[      7]	=	moins un
+	===	v[      8]	=	moins un
+	===	v[      9]	=	moins un
+	===	v[     10]	=	moins un
+	===	v[     11]	=	moins un
+	===	v[     12]	=	moins un
+	===	v[     13]	=	moins un
+	===	v[     14]	=	moins un
 
 ===	display_relationals() :
 ===	CONTEXT : vector<T> v1(N, VAL3); v2 = v1; with v1 bigger than v2
@@ -132,8 +144,8 @@
 ===	CONTEXT : vector<T> v3; v2 = v3; v2 is empty
 	===	v.empty()	=	true
 	===	v.size()	=	0
-	===	v.capacity()	=	3
-	===	v.max_size()	=	2305843009213693951
+	===	v.capacity()	=	15
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : vector<T> v3; v2 = v3; v2 is empty
@@ -151,34 +163,58 @@
 ===	display_capacity() :
 ===	CONTEXT : rand_push_back(v3);
 	===	v.empty()	=	false
-	===	v.size()	=	6
-	===	v.capacity()	=	8
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	30
+	===	v.capacity()	=	32
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : rand_push_back(v3);
-	===	v[      0]	=	-1
-	===	v[      1]	=	42
-	===	v[      2]	=	-1
-	===	v[      3]	=	-1
-	===	v[      4]	=	-1
-	===	v[      5]	=	42
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	moins un
+	===	v[      2]	=	moins un
+	===	v[      3]	=	mille trois cent
+	===	v[      4]	=	mille trois cent
+	===	v[      5]	=	moins un
+	===	v[      6]	=	quarante deux
+	===	v[      7]	=	moins un
+	===	v[      8]	=	quarante deux
+	===	v[      9]	=	quarante deux
+	===	v[     10]	=	quarante deux
+	===	v[     11]	=	quarante deux
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	quarante deux
+	===	v[     15]	=	moins un
+	===	v[     16]	=	mille trois cent
+	===	v[     17]	=	quarante deux
+	===	v[     18]	=	mille trois cent
+	===	v[     19]	=	quarante deux
+	===	v[     20]	=	quarante deux
+	===	v[     21]	=	mille trois cent
+	===	v[     22]	=	moins un
+	===	v[     23]	=	moins un
+	===	v[     24]	=	quarante deux
+	===	v[     25]	=	quarante deux
+	===	v[     26]	=	quarante deux
+	===	v[     27]	=	moins un
+	===	v[     28]	=	quarante deux
+	===	v[     29]	=	moins un
 
 ===	display_relationals() :
 ===	CONTEXT : rand_push_back(v3);
 	===	(v1 == v2)	=	false
 	===	(v1 != v2)	=	true
-	===	(v1 <  v2)	=	true
-	===	(v1 <= v2)	=	true
-	===	(v1 >  v2)	=	false
-	===	(v1 >= v2)	=	false
+	===	(v1 <  v2)	=	false
+	===	(v1 <= v2)	=	false
+	===	(v1 >  v2)	=	true
+	===	(v1 >= v2)	=	true
 
 ===	display_capacity() :
 ===	CONTEXT : v3 = v2 = v1; multiple assignations test
 	===	v.empty()	=	true
 	===	v.size()	=	0
-	===	v.capacity()	=	8
-	===	v.max_size()	=	2305843009213693951
+	===	v.capacity()	=	32
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : v3 = v2 = v1; multiple assignations test
@@ -210,281 +246,593 @@
 ===	display_capacity() :
 ===	CONTEXT : v.resize(v.size() / 2); resizing with (n < size)
 	===	v.empty()	=	false
-	===	v.size()	=	3
-	===	v.capacity()	=	8
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	15
+	===	v.capacity()	=	32
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : v.resize(v.size() / 2); resizing with (n < size)
-	===	v[      0]	=	-1
-	===	v[      1]	=	42
-	===	v[      2]	=	42
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	moins un
+	===	v[      4]	=	moins un
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	quarante deux
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	quarante deux
+	===	v[     11]	=	moins un
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	quarante deux
+	===	v[     14]	=	moins un
 
 ===	display_elem_access() :
 ===	CONTEXT : v.resize(v.size() / 2); resizing with (n < size)
-	===	v.front()	=	-1
-	===	v.at(0)		=	-1
-	===	v[0]		=	-1
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	moins un
+	===	v.at(size()-1)	=	moins un
+	===	v[v.size()-1]	=	moins un
 
 ===	display_capacity() :
 ===	CONTEXT : v.resize(v.size() * 3); resizing with (n > size)
 	===	v.empty()	=	false
-	===	v.size()	=	9
-	===	v.capacity()	=	9
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	45
+	===	v.capacity()	=	45
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : v.resize(v.size() * 3); resizing with (n > size)
-	===	v[      0]	=	-1
-	===	v[      1]	=	42
-	===	v[      2]	=	42
-	===	v[      3]	=	1337
-	===	v[      4]	=	1337
-	===	v[      5]	=	1337
-	===	v[      6]	=	1337
-	===	v[      7]	=	1337
-	===	v[      8]	=	1337
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	moins un
+	===	v[      4]	=	moins un
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	quarante deux
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	quarante deux
+	===	v[     11]	=	moins un
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	quarante deux
+	===	v[     14]	=	moins un
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	mille trois cent
+	===	v[     17]	=	mille trois cent
+	===	v[     18]	=	mille trois cent
+	===	v[     19]	=	mille trois cent
+	===	v[     20]	=	mille trois cent
+	===	v[     21]	=	mille trois cent
+	===	v[     22]	=	mille trois cent
+	===	v[     23]	=	mille trois cent
+	===	v[     24]	=	mille trois cent
+	===	v[     25]	=	mille trois cent
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	mille trois cent
+	===	v[     28]	=	mille trois cent
+	===	v[     29]	=	mille trois cent
+	===	v[     30]	=	mille trois cent
+	===	v[     31]	=	mille trois cent
+	===	v[     32]	=	mille trois cent
+	===	v[     33]	=	mille trois cent
+	===	v[     34]	=	mille trois cent
+	===	v[     35]	=	mille trois cent
+	===	v[     36]	=	mille trois cent
+	===	v[     37]	=	mille trois cent
+	===	v[     38]	=	mille trois cent
+	===	v[     39]	=	mille trois cent
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	mille trois cent
+	===	v[     42]	=	mille trois cent
+	===	v[     43]	=	mille trois cent
+	===	v[     44]	=	mille trois cent
 
 ===	display_elem_access() :
 ===	CONTEXT : v.resize(v.size() * 3); resizing with (n > size)
-	===	v.front()	=	-1
-	===	v.at(0)		=	-1
-	===	v[0]		=	-1
-	===	v.back()	=	1337
-	===	v.at(size()-1)	=	1337
-	===	v[v.size()-1]	=	1337
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	mille trois cent
+	===	v.at(size()-1)	=	mille trois cent
+	===	v[v.size()-1]	=	mille trois cent
 
 ===	display_capacity() :
 ===	CONTEXT : v.resize(v.capacity() * 2); resizing with (n > capacity)
 	===	v.empty()	=	false
-	===	v.size()	=	12
-	===	v.capacity()	=	18
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	48
+	===	v.capacity()	=	90
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : v.resize(v.capacity() * 2); resizing with (n > capacity)
-	===	v[      0]	=	-1
-	===	v[      1]	=	42
-	===	v[      2]	=	42
-	===	v[      3]	=	1337
-	===	v[      4]	=	1337
-	===	v[      5]	=	1337
-	===	v[      6]	=	1337
-	===	v[      7]	=	1337
-	===	v[      8]	=	1337
-	===	v[      9]	=	42
-	===	v[     10]	=	42
-	===	v[     11]	=	42
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	moins un
+	===	v[      4]	=	moins un
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	quarante deux
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	quarante deux
+	===	v[     11]	=	moins un
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	quarante deux
+	===	v[     14]	=	moins un
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	mille trois cent
+	===	v[     17]	=	mille trois cent
+	===	v[     18]	=	mille trois cent
+	===	v[     19]	=	mille trois cent
+	===	v[     20]	=	mille trois cent
+	===	v[     21]	=	mille trois cent
+	===	v[     22]	=	mille trois cent
+	===	v[     23]	=	mille trois cent
+	===	v[     24]	=	mille trois cent
+	===	v[     25]	=	mille trois cent
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	mille trois cent
+	===	v[     28]	=	mille trois cent
+	===	v[     29]	=	mille trois cent
+	===	v[     30]	=	mille trois cent
+	===	v[     31]	=	mille trois cent
+	===	v[     32]	=	mille trois cent
+	===	v[     33]	=	mille trois cent
+	===	v[     34]	=	mille trois cent
+	===	v[     35]	=	mille trois cent
+	===	v[     36]	=	mille trois cent
+	===	v[     37]	=	mille trois cent
+	===	v[     38]	=	mille trois cent
+	===	v[     39]	=	mille trois cent
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	mille trois cent
+	===	v[     42]	=	mille trois cent
+	===	v[     43]	=	mille trois cent
+	===	v[     44]	=	mille trois cent
+	===	v[     45]	=	quarante deux
+	===	v[     46]	=	quarante deux
+	===	v[     47]	=	quarante deux
 
 ===	display_elem_access() :
 ===	CONTEXT : v.resize(v.capacity() * 2); resizing with (n > capacity)
-	===	v.front()	=	-1
-	===	v.at(0)		=	-1
-	===	v[0]		=	-1
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	quarante deux
+	===	v.at(size()-1)	=	quarante deux
+	===	v[v.size()-1]	=	quarante deux
 
 ===	v.resize(N);
 ===	display_capacity() :
 ===	CONTEXT : v.reserve(v.capacity() + 1); reserving one more elem
 	===	v.empty()	=	false
-	===	v.size()	=	3
-	===	v.capacity()	=	19
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	15
+	===	v.capacity()	=	91
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : v.reserve(v.capacity() + 1); reserving one more elem
-	===	v[      0]	=	-1
-	===	v[      1]	=	42
-	===	v[      2]	=	42
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	moins un
+	===	v[      4]	=	moins un
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	quarante deux
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	quarante deux
+	===	v[     11]	=	moins un
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	quarante deux
+	===	v[     14]	=	moins un
 
 ===	display_elem_access() :
 ===	CONTEXT : v.reserve(v.capacity() + 1); reserving one more elem
-	===	v.front()	=	-1
-	===	v.at(0)		=	-1
-	===	v[0]		=	-1
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	moins un
+	===	v.at(size()-1)	=	moins un
+	===	v[v.size()-1]	=	moins un
 
 ===	display_capacity() :
 ===	CONTEXT : v.reserve(v.capacity()); reserving same capacity
 	===	v.empty()	=	false
-	===	v.size()	=	3
-	===	v.capacity()	=	19
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	15
+	===	v.capacity()	=	91
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : v.reserve(v.capacity()); reserving same capacity
-	===	v[      0]	=	-1
-	===	v[      1]	=	42
-	===	v[      2]	=	42
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	moins un
+	===	v[      4]	=	moins un
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	quarante deux
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	quarante deux
+	===	v[     11]	=	moins un
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	quarante deux
+	===	v[     14]	=	moins un
 
 ===	display_elem_access() :
 ===	CONTEXT : v.reserve(v.capacity()); reserving same capacity
-	===	v.front()	=	-1
-	===	v.at(0)		=	-1
-	===	v[0]		=	-1
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	moins un
+	===	v.at(size()-1)	=	moins un
+	===	v[v.size()-1]	=	moins un
 
 ===	display_capacity() :
 ===	CONTEXT : v.reserve(v.capacity() - 1); reserving lesser capacity
 	===	v.empty()	=	false
-	===	v.size()	=	3
-	===	v.capacity()	=	19
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	15
+	===	v.capacity()	=	91
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : v.reserve(v.capacity() - 1); reserving lesser capacity
-	===	v[      0]	=	-1
-	===	v[      1]	=	42
-	===	v[      2]	=	42
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	moins un
+	===	v[      4]	=	moins un
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	quarante deux
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	quarante deux
+	===	v[     11]	=	moins un
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	quarante deux
+	===	v[     14]	=	moins un
 
 ===	display_elem_access() :
 ===	CONTEXT : v.reserve(v.capacity() - 1); reserving lesser capacity
-	===	v.front()	=	-1
-	===	v.at(0)		=	-1
-	===	v[0]		=	-1
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	moins un
+	===	v.at(size()-1)	=	moins un
+	===	v[v.size()-1]	=	moins un
 
 ===	display_capacity() :
 ===	CONTEXT : v.reserve(v.max_size() + 1); exception thrown
 	===	v.empty()	=	false
-	===	v.size()	=	3
-	===	v.capacity()	=	19
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	15
+	===	v.capacity()	=	91
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : v.reserve(v.max_size() + 1); exception thrown
-	===	v[      0]	=	-1
-	===	v[      1]	=	42
-	===	v[      2]	=	42
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	moins un
+	===	v[      4]	=	moins un
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	quarante deux
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	quarante deux
+	===	v[     11]	=	moins un
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	quarante deux
+	===	v[     14]	=	moins un
 
 ===	display_elem_access() :
 ===	CONTEXT : v.reserve(v.max_size() + 1); exception thrown
-	===	v.front()	=	-1
-	===	v.at(0)		=	-1
-	===	v[0]		=	-1
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	moins un
+	===	v.at(size()-1)	=	moins un
+	===	v[v.size()-1]	=	moins un
 
 =========================
 =	ELEMENT ACCESS	=
 =========================
 
 ===	operator[] access / assignation
-	===	-1
-	===	-1
-	===	-1
-	===	-1
-	===	42
-	===	42
-	===	-1
-	===	-1
-	===	42
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	moins un
+	===	moins un
+	===	quarante deux
+	===	quarante deux
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	moins un
+	===	mille trois cent
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	moins un
+	===	mille trois cent
 
 ===	display_capacity() :
 ===	CONTEXT : v[i++] = copy; each member assigned
 	===	v.empty()	=	false
-	===	v.size()	=	9
-	===	v.capacity()	=	12
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	45
+	===	v.capacity()	=	60
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : v[i++] = copy; each member assigned
-	===	v[      0]	=	1337
-	===	v[      1]	=	1337
-	===	v[      2]	=	1337
-	===	v[      3]	=	1337
-	===	v[      4]	=	1337
-	===	v[      5]	=	1337
-	===	v[      6]	=	1337
-	===	v[      7]	=	1337
-	===	v[      8]	=	1337
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	mille trois cent
+	===	v[      2]	=	mille trois cent
+	===	v[      3]	=	mille trois cent
+	===	v[      4]	=	mille trois cent
+	===	v[      5]	=	mille trois cent
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	mille trois cent
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	mille trois cent
+	===	v[     17]	=	mille trois cent
+	===	v[     18]	=	mille trois cent
+	===	v[     19]	=	mille trois cent
+	===	v[     20]	=	mille trois cent
+	===	v[     21]	=	mille trois cent
+	===	v[     22]	=	mille trois cent
+	===	v[     23]	=	mille trois cent
+	===	v[     24]	=	mille trois cent
+	===	v[     25]	=	mille trois cent
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	mille trois cent
+	===	v[     28]	=	mille trois cent
+	===	v[     29]	=	mille trois cent
+	===	v[     30]	=	mille trois cent
+	===	v[     31]	=	mille trois cent
+	===	v[     32]	=	mille trois cent
+	===	v[     33]	=	mille trois cent
+	===	v[     34]	=	mille trois cent
+	===	v[     35]	=	mille trois cent
+	===	v[     36]	=	mille trois cent
+	===	v[     37]	=	mille trois cent
+	===	v[     38]	=	mille trois cent
+	===	v[     39]	=	mille trois cent
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	mille trois cent
+	===	v[     42]	=	mille trois cent
+	===	v[     43]	=	mille trois cent
+	===	v[     44]	=	mille trois cent
 
 ===	display_elem_access() :
 ===	CONTEXT : v[i++] = copy; each member assigned
-	===	v.front()	=	1337
-	===	v.at(0)		=	1337
-	===	v[0]		=	1337
-	===	v.back()	=	1337
-	===	v.at(size()-1)	=	1337
-	===	v[v.size()-1]	=	1337
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	mille trois cent
+	===	v.at(size()-1)	=	mille trois cent
+	===	v[v.size()-1]	=	mille trois cent
 
 ===	at() access / assignation
-	===	-1
-	===	-1
-	===	-1
-	===	-1
-	===	42
-	===	42
-	===	-1
-	===	-1
-	===	42
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	moins un
+	===	moins un
+	===	quarante deux
+	===	quarante deux
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	moins un
+	===	mille trois cent
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	moins un
+	===	mille trois cent
 ===	display_capacity() :
 ===	CONTEXT : after at() retrieval and assignation test
 	===	v.empty()	=	false
-	===	v.size()	=	9
-	===	v.capacity()	=	12
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	45
+	===	v.capacity()	=	60
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : after at() retrieval and assignation test
-	===	v[      0]	=	-1
-	===	v[      1]	=	-1
-	===	v[      2]	=	-1
-	===	v[      3]	=	-1
-	===	v[      4]	=	42
-	===	v[      5]	=	42
-	===	v[      6]	=	-1
-	===	v[      7]	=	-1
-	===	v[      8]	=	42
+	===	v[      0]	=	moins un
+	===	v[      1]	=	moins un
+	===	v[      2]	=	moins un
+	===	v[      3]	=	moins un
+	===	v[      4]	=	moins un
+	===	v[      5]	=	moins un
+	===	v[      6]	=	moins un
+	===	v[      7]	=	moins un
+	===	v[      8]	=	moins un
+	===	v[      9]	=	moins un
+	===	v[     10]	=	moins un
+	===	v[     11]	=	moins un
+	===	v[     12]	=	moins un
+	===	v[     13]	=	moins un
+	===	v[     14]	=	moins un
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	moins un
+	===	v[     17]	=	moins un
+	===	v[     18]	=	moins un
+	===	v[     19]	=	quarante deux
+	===	v[     20]	=	quarante deux
+	===	v[     21]	=	mille trois cent
+	===	v[     22]	=	moins un
+	===	v[     23]	=	quarante deux
+	===	v[     24]	=	mille trois cent
+	===	v[     25]	=	moins un
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	moins un
+	===	v[     28]	=	mille trois cent
+	===	v[     29]	=	moins un
+	===	v[     30]	=	quarante deux
+	===	v[     31]	=	moins un
+	===	v[     32]	=	mille trois cent
+	===	v[     33]	=	mille trois cent
+	===	v[     34]	=	moins un
+	===	v[     35]	=	quarante deux
+	===	v[     36]	=	mille trois cent
+	===	v[     37]	=	mille trois cent
+	===	v[     38]	=	moins un
+	===	v[     39]	=	quarante deux
+	===	v[     40]	=	quarante deux
+	===	v[     41]	=	quarante deux
+	===	v[     42]	=	quarante deux
+	===	v[     43]	=	moins un
+	===	v[     44]	=	mille trois cent
 
 ===	display_elem_access() :
 ===	CONTEXT : after at() retrieval and assignation test
-	===	v.front()	=	-1
-	===	v.at(0)		=	-1
-	===	v[0]		=	-1
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	moins un
+	===	v.at(0)		=	moins un
+	===	v[0]		=	moins un
+	===	v.back()	=	mille trois cent
+	===	v.at(size()-1)	=	mille trois cent
+	===	v[v.size()-1]	=	mille trois cent
 
 ===	display_capacity() :
 ===	CONTEXT : after at() retrieval and assignation test - const version
 	===	v.empty()	=	false
-	===	v.size()	=	9
-	===	v.capacity()	=	9
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	45
+	===	v.capacity()	=	45
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : after at() retrieval and assignation test - const version
-	===	v[      0]	=	-1
-	===	v[      1]	=	-1
-	===	v[      2]	=	-1
-	===	v[      3]	=	-1
-	===	v[      4]	=	42
-	===	v[      5]	=	42
-	===	v[      6]	=	-1
-	===	v[      7]	=	-1
-	===	v[      8]	=	42
+	===	v[      0]	=	moins un
+	===	v[      1]	=	moins un
+	===	v[      2]	=	moins un
+	===	v[      3]	=	moins un
+	===	v[      4]	=	moins un
+	===	v[      5]	=	moins un
+	===	v[      6]	=	moins un
+	===	v[      7]	=	moins un
+	===	v[      8]	=	moins un
+	===	v[      9]	=	moins un
+	===	v[     10]	=	moins un
+	===	v[     11]	=	moins un
+	===	v[     12]	=	moins un
+	===	v[     13]	=	moins un
+	===	v[     14]	=	moins un
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	moins un
+	===	v[     17]	=	moins un
+	===	v[     18]	=	moins un
+	===	v[     19]	=	quarante deux
+	===	v[     20]	=	quarante deux
+	===	v[     21]	=	mille trois cent
+	===	v[     22]	=	moins un
+	===	v[     23]	=	quarante deux
+	===	v[     24]	=	mille trois cent
+	===	v[     25]	=	moins un
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	moins un
+	===	v[     28]	=	mille trois cent
+	===	v[     29]	=	moins un
+	===	v[     30]	=	quarante deux
+	===	v[     31]	=	moins un
+	===	v[     32]	=	mille trois cent
+	===	v[     33]	=	mille trois cent
+	===	v[     34]	=	moins un
+	===	v[     35]	=	quarante deux
+	===	v[     36]	=	mille trois cent
+	===	v[     37]	=	mille trois cent
+	===	v[     38]	=	moins un
+	===	v[     39]	=	quarante deux
+	===	v[     40]	=	quarante deux
+	===	v[     41]	=	quarante deux
+	===	v[     42]	=	quarante deux
+	===	v[     43]	=	moins un
+	===	v[     44]	=	mille trois cent
 
 ===	display_elem_access() :
 ===	CONTEXT : after at() retrieval and assignation test - const version
-	===	v.front()	=	-1
-	===	v.at(0)		=	-1
-	===	v[0]		=	-1
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	moins un
+	===	v.at(0)		=	moins un
+	===	v[0]		=	moins un
+	===	v.back()	=	mille trois cent
+	===	v.at(size()-1)	=	mille trois cent
+	===	v[v.size()-1]	=	mille trois cent
 
 =========================
 =	MODIFIERS	=
@@ -493,409 +841,1189 @@
 ===	display_capacity() :
 ===	CONTEXT : pushed back N * 2 elements
 	===	v.empty()	=	false
-	===	v.size()	=	6
-	===	v.capacity()	=	8
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	30
+	===	v.capacity()	=	32
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : pushed back N * 2 elements
-	===	v[      0]	=	1337
-	===	v[      1]	=	1337
-	===	v[      2]	=	1337
-	===	v[      3]	=	1337
-	===	v[      4]	=	1337
-	===	v[      5]	=	1337
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	mille trois cent
+	===	v[      2]	=	mille trois cent
+	===	v[      3]	=	mille trois cent
+	===	v[      4]	=	mille trois cent
+	===	v[      5]	=	mille trois cent
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	mille trois cent
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	mille trois cent
+	===	v[     17]	=	mille trois cent
+	===	v[     18]	=	mille trois cent
+	===	v[     19]	=	mille trois cent
+	===	v[     20]	=	mille trois cent
+	===	v[     21]	=	mille trois cent
+	===	v[     22]	=	mille trois cent
+	===	v[     23]	=	mille trois cent
+	===	v[     24]	=	mille trois cent
+	===	v[     25]	=	mille trois cent
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	mille trois cent
+	===	v[     28]	=	mille trois cent
+	===	v[     29]	=	mille trois cent
 
 ===	display_elem_access() :
 ===	CONTEXT : pushed back N * 2 elements
-	===	v.front()	=	1337
-	===	v.at(0)		=	1337
-	===	v[0]		=	1337
-	===	v.back()	=	1337
-	===	v.at(size()-1)	=	1337
-	===	v[v.size()-1]	=	1337
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	mille trois cent
+	===	v.at(size()-1)	=	mille trois cent
+	===	v[v.size()-1]	=	mille trois cent
 
 ===	display_capacity() :
 ===	CONTEXT : pop_back()ed N last elements
 	===	v.empty()	=	false
-	===	v.size()	=	3
-	===	v.capacity()	=	8
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	15
+	===	v.capacity()	=	32
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : pop_back()ed N last elements
-	===	v[      0]	=	1337
-	===	v[      1]	=	1337
-	===	v[      2]	=	1337
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	mille trois cent
+	===	v[      2]	=	mille trois cent
+	===	v[      3]	=	mille trois cent
+	===	v[      4]	=	mille trois cent
+	===	v[      5]	=	mille trois cent
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	mille trois cent
 
 ===	display_elem_access() :
 ===	CONTEXT : pop_back()ed N last elements
-	===	v.front()	=	1337
-	===	v.at(0)		=	1337
-	===	v[0]		=	1337
-	===	v.back()	=	1337
-	===	v.at(size()-1)	=	1337
-	===	v[v.size()-1]	=	1337
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	mille trois cent
+	===	v.at(size()-1)	=	mille trois cent
+	===	v[v.size()-1]	=	mille trois cent
 
 ===	display_capacity() :
 ===	CONTEXT : inserted VAL3 between each element
 	===	v.empty()	=	false
-	===	v.size()	=	6
-	===	v.capacity()	=	8
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	30
+	===	v.capacity()	=	32
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : inserted VAL3 between each element
-	===	v[      0]	=	-1
-	===	v[      1]	=	1337
-	===	v[      2]	=	-1
-	===	v[      3]	=	1337
-	===	v[      4]	=	-1
-	===	v[      5]	=	1337
+	===	v[      0]	=	moins un
+	===	v[      1]	=	mille trois cent
+	===	v[      2]	=	moins un
+	===	v[      3]	=	mille trois cent
+	===	v[      4]	=	moins un
+	===	v[      5]	=	mille trois cent
+	===	v[      6]	=	moins un
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	moins un
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	moins un
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	moins un
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	moins un
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	moins un
+	===	v[     17]	=	mille trois cent
+	===	v[     18]	=	moins un
+	===	v[     19]	=	mille trois cent
+	===	v[     20]	=	moins un
+	===	v[     21]	=	mille trois cent
+	===	v[     22]	=	moins un
+	===	v[     23]	=	mille trois cent
+	===	v[     24]	=	moins un
+	===	v[     25]	=	mille trois cent
+	===	v[     26]	=	moins un
+	===	v[     27]	=	mille trois cent
+	===	v[     28]	=	moins un
+	===	v[     29]	=	mille trois cent
 
 ===	display_elem_access() :
 ===	CONTEXT : inserted VAL3 between each element
-	===	v.front()	=	-1
-	===	v.at(0)		=	-1
-	===	v[0]		=	-1
-	===	v.back()	=	1337
-	===	v.at(size()-1)	=	1337
-	===	v[v.size()-1]	=	1337
+	===	v.front()	=	moins un
+	===	v.at(0)		=	moins un
+	===	v[0]		=	moins un
+	===	v.back()	=	mille trois cent
+	===	v.at(size()-1)	=	mille trois cent
+	===	v[v.size()-1]	=	mille trois cent
 
 ===	display_capacity() :
 ===	CONTEXT : inserted VAL3 until reallocation => while (v.size() < cpct + N)
 	===	v.empty()	=	false
-	===	v.size()	=	11
-	===	v.capacity()	=	16
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	47
+	===	v.capacity()	=	64
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : inserted VAL3 until reallocation => while (v.size() < cpct + N)
-	===	v[      0]	=	1337
-	===	v[      1]	=	1337
-	===	v[      2]	=	1337
-	===	v[      3]	=	1337
-	===	v[      4]	=	1337
-	===	v[      5]	=	-1
-	===	v[      6]	=	1337
-	===	v[      7]	=	-1
-	===	v[      8]	=	1337
-	===	v[      9]	=	-1
-	===	v[     10]	=	1337
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	mille trois cent
+	===	v[      2]	=	mille trois cent
+	===	v[      3]	=	mille trois cent
+	===	v[      4]	=	mille trois cent
+	===	v[      5]	=	mille trois cent
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	mille trois cent
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	mille trois cent
+	===	v[     17]	=	moins un
+	===	v[     18]	=	mille trois cent
+	===	v[     19]	=	moins un
+	===	v[     20]	=	mille trois cent
+	===	v[     21]	=	moins un
+	===	v[     22]	=	mille trois cent
+	===	v[     23]	=	moins un
+	===	v[     24]	=	mille trois cent
+	===	v[     25]	=	moins un
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	moins un
+	===	v[     28]	=	mille trois cent
+	===	v[     29]	=	moins un
+	===	v[     30]	=	mille trois cent
+	===	v[     31]	=	moins un
+	===	v[     32]	=	mille trois cent
+	===	v[     33]	=	moins un
+	===	v[     34]	=	mille trois cent
+	===	v[     35]	=	moins un
+	===	v[     36]	=	mille trois cent
+	===	v[     37]	=	moins un
+	===	v[     38]	=	mille trois cent
+	===	v[     39]	=	moins un
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	moins un
+	===	v[     42]	=	mille trois cent
+	===	v[     43]	=	moins un
+	===	v[     44]	=	mille trois cent
+	===	v[     45]	=	moins un
+	===	v[     46]	=	mille trois cent
 
 ===	display_elem_access() :
 ===	CONTEXT : inserted VAL3 until reallocation => while (v.size() < cpct + N)
-	===	v.front()	=	1337
-	===	v.at(0)		=	1337
-	===	v[0]		=	1337
-	===	v.back()	=	1337
-	===	v.at(size()-1)	=	1337
-	===	v[v.size()-1]	=	1337
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	mille trois cent
+	===	v.at(size()-1)	=	mille trois cent
+	===	v[v.size()-1]	=	mille trois cent
 
 ===	display_capacity() :
 ===	CONTEXT : inserted N*VAL1, N*VAL2, N*VAL3 at v.end()
 	===	v.empty()	=	false
-	===	v.size()	=	20
-	===	v.capacity()	=	28
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	92
+	===	v.capacity()	=	124
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : inserted N*VAL1, N*VAL2, N*VAL3 at v.end()
-	===	v[      0]	=	1337
-	===	v[      1]	=	1337
-	===	v[      2]	=	1337
-	===	v[      3]	=	1337
-	===	v[      4]	=	1337
-	===	v[      5]	=	-1
-	===	v[      6]	=	1337
-	===	v[      7]	=	-1
-	===	v[      8]	=	1337
-	===	v[      9]	=	-1
-	===	v[     10]	=	1337
-	===	v[     11]	=	42
-	===	v[     12]	=	42
-	===	v[     13]	=	42
-	===	v[     14]	=	1337
-	===	v[     15]	=	1337
-	===	v[     16]	=	1337
-	===	v[     17]	=	-1
-	===	v[     18]	=	-1
-	===	v[     19]	=	-1
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	mille trois cent
+	===	v[      2]	=	mille trois cent
+	===	v[      3]	=	mille trois cent
+	===	v[      4]	=	mille trois cent
+	===	v[      5]	=	mille trois cent
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	mille trois cent
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	mille trois cent
+	===	v[     17]	=	moins un
+	===	v[     18]	=	mille trois cent
+	===	v[     19]	=	moins un
+	===	v[     20]	=	mille trois cent
+	===	v[     21]	=	moins un
+	===	v[     22]	=	mille trois cent
+	===	v[     23]	=	moins un
+	===	v[     24]	=	mille trois cent
+	===	v[     25]	=	moins un
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	moins un
+	===	v[     28]	=	mille trois cent
+	===	v[     29]	=	moins un
+	===	v[     30]	=	mille trois cent
+	===	v[     31]	=	moins un
+	===	v[     32]	=	mille trois cent
+	===	v[     33]	=	moins un
+	===	v[     34]	=	mille trois cent
+	===	v[     35]	=	moins un
+	===	v[     36]	=	mille trois cent
+	===	v[     37]	=	moins un
+	===	v[     38]	=	mille trois cent
+	===	v[     39]	=	moins un
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	moins un
+	===	v[     42]	=	mille trois cent
+	===	v[     43]	=	moins un
+	===	v[     44]	=	mille trois cent
+	===	v[     45]	=	moins un
+	===	v[     46]	=	mille trois cent
+	===	v[     47]	=	quarante deux
+	===	v[     48]	=	quarante deux
+	===	v[     49]	=	quarante deux
+	===	v[     50]	=	quarante deux
+	===	v[     51]	=	quarante deux
+	===	v[     52]	=	quarante deux
+	===	v[     53]	=	quarante deux
+	===	v[     54]	=	quarante deux
+	===	v[     55]	=	quarante deux
+	===	v[     56]	=	quarante deux
+	===	v[     57]	=	quarante deux
+	===	v[     58]	=	quarante deux
+	===	v[     59]	=	quarante deux
+	===	v[     60]	=	quarante deux
+	===	v[     61]	=	quarante deux
+	===	v[     62]	=	mille trois cent
+	===	v[     63]	=	mille trois cent
+	===	v[     64]	=	mille trois cent
+	===	v[     65]	=	mille trois cent
+	===	v[     66]	=	mille trois cent
+	===	v[     67]	=	mille trois cent
+	===	v[     68]	=	mille trois cent
+	===	v[     69]	=	mille trois cent
+	===	v[     70]	=	mille trois cent
+	===	v[     71]	=	mille trois cent
+	===	v[     72]	=	mille trois cent
+	===	v[     73]	=	mille trois cent
+	===	v[     74]	=	mille trois cent
+	===	v[     75]	=	mille trois cent
+	===	v[     76]	=	mille trois cent
+	===	v[     77]	=	moins un
+	===	v[     78]	=	moins un
+	===	v[     79]	=	moins un
+	===	v[     80]	=	moins un
+	===	v[     81]	=	moins un
+	===	v[     82]	=	moins un
+	===	v[     83]	=	moins un
+	===	v[     84]	=	moins un
+	===	v[     85]	=	moins un
+	===	v[     86]	=	moins un
+	===	v[     87]	=	moins un
+	===	v[     88]	=	moins un
+	===	v[     89]	=	moins un
+	===	v[     90]	=	moins un
+	===	v[     91]	=	moins un
 
 ===	display_elem_access() :
 ===	CONTEXT : inserted N*VAL1, N*VAL2, N*VAL3 at v.end()
-	===	v.front()	=	1337
-	===	v.at(0)		=	1337
-	===	v[0]		=	1337
-	===	v.back()	=	-1
-	===	v.at(size()-1)	=	-1
-	===	v[v.size()-1]	=	-1
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	moins un
+	===	v.at(size()-1)	=	moins un
+	===	v[v.size()-1]	=	moins un
 
 ===	display_capacity() :
 ===	CONTEXT : inserted v in the middle of itself
 	===	v.empty()	=	false
-	===	v.size()	=	40
-	===	v.capacity()	=	40
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	184
+	===	v.capacity()	=	184
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : inserted v in the middle of itself
-	===	v[      0]	=	1337
-	===	v[      1]	=	1337
-	===	v[      2]	=	1337
-	===	v[      3]	=	1337
-	===	v[      4]	=	1337
-	===	v[      5]	=	-1
-	===	v[      6]	=	1337
-	===	v[      7]	=	-1
-	===	v[      8]	=	1337
-	===	v[      9]	=	-1
-	===	v[     10]	=	1337
-	===	v[     11]	=	1337
-	===	v[     12]	=	1337
-	===	v[     13]	=	1337
-	===	v[     14]	=	1337
-	===	v[     15]	=	-1
-	===	v[     16]	=	1337
-	===	v[     17]	=	-1
-	===	v[     18]	=	1337
-	===	v[     19]	=	-1
-	===	v[     20]	=	1337
-	===	v[     21]	=	42
-	===	v[     22]	=	42
-	===	v[     23]	=	42
-	===	v[     24]	=	1337
-	===	v[     25]	=	1337
-	===	v[     26]	=	1337
-	===	v[     27]	=	-1
-	===	v[     28]	=	-1
-	===	v[     29]	=	-1
-	===	v[     30]	=	1337
-	===	v[     31]	=	42
-	===	v[     32]	=	42
-	===	v[     33]	=	42
-	===	v[     34]	=	1337
-	===	v[     35]	=	1337
-	===	v[     36]	=	1337
-	===	v[     37]	=	-1
-	===	v[     38]	=	-1
-	===	v[     39]	=	-1
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	mille trois cent
+	===	v[      2]	=	mille trois cent
+	===	v[      3]	=	mille trois cent
+	===	v[      4]	=	mille trois cent
+	===	v[      5]	=	mille trois cent
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	mille trois cent
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	mille trois cent
+	===	v[     17]	=	moins un
+	===	v[     18]	=	mille trois cent
+	===	v[     19]	=	moins un
+	===	v[     20]	=	mille trois cent
+	===	v[     21]	=	moins un
+	===	v[     22]	=	mille trois cent
+	===	v[     23]	=	moins un
+	===	v[     24]	=	mille trois cent
+	===	v[     25]	=	moins un
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	moins un
+	===	v[     28]	=	mille trois cent
+	===	v[     29]	=	moins un
+	===	v[     30]	=	mille trois cent
+	===	v[     31]	=	moins un
+	===	v[     32]	=	mille trois cent
+	===	v[     33]	=	moins un
+	===	v[     34]	=	mille trois cent
+	===	v[     35]	=	moins un
+	===	v[     36]	=	mille trois cent
+	===	v[     37]	=	moins un
+	===	v[     38]	=	mille trois cent
+	===	v[     39]	=	moins un
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	moins un
+	===	v[     42]	=	mille trois cent
+	===	v[     43]	=	moins un
+	===	v[     44]	=	mille trois cent
+	===	v[     45]	=	moins un
+	===	v[     46]	=	mille trois cent
+	===	v[     47]	=	mille trois cent
+	===	v[     48]	=	mille trois cent
+	===	v[     49]	=	mille trois cent
+	===	v[     50]	=	mille trois cent
+	===	v[     51]	=	mille trois cent
+	===	v[     52]	=	mille trois cent
+	===	v[     53]	=	mille trois cent
+	===	v[     54]	=	mille trois cent
+	===	v[     55]	=	mille trois cent
+	===	v[     56]	=	mille trois cent
+	===	v[     57]	=	mille trois cent
+	===	v[     58]	=	mille trois cent
+	===	v[     59]	=	mille trois cent
+	===	v[     60]	=	mille trois cent
+	===	v[     61]	=	mille trois cent
+	===	v[     62]	=	mille trois cent
+	===	v[     63]	=	moins un
+	===	v[     64]	=	mille trois cent
+	===	v[     65]	=	moins un
+	===	v[     66]	=	mille trois cent
+	===	v[     67]	=	moins un
+	===	v[     68]	=	mille trois cent
+	===	v[     69]	=	moins un
+	===	v[     70]	=	mille trois cent
+	===	v[     71]	=	moins un
+	===	v[     72]	=	mille trois cent
+	===	v[     73]	=	moins un
+	===	v[     74]	=	mille trois cent
+	===	v[     75]	=	moins un
+	===	v[     76]	=	mille trois cent
+	===	v[     77]	=	moins un
+	===	v[     78]	=	mille trois cent
+	===	v[     79]	=	moins un
+	===	v[     80]	=	mille trois cent
+	===	v[     81]	=	moins un
+	===	v[     82]	=	mille trois cent
+	===	v[     83]	=	moins un
+	===	v[     84]	=	mille trois cent
+	===	v[     85]	=	moins un
+	===	v[     86]	=	mille trois cent
+	===	v[     87]	=	moins un
+	===	v[     88]	=	mille trois cent
+	===	v[     89]	=	moins un
+	===	v[     90]	=	mille trois cent
+	===	v[     91]	=	moins un
+	===	v[     92]	=	mille trois cent
+	===	v[     93]	=	quarante deux
+	===	v[     94]	=	quarante deux
+	===	v[     95]	=	quarante deux
+	===	v[     96]	=	quarante deux
+	===	v[     97]	=	quarante deux
+	===	v[     98]	=	quarante deux
+	===	v[     99]	=	quarante deux
+	===	v[    100]	=	quarante deux
+	===	v[    101]	=	quarante deux
+	===	v[    102]	=	quarante deux
+	===	v[    103]	=	quarante deux
+	===	v[    104]	=	quarante deux
+	===	v[    105]	=	quarante deux
+	===	v[    106]	=	quarante deux
+	===	v[    107]	=	quarante deux
+	===	v[    108]	=	mille trois cent
+	===	v[    109]	=	mille trois cent
+	===	v[    110]	=	mille trois cent
+	===	v[    111]	=	mille trois cent
+	===	v[    112]	=	mille trois cent
+	===	v[    113]	=	mille trois cent
+	===	v[    114]	=	mille trois cent
+	===	v[    115]	=	mille trois cent
+	===	v[    116]	=	mille trois cent
+	===	v[    117]	=	mille trois cent
+	===	v[    118]	=	mille trois cent
+	===	v[    119]	=	mille trois cent
+	===	v[    120]	=	mille trois cent
+	===	v[    121]	=	mille trois cent
+	===	v[    122]	=	mille trois cent
+	===	v[    123]	=	moins un
+	===	v[    124]	=	moins un
+	===	v[    125]	=	moins un
+	===	v[    126]	=	moins un
+	===	v[    127]	=	moins un
+	===	v[    128]	=	moins un
+	===	v[    129]	=	moins un
+	===	v[    130]	=	moins un
+	===	v[    131]	=	moins un
+	===	v[    132]	=	moins un
+	===	v[    133]	=	moins un
+	===	v[    134]	=	moins un
+	===	v[    135]	=	moins un
+	===	v[    136]	=	moins un
+	===	v[    137]	=	moins un
+	===	v[    138]	=	mille trois cent
+	===	v[    139]	=	quarante deux
+	===	v[    140]	=	quarante deux
+	===	v[    141]	=	quarante deux
+	===	v[    142]	=	quarante deux
+	===	v[    143]	=	quarante deux
+	===	v[    144]	=	quarante deux
+	===	v[    145]	=	quarante deux
+	===	v[    146]	=	quarante deux
+	===	v[    147]	=	quarante deux
+	===	v[    148]	=	quarante deux
+	===	v[    149]	=	quarante deux
+	===	v[    150]	=	quarante deux
+	===	v[    151]	=	quarante deux
+	===	v[    152]	=	quarante deux
+	===	v[    153]	=	quarante deux
+	===	v[    154]	=	mille trois cent
+	===	v[    155]	=	mille trois cent
+	===	v[    156]	=	mille trois cent
+	===	v[    157]	=	mille trois cent
+	===	v[    158]	=	mille trois cent
+	===	v[    159]	=	mille trois cent
+	===	v[    160]	=	mille trois cent
+	===	v[    161]	=	mille trois cent
+	===	v[    162]	=	mille trois cent
+	===	v[    163]	=	mille trois cent
+	===	v[    164]	=	mille trois cent
+	===	v[    165]	=	mille trois cent
+	===	v[    166]	=	mille trois cent
+	===	v[    167]	=	mille trois cent
+	===	v[    168]	=	mille trois cent
+	===	v[    169]	=	moins un
+	===	v[    170]	=	moins un
+	===	v[    171]	=	moins un
+	===	v[    172]	=	moins un
+	===	v[    173]	=	moins un
+	===	v[    174]	=	moins un
+	===	v[    175]	=	moins un
+	===	v[    176]	=	moins un
+	===	v[    177]	=	moins un
+	===	v[    178]	=	moins un
+	===	v[    179]	=	moins un
+	===	v[    180]	=	moins un
+	===	v[    181]	=	moins un
+	===	v[    182]	=	moins un
+	===	v[    183]	=	moins un
 
 ===	display_elem_access() :
 ===	CONTEXT : inserted v in the middle of itself
-	===	v.front()	=	1337
-	===	v.at(0)		=	1337
-	===	v[0]		=	1337
-	===	v.back()	=	-1
-	===	v.at(size()-1)	=	-1
-	===	v[v.size()-1]	=	-1
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	moins un
+	===	v.at(size()-1)	=	moins un
+	===	v[v.size()-1]	=	moins un
 
 ===	display_capacity() :
 ===	CONTEXT : inserted a list l at the end of v
 	===	v.empty()	=	false
-	===	v.size()	=	42
-	===	v.capacity()	=	80
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	198
+	===	v.capacity()	=	368
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : inserted a list l at the end of v
-	===	v[      0]	=	1337
-	===	v[      1]	=	1337
-	===	v[      2]	=	1337
-	===	v[      3]	=	1337
-	===	v[      4]	=	1337
-	===	v[      5]	=	-1
-	===	v[      6]	=	1337
-	===	v[      7]	=	-1
-	===	v[      8]	=	1337
-	===	v[      9]	=	-1
-	===	v[     10]	=	1337
-	===	v[     11]	=	1337
-	===	v[     12]	=	1337
-	===	v[     13]	=	1337
-	===	v[     14]	=	1337
-	===	v[     15]	=	-1
-	===	v[     16]	=	1337
-	===	v[     17]	=	-1
-	===	v[     18]	=	1337
-	===	v[     19]	=	-1
-	===	v[     20]	=	1337
-	===	v[     21]	=	42
-	===	v[     22]	=	42
-	===	v[     23]	=	42
-	===	v[     24]	=	1337
-	===	v[     25]	=	1337
-	===	v[     26]	=	1337
-	===	v[     27]	=	-1
-	===	v[     28]	=	-1
-	===	v[     29]	=	-1
-	===	v[     30]	=	1337
-	===	v[     31]	=	42
-	===	v[     32]	=	42
-	===	v[     33]	=	42
-	===	v[     34]	=	1337
-	===	v[     35]	=	1337
-	===	v[     36]	=	1337
-	===	v[     37]	=	-1
-	===	v[     38]	=	-1
-	===	v[     39]	=	-1
-	===	v[     40]	=	42
-	===	v[     41]	=	42
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	mille trois cent
+	===	v[      2]	=	mille trois cent
+	===	v[      3]	=	mille trois cent
+	===	v[      4]	=	mille trois cent
+	===	v[      5]	=	mille trois cent
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	mille trois cent
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	mille trois cent
+	===	v[     17]	=	moins un
+	===	v[     18]	=	mille trois cent
+	===	v[     19]	=	moins un
+	===	v[     20]	=	mille trois cent
+	===	v[     21]	=	moins un
+	===	v[     22]	=	mille trois cent
+	===	v[     23]	=	moins un
+	===	v[     24]	=	mille trois cent
+	===	v[     25]	=	moins un
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	moins un
+	===	v[     28]	=	mille trois cent
+	===	v[     29]	=	moins un
+	===	v[     30]	=	mille trois cent
+	===	v[     31]	=	moins un
+	===	v[     32]	=	mille trois cent
+	===	v[     33]	=	moins un
+	===	v[     34]	=	mille trois cent
+	===	v[     35]	=	moins un
+	===	v[     36]	=	mille trois cent
+	===	v[     37]	=	moins un
+	===	v[     38]	=	mille trois cent
+	===	v[     39]	=	moins un
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	moins un
+	===	v[     42]	=	mille trois cent
+	===	v[     43]	=	moins un
+	===	v[     44]	=	mille trois cent
+	===	v[     45]	=	moins un
+	===	v[     46]	=	mille trois cent
+	===	v[     47]	=	mille trois cent
+	===	v[     48]	=	mille trois cent
+	===	v[     49]	=	mille trois cent
+	===	v[     50]	=	mille trois cent
+	===	v[     51]	=	mille trois cent
+	===	v[     52]	=	mille trois cent
+	===	v[     53]	=	mille trois cent
+	===	v[     54]	=	mille trois cent
+	===	v[     55]	=	mille trois cent
+	===	v[     56]	=	mille trois cent
+	===	v[     57]	=	mille trois cent
+	===	v[     58]	=	mille trois cent
+	===	v[     59]	=	mille trois cent
+	===	v[     60]	=	mille trois cent
+	===	v[     61]	=	mille trois cent
+	===	v[     62]	=	mille trois cent
+	===	v[     63]	=	moins un
+	===	v[     64]	=	mille trois cent
+	===	v[     65]	=	moins un
+	===	v[     66]	=	mille trois cent
+	===	v[     67]	=	moins un
+	===	v[     68]	=	mille trois cent
+	===	v[     69]	=	moins un
+	===	v[     70]	=	mille trois cent
+	===	v[     71]	=	moins un
+	===	v[     72]	=	mille trois cent
+	===	v[     73]	=	moins un
+	===	v[     74]	=	mille trois cent
+	===	v[     75]	=	moins un
+	===	v[     76]	=	mille trois cent
+	===	v[     77]	=	moins un
+	===	v[     78]	=	mille trois cent
+	===	v[     79]	=	moins un
+	===	v[     80]	=	mille trois cent
+	===	v[     81]	=	moins un
+	===	v[     82]	=	mille trois cent
+	===	v[     83]	=	moins un
+	===	v[     84]	=	mille trois cent
+	===	v[     85]	=	moins un
+	===	v[     86]	=	mille trois cent
+	===	v[     87]	=	moins un
+	===	v[     88]	=	mille trois cent
+	===	v[     89]	=	moins un
+	===	v[     90]	=	mille trois cent
+	===	v[     91]	=	moins un
+	===	v[     92]	=	mille trois cent
+	===	v[     93]	=	quarante deux
+	===	v[     94]	=	quarante deux
+	===	v[     95]	=	quarante deux
+	===	v[     96]	=	quarante deux
+	===	v[     97]	=	quarante deux
+	===	v[     98]	=	quarante deux
+	===	v[     99]	=	quarante deux
+	===	v[    100]	=	quarante deux
+	===	v[    101]	=	quarante deux
+	===	v[    102]	=	quarante deux
+	===	v[    103]	=	quarante deux
+	===	v[    104]	=	quarante deux
+	===	v[    105]	=	quarante deux
+	===	v[    106]	=	quarante deux
+	===	v[    107]	=	quarante deux
+	===	v[    108]	=	mille trois cent
+	===	v[    109]	=	mille trois cent
+	===	v[    110]	=	mille trois cent
+	===	v[    111]	=	mille trois cent
+	===	v[    112]	=	mille trois cent
+	===	v[    113]	=	mille trois cent
+	===	v[    114]	=	mille trois cent
+	===	v[    115]	=	mille trois cent
+	===	v[    116]	=	mille trois cent
+	===	v[    117]	=	mille trois cent
+	===	v[    118]	=	mille trois cent
+	===	v[    119]	=	mille trois cent
+	===	v[    120]	=	mille trois cent
+	===	v[    121]	=	mille trois cent
+	===	v[    122]	=	mille trois cent
+	===	v[    123]	=	moins un
+	===	v[    124]	=	moins un
+	===	v[    125]	=	moins un
+	===	v[    126]	=	moins un
+	===	v[    127]	=	moins un
+	===	v[    128]	=	moins un
+	===	v[    129]	=	moins un
+	===	v[    130]	=	moins un
+	===	v[    131]	=	moins un
+	===	v[    132]	=	moins un
+	===	v[    133]	=	moins un
+	===	v[    134]	=	moins un
+	===	v[    135]	=	moins un
+	===	v[    136]	=	moins un
+	===	v[    137]	=	moins un
+	===	v[    138]	=	mille trois cent
+	===	v[    139]	=	quarante deux
+	===	v[    140]	=	quarante deux
+	===	v[    141]	=	quarante deux
+	===	v[    142]	=	quarante deux
+	===	v[    143]	=	quarante deux
+	===	v[    144]	=	quarante deux
+	===	v[    145]	=	quarante deux
+	===	v[    146]	=	quarante deux
+	===	v[    147]	=	quarante deux
+	===	v[    148]	=	quarante deux
+	===	v[    149]	=	quarante deux
+	===	v[    150]	=	quarante deux
+	===	v[    151]	=	quarante deux
+	===	v[    152]	=	quarante deux
+	===	v[    153]	=	quarante deux
+	===	v[    154]	=	mille trois cent
+	===	v[    155]	=	mille trois cent
+	===	v[    156]	=	mille trois cent
+	===	v[    157]	=	mille trois cent
+	===	v[    158]	=	mille trois cent
+	===	v[    159]	=	mille trois cent
+	===	v[    160]	=	mille trois cent
+	===	v[    161]	=	mille trois cent
+	===	v[    162]	=	mille trois cent
+	===	v[    163]	=	mille trois cent
+	===	v[    164]	=	mille trois cent
+	===	v[    165]	=	mille trois cent
+	===	v[    166]	=	mille trois cent
+	===	v[    167]	=	mille trois cent
+	===	v[    168]	=	mille trois cent
+	===	v[    169]	=	moins un
+	===	v[    170]	=	moins un
+	===	v[    171]	=	moins un
+	===	v[    172]	=	moins un
+	===	v[    173]	=	moins un
+	===	v[    174]	=	moins un
+	===	v[    175]	=	moins un
+	===	v[    176]	=	moins un
+	===	v[    177]	=	moins un
+	===	v[    178]	=	moins un
+	===	v[    179]	=	moins un
+	===	v[    180]	=	moins un
+	===	v[    181]	=	moins un
+	===	v[    182]	=	moins un
+	===	v[    183]	=	moins un
+	===	v[    184]	=	quarante deux
+	===	v[    185]	=	quarante deux
+	===	v[    186]	=	quarante deux
+	===	v[    187]	=	quarante deux
+	===	v[    188]	=	quarante deux
+	===	v[    189]	=	quarante deux
+	===	v[    190]	=	quarante deux
+	===	v[    191]	=	quarante deux
+	===	v[    192]	=	quarante deux
+	===	v[    193]	=	quarante deux
+	===	v[    194]	=	quarante deux
+	===	v[    195]	=	quarante deux
+	===	v[    196]	=	quarante deux
+	===	v[    197]	=	quarante deux
 
 ===	display_elem_access() :
 ===	CONTEXT : inserted a list l at the end of v
-	===	v.front()	=	1337
-	===	v.at(0)		=	1337
-	===	v[0]		=	1337
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	quarante deux
+	===	v.at(size()-1)	=	quarante deux
+	===	v[v.size()-1]	=	quarante deux
 
 ===	display_capacity() :
 ===	CONTEXT : erased v.begin()
 	===	v.empty()	=	false
-	===	v.size()	=	41
-	===	v.capacity()	=	80
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	197
+	===	v.capacity()	=	368
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : erased v.begin()
-	===	v[      0]	=	1337
-	===	v[      1]	=	1337
-	===	v[      2]	=	1337
-	===	v[      3]	=	1337
-	===	v[      4]	=	-1
-	===	v[      5]	=	1337
-	===	v[      6]	=	-1
-	===	v[      7]	=	1337
-	===	v[      8]	=	-1
-	===	v[      9]	=	1337
-	===	v[     10]	=	1337
-	===	v[     11]	=	1337
-	===	v[     12]	=	1337
-	===	v[     13]	=	1337
-	===	v[     14]	=	-1
-	===	v[     15]	=	1337
-	===	v[     16]	=	-1
-	===	v[     17]	=	1337
-	===	v[     18]	=	-1
-	===	v[     19]	=	1337
-	===	v[     20]	=	42
-	===	v[     21]	=	42
-	===	v[     22]	=	42
-	===	v[     23]	=	1337
-	===	v[     24]	=	1337
-	===	v[     25]	=	1337
-	===	v[     26]	=	-1
-	===	v[     27]	=	-1
-	===	v[     28]	=	-1
-	===	v[     29]	=	1337
-	===	v[     30]	=	42
-	===	v[     31]	=	42
-	===	v[     32]	=	42
-	===	v[     33]	=	1337
-	===	v[     34]	=	1337
-	===	v[     35]	=	1337
-	===	v[     36]	=	-1
-	===	v[     37]	=	-1
-	===	v[     38]	=	-1
-	===	v[     39]	=	42
-	===	v[     40]	=	42
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	mille trois cent
+	===	v[      2]	=	mille trois cent
+	===	v[      3]	=	mille trois cent
+	===	v[      4]	=	mille trois cent
+	===	v[      5]	=	mille trois cent
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	mille trois cent
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	moins un
+	===	v[     17]	=	mille trois cent
+	===	v[     18]	=	moins un
+	===	v[     19]	=	mille trois cent
+	===	v[     20]	=	moins un
+	===	v[     21]	=	mille trois cent
+	===	v[     22]	=	moins un
+	===	v[     23]	=	mille trois cent
+	===	v[     24]	=	moins un
+	===	v[     25]	=	mille trois cent
+	===	v[     26]	=	moins un
+	===	v[     27]	=	mille trois cent
+	===	v[     28]	=	moins un
+	===	v[     29]	=	mille trois cent
+	===	v[     30]	=	moins un
+	===	v[     31]	=	mille trois cent
+	===	v[     32]	=	moins un
+	===	v[     33]	=	mille trois cent
+	===	v[     34]	=	moins un
+	===	v[     35]	=	mille trois cent
+	===	v[     36]	=	moins un
+	===	v[     37]	=	mille trois cent
+	===	v[     38]	=	moins un
+	===	v[     39]	=	mille trois cent
+	===	v[     40]	=	moins un
+	===	v[     41]	=	mille trois cent
+	===	v[     42]	=	moins un
+	===	v[     43]	=	mille trois cent
+	===	v[     44]	=	moins un
+	===	v[     45]	=	mille trois cent
+	===	v[     46]	=	mille trois cent
+	===	v[     47]	=	mille trois cent
+	===	v[     48]	=	mille trois cent
+	===	v[     49]	=	mille trois cent
+	===	v[     50]	=	mille trois cent
+	===	v[     51]	=	mille trois cent
+	===	v[     52]	=	mille trois cent
+	===	v[     53]	=	mille trois cent
+	===	v[     54]	=	mille trois cent
+	===	v[     55]	=	mille trois cent
+	===	v[     56]	=	mille trois cent
+	===	v[     57]	=	mille trois cent
+	===	v[     58]	=	mille trois cent
+	===	v[     59]	=	mille trois cent
+	===	v[     60]	=	mille trois cent
+	===	v[     61]	=	mille trois cent
+	===	v[     62]	=	moins un
+	===	v[     63]	=	mille trois cent
+	===	v[     64]	=	moins un
+	===	v[     65]	=	mille trois cent
+	===	v[     66]	=	moins un
+	===	v[     67]	=	mille trois cent
+	===	v[     68]	=	moins un
+	===	v[     69]	=	mille trois cent
+	===	v[     70]	=	moins un
+	===	v[     71]	=	mille trois cent
+	===	v[     72]	=	moins un
+	===	v[     73]	=	mille trois cent
+	===	v[     74]	=	moins un
+	===	v[     75]	=	mille trois cent
+	===	v[     76]	=	moins un
+	===	v[     77]	=	mille trois cent
+	===	v[     78]	=	moins un
+	===	v[     79]	=	mille trois cent
+	===	v[     80]	=	moins un
+	===	v[     81]	=	mille trois cent
+	===	v[     82]	=	moins un
+	===	v[     83]	=	mille trois cent
+	===	v[     84]	=	moins un
+	===	v[     85]	=	mille trois cent
+	===	v[     86]	=	moins un
+	===	v[     87]	=	mille trois cent
+	===	v[     88]	=	moins un
+	===	v[     89]	=	mille trois cent
+	===	v[     90]	=	moins un
+	===	v[     91]	=	mille trois cent
+	===	v[     92]	=	quarante deux
+	===	v[     93]	=	quarante deux
+	===	v[     94]	=	quarante deux
+	===	v[     95]	=	quarante deux
+	===	v[     96]	=	quarante deux
+	===	v[     97]	=	quarante deux
+	===	v[     98]	=	quarante deux
+	===	v[     99]	=	quarante deux
+	===	v[    100]	=	quarante deux
+	===	v[    101]	=	quarante deux
+	===	v[    102]	=	quarante deux
+	===	v[    103]	=	quarante deux
+	===	v[    104]	=	quarante deux
+	===	v[    105]	=	quarante deux
+	===	v[    106]	=	quarante deux
+	===	v[    107]	=	mille trois cent
+	===	v[    108]	=	mille trois cent
+	===	v[    109]	=	mille trois cent
+	===	v[    110]	=	mille trois cent
+	===	v[    111]	=	mille trois cent
+	===	v[    112]	=	mille trois cent
+	===	v[    113]	=	mille trois cent
+	===	v[    114]	=	mille trois cent
+	===	v[    115]	=	mille trois cent
+	===	v[    116]	=	mille trois cent
+	===	v[    117]	=	mille trois cent
+	===	v[    118]	=	mille trois cent
+	===	v[    119]	=	mille trois cent
+	===	v[    120]	=	mille trois cent
+	===	v[    121]	=	mille trois cent
+	===	v[    122]	=	moins un
+	===	v[    123]	=	moins un
+	===	v[    124]	=	moins un
+	===	v[    125]	=	moins un
+	===	v[    126]	=	moins un
+	===	v[    127]	=	moins un
+	===	v[    128]	=	moins un
+	===	v[    129]	=	moins un
+	===	v[    130]	=	moins un
+	===	v[    131]	=	moins un
+	===	v[    132]	=	moins un
+	===	v[    133]	=	moins un
+	===	v[    134]	=	moins un
+	===	v[    135]	=	moins un
+	===	v[    136]	=	moins un
+	===	v[    137]	=	mille trois cent
+	===	v[    138]	=	quarante deux
+	===	v[    139]	=	quarante deux
+	===	v[    140]	=	quarante deux
+	===	v[    141]	=	quarante deux
+	===	v[    142]	=	quarante deux
+	===	v[    143]	=	quarante deux
+	===	v[    144]	=	quarante deux
+	===	v[    145]	=	quarante deux
+	===	v[    146]	=	quarante deux
+	===	v[    147]	=	quarante deux
+	===	v[    148]	=	quarante deux
+	===	v[    149]	=	quarante deux
+	===	v[    150]	=	quarante deux
+	===	v[    151]	=	quarante deux
+	===	v[    152]	=	quarante deux
+	===	v[    153]	=	mille trois cent
+	===	v[    154]	=	mille trois cent
+	===	v[    155]	=	mille trois cent
+	===	v[    156]	=	mille trois cent
+	===	v[    157]	=	mille trois cent
+	===	v[    158]	=	mille trois cent
+	===	v[    159]	=	mille trois cent
+	===	v[    160]	=	mille trois cent
+	===	v[    161]	=	mille trois cent
+	===	v[    162]	=	mille trois cent
+	===	v[    163]	=	mille trois cent
+	===	v[    164]	=	mille trois cent
+	===	v[    165]	=	mille trois cent
+	===	v[    166]	=	mille trois cent
+	===	v[    167]	=	mille trois cent
+	===	v[    168]	=	moins un
+	===	v[    169]	=	moins un
+	===	v[    170]	=	moins un
+	===	v[    171]	=	moins un
+	===	v[    172]	=	moins un
+	===	v[    173]	=	moins un
+	===	v[    174]	=	moins un
+	===	v[    175]	=	moins un
+	===	v[    176]	=	moins un
+	===	v[    177]	=	moins un
+	===	v[    178]	=	moins un
+	===	v[    179]	=	moins un
+	===	v[    180]	=	moins un
+	===	v[    181]	=	moins un
+	===	v[    182]	=	moins un
+	===	v[    183]	=	quarante deux
+	===	v[    184]	=	quarante deux
+	===	v[    185]	=	quarante deux
+	===	v[    186]	=	quarante deux
+	===	v[    187]	=	quarante deux
+	===	v[    188]	=	quarante deux
+	===	v[    189]	=	quarante deux
+	===	v[    190]	=	quarante deux
+	===	v[    191]	=	quarante deux
+	===	v[    192]	=	quarante deux
+	===	v[    193]	=	quarante deux
+	===	v[    194]	=	quarante deux
+	===	v[    195]	=	quarante deux
+	===	v[    196]	=	quarante deux
 
 ===	display_elem_access() :
 ===	CONTEXT : erased v.begin()
-	===	v.front()	=	1337
-	===	v.at(0)		=	1337
-	===	v[0]		=	1337
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	quarante deux
+	===	v.at(size()-1)	=	quarante deux
+	===	v[v.size()-1]	=	quarante deux
 
 ===	display_capacity() :
 ===	CONTEXT : erased all pair indexes
 	===	v.empty()	=	false
-	===	v.size()	=	27
-	===	v.capacity()	=	80
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	131
+	===	v.capacity()	=	368
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : erased all pair indexes
-	===	v[      0]	=	1337
-	===	v[      1]	=	1337
-	===	v[      2]	=	-1
-	===	v[      3]	=	1337
-	===	v[      4]	=	1337
-	===	v[      5]	=	-1
-	===	v[      6]	=	1337
-	===	v[      7]	=	1337
-	===	v[      8]	=	1337
-	===	v[      9]	=	-1
-	===	v[     10]	=	-1
-	===	v[     11]	=	1337
-	===	v[     12]	=	1337
-	===	v[     13]	=	42
-	===	v[     14]	=	42
-	===	v[     15]	=	1337
-	===	v[     16]	=	1337
-	===	v[     17]	=	-1
-	===	v[     18]	=	-1
-	===	v[     19]	=	1337
-	===	v[     20]	=	42
-	===	v[     21]	=	42
-	===	v[     22]	=	1337
-	===	v[     23]	=	1337
-	===	v[     24]	=	-1
-	===	v[     25]	=	-1
-	===	v[     26]	=	42
+	===	v[      0]	=	mille trois cent
+	===	v[      1]	=	mille trois cent
+	===	v[      2]	=	mille trois cent
+	===	v[      3]	=	mille trois cent
+	===	v[      4]	=	mille trois cent
+	===	v[      5]	=	mille trois cent
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	moins un
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	moins un
+	===	v[     14]	=	moins un
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	mille trois cent
+	===	v[     17]	=	moins un
+	===	v[     18]	=	moins un
+	===	v[     19]	=	mille trois cent
+	===	v[     20]	=	mille trois cent
+	===	v[     21]	=	moins un
+	===	v[     22]	=	moins un
+	===	v[     23]	=	mille trois cent
+	===	v[     24]	=	mille trois cent
+	===	v[     25]	=	moins un
+	===	v[     26]	=	moins un
+	===	v[     27]	=	mille trois cent
+	===	v[     28]	=	mille trois cent
+	===	v[     29]	=	moins un
+	===	v[     30]	=	mille trois cent
+	===	v[     31]	=	mille trois cent
+	===	v[     32]	=	mille trois cent
+	===	v[     33]	=	mille trois cent
+	===	v[     34]	=	mille trois cent
+	===	v[     35]	=	mille trois cent
+	===	v[     36]	=	mille trois cent
+	===	v[     37]	=	mille trois cent
+	===	v[     38]	=	mille trois cent
+	===	v[     39]	=	mille trois cent
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	moins un
+	===	v[     42]	=	moins un
+	===	v[     43]	=	mille trois cent
+	===	v[     44]	=	mille trois cent
+	===	v[     45]	=	moins un
+	===	v[     46]	=	moins un
+	===	v[     47]	=	mille trois cent
+	===	v[     48]	=	mille trois cent
+	===	v[     49]	=	moins un
+	===	v[     50]	=	moins un
+	===	v[     51]	=	mille trois cent
+	===	v[     52]	=	mille trois cent
+	===	v[     53]	=	moins un
+	===	v[     54]	=	moins un
+	===	v[     55]	=	mille trois cent
+	===	v[     56]	=	mille trois cent
+	===	v[     57]	=	moins un
+	===	v[     58]	=	moins un
+	===	v[     59]	=	mille trois cent
+	===	v[     60]	=	mille trois cent
+	===	v[     61]	=	quarante deux
+	===	v[     62]	=	quarante deux
+	===	v[     63]	=	quarante deux
+	===	v[     64]	=	quarante deux
+	===	v[     65]	=	quarante deux
+	===	v[     66]	=	quarante deux
+	===	v[     67]	=	quarante deux
+	===	v[     68]	=	quarante deux
+	===	v[     69]	=	quarante deux
+	===	v[     70]	=	quarante deux
+	===	v[     71]	=	mille trois cent
+	===	v[     72]	=	mille trois cent
+	===	v[     73]	=	mille trois cent
+	===	v[     74]	=	mille trois cent
+	===	v[     75]	=	mille trois cent
+	===	v[     76]	=	mille trois cent
+	===	v[     77]	=	mille trois cent
+	===	v[     78]	=	mille trois cent
+	===	v[     79]	=	mille trois cent
+	===	v[     80]	=	mille trois cent
+	===	v[     81]	=	moins un
+	===	v[     82]	=	moins un
+	===	v[     83]	=	moins un
+	===	v[     84]	=	moins un
+	===	v[     85]	=	moins un
+	===	v[     86]	=	moins un
+	===	v[     87]	=	moins un
+	===	v[     88]	=	moins un
+	===	v[     89]	=	moins un
+	===	v[     90]	=	moins un
+	===	v[     91]	=	mille trois cent
+	===	v[     92]	=	quarante deux
+	===	v[     93]	=	quarante deux
+	===	v[     94]	=	quarante deux
+	===	v[     95]	=	quarante deux
+	===	v[     96]	=	quarante deux
+	===	v[     97]	=	quarante deux
+	===	v[     98]	=	quarante deux
+	===	v[     99]	=	quarante deux
+	===	v[    100]	=	quarante deux
+	===	v[    101]	=	quarante deux
+	===	v[    102]	=	mille trois cent
+	===	v[    103]	=	mille trois cent
+	===	v[    104]	=	mille trois cent
+	===	v[    105]	=	mille trois cent
+	===	v[    106]	=	mille trois cent
+	===	v[    107]	=	mille trois cent
+	===	v[    108]	=	mille trois cent
+	===	v[    109]	=	mille trois cent
+	===	v[    110]	=	mille trois cent
+	===	v[    111]	=	mille trois cent
+	===	v[    112]	=	moins un
+	===	v[    113]	=	moins un
+	===	v[    114]	=	moins un
+	===	v[    115]	=	moins un
+	===	v[    116]	=	moins un
+	===	v[    117]	=	moins un
+	===	v[    118]	=	moins un
+	===	v[    119]	=	moins un
+	===	v[    120]	=	moins un
+	===	v[    121]	=	moins un
+	===	v[    122]	=	quarante deux
+	===	v[    123]	=	quarante deux
+	===	v[    124]	=	quarante deux
+	===	v[    125]	=	quarante deux
+	===	v[    126]	=	quarante deux
+	===	v[    127]	=	quarante deux
+	===	v[    128]	=	quarante deux
+	===	v[    129]	=	quarante deux
+	===	v[    130]	=	quarante deux
 
 ===	display_elem_access() :
 ===	CONTEXT : erased all pair indexes
-	===	v.front()	=	1337
-	===	v.at(0)		=	1337
-	===	v[0]		=	1337
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	mille trois cent
+	===	v.at(0)		=	mille trois cent
+	===	v[0]		=	mille trois cent
+	===	v.back()	=	quarante deux
+	===	v.at(size()-1)	=	quarante deux
+	===	v[v.size()-1]	=	quarante deux
 
 ===	display_capacity() :
 ===	CONTEXT : erased first half of vector
 	===	v.empty()	=	false
-	===	v.size()	=	14
-	===	v.capacity()	=	80
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	66
+	===	v.capacity()	=	368
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : erased first half of vector
-	===	v[      0]	=	42
-	===	v[      1]	=	42
-	===	v[      2]	=	1337
-	===	v[      3]	=	1337
-	===	v[      4]	=	-1
-	===	v[      5]	=	-1
-	===	v[      6]	=	1337
-	===	v[      7]	=	42
-	===	v[      8]	=	42
-	===	v[      9]	=	1337
-	===	v[     10]	=	1337
-	===	v[     11]	=	-1
-	===	v[     12]	=	-1
-	===	v[     13]	=	42
+	===	v[      0]	=	quarante deux
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	quarante deux
+	===	v[      4]	=	quarante deux
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	mille trois cent
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	moins un
+	===	v[     17]	=	moins un
+	===	v[     18]	=	moins un
+	===	v[     19]	=	moins un
+	===	v[     20]	=	moins un
+	===	v[     21]	=	moins un
+	===	v[     22]	=	moins un
+	===	v[     23]	=	moins un
+	===	v[     24]	=	moins un
+	===	v[     25]	=	moins un
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	quarante deux
+	===	v[     28]	=	quarante deux
+	===	v[     29]	=	quarante deux
+	===	v[     30]	=	quarante deux
+	===	v[     31]	=	quarante deux
+	===	v[     32]	=	quarante deux
+	===	v[     33]	=	quarante deux
+	===	v[     34]	=	quarante deux
+	===	v[     35]	=	quarante deux
+	===	v[     36]	=	quarante deux
+	===	v[     37]	=	mille trois cent
+	===	v[     38]	=	mille trois cent
+	===	v[     39]	=	mille trois cent
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	mille trois cent
+	===	v[     42]	=	mille trois cent
+	===	v[     43]	=	mille trois cent
+	===	v[     44]	=	mille trois cent
+	===	v[     45]	=	mille trois cent
+	===	v[     46]	=	mille trois cent
+	===	v[     47]	=	moins un
+	===	v[     48]	=	moins un
+	===	v[     49]	=	moins un
+	===	v[     50]	=	moins un
+	===	v[     51]	=	moins un
+	===	v[     52]	=	moins un
+	===	v[     53]	=	moins un
+	===	v[     54]	=	moins un
+	===	v[     55]	=	moins un
+	===	v[     56]	=	moins un
+	===	v[     57]	=	quarante deux
+	===	v[     58]	=	quarante deux
+	===	v[     59]	=	quarante deux
+	===	v[     60]	=	quarante deux
+	===	v[     61]	=	quarante deux
+	===	v[     62]	=	quarante deux
+	===	v[     63]	=	quarante deux
+	===	v[     64]	=	quarante deux
+	===	v[     65]	=	quarante deux
 
 ===	display_elem_access() :
 ===	CONTEXT : erased first half of vector
-	===	v.front()	=	42
-	===	v.at(0)		=	42
-	===	v[0]		=	42
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	quarante deux
+	===	v.at(0)		=	quarante deux
+	===	v[0]		=	quarante deux
+	===	v.back()	=	quarante deux
+	===	v.at(size()-1)	=	quarante deux
+	===	v[v.size()-1]	=	quarante deux
 
 ===	display_capacity() :
 ===	CONTEXT : erased all elements
 	===	v.empty()	=	true
 	===	v.size()	=	0
-	===	v.capacity()	=	80
-	===	v.max_size()	=	2305843009213693951
+	===	v.capacity()	=	368
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : erased all elements
@@ -908,35 +2036,87 @@
 ===	display_capacity() :
 ===	CONTEXT : assigned copy to v
 	===	v.empty()	=	false
-	===	v.size()	=	14
-	===	v.capacity()	=	80
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	66
+	===	v.capacity()	=	368
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : assigned copy to v
-	===	v[      0]	=	42
-	===	v[      1]	=	42
-	===	v[      2]	=	1337
-	===	v[      3]	=	1337
-	===	v[      4]	=	-1
-	===	v[      5]	=	-1
-	===	v[      6]	=	1337
-	===	v[      7]	=	42
-	===	v[      8]	=	42
-	===	v[      9]	=	1337
-	===	v[     10]	=	1337
-	===	v[     11]	=	-1
-	===	v[     12]	=	-1
-	===	v[     13]	=	42
+	===	v[      0]	=	quarante deux
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	quarante deux
+	===	v[      4]	=	quarante deux
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	mille trois cent
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	moins un
+	===	v[     17]	=	moins un
+	===	v[     18]	=	moins un
+	===	v[     19]	=	moins un
+	===	v[     20]	=	moins un
+	===	v[     21]	=	moins un
+	===	v[     22]	=	moins un
+	===	v[     23]	=	moins un
+	===	v[     24]	=	moins un
+	===	v[     25]	=	moins un
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	quarante deux
+	===	v[     28]	=	quarante deux
+	===	v[     29]	=	quarante deux
+	===	v[     30]	=	quarante deux
+	===	v[     31]	=	quarante deux
+	===	v[     32]	=	quarante deux
+	===	v[     33]	=	quarante deux
+	===	v[     34]	=	quarante deux
+	===	v[     35]	=	quarante deux
+	===	v[     36]	=	quarante deux
+	===	v[     37]	=	mille trois cent
+	===	v[     38]	=	mille trois cent
+	===	v[     39]	=	mille trois cent
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	mille trois cent
+	===	v[     42]	=	mille trois cent
+	===	v[     43]	=	mille trois cent
+	===	v[     44]	=	mille trois cent
+	===	v[     45]	=	mille trois cent
+	===	v[     46]	=	mille trois cent
+	===	v[     47]	=	moins un
+	===	v[     48]	=	moins un
+	===	v[     49]	=	moins un
+	===	v[     50]	=	moins un
+	===	v[     51]	=	moins un
+	===	v[     52]	=	moins un
+	===	v[     53]	=	moins un
+	===	v[     54]	=	moins un
+	===	v[     55]	=	moins un
+	===	v[     56]	=	moins un
+	===	v[     57]	=	quarante deux
+	===	v[     58]	=	quarante deux
+	===	v[     59]	=	quarante deux
+	===	v[     60]	=	quarante deux
+	===	v[     61]	=	quarante deux
+	===	v[     62]	=	quarante deux
+	===	v[     63]	=	quarante deux
+	===	v[     64]	=	quarante deux
+	===	v[     65]	=	quarante deux
 
 ===	display_elem_access() :
 ===	CONTEXT : assigned copy to v
-	===	v.front()	=	42
-	===	v.at(0)		=	42
-	===	v[0]		=	42
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	quarante deux
+	===	v.at(0)		=	quarante deux
+	===	v[0]		=	quarante deux
+	===	v.back()	=	quarante deux
+	===	v.at(size()-1)	=	quarante deux
+	===	v[v.size()-1]	=	quarante deux
 
 ===	display_relationals() :
 ===	CONTEXT : assigned copy to v
@@ -950,118 +2130,282 @@
 ===	display_capacity() :
 ===	CONTEXT : assigned (N * 5) VAL1
 	===	v.empty()	=	false
-	===	v.size()	=	15
-	===	v.capacity()	=	80
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	75
+	===	v.capacity()	=	368
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : assigned (N * 5) VAL1
-	===	v[      0]	=	42
-	===	v[      1]	=	42
-	===	v[      2]	=	42
-	===	v[      3]	=	42
-	===	v[      4]	=	42
-	===	v[      5]	=	42
-	===	v[      6]	=	42
-	===	v[      7]	=	42
-	===	v[      8]	=	42
-	===	v[      9]	=	42
-	===	v[     10]	=	42
-	===	v[     11]	=	42
-	===	v[     12]	=	42
-	===	v[     13]	=	42
-	===	v[     14]	=	42
+	===	v[      0]	=	quarante deux
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	quarante deux
+	===	v[      4]	=	quarante deux
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	quarante deux
+	===	v[      7]	=	quarante deux
+	===	v[      8]	=	quarante deux
+	===	v[      9]	=	quarante deux
+	===	v[     10]	=	quarante deux
+	===	v[     11]	=	quarante deux
+	===	v[     12]	=	quarante deux
+	===	v[     13]	=	quarante deux
+	===	v[     14]	=	quarante deux
+	===	v[     15]	=	quarante deux
+	===	v[     16]	=	quarante deux
+	===	v[     17]	=	quarante deux
+	===	v[     18]	=	quarante deux
+	===	v[     19]	=	quarante deux
+	===	v[     20]	=	quarante deux
+	===	v[     21]	=	quarante deux
+	===	v[     22]	=	quarante deux
+	===	v[     23]	=	quarante deux
+	===	v[     24]	=	quarante deux
+	===	v[     25]	=	quarante deux
+	===	v[     26]	=	quarante deux
+	===	v[     27]	=	quarante deux
+	===	v[     28]	=	quarante deux
+	===	v[     29]	=	quarante deux
+	===	v[     30]	=	quarante deux
+	===	v[     31]	=	quarante deux
+	===	v[     32]	=	quarante deux
+	===	v[     33]	=	quarante deux
+	===	v[     34]	=	quarante deux
+	===	v[     35]	=	quarante deux
+	===	v[     36]	=	quarante deux
+	===	v[     37]	=	quarante deux
+	===	v[     38]	=	quarante deux
+	===	v[     39]	=	quarante deux
+	===	v[     40]	=	quarante deux
+	===	v[     41]	=	quarante deux
+	===	v[     42]	=	quarante deux
+	===	v[     43]	=	quarante deux
+	===	v[     44]	=	quarante deux
+	===	v[     45]	=	quarante deux
+	===	v[     46]	=	quarante deux
+	===	v[     47]	=	quarante deux
+	===	v[     48]	=	quarante deux
+	===	v[     49]	=	quarante deux
+	===	v[     50]	=	quarante deux
+	===	v[     51]	=	quarante deux
+	===	v[     52]	=	quarante deux
+	===	v[     53]	=	quarante deux
+	===	v[     54]	=	quarante deux
+	===	v[     55]	=	quarante deux
+	===	v[     56]	=	quarante deux
+	===	v[     57]	=	quarante deux
+	===	v[     58]	=	quarante deux
+	===	v[     59]	=	quarante deux
+	===	v[     60]	=	quarante deux
+	===	v[     61]	=	quarante deux
+	===	v[     62]	=	quarante deux
+	===	v[     63]	=	quarante deux
+	===	v[     64]	=	quarante deux
+	===	v[     65]	=	quarante deux
+	===	v[     66]	=	quarante deux
+	===	v[     67]	=	quarante deux
+	===	v[     68]	=	quarante deux
+	===	v[     69]	=	quarante deux
+	===	v[     70]	=	quarante deux
+	===	v[     71]	=	quarante deux
+	===	v[     72]	=	quarante deux
+	===	v[     73]	=	quarante deux
+	===	v[     74]	=	quarante deux
 
 ===	display_elem_access() :
 ===	CONTEXT : assigned (N * 5) VAL1
-	===	v.front()	=	42
-	===	v.at(0)		=	42
-	===	v[0]		=	42
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	quarante deux
+	===	v.at(0)		=	quarante deux
+	===	v[0]		=	quarante deux
+	===	v.back()	=	quarante deux
+	===	v.at(size()-1)	=	quarante deux
+	===	v[v.size()-1]	=	quarante deux
 
 ===	display_capacity() :
 ===	CONTEXT : swapped v and copy
 	===	v.empty()	=	false
-	===	v.size()	=	14
-	===	v.capacity()	=	14
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	66
+	===	v.capacity()	=	66
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : swapped v and copy
-	===	v[      0]	=	42
-	===	v[      1]	=	42
-	===	v[      2]	=	1337
-	===	v[      3]	=	1337
-	===	v[      4]	=	-1
-	===	v[      5]	=	-1
-	===	v[      6]	=	1337
-	===	v[      7]	=	42
-	===	v[      8]	=	42
-	===	v[      9]	=	1337
-	===	v[     10]	=	1337
-	===	v[     11]	=	-1
-	===	v[     12]	=	-1
-	===	v[     13]	=	42
+	===	v[      0]	=	quarante deux
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	quarante deux
+	===	v[      4]	=	quarante deux
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	mille trois cent
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	moins un
+	===	v[     17]	=	moins un
+	===	v[     18]	=	moins un
+	===	v[     19]	=	moins un
+	===	v[     20]	=	moins un
+	===	v[     21]	=	moins un
+	===	v[     22]	=	moins un
+	===	v[     23]	=	moins un
+	===	v[     24]	=	moins un
+	===	v[     25]	=	moins un
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	quarante deux
+	===	v[     28]	=	quarante deux
+	===	v[     29]	=	quarante deux
+	===	v[     30]	=	quarante deux
+	===	v[     31]	=	quarante deux
+	===	v[     32]	=	quarante deux
+	===	v[     33]	=	quarante deux
+	===	v[     34]	=	quarante deux
+	===	v[     35]	=	quarante deux
+	===	v[     36]	=	quarante deux
+	===	v[     37]	=	mille trois cent
+	===	v[     38]	=	mille trois cent
+	===	v[     39]	=	mille trois cent
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	mille trois cent
+	===	v[     42]	=	mille trois cent
+	===	v[     43]	=	mille trois cent
+	===	v[     44]	=	mille trois cent
+	===	v[     45]	=	mille trois cent
+	===	v[     46]	=	mille trois cent
+	===	v[     47]	=	moins un
+	===	v[     48]	=	moins un
+	===	v[     49]	=	moins un
+	===	v[     50]	=	moins un
+	===	v[     51]	=	moins un
+	===	v[     52]	=	moins un
+	===	v[     53]	=	moins un
+	===	v[     54]	=	moins un
+	===	v[     55]	=	moins un
+	===	v[     56]	=	moins un
+	===	v[     57]	=	quarante deux
+	===	v[     58]	=	quarante deux
+	===	v[     59]	=	quarante deux
+	===	v[     60]	=	quarante deux
+	===	v[     61]	=	quarante deux
+	===	v[     62]	=	quarante deux
+	===	v[     63]	=	quarante deux
+	===	v[     64]	=	quarante deux
+	===	v[     65]	=	quarante deux
 
 ===	display_elem_access() :
 ===	CONTEXT : swapped v and copy
-	===	v.front()	=	42
-	===	v.at(0)		=	42
-	===	v[0]		=	42
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	quarante deux
+	===	v.at(0)		=	quarante deux
+	===	v[0]		=	quarante deux
+	===	v.back()	=	quarante deux
+	===	v.at(size()-1)	=	quarante deux
+	===	v[v.size()-1]	=	quarante deux
 
 ===	display_relationals() :
 ===	CONTEXT : swapped v and copy
 	===	(v1 == v2)	=	false
 	===	(v1 != v2)	=	true
-	===	(v1 <  v2)	=	false
-	===	(v1 <= v2)	=	false
-	===	(v1 >  v2)	=	true
-	===	(v1 >= v2)	=	true
+	===	(v1 <  v2)	=	true
+	===	(v1 <= v2)	=	true
+	===	(v1 >  v2)	=	false
+	===	(v1 >= v2)	=	false
 
 ===	display_capacity() :
 ===	CONTEXT : v self swap
 	===	v.empty()	=	false
-	===	v.size()	=	14
-	===	v.capacity()	=	14
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	66
+	===	v.capacity()	=	66
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : v self swap
-	===	v[      0]	=	42
-	===	v[      1]	=	42
-	===	v[      2]	=	1337
-	===	v[      3]	=	1337
-	===	v[      4]	=	-1
-	===	v[      5]	=	-1
-	===	v[      6]	=	1337
-	===	v[      7]	=	42
-	===	v[      8]	=	42
-	===	v[      9]	=	1337
-	===	v[     10]	=	1337
-	===	v[     11]	=	-1
-	===	v[     12]	=	-1
-	===	v[     13]	=	42
+	===	v[      0]	=	quarante deux
+	===	v[      1]	=	quarante deux
+	===	v[      2]	=	quarante deux
+	===	v[      3]	=	quarante deux
+	===	v[      4]	=	quarante deux
+	===	v[      5]	=	quarante deux
+	===	v[      6]	=	mille trois cent
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	mille trois cent
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	mille trois cent
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	mille trois cent
+	===	v[     14]	=	mille trois cent
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	moins un
+	===	v[     17]	=	moins un
+	===	v[     18]	=	moins un
+	===	v[     19]	=	moins un
+	===	v[     20]	=	moins un
+	===	v[     21]	=	moins un
+	===	v[     22]	=	moins un
+	===	v[     23]	=	moins un
+	===	v[     24]	=	moins un
+	===	v[     25]	=	moins un
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	quarante deux
+	===	v[     28]	=	quarante deux
+	===	v[     29]	=	quarante deux
+	===	v[     30]	=	quarante deux
+	===	v[     31]	=	quarante deux
+	===	v[     32]	=	quarante deux
+	===	v[     33]	=	quarante deux
+	===	v[     34]	=	quarante deux
+	===	v[     35]	=	quarante deux
+	===	v[     36]	=	quarante deux
+	===	v[     37]	=	mille trois cent
+	===	v[     38]	=	mille trois cent
+	===	v[     39]	=	mille trois cent
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	mille trois cent
+	===	v[     42]	=	mille trois cent
+	===	v[     43]	=	mille trois cent
+	===	v[     44]	=	mille trois cent
+	===	v[     45]	=	mille trois cent
+	===	v[     46]	=	mille trois cent
+	===	v[     47]	=	moins un
+	===	v[     48]	=	moins un
+	===	v[     49]	=	moins un
+	===	v[     50]	=	moins un
+	===	v[     51]	=	moins un
+	===	v[     52]	=	moins un
+	===	v[     53]	=	moins un
+	===	v[     54]	=	moins un
+	===	v[     55]	=	moins un
+	===	v[     56]	=	moins un
+	===	v[     57]	=	quarante deux
+	===	v[     58]	=	quarante deux
+	===	v[     59]	=	quarante deux
+	===	v[     60]	=	quarante deux
+	===	v[     61]	=	quarante deux
+	===	v[     62]	=	quarante deux
+	===	v[     63]	=	quarante deux
+	===	v[     64]	=	quarante deux
+	===	v[     65]	=	quarante deux
 
 ===	display_elem_access() :
 ===	CONTEXT : v self swap
-	===	v.front()	=	42
-	===	v.at(0)		=	42
-	===	v[0]		=	42
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	quarante deux
+	===	v.at(0)		=	quarante deux
+	===	v[0]		=	quarante deux
+	===	v.back()	=	quarante deux
+	===	v.at(size()-1)	=	quarante deux
+	===	v[v.size()-1]	=	quarante deux
 
 ===	display_capacity() :
 ===	CONTEXT : swapped v with cleared copy
 	===	v.empty()	=	true
 	===	v.size()	=	0
-	===	v.capacity()	=	14
-	===	v.max_size()	=	2305843009213693951
+	===	v.capacity()	=	66
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : swapped v with cleared copy
@@ -1078,96 +2422,336 @@
 ===	display_capacity() :
 ===	CONTEXT : created new vector
 	===	v.empty()	=	false
-	===	v.size()	=	12
-	===	v.capacity()	=	12
-	===	v.max_size()	=	2305843009213693951
+	===	v.size()	=	60
+	===	v.capacity()	=	60
+	===	v.max_size()	=	288230376151711743
 
 ===	display_content() :
 ===	CONTEXT : created new vector
-	===	v[      0]	=	42
-	===	v[      1]	=	-1
-	===	v[      2]	=	42
-	===	v[      3]	=	-1
-	===	v[      4]	=	42
-	===	v[      5]	=	1337
-	===	v[      6]	=	1337
-	===	v[      7]	=	1337
-	===	v[      8]	=	-1
-	===	v[      9]	=	42
-	===	v[     10]	=	42
-	===	v[     11]	=	42
+	===	v[      0]	=	moins un
+	===	v[      1]	=	mille trois cent
+	===	v[      2]	=	moins un
+	===	v[      3]	=	quarante deux
+	===	v[      4]	=	moins un
+	===	v[      5]	=	mille trois cent
+	===	v[      6]	=	moins un
+	===	v[      7]	=	mille trois cent
+	===	v[      8]	=	moins un
+	===	v[      9]	=	mille trois cent
+	===	v[     10]	=	mille trois cent
+	===	v[     11]	=	moins un
+	===	v[     12]	=	mille trois cent
+	===	v[     13]	=	moins un
+	===	v[     14]	=	quarante deux
+	===	v[     15]	=	mille trois cent
+	===	v[     16]	=	quarante deux
+	===	v[     17]	=	mille trois cent
+	===	v[     18]	=	mille trois cent
+	===	v[     19]	=	quarante deux
+	===	v[     20]	=	mille trois cent
+	===	v[     21]	=	quarante deux
+	===	v[     22]	=	quarante deux
+	===	v[     23]	=	mille trois cent
+	===	v[     24]	=	mille trois cent
+	===	v[     25]	=	mille trois cent
+	===	v[     26]	=	mille trois cent
+	===	v[     27]	=	mille trois cent
+	===	v[     28]	=	mille trois cent
+	===	v[     29]	=	mille trois cent
+	===	v[     30]	=	mille trois cent
+	===	v[     31]	=	mille trois cent
+	===	v[     32]	=	mille trois cent
+	===	v[     33]	=	mille trois cent
+	===	v[     34]	=	mille trois cent
+	===	v[     35]	=	mille trois cent
+	===	v[     36]	=	mille trois cent
+	===	v[     37]	=	mille trois cent
+	===	v[     38]	=	quarante deux
+	===	v[     39]	=	mille trois cent
+	===	v[     40]	=	mille trois cent
+	===	v[     41]	=	quarante deux
+	===	v[     42]	=	moins un
+	===	v[     43]	=	quarante deux
+	===	v[     44]	=	mille trois cent
+	===	v[     45]	=	quarante deux
+	===	v[     46]	=	quarante deux
+	===	v[     47]	=	quarante deux
+	===	v[     48]	=	quarante deux
+	===	v[     49]	=	quarante deux
+	===	v[     50]	=	quarante deux
+	===	v[     51]	=	quarante deux
+	===	v[     52]	=	quarante deux
+	===	v[     53]	=	quarante deux
+	===	v[     54]	=	quarante deux
+	===	v[     55]	=	quarante deux
+	===	v[     56]	=	quarante deux
+	===	v[     57]	=	quarante deux
+	===	v[     58]	=	quarante deux
+	===	v[     59]	=	quarante deux
 
 ===	display_elem_access() :
 ===	CONTEXT : created new vector
-	===	v.front()	=	42
-	===	v.at(0)		=	42
-	===	v[0]		=	42
-	===	v.back()	=	42
-	===	v.at(size()-1)	=	42
-	===	v[v.size()-1]	=	42
+	===	v.front()	=	moins un
+	===	v.at(0)		=	moins un
+	===	v[0]		=	moins un
+	===	v.back()	=	quarante deux
+	===	v.at(size()-1)	=	quarante deux
+	===	v[v.size()-1]	=	quarante deux
 
 ===	display_iterator_functions() :
 ===	CONTEXT : created new vector
-	===	*(v.begin())	=	42
-	===	*(v.end() - 1)	=	42
-	===	*(v.rbegin())	=	42
-	===	*(v.rend() - 1)	=	42
+	===	*(v.begin())	=	moins un
+	===	*(v.end() - 1)	=	quarante deux
+	===	*(v.rbegin())	=	quarante deux
+	===	*(v.rend() - 1)	=	moins un
 
 ===	iterator iteration
-	===	42
-	===	-1
-	===	42
-	===	-1
-	===	42
-	===	1337
-	===	1337
-	===	1337
-	===	-1
-	===	42
-	===	42
-	===	42
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	mille trois cent
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	quarante deux
+	===	mille trois cent
+	===	quarante deux
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	quarante deux
+	===	moins un
+	===	quarante deux
+	===	mille trois cent
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
 
 ===	reverse_iterator iteration
-	===	42
-	===	42
-	===	42
-	===	-1
-	===	1337
-	===	1337
-	===	1337
-	===	42
-	===	-1
-	===	42
-	===	-1
-	===	42
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	mille trois cent
+	===	quarante deux
+	===	moins un
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	quarante deux
+	===	quarante deux
+	===	mille trois cent
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	quarante deux
+	===	mille trois cent
+	===	quarante deux
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	moins un
+	===	mille trois cent
+	===	moins un
 
 ===	const_iterator iteration
-	===	42
-	===	-1
-	===	42
-	===	-1
-	===	42
-	===	1337
-	===	1337
-	===	1337
-	===	-1
-	===	42
-	===	42
-	===	42
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	mille trois cent
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	quarante deux
+	===	mille trois cent
+	===	quarante deux
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	quarante deux
+	===	moins un
+	===	quarante deux
+	===	mille trois cent
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
 
 ===	const_reverse_iterator iteration
-	===	42
-	===	42
-	===	42
-	===	-1
-	===	1337
-	===	1337
-	===	1337
-	===	42
-	===	-1
-	===	42
-	===	-1
-	===	42
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	quarante deux
+	===	mille trois cent
+	===	quarante deux
+	===	moins un
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	mille trois cent
+	===	quarante deux
+	===	quarante deux
+	===	mille trois cent
+	===	quarante deux
+	===	mille trois cent
+	===	mille trois cent
+	===	quarante deux
+	===	mille trois cent
+	===	quarante deux
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	mille trois cent
+	===	moins un
+	===	quarante deux
+	===	moins un
+	===	mille trois cent
+	===	moins un
 
 ===	display_relationals() :
 ===	CONTEXT : ite = it; it and ite relationals
@@ -1256,122 +2840,89 @@
 ===	(cite == crit)	=	true
 
 ===	weird iteration
-	===	*(it++)	=	-1
-	===	*(--it)	=	-1
-	===	*(++it)	=	-1
-	===	*(it--)	=	-1
-	===	*(it++)	=	-1
-	===	*(--it)	=	-1
-	===	*(++it)	=	42
-	===	*(it--)	=	42
-	===	*(it++)	=	42
-	===	*(--it)	=	42
-	===	*(++it)	=	-1
-	===	*(it--)	=	-1
-	===	*(it++)	=	-1
-	===	*(--it)	=	-1
-	===	*(++it)	=	42
-	===	*(it--)	=	42
-	===	*(it++)	=	42
-	===	*(--it)	=	42
-	===	*(++it)	=	1337
-	===	*(it--)	=	1337
-	===	*(it++)	=	1337
-	===	*(--it)	=	1337
-	===	*(++it)	=	1337
-	===	*(it--)	=	1337
-	===	*(it++)	=	1337
-	===	*(--it)	=	1337
-	===	*(++it)	=	1337
-	===	*(it--)	=	1337
-	===	*(it++)	=	1337
-	===	*(--it)	=	1337
-	===	*(++it)	=	-1
-	===	*(it--)	=	-1
-	===	*(it++)	=	-1
-	===	*(--it)	=	-1
-	===	*(++it)	=	42
-	===	*(it--)	=	42
-	===	*(it++)	=	42
-	===	*(--it)	=	42
-	===	*(++it)	=	42
-	===	*(it--)	=	42
-	===	*(it++)	=	42
-	===	*(--it)	=	42
-	===	*(++it)	=	42
-	===	*(it--)	=	42
-	===	*(it++)	=	42
-	===	*(--it)	=	42
-	===	*(++it)	=	-1
-	===	*(it--)	=	-1
+	===	*(it++)	=	moins un
+	===	*(--it)	=	moins un
+	===	*(++it)	=	mille trois cent
+	===	*(it--)	=	mille trois cent
 
 ===	reverse weird iteration
-	===	*(rit++)	=	42
-	===	*(--rit)	=	42
-	===	*(rit--)	=	42
-	===	*(++rit)	=	42
-	===	*(rit++)	=	42
-	===	*(--rit)	=	42
-	===	*(rit--)	=	42
-	===	*(++rit)	=	42
-	===	*(rit++)	=	42
-	===	*(--rit)	=	42
-	===	*(rit--)	=	42
-	===	*(++rit)	=	42
-	===	*(rit++)	=	-1
-	===	*(--rit)	=	-1
-	===	*(rit--)	=	-1
-	===	*(++rit)	=	-1
-	===	*(rit++)	=	1337
-	===	*(--rit)	=	1337
-	===	*(rit--)	=	1337
-	===	*(++rit)	=	1337
-	===	*(rit++)	=	1337
-	===	*(--rit)	=	1337
-	===	*(rit--)	=	1337
-	===	*(++rit)	=	1337
-	===	*(rit++)	=	1337
-	===	*(--rit)	=	1337
-	===	*(rit--)	=	1337
-	===	*(++rit)	=	1337
-	===	*(rit++)	=	42
-	===	*(--rit)	=	42
-	===	*(rit--)	=	42
-	===	*(++rit)	=	42
-	===	*(rit++)	=	-1
-	===	*(--rit)	=	-1
-	===	*(rit--)	=	-1
-	===	*(++rit)	=	-1
-	===	*(rit++)	=	42
-	===	*(--rit)	=	42
-	===	*(rit--)	=	42
-	===	*(++rit)	=	42
-	===	*(rit++)	=	-1
-	===	*(--rit)	=	-1
-	===	*(rit--)	=	-1
-	===	*(++rit)	=	-1
-	===	*(rit++)	=	-1
-	===	*(--rit)	=	-1
-	===	*(rit--)	=	-1
-	===	*(++rit)	=	-1
+	===	*(rit++)	=	quarante deux
+	===	*(--rit)	=	quarante deux
+	===	*(++rit)	=	quarante deux
+	===	*(rit--)	=	quarante deux
 
 ===	it = v.begin();
-	===	*(it + size() / 2)	=	1337
+	===	*(it + size() / 2)	=	mille trois cent
 ===	*it += size() / 2;
-	===	*it			=	1337
-	===	*(it - size() / 2)	=	-1
+	===	*it			=	mille trois cent
+	===	*(it - size() / 2)	=	moins un
 ===	*it -= size() / 2;
-	===	*it			=	1337
+	===	*it			=	mille trois cent
 
-it[       0]	=	42
-it[       1]	=	1337
-it[       2]	=	-1
-it[       3]	=	42
-it[       4]	=	1337
-it[       5]	=	-1
-it[       6]	=	42
-it[       7]	=	1337
-it[       8]	=	-1
-it[       9]	=	42
-it[      10]	=	1337
-it[      11]	=	-1
+===	display_capacity() :
+===	CONTEXT : debug
+	===	v.empty()	=	false
+	===	v.size()	=	60
+	===	v.capacity()	=	60
+	===	v.max_size()	=	288230376151711743
+
+===	it[0]	=	quarante deux
+===	it[1]	=	mille trois cent
+===	it[2]	=	moins un
+===	it[3]	=	quarante deux
+===	it[4]	=	mille trois cent
+===	it[5]	=	moins un
+===	it[6]	=	quarante deux
+===	it[7]	=	mille trois cent
+===	it[8]	=	moins un
+===	it[9]	=	quarante deux
+===	it[10]	=	mille trois cent
+===	it[11]	=	moins un
+===	it[12]	=	quarante deux
+===	it[13]	=	mille trois cent
+===	it[14]	=	moins un
+===	it[15]	=	quarante deux
+===	it[16]	=	mille trois cent
+===	it[17]	=	moins un
+===	it[18]	=	quarante deux
+===	it[19]	=	mille trois cent
+===	it[20]	=	moins un
+===	it[21]	=	quarante deux
+===	it[22]	=	mille trois cent
+===	it[23]	=	moins un
+===	it[24]	=	quarante deux
+===	it[25]	=	mille trois cent
+===	it[26]	=	moins un
+===	it[27]	=	quarante deux
+===	it[28]	=	mille trois cent
+===	it[29]	=	moins un
+===	it[30]	=	quarante deux
+===	it[31]	=	mille trois cent
+===	it[32]	=	moins un
+===	it[33]	=	quarante deux
+===	it[34]	=	mille trois cent
+===	it[35]	=	moins un
+===	it[36]	=	quarante deux
+===	it[37]	=	mille trois cent
+===	it[38]	=	moins un
+===	it[39]	=	quarante deux
+===	it[40]	=	mille trois cent
+===	it[41]	=	moins un
+===	it[42]	=	quarante deux
+===	it[43]	=	mille trois cent
+===	it[44]	=	moins un
+===	it[45]	=	quarante deux
+===	it[46]	=	mille trois cent
+===	it[47]	=	moins un
+===	it[48]	=	quarante deux
+===	it[49]	=	mille trois cent
+===	it[50]	=	moins un
+===	it[51]	=	quarante deux
+===	it[52]	=	mille trois cent
+===	it[53]	=	moins un
+===	it[54]	=	quarante deux
+===	it[55]	=	mille trois cent
+===	it[56]	=	moins un
+===	it[57]	=	quarante deux
+===	it[58]	=	mille trois cent
+===	it[59]	=	moins un
