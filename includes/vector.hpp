@@ -1,6 +1,7 @@
 #ifndef VECTOR_HPP
 # define VECTOR_HPP
 
+
 # include <memory>
 # include <stdexcept>
 # include <iomanip>		// !!!
@@ -8,6 +9,7 @@
 # include <cstdlib>		// !!!
 # include <cstddef>		// !!!
 # include <iterator>	// !!!
+# include <typeinfo>	// !!!
 
 # include "type_utils.hpp"
 # include "cmp_utils.hpp"
@@ -64,7 +66,7 @@ explicit	vector(size_type n, const value_type& val = value_type(),
 	_end(_begin + n),
 	_capacity(_end)
 {
-//	std::cerr << "VECTOR FILL CONSTRUCTOR" << std::endl;
+	//	std::cerr << "VECTOR FILL CONSTRUCTOR" << std::endl;
 	pointer	tmp;
 
 	tmp = _begin;
@@ -79,7 +81,11 @@ explicit	vector(size_type n, const value_type& val = value_type(),
 
 //	range (3)
 template <class InpIt>
-vector(typename ft::enable_if<!ft::is_integral<InpIt>::value, InpIt>::type first,
+	vector(typename ft::enable_if<!ft::is_integral<InpIt>::value, InpIt>::type first,
+//	vector(typename ft::enable_if<(!false)						, InpIt>::type first,
+//	vector(typename ft::enable_if< true							, InpIt>::type first,
+//	vector(typename type													   first,
+//	vector(typename InpIt													   first,
 		InpIt last,
 		const allocator_type& alloc = allocator_type()) :
 	_allocator(alloc)

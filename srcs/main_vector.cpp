@@ -666,7 +666,6 @@ void	iterator_functions(void)
 		std::cout << FMT2 << "*(--it)\t=\t" << *(--it) << std::endl;
 		std::cout << FMT2 << "*(++it)\t=\t" << *(++it) << std::endl;
 		std::cout << FMT2 << "*(it--)\t=\t" << *(it--) << std::endl;
-//		std::cout << FMT2 << "*(it++)\t=\t" << *(it++) << std::endl;
 		it++;
 	}
 	std::cout << std::endl;
@@ -680,12 +679,39 @@ void	iterator_functions(void)
 		std::cout << FMT2 << "*(--rit)\t=\t" << *(--rit) << std::endl;
 		std::cout << FMT2 << "*(rit--)\t=\t" << *(rit--) << std::endl;
 		std::cout << FMT2 << "*(++rit)\t=\t" << *(++rit) << std::endl;
-//		std::cout << FMT2 << "*(rit++)\t=\t" << *(rit++) << std::endl;
 		rit++;
 	}
 	std::cout << std::endl;
 
-	
+	//	it + n
+	it = v.begin();
+	std::cout << FMT1 << "it = v.begin();" << std::endl;
+	std::cout << FMT2 << "*(it + size() / 2)\t=\t" << *(it + v.size() / 2) << std::endl;
+	//	it += n
+	it += v.size() / 2;
+	std::cout << FMT1 << "*it += size() / 2;" << std::endl;
+	std::cout << FMT2 << "*it\t\t\t=\t" << *it <<  std::endl;
+	//	it - n
+	std::cout << FMT2 << "*(it - size() / 2)\t=\t" << *(it - v.size() / 2) << std::endl;
+	//	it-= n
+	std::cout << FMT1 << "*it -= size() / 2;" << std::endl;
+	std::cout << FMT2 << "*it\t\t\t=\t" << *it << std::endl;
+	std::cout << std::endl;
+	//	it[]
+	it = v.begin();
+	int i = 0;
+	while (it != v.end())
+	{
+		if (i % 3 == 0)
+			it[i] = VAL1;
+		else if (i % 3 == 1)
+			it[i] = VAL2;
+		else
+			it[i] = VAL3;
+		std::cout << "it[" << std::setw(8) << i << "]\t=\t" << it[i] << std::endl;
+		i++;
+		it++;
+	}
 }
 
 int		main(void)
@@ -696,6 +722,6 @@ int		main(void)
 	capacity_changes();
 	element_access();
 	modifiers();
-//	iterator_functions();
+	iterator_functions();
 	return (0);
 }
