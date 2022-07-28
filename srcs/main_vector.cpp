@@ -14,7 +14,6 @@
  #include <vector>
 #endif
 
-/*
 #ifdef CONTAINS_ALLOC
  #define T ContainsAlloc
  #define VAL1 ContainsAlloc("quarante deux")
@@ -23,30 +22,33 @@
 #else
 	#ifdef STRING
 	 #define T std::string
-	 #define VAL1 std::string("42")
-	 #define VAL2 std::string("1337")
-	 #define VAL3 std::string("-1")
+	 #define VAL1 std::string("quarante deux")
+	 #define VAL2 std::string("mille trois cent")
+	 #define VAL3 std::string("moins un")
 	#else
-	 #define T int
-	 #define VAL1 42
-	 #define VAL2 1337
-	 #define VAL3 -1
+		#ifdef FLOAT
+		 #define T float
+		 #define VAL1 1983.128f
+		 #define VAL2 0.01f
+		 #define VAL3 -3.14152589171f
+		#else
+		 #define T int
+		 #define VAL1 42
+		 #define VAL2 1337
+		 #define VAL3 -1
+		#endif
 	#endif
 #endif
-*/
 
-#define T std::string
-#define VAL1 std::string("quarante deux")
-#define VAL2 std::string("mille trois cent")
-#define VAL3 std::string("moins un")
-
+#ifndef N
+//#define N 10000		//	NOT 0 OR SEGFAULT
+ #define N 100			//	NOT 0 OR SEGFAULT
+						//	NOT < 0	OR LONG
+#endif
 
 #define FMT1	"===\t"
 #define FMT2	"\t===\t"
 
-//#define N 10000		//	NOT 0 OR SEGFAULT
-#define N 15 		//	NOT 0 OR SEGFAULT
-				//	NOT < 0	OR LONG
 
 using namespace NAMESPACE;
 
