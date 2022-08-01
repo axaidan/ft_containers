@@ -87,7 +87,17 @@ vector		:	${HEADERS} srcs/main_vector.cpp
 			cat -n outs/ft_vector.txt
 			diff outs/std_vector.txt outs/ft_vector.txt
 
-			
+map		:	${HEADERS} srcs/main_map.cpp
+			${CXX} ${CXXFLAGS} -I ${INC_FLD} \
+				srcs/ContainsAlloc.cpp \
+				srcs/main_map.cpp -o ft_map -D${ARG}
+			./ft_map > outs/ft_map.txt
+			${CXX} ${CXXFLAGS} -I ${INC_FLD} -DSTD \
+				srcs/ContainsAlloc.cpp \
+				srcs/main_map.cpp -o std_map -D${ARG}
+			./std_map > outs/std_map.txt
+			cat -n outs/ft_map.txt
+			diff outs/std_map.txt outs/ft_map.txt 			
 
 
 .PHONY		:	all re clean fclean

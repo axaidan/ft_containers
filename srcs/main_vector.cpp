@@ -41,8 +41,8 @@
 #endif
 
 #ifndef N
-//#define N 10000		//	NOT 0 OR SEGFAULT
- #define N 100			//	NOT 0 OR SEGFAULT
+# define N 10000		//	NOT 0 OR SEGFAULT
+// #define N 10			//	NOT 0 OR SEGFAULT
 						//	NOT < 0	OR LONG
 #endif
 
@@ -702,10 +702,7 @@ void	iterator_functions(void)
 	std::cout << std::endl;
 	//	it[]
 	it = v.begin();
-	ite = v.end();
 	size_t	i	= 0;
-	display_capacity(v, "debug");
-
 	while (i < v.size())
 	{
 		if (i % 3 == 0)
