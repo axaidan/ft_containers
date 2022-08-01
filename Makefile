@@ -99,5 +99,4 @@ map		:	${HEADERS} srcs/main_map.cpp
 			cat -n outs/ft_map.txt
 			diff outs/std_map.txt outs/ft_map.txt 			
 
-
 .PHONY		:	all re clean fclean

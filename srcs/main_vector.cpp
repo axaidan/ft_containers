@@ -7,11 +7,6 @@
 #include <list>
 
 #ifndef STD
- #define NAMESPACE ft
- #include "vector.hpp"
-#else
- #define NAMESPACE std
- #include <vector>
 #endif
 
 #ifdef CONTAINS_ALLOC

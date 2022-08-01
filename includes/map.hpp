@@ -58,18 +58,18 @@ typedef ptrdiff_t									difference_type;
 class value_compare
 //: public std::binary_function<value_type, value_type, bool>
 {
-// in C++98, it is required to inherit binary_function<T, T, bool>
-friend class map;
-protected:
-	Compare		comp;
-	value_compare(Compare c) : comp(c) {}
-	// constructed with map's comparison object
-public:
-	typedef bool			result_type;
-	typedef value_type		first_argument_type;
-	typedef value_type		second_argument_type;
-	bool operator() (const value_type& x, const value_type& y) const
-	{ return comp(x.first, y.first); }
+	// in C++98, it is required to inherit binary_function<T, T, bool>
+	friend class map;
+	protected:
+		Compare		comp;
+		value_compare(Compare c) : comp(c) {}
+		// constructed with map's comparison object
+	public:
+		typedef bool			result_type;
+		typedef value_type		first_argument_type;
+		typedef value_type		second_argument_type;
+		bool operator() (const value_type& x, const value_type& y) const
+		{ return comp(x.first, y.first); }
 };
 
 /****************/
@@ -79,10 +79,8 @@ private:
 allocator_type			_pairAlloc;
 node_allocator			_nodeAlloc;
 key_compare				_keyComp;
-public:
 node					*_nil;
 node					*_root;
-private:
 size_type				_size;
 
 public:
@@ -156,11 +154,6 @@ const_iterator				begin(void) const
 	return (it);
 }
 
-// 1:
-// _nil->_p == _tree_max() ? 
-// 2:
-// RETURN _nil AND TO _tree_max() WHEN --
-// => WHAT HAPPENS IN CASE OF revser_iterator ?
 iterator					end(void)
 {
 	iterator	it(_nil, _nil, _root);

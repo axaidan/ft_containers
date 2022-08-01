@@ -1,103 +1,302 @@
+=========================
+=	CONSTRUCTION	=
+=========================
+
 ===	display_capacity() :
-===	CONTEXT : map_test
-	===	m.empty()	=	false
-	===	m.size()	=	94
+===	CONTEXT : default constructed empty map m
+	===	m.empty()	=	true
+	===	m.size()	=	0
 	===	m.max_size()	=	461168601842738790
 
 ===	display_content() :
-===	CONTEXT : map_test
-	===	m[   -491]	=	-1.1
-	===	m[   -477]	=	3.14
-	===	m[   -472]	=	0
-	===	m[   -454]	=	-1.1
-	===	m[   -442]	=	-1.1
-	===	m[   -434]	=	0
-	===	m[   -429]	=	0
-	===	m[   -421]	=	-1.1
-	===	m[   -414]	=	3.14
-	===	m[   -411]	=	-1.1
-	===	m[   -399]	=	3.14
-	===	m[   -392]	=	0
-	===	m[   -386]	=	-1.1
-	===	m[   -364]	=	3.14
-	===	m[   -339]	=	-1.1
-	===	m[   -338]	=	-1.1
-	===	m[   -331]	=	-1.1
-	===	m[   -329]	=	-1.1
-	===	m[   -311]	=	0
-	===	m[   -304]	=	0
-	===	m[   -303]	=	-1.1
-	===	m[   -298]	=	-1.1
-	===	m[   -293]	=	0
-	===	m[   -291]	=	-1.1
-	===	m[   -282]	=	3.14
-	===	m[   -268]	=	0
-	===	m[   -261]	=	3.14
-	===	m[   -257]	=	3.14
-	===	m[   -229]	=	-1.1
-	===	m[   -217]	=	0
-	===	m[   -216]	=	0
-	===	m[   -200]	=	3.14
-	===	m[   -191]	=	3.14
-	===	m[   -186]	=	-1.1
-	===	m[   -181]	=	0
-	===	m[   -172]	=	0
-	===	m[   -141]	=	-1.1
-	===	m[   -134]	=	3.14
-	===	m[   -130]	=	0
-	===	m[   -121]	=	3.14
-	===	m[   -117]	=	-1.1
-	===	m[    -83]	=	0
-	===	m[    -72]	=	0
-	===	m[    -63]	=	0
-	===	m[    -61]	=	0
-	===	m[    -53]	=	0
-	===	m[     -3]	=	3.14
-	===	m[      2]	=	-1.1
-	===	m[     24]	=	-1.1
-	===	m[     26]	=	0
-	===	m[     56]	=	-1.1
-	===	m[     80]	=	-1.1
-	===	m[     88]	=	-1.1
-	===	m[     94]	=	3.14
-	===	m[    104]	=	0
-	===	m[    108]	=	-1.1
-	===	m[    113]	=	-1.1
-	===	m[    142]	=	0
-	===	m[    148]	=	-1.1
-	===	m[    151]	=	3.14
-	===	m[    161]	=	3.14
-	===	m[    169]	=	-1.1
-	===	m[    172]	=	3.14
-	===	m[    195]	=	-1.1
-	===	m[    197]	=	3.14
-	===	m[    203]	=	0
-	===	m[    208]	=	0
-	===	m[    210]	=	0
-	===	m[    218]	=	0
-	===	m[    250]	=	0
-	===	m[    257]	=	3.14
-	===	m[    260]	=	0
-	===	m[    267]	=	3.14
-	===	m[    271]	=	-1.1
-	===	m[    278]	=	-1.1
-	===	m[    282]	=	-1.1
-	===	m[    285]	=	-1.1
-	===	m[    307]	=	3.14
-	===	m[    330]	=	-1.1
-	===	m[    332]	=	0
-	===	m[    362]	=	3.14
-	===	m[    369]	=	-1.1
-	===	m[    376]	=	-1.1
-	===	m[    377]	=	3.14
-	===	m[    391]	=	3.14
-	===	m[    393]	=	3.14
-	===	m[    408]	=	-1.1
-	===	m[    409]	=	0
-	===	m[    412]	=	0
-	===	m[    425]	=	-1.1
-	===	m[    436]	=	0
-	===	m[    438]	=	3.14
-	===	m[    443]	=	-1.1
-	===	m[    458]	=	0
+===	CONTEXT : default constructed empty map m
+	===	NO CONTENT
+
+===	display_capacity() :
+===	CONTEXT : rand_insert()ed values in m
+	===	m.empty()	=	false
+	===	m.size()	=	10
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : rand_insert()ed values in m
+	===	m[    -89]	=	0
+	===	m[    -86]	=	3.14
+	===	m[    -64]	=	0
+	===	m[    -28]	=	-1.1
+	===	m[    -23]	=	0
+	===	m[     17]	=	-1.1
+	===	m[     35]	=	-1.1
+	===	m[     51]	=	-1.1
+	===	m[     98]	=	-1.1
+	===	m[     99]	=	-1.1
+
+===	display_capacity() :
+===	CONTEXT : range constructed from m begin/end
+	===	m.empty()	=	false
+	===	m.size()	=	10
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : range constructed from m begin/end
+	===	m[    -89]	=	0
+	===	m[    -86]	=	3.14
+	===	m[    -64]	=	0
+	===	m[    -28]	=	-1.1
+	===	m[    -23]	=	0
+	===	m[     17]	=	-1.1
+	===	m[     35]	=	-1.1
+	===	m[     51]	=	-1.1
+	===	m[     98]	=	-1.1
+	===	m[     99]	=	-1.1
+
+===	display_capacity() :
+===	CONTEXT : range constructed from m begin/begin
+	===	m.empty()	=	true
+	===	m.size()	=	0
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : range constructed from m begin/begin
+	===	NO CONTENT
+
+===	display_capacity() :
+===	CONTEXT : range constructed from m begin/half
+	===	m.empty()	=	false
+	===	m.size()	=	5
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : range constructed from m begin/half
+	===	m[    -89]	=	0
+	===	m[    -86]	=	3.14
+	===	m[    -64]	=	0
+	===	m[    -28]	=	-1.1
+	===	m[    -23]	=	0
+
+===	display_capacity() :
+===	CONTEXT : range constructed from m half/end
+	===	m.empty()	=	false
+	===	m.size()	=	5
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : range constructed from m half/end
+	===	m[     17]	=	-1.1
+	===	m[     35]	=	-1.1
+	===	m[     51]	=	-1.1
+	===	m[     98]	=	-1.1
+	===	m[     99]	=	-1.1
+
+===	display_capacity() :
+===	CONTEXT : copy constructed from m_range1
+	===	m.empty()	=	false
+	===	m.size()	=	10
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : copy constructed from m_range1
+	===	m[    -89]	=	0
+	===	m[    -86]	=	3.14
+	===	m[    -64]	=	0
+	===	m[    -28]	=	-1.1
+	===	m[    -23]	=	0
+	===	m[     17]	=	-1.1
+	===	m[     35]	=	-1.1
+	===	m[     51]	=	-1.1
+	===	m[     98]	=	-1.1
+	===	m[     99]	=	-1.1
+
+===	display_relationals() :
+===	CONTEXT : copy constructed from m_range1
+	===	(m1 == m2)	=	true
+	===	(m1 != m2)	=	false
+	===	(m1 <  m2)	=	false
+	===	(m1 <= m2)	=	true
+	===	(m1 >  m2)	=	false
+	===	(m1 >= m2)	=	true
+
+=========================
+=	ASSIGNATION	=
+=========================
+
+===	display_capacity() :
+===	CONTEXT : (rand_insert() * 2) filling m1
+	===	m.empty()	=	true
+	===	m.size()	=	0
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : (rand_insert() * 2) filling m1
+	===	NO CONTENT
+
+===	display_capacity() :
+===	CONTEXT : map<K, T> m1(N, VAL3); m2 = m1; with m1 bigger than m2
+	===	m.empty()	=	false
+	===	m.size()	=	10
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : map<K, T> m1(N, VAL3); m2 = m1; with m1 bigger than m2
+	===	m[    -73]	=	0
+	===	m[    -46]	=	3.14
+	===	m[    -38]	=	3.14
+	===	m[    -37]	=	0
+	===	m[    -26]	=	0
+	===	m[     17]	=	3.14
+	===	m[     22]	=	0
+	===	m[     29]	=	3.14
+	===	m[     50]	=	-1.1
+	===	m[     67]	=	0
+
+===	display_relationals() :
+===	CONTEXT : map<K, T> m1(N, VAL3); m2 = m1; with m1 bigger than m2
+	===	(m1 == m2)	=	true
+	===	(m1 != m2)	=	false
+	===	(m1 <  m2)	=	false
+	===	(m1 <= m2)	=	true
+	===	(m1 >  m2)	=	false
+	===	(m1 >= m2)	=	true
+
+===	display_capacity() :
+===	CONTEXT : map<K, T> m3; m2 = m3; m2 is empty
+	===	m.empty()	=	true
+	===	m.size()	=	0
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : map<K, T> m3; m2 = m3; m2 is empty
+	===	NO CONTENT
+
+===	display_relationals() :
+===	CONTEXT : map<K, T> m3; m2 = m3; m2 is empty
+	===	(m1 == m2)	=	false
+	===	(m1 != m2)	=	true
+	===	(m1 <  m2)	=	false
+	===	(m1 <= m2)	=	false
+	===	(m1 >  m2)	=	true
+	===	(m1 >= m2)	=	true
+
+===	display_capacity() :
+===	CONTEXT : rand_insert(m3);
+	===	m.empty()	=	false
+	===	m.size()	=	8
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : rand_insert(m3);
+	===	m[    -92]	=	0
+	===	m[    -71]	=	3.14
+	===	m[    -14]	=	0
+	===	m[     11]	=	3.14
+	===	m[     21]	=	-1.1
+	===	m[     25]	=	-1.1
+	===	m[     31]	=	-1.1
+	===	m[     56]	=	3.14
+
+===	display_relationals() :
+===	CONTEXT : rand_insert(m3);
+	===	(m1 == m2)	=	false
+	===	(m1 != m2)	=	true
+	===	(m1 <  m2)	=	false
+	===	(m1 <= m2)	=	false
+	===	(m1 >  m2)	=	true
+	===	(m1 >= m2)	=	true
+
+===	display_capacity() :
+===	CONTEXT : m3 = m2 = m1; multiple assignations test
+	===	m.empty()	=	true
+	===	m.size()	=	0
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : m3 = m2 = m1; multiple assignations test
+	===	NO CONTENT
+
+===	display_relationals() :
+===	CONTEXT : m3 = m2 = m1; multiple assignations test
+	===	(m1 == m2)	=	true
+	===	(m1 != m2)	=	false
+	===	(m1 <  m2)	=	false
+	===	(m1 <= m2)	=	true
+	===	(m1 >  m2)	=	false
+	===	(m1 >= m2)	=	true
+
+=========================
+=	ELEMENT ACCESS	=
+=========================
+
+===	display_capacity() :
+===	CONTEXT : m1[KVAL1] = VAL1; m1[KVAL2] = VAL2; m1[KVAL3] = VAL3;
+	===	m.empty()	=	false
+	===	m.size()	=	3
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : m1[KVAL1] = VAL1; m1[KVAL2] = VAL2; m1[KVAL3] = VAL3;
+	===	m[     -1]	=	-1.1
+	===	m[      0]	=	0
+	===	m[    314]	=	3.14
+
+===	display_capacity() :
+===	CONTEXT : rand_insert() filling m1
+	===	m.empty()	=	false
+	===	m.size()	=	21
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : rand_insert() filling m1
+	===	m[    -86]	=	3.14
+	===	m[    -74]	=	0
+	===	m[    -52]	=	3.14
+	===	m[    -42]	=	0
+	===	m[    -41]	=	-1.1
+	===	m[    -22]	=	-1.1
+	===	m[    -21]	=	3.14
+	===	m[    -17]	=	3.14
+	===	m[     -1]	=	-1.1
+	===	m[      0]	=	0
+	===	m[     13]	=	-1.1
+	===	m[     18]	=	0
+	===	m[     19]	=	-1.1
+	===	m[     20]	=	-1.1
+	===	m[     23]	=	3.14
+	===	m[     35]	=	-1.1
+	===	m[     61]	=	3.14
+	===	m[     64]	=	0
+	===	m[     80]	=	0
+	===	m[     94]	=	-1.1
+	===	m[    314]	=	3.14
+
+===	key1 = m1.begin().first;
+	===	m1[key1] = TVAL3;
+===	display_capacity() :
+===	CONTEXT : replaced existing key with another value
+	===	m.empty()	=	false
+	===	m.size()	=	21
+	===	m.max_size()	=	461168601842738790
+
+===	display_content() :
+===	CONTEXT : replaced existing key with another value
+	===	m[    -86]	=	0
+	===	m[    -74]	=	0
+	===	m[    -52]	=	3.14
+	===	m[    -42]	=	0
+	===	m[    -41]	=	-1.1
+	===	m[    -22]	=	-1.1
+	===	m[    -21]	=	3.14
+	===	m[    -17]	=	3.14
+	===	m[     -1]	=	-1.1
+	===	m[      0]	=	0
+	===	m[     13]	=	-1.1
+	===	m[     18]	=	0
+	===	m[     19]	=	-1.1
+	===	m[     20]	=	-1.1
+	===	m[     23]	=	3.14
+	===	m[     35]	=	-1.1
+	===	m[     61]	=	3.14
+	===	m[     64]	=	0
+	===	m[     80]	=	0
+	===	m[     94]	=	-1.1
+	===	m[    314]	=	3.14
 

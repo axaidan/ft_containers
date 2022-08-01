@@ -44,11 +44,16 @@
 
 #ifdef STRING
 # define K std::string
+# define KVAL1 std::string("trois virg quatorze")
+# define KVAL2 std::string("moins un virgule un")
+# define KVAL3 std::string("zero virgule zero")
 # define LEN 11
 #else
 # define K int
+# define KVAL1 314
+# define KVAL2 -1
+# define KVAL3 0
 #endif
-
 
 #define T		float
 #define TVAL1	3.14f
@@ -58,7 +63,7 @@
 #define P		NAMESPACE::pair<K, T>
 
 #ifndef N
- #define N 50			//	NOT 0 OR SEGFAULT
+ #define N 10			//	NOT 0 OR SEGFAULT
 						//	NOT < 0	OR LONG
 #endif
 
@@ -81,7 +86,7 @@ K		rand_K(void)
 	while (i < LEN - 1)
 	{
 		//c = (rand() % (126 - 33)) + 33;
-		c = (rand() % (90 - 65)) + 65;
+		c = (rand() % ('A' - 'Z')) + 'A';
 		k.push_back(c);
 		i++;
 	}
@@ -96,12 +101,12 @@ K		rand_K(void)
 	return (k);
 }
 
-void	rand_push_back(map<K, T> & m)
+void	rand_insert(map<K, T> & m)
 {
 	pair<K, T>	p;
 	int	 		n;
 
-	for (int i = 0 ; i < N * 2 ; i++)
+	for (int i = 0 ; i < N ; i++)
 	{
 		n = rand();
 
@@ -109,20 +114,12 @@ void	rand_push_back(map<K, T> & m)
 
 		n %= 3;
 		if (n == 1)
-		{
 			p.second = TVAL1;
-			m.insert(p);
-		}
 		else if (n == 2)
-		{
 			p.second = TVAL2;
-			m.insert(p);
-		}
 		else
-		{
 			p.second = TVAL3;
-			m.insert(p);
-		}
+		m.insert(p);
 	}
 }
 
@@ -158,25 +155,25 @@ void	display_content(const ::map<K, T> & m, std::string context)
 	std::cout << std::endl;
 }
 
-/*
 template<class U>
-void	display_relationals(const U & v1,
-		const U & v2,
+void	display_relationals(const U & m1,
+		const U & m2,
 		std::string context)
 
 {
 	std::cout << std::boolalpha;
 	std::cout << FMT1 << "display_relationals() :" << std::endl;
 	std::cout << FMT1 << "CONTEXT : " << context << std::endl;
-	std::cout << FMT2 << "(v1 == v2)\t=\t" << (v1 == v2) << std::endl;
-	std::cout << FMT2 << "(v1 != v2)\t=\t" << (v1 != v2) << std::endl;
-	std::cout << FMT2 << "(v1 <  v2)\t=\t" << (v1 < v2) << std::endl;
-	std::cout << FMT2 << "(v1 <= v2)\t=\t" << (v1 <= v2) << std::endl;
-	std::cout << FMT2 << "(v1 >  v2)\t=\t" << (v1 >  v2) << std::endl;
-	std::cout << FMT2 << "(v1 >= v2)\t=\t" << (v1 >= v2) << std::endl;
+	std::cout << FMT2 << "(m1 == m2)\t=\t" << (m1 == m2) << std::endl;
+	std::cout << FMT2 << "(m1 != m2)\t=\t" << (m1 != m2) << std::endl;
+	std::cout << FMT2 << "(m1 <  m2)\t=\t" << (m1 < m2) << std::endl;
+	std::cout << FMT2 << "(m1 <= m2)\t=\t" << (m1 <= m2) << std::endl;
+	std::cout << FMT2 << "(m1 >  m2)\t=\t" << (m1 >  m2) << std::endl;
+	std::cout << FMT2 << "(m1 >= m2)\t=\t" << (m1 >= m2) << std::endl;
 	std::cout << std::endl;
 }
 
+/*
 void	display_elem_access(const vector<T> & v,
 		std::string context)
 {
@@ -213,6 +210,7 @@ void	display_iterator_functions(vector<T> & v,
 	std::cout << FMT2 << "*(v.rend() - 1)\t=\t" << *(v.rend() - 1) << std::endl;
 	std::cout << std::endl;
 }
+*/
 
 void	construction(void)
 {
@@ -222,38 +220,48 @@ void	construction(void)
 	std::cout << std::endl;
 
 	//	CONSTRUCTORS
-	//	vector(void)	
-	::vector<T>	v;
- 	context = "default constructed empty vector";
-	display_capacity(v, context);
-	display_content(v, context);
+	//	map(void)	
+	::map<K, T>	m;
+ 	context = "default constructed empty map m";
+	display_capacity(m, context);
+	display_content(m, context);
 
-	//	vector(n, val)
-	::vector<T>	v_fill1(10, VAL1);
-	context = "fill constructed 10 elems";
-	display_capacity(v_fill1, context);
-	display_content(v_fill1, context);
-	::vector<T>	v_fill2(0, VAL1);
-	context = "fill constructed 0 elem";
-	display_capacity(v_fill2, context);
-	display_content(v_fill2, context);
-	//	vector(first, last)
-	::vector<T>	v_range1(v_fill1.begin(), v_fill1.end() - 2);
-	context = "range constructed from v_fill1 begin/end - 2";
-	display_capacity(v_range1, context);
-	display_content(v_range1, context);
+	rand_insert(m);
+	context = "rand_insert()ed values in m";
+	display_capacity(m, context);
+	display_content(m, context);
 
-	::vector<T>	v_range2(v_fill1.begin(), v_fill1.begin());
-	context = "range constructed from v_fill1 begin/begin";
-	display_capacity(v_range2, context);
-	display_content(v_range2, context);
+	//	map(first, last)
+	::map<K, T>	m_range1(m.begin(), m.end());
+	context = "range constructed from m begin/end";
+	display_capacity(m_range1, context);
+	display_content(m_range1, context);
 
-	//	vector(src)
-	::vector<T>	v_copy(v_fill1);
-	context = "copy constructed from v_fill1";
-	display_capacity(v_copy, context);
-	display_content(v_copy, context);
-	display_relationals(v_fill1, v_copy, context);
+	//	map(same_it, same_it)
+	::map<K, T>	m_range2(m.begin(), m.begin());
+	context = "range constructed from m begin/begin";
+	display_capacity(m_range2, context);
+	display_content(m_range2, context);
+
+	//	map(begin, begin + size() / 2)
+	::map<K, T>::iterator 	it = m.begin();
+	for (size_t i = 0 ; i < m.size() / 2 ; i++)
+		it++;
+	::map<K, T>	m_range3(m.begin(), it);
+	context = "range constructed from m begin/half";
+	display_capacity(m_range3, context);
+	display_content(m_range3, context);
+	::map<K, T>	m_range4(it, m.end());
+	context = "range constructed from m half/end";
+	display_capacity(m_range4, context);
+	display_content(m_range4, context);
+
+	//	map(src)
+	::map<K, T>	m_copy(m_range1);
+	context = "copy constructed from m_range1";
+	display_capacity(m_copy, context);
+	display_content(m_copy, context);
+	display_relationals(m, m_copy, context);
 }
 
 void	assignation(void)
@@ -263,103 +271,39 @@ void	assignation(void)
 	std::cout << "=========================" << std::endl;
 	std::cout << std::endl;
 //	ASSIGNATION
-	vector<T>	v1(N, VAL3);
-	vector<T>	v2;
-	vector<T>	v3;
+	map<K, T>	m1;
+	map<K, T>	m2;
+	map<K, T>	m3;
 
-	v2 = v1;
-	context = "vector<T> v1(N, VAL3); v2 = v1; with v1 bigger than v2";
-	display_capacity(v2, context);
-	display_content(v2, context);
-	display_relationals(v1, v2, context);
-	v2 = v3;
-	context = "vector<T> v3; v2 = v3; v2 is empty";
-	display_capacity(v2, context);
-	display_content(v2, context);
-	display_relationals(v1, v2, context);
-	rand_push_back(v3);
-	context = "rand_push_back(v3);";
-	display_capacity(v3, context);
-	display_content(v3, context);
-	display_relationals(v1, v3, context);
-//	v3 = v3;	//	WON'T COMPILE AT SCHOOL
-//	context = "v3 = v3; self assignation test";
-//	display_capacity(v3, context);
-//	display_content(v3, context);
-	v3 = v1 = v2;
-	context = "v3 = v2 = v1; multiple assignations test";
-	display_capacity(v3, context);
-	display_content(v3, context);
-	display_relationals(v1, v3, context);
-	display_relationals(v1, v2, context);
-}
+	context = "(rand_insert() * 2) filling m1";
+	rand_insert(m1);
+	display_capacity(m2, context);
+	display_content(m2, context);
 
-void	capacity_changes(void)
-{
-
-	std::cout << "=================================" << std::endl;
-	std::cout << "=\tCAPACITY CHANGES\t=" << std::endl;
-	std::cout << "=================================" << std::endl;
-	std::cout << std::endl;
-
-	vector<T>	v;
-
-	rand_push_back(v);
-	std::cout << FMT1 << "vector<T> v; rand_push_back(v);" << std::endl;
-	//	resize
-	//		if n < size
-	v.resize(v.size() / 2);
-	context = "v.resize(v.size() / 2); resizing with (n < size)";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-	//		if n > size
-	v.resize(v.size() * 3, VAL2);
-	context = "v.resize(v.size() * 3); resizing with (n > size)";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-	//		if n > size && n > capacity
-	v.resize(v.capacity() + 3, VAL1);
-	context = "v.resize(v.capacity() * 2); resizing with (n > capacity)";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-
-	v.resize(N, VAL1);
-	std::cout << FMT1 << "v.resize(N);" << std::endl;
-
-	//	reserve(n)
-	//		if n > capacity
-	v.reserve(v.capacity() + 1);
-	context = "v.reserve(v.capacity() + 1); reserving one more elem";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-	//		if n == capacity
-	v.reserve(v.capacity());
-	context = "v.reserve(v.capacity()); reserving same capacity";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-	//		if n < capacity
-	v.reserve(v.capacity());
-	context = "v.reserve(v.capacity() - 1); reserving lesser capacity";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-	//		if n > max_size()
-	try {
-		v.reserve(v.capacity());
-	}
-	catch (std::exception & e) {
-		std::cerr << e.what() << std::endl;
-	}
-	context = "v.reserve(v.max_size() + 1); exception thrown";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-	
+	m2 = m1;
+	context = "map<K, T> m1(N, VAL3); m2 = m1; with m1 bigger than m2";
+	display_capacity(m2, context);
+	display_content(m2, context);
+	display_relationals(m1, m2, context);
+	m2 = m3;
+	context = "map<K, T> m3; m2 = m3; m2 is empty";
+	display_capacity(m2, context);
+	display_content(m2, context);
+	display_relationals(m1, m2, context);
+	rand_insert(m3);
+	context = "rand_insert(m3);";
+	display_capacity(m3, context);
+	display_content(m3, context);
+	display_relationals(m1, m3, context);
+//	m3 = m3;	//	WON'T COMPILE AT SCHOOL
+//	context = "m3 = m3; self assignation test";
+//	display_capacity(m3, context);
+//	display_content(m3, context);
+	m3 = m1 = m2;
+	context = "m3 = m2 = m1; multiple assignations test";
+	display_capacity(m3, context);
+	display_content(m3, context);
+	display_relationals(m1, m3, context);
 }
 
 void	element_access(void)
@@ -369,78 +313,43 @@ void	element_access(void)
 	std::cout << "=========================" << std::endl;
 	std::cout << std::endl;
 
-	vector<T>		v(N, VAL3);
-	vector<T>		bckp(v);
-	size_t			size;
-	T				copy;
+	map<K, T>		m1;
+	K				key1;
 
-	copy = VAL2;
-	rand_push_back(v);
-	const vector<T>	const_v(v);
-	size = v.size();
+	m1[KVAL1] = TVAL1;
+	m1[KVAL2] = TVAL2;
+	m1[KVAL3] = TVAL3;
+	context = "m1[KVAL1] = VAL1; m1[KVAL2] = VAL2; m1[KVAL3] = VAL3;"; 
+	display_capacity(m1, context);
+	display_content(m1, context);
+	
+	context = "rand_insert() filling m1";
+	rand_insert(m1);
+	rand_insert(m1);
+	display_capacity(m1, context);
+	display_content(m1, context);
 
-	//	operator[]
-	std::cout << FMT1 << "operator[] access / assignation" << std::endl;
-	for (size_t i = 0 ; i < size ; i++)
+	key1 = m1.begin()->first;
+//	while (it != ite)
+//	{
+	std::cout << FMT1 << "key1 = m1.begin().first;" << std::endl;
+	if (m1[key1] == TVAL1)
 	{
-		std::cout << FMT2 << v[i] << std::endl;
-		v[i] = copy;
+		m1[key1] = TVAL3;
+		std::cout << FMT2 << "m1[key1] = TVAL3;" << std::endl;
 	}
-	std::cout << std::endl;
-
-	context = "v[i++] = copy; each member assigned";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-
-	for (size_t i = 0 ; i < size ; i++)
+	else
 	{
-		copy = const_v[i];
-//		const_v[i] = copy;	// 	WON'T COMPILE - const_reference
+		m1[key1] = TVAL1;
+		std::cout << FMT2 << "m1[key1] = TVAL1;" << std::endl;
 	}
-
-	//	non-const access
-	copy = v.front();
-	v.front() = copy;
-	copy = v.back();
-	v.front() = copy;
-
-	//	const access
-	copy = const_v.front();
-//	const_v.front() = copy;	// 	WON'T COMPILE - const_reference
-	copy = const_v.back();
-//	const_v.front() = copy;	// 	WON'T COMPILE - const_reference
-
-	//	at() over-bounds exception test
-	try {
-		v.at(v.size());
-	}
-	catch (std::exception & e) {
-		std::cerr << e.what();
-	}
-
-	copy = VAL3;
-	v = const_v;
-	//	at() retrieval and assignation
-	std::cout << FMT1 << "at() access / assignation" << std::endl;
-	for (size_t i = 0 ; i < size ; i++)
-	{
-		copy = v.at(i);
-		v.at(i) = copy;
-		copy = const_v.at(i);
-		std::cout << FMT2 << copy << std::endl;
-//		const_v.at(i) = copy;	// 	WON'T COMPILE - const_reference
-	}
-	context = "after at() retrieval and assignation test";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-	context = "after at() retrieval and assignation test - const version";
-	display_capacity(const_v, context);
-	display_content(const_v, context);
-	display_elem_access(const_v, context);
+//	}
+	context = "replaced existing key with another value";
+	display_capacity(m1, context);
+	display_content(m1, context);
 }
 
+/*
 void	modifiers(void)
 {
 	std::cout << "=========================" << std::endl;
@@ -606,7 +515,7 @@ void	iterator_functions(void)
 	vector<T>::const_reverse_iterator		crit;
 	vector<T>::const_reverse_iterator		crite(crit);
 
-	rand_push_back(v);
+	rand_insert(v);
 	v.insert(v.end(), N, VAL1);
 	v.insert(v.end() - v.size() / 2, N, VAL2);
 	context = "created new vector";
@@ -764,24 +673,28 @@ void	iterator_functions(void)
 void	map_test(void)
 {
 	::map<K, T>		m;
+	::map<K, T>		m2;
 	context = "map_test";
 
-	rand_push_back(m);
+	rand_insert(m);
+	m2 = m;
 	display_capacity(m, context);
 	display_content(m, context);
+	display_relationals(m, m2, context);
 }
 
 int		main(void)
 {
 	srand(N);
-	map_test();
-	/*
+//	map_test();
 	construction();
 	assignation();
-	capacity_changes();
 	element_access();
+	/*
 	modifiers();
 	iterator_functions();
+	obervers();
+	operations();
 	*/
 	return (0);
 }
