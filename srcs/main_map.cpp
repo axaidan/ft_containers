@@ -691,6 +691,252 @@ void	iterator_functions(void)
 
 }
 
+void	observers(void)
+{
+	std::cout << "=========================" << std::endl;
+	std::cout << "=\tOBSERVERS\t=" << std::endl;
+	std::cout << "=========================" << std::endl;
+	std::cout << std::endl;
+
+	map<K, T>					m;
+	map<K, T>::iterator			it;
+	map<K, T>::iterator			it2;
+	map<K, T>::iterator			ite;
+
+	rand_insert(m);
+	rand_insert(m);
+
+	std::cout << FMT1 << "rand_insert()ed m twice" << std::endl;
+
+	context = "rand_insert()ed m twice2";
+	display_content(m, context);
+	display_capacity(m, context);
+
+	//	key_comp()
+	map<K, T>::key_compare		k_comp;
+
+	it = m.begin();
+	ite = m.end();
+	ite--;
+	k_comp = m.key_comp();
+	std::cout << FMT1 << "comparing key with next key" << std::endl;
+	while (it != ite)
+	{
+		it2 = it;
+		it2++;
+		std::cout << FMT2 << "k_comp(it->first, it2->first)\t=\t"
+		   	<< k_comp(it->first, it2->first)
+			<< std::endl;
+		std::cout << FMT2 << "k_comp(it2->first, it->first)\t=\t"
+		   	<< k_comp(it2->first, it->first)
+			<< std::endl;
+		it++;
+	}
+	std::cout << std::endl;
+	
+	//	value_comp()
+	map<K, T>::value_compare	v_comp = m.value_comp();
+
+	it = m.begin();
+	ite = m.end();
+	ite--;
+	std::cout << FMT1 << "comparing key with next key" << std::endl;
+	while (it != ite)
+	{
+		it2 = it;
+		it2++;
+		std::cout << FMT2 << "v_comp(it->first, it2->first)\t=\t"
+		   	<< v_comp(*it, *it2)
+			<< std::endl;
+		std::cout << FMT2 << "v_comp(it2->first, it1->first)\t=\t"
+		   	<< v_comp(*it2, *it)
+			<< std::endl;
+		it++;
+	}
+	std::cout << std::endl;
+}
+
+void	operations(void)
+{
+	std::cout << "=========================" << std::endl;
+	std::cout << "=\tOPERATIONS\t=" << std::endl;
+	std::cout << "=========================" << std::endl;
+	std::cout << std::endl;
+
+	map<K, T>							m;
+	map<K, T>							cm;
+	map<K, T>::iterator					it;
+	map<K, T>::iterator					ite;
+	map<K, T>::iterator					ret;
+	map<K, T>::const_iterator			cit;
+	map<K, T>::const_iterator			cite;
+	map<K, T>::const_iterator			cret;
+	size_t								i;
+	K									k;
+
+	//	find(k)
+	rand_insert(m);
+	rand_insert(m);
+
+	context = "rand_insert()ed m twice2";
+	display_content(m, context);
+	display_capacity(m, context);
+
+	it = m.begin();
+	ite = m.end();
+
+	std::cout << FMT1 << "find(existing k) and change value" << std::endl;
+	while (it != ite)
+	{
+		ret = m.find(it->first);
+		if (ret == m.end())
+			std::cout << FMT2 << it->first << " NOT FOUND" << std::endl;
+		else
+			std::cout << FMT2 << it->first << " FOUND" << std::endl;
+		ret->second = TVAL2;
+		it++;
+	}
+	std::cout << std::endl;
+
+	context = "changed value while finding";
+	display_content(m, context);
+	display_capacity(m, context);
+
+	std::cout << FMT1 << "find(probably non existing k)" << std::endl;
+	i = 0;
+	while (i < N)
+	{
+		k = rand_K();
+		ret = m.find(k);
+		if (ret == m.end())
+			std::cout << FMT2 << k << " NOT FOUND" << std::endl;
+		else
+			std::cout << FMT2 << k << " FOUND" << std::endl;
+		i++;
+	}
+	std::cout << std::endl;
+
+	const	map<K, T>	m2(m);
+
+	cit = m.begin();
+	cite = m.end();
+	std::cout << FMT1 << "const find(existing k)" << std::endl;
+	while (cit != cite)
+	{
+		cret = m2.find(cit->first);
+		if (cret == m2.end())
+			std::cout << FMT2 << cit->first << " NOT FOUND" << std::endl;
+		else
+			std::cout << FMT2 << cit->first << " FOUND" << std::endl;
+		//cret->second = TVAL2;	//	WON'T COMPILE
+		cit++;
+	}
+	std::cout << std::endl;
+
+	std::cout << FMT1 << "const find(probably non existing k)" << std::endl;
+	i = 0;
+	while (i < N)
+	{
+		k = rand_K();
+		cret = m2.find(k);
+		if (cret == m2.end())
+			std::cout << FMT2 << k << " NOT FOUND" << std::endl;
+		else
+			std::cout << FMT2 << k << " FOUND" << std::endl;
+		i++;
+	}
+	std::cout << std::endl;
+
+	//	count(k)
+	k = m.begin()->first;
+
+	std::cout << FMT1 << "count(existing k) "
+		<< k << std::endl;
+	std::cout << FMT2 << "m.count(k)\t=\t" << m.count(k) << std::endl;
+	std::cout << std::endl;
+	k = rand_K();
+	std::cout << FMT1 << "count(probably non existing k) "
+		<< k << std::endl;
+	std::cout << FMT2 << "m.count(k)\t=\t" << m.count(k) << std::endl;
+	std::cout << std::endl;
+
+	//	upper_bound(k)
+	it = m.begin();
+	i = 0;
+	while (i < m.size() / 2)
+	{
+		it++;
+		i++;
+	}
+	k = it->first;
+	std::cout << FMT1 << "upper_bound(existing k) "
+		<< k << std::endl;
+	ret = m.upper_bound(k);
+	std::cout << FMT2 << "m.upper_bound(k)\t=\t" << ret->first
+		<< std::endl;
+	std::cout << std::endl;
+	k = rand_K();
+	std::cout << FMT1 << "upper_bound(probably non existing k) "
+		<< k << std::endl;
+	ret = m.upper_bound(k);
+	if (ret == m.end())
+		std::cout << FMT2 << "m.upper_bound(k)\t=\t" << "NO UPPER_BOUND"
+			<< std::endl;
+	else
+		std::cout << FMT2 << "m.upper_bound(k)\t=\t"
+			<< ret->first
+			<< std::endl;
+	std::cout << std::endl;
+	//lower_bound(k)
+	k = it->first;
+	std::cout << FMT1 << "lower_bound(existing k) "
+		<< k << std::endl;
+	ret = m.lower_bound(k);
+	std::cout << FMT2 << "m.lower_bound(k)\t=\t" << ret->first
+		<< std::endl;
+	std::cout << std::endl;
+	k = rand_K();
+	std::cout << FMT1 << "lower_bound(probably non existing k) "
+		<< k << std::endl;
+	ret = m.lower_bound(k);
+	if (ret == m.end())
+		std::cout << FMT2 << "m.lower_bound(k)\t=\t" << "NO LOWER_BOUND"
+			<< std::endl;
+	else
+		std::cout << FMT2 << "m.lower_bound(k)\t=\t"
+			<< ret->first
+			<< std::endl;
+	std::cout << std::endl;
+
+	//	equal_range(k)
+	pair<map<K, T>::iterator, map<K, T>::iterator>	pret;
+	pret = m.equal_range(k);
+
+	k = it->first;
+	std::cout << FMT1 << "equal_range(existing k) "
+		<< k << std::endl;
+	pret = m.equal_range(k);
+	if (pret.first == pret.second)
+		std::cout << FMT2 << "0 element with key "
+			<< k << " in map m" << std::endl;
+	else
+		std::cout << FMT2 <<"1 element with key "
+			<< k << " in map m" << std::endl;
+	std::cout << std::endl;
+
+	k = rand_K();
+	std::cout << FMT1 << "equal_range(probably non existing k) "
+		<< k << std::endl;
+	pret = m.equal_range(k);
+	if (pret.first == pret.second)
+		std::cout << FMT2 << "0 element with key "
+			<< k << " in map m" << std::endl;
+	else
+		std::cout << FMT2 <<"1 element with key "
+			<< k << " in map m" << std::endl;
+	std::cout << std::endl;
+}
+
 int		main(void)
 {
 	srand(N);
@@ -699,9 +945,7 @@ int		main(void)
 	element_access();
 	modifiers();
 	iterator_functions();
-	/*
-	obervers();
+	observers();
 	operations();
-	*/
 	return (0);
 }

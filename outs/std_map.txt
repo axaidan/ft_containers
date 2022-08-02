@@ -764,3 +764,271 @@
 	===	*(++rit)	=	YHZLNWSNZA
 	===	*(rit--)	=	YHZLNWSNZA
 
+=========================
+=	OBSERVERS	=
+=========================
+
+===	rand_insert()ed m twice
+===	display_content() :
+===	CONTEXT : rand_insert()ed m twice2
+	===	m[AXIDUBLVLQ]	=	3.14
+	===	m[BKWDGXWDBB]	=	-1.1
+	===	m[BZGWACMJGP]	=	0
+	===	m[COVAXHLVDI]	=	0
+	===	m[CZQEOZLDHB]	=	-1.1
+	===	m[DZFNLCQVDR]	=	-1.1
+	===	m[ERULQJZQWD]	=	0
+	===	m[FTFGLHUQHP]	=	-1.1
+	===	m[GHKOCAXTIZ]	=	0
+	===	m[KKEXXWYLVZ]	=	3.14
+	===	m[KXGNUBWAJY]	=	-1.1
+	===	m[OSCSDXDTUV]	=	0
+	===	m[QHLECBRCUD]	=	-1.1
+	===	m[SDIUVFZOOY]	=	3.14
+	===	m[VPVWOVHMLX]	=	3.14
+	===	m[WEYAVCWZRV]	=	0
+	===	m[YBMWBZSAMC]	=	0
+	===	m[ZANVTCXVHE]	=	3.14
+	===	m[ZMFJXOVQNA]	=	-1.1
+	===	m[ZWNZTTAUQH]	=	0
+
+===	display_capacity() :
+===	CONTEXT : rand_insert()ed m twice2
+	===	m.empty()	=	false
+	===	m.size()	=	20
+	===	m.max_size()	=	128102389400760775
+
+===	comparing key with next key
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+	===	k_comp(it->first, it2->first)	=	true
+	===	k_comp(it2->first, it->first)	=	false
+
+===	comparing key with next key
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+	===	v_comp(it->first, it2->first)	=	true
+	===	v_comp(it2->first, it1->first)	=	false
+
+=========================
+=	OPERATIONS	=
+=========================
+
+===	display_content() :
+===	CONTEXT : rand_insert()ed m twice2
+	===	m[CMKFLPAZBL]	=	0
+	===	m[DELERQLVNW]	=	0
+	===	m[DGIAEILGHO]	=	-1.1
+	===	m[DONNWVJWZN]	=	3.14
+	===	m[JVAIYVDVWH]	=	3.14
+	===	m[KAVXLQYPGD]	=	0
+	===	m[KXBPVRRKMU]	=	0
+	===	m[LUTBUUEFVF]	=	0
+	===	m[NLVORYOUJL]	=	0
+	===	m[OIFWXDTYXT]	=	-1.1
+	===	m[PGRMJMJTZC]	=	3.14
+	===	m[PZSESYWJOL]	=	0
+	===	m[REBZRJGIWA]	=	-1.1
+	===	m[RVCCUVYXLA]	=	3.14
+	===	m[UAFOWNQDQP]	=	-1.1
+	===	m[UUGKHBXDTO]	=	-1.1
+	===	m[XKYRRFOWXZ]	=	3.14
+	===	m[YOORHAEBYD]	=	0
+	===	m[ZHUUSSWHCH]	=	3.14
+	===	m[ZKNPKEYNAP]	=	3.14
+
+===	display_capacity() :
+===	CONTEXT : rand_insert()ed m twice2
+	===	m.empty()	=	false
+	===	m.size()	=	20
+	===	m.max_size()	=	128102389400760775
+
+===	find(existing k) and change value
+	===	CMKFLPAZBL FOUND
+	===	DELERQLVNW FOUND
+	===	DGIAEILGHO FOUND
+	===	DONNWVJWZN FOUND
+	===	JVAIYVDVWH FOUND
+	===	KAVXLQYPGD FOUND
+	===	KXBPVRRKMU FOUND
+	===	LUTBUUEFVF FOUND
+	===	NLVORYOUJL FOUND
+	===	OIFWXDTYXT FOUND
+	===	PGRMJMJTZC FOUND
+	===	PZSESYWJOL FOUND
+	===	REBZRJGIWA FOUND
+	===	RVCCUVYXLA FOUND
+	===	UAFOWNQDQP FOUND
+	===	UUGKHBXDTO FOUND
+	===	XKYRRFOWXZ FOUND
+	===	YOORHAEBYD FOUND
+	===	ZHUUSSWHCH FOUND
+	===	ZKNPKEYNAP FOUND
+
+===	display_content() :
+===	CONTEXT : changed value while finding
+	===	m[CMKFLPAZBL]	=	-1.1
+	===	m[DELERQLVNW]	=	-1.1
+	===	m[DGIAEILGHO]	=	-1.1
+	===	m[DONNWVJWZN]	=	-1.1
+	===	m[JVAIYVDVWH]	=	-1.1
+	===	m[KAVXLQYPGD]	=	-1.1
+	===	m[KXBPVRRKMU]	=	-1.1
+	===	m[LUTBUUEFVF]	=	-1.1
+	===	m[NLVORYOUJL]	=	-1.1
+	===	m[OIFWXDTYXT]	=	-1.1
+	===	m[PGRMJMJTZC]	=	-1.1
+	===	m[PZSESYWJOL]	=	-1.1
+	===	m[REBZRJGIWA]	=	-1.1
+	===	m[RVCCUVYXLA]	=	-1.1
+	===	m[UAFOWNQDQP]	=	-1.1
+	===	m[UUGKHBXDTO]	=	-1.1
+	===	m[XKYRRFOWXZ]	=	-1.1
+	===	m[YOORHAEBYD]	=	-1.1
+	===	m[ZHUUSSWHCH]	=	-1.1
+	===	m[ZKNPKEYNAP]	=	-1.1
+
+===	display_capacity() :
+===	CONTEXT : changed value while finding
+	===	m.empty()	=	false
+	===	m.size()	=	20
+	===	m.max_size()	=	128102389400760775
+
+===	find(probably non existing k)
+	===	SVJRYCRVXF NOT FOUND
+	===	LIABBYRYKC NOT FOUND
+	===	UBEPFYNBHB NOT FOUND
+	===	OBWXUUBLSZ NOT FOUND
+	===	QFJSGLTZJF NOT FOUND
+	===	CFGIUNIJQR NOT FOUND
+	===	KFTIEPFIBX NOT FOUND
+	===	HTESOMDJLO NOT FOUND
+	===	OPWUXQHHCX NOT FOUND
+	===	ZMESXLJCTM NOT FOUND
+
+===	const find(existing k)
+	===	CMKFLPAZBL FOUND
+	===	DELERQLVNW FOUND
+	===	DGIAEILGHO FOUND
+	===	DONNWVJWZN FOUND
+	===	JVAIYVDVWH FOUND
+	===	KAVXLQYPGD FOUND
+	===	KXBPVRRKMU FOUND
+	===	LUTBUUEFVF FOUND
+	===	NLVORYOUJL FOUND
+	===	OIFWXDTYXT FOUND
+	===	PGRMJMJTZC FOUND
+	===	PZSESYWJOL FOUND
+	===	REBZRJGIWA FOUND
+	===	RVCCUVYXLA FOUND
+	===	UAFOWNQDQP FOUND
+	===	UUGKHBXDTO FOUND
+	===	XKYRRFOWXZ FOUND
+	===	YOORHAEBYD FOUND
+	===	ZHUUSSWHCH FOUND
+	===	ZKNPKEYNAP FOUND
+
+===	const find(probably non existing k)
+	===	BCGFUWTAFE NOT FOUND
+	===	QTWONTHWDJ NOT FOUND
+	===	VCVAWSNFWI NOT FOUND
+	===	SXKAEGWXID NOT FOUND
+	===	CBWYPLTWJW NOT FOUND
+	===	FEYDEWVTCU NOT FOUND
+	===	BWRNWWUUTC NOT FOUND
+	===	XXDVXVGTRP NOT FOUND
+	===	RXVSACOXVQ NOT FOUND
+	===	RXMLKKHGEC NOT FOUND
+
+===	count(existing k) CMKFLPAZBL
+	===	m.count(k)	=	1
+
+===	count(probably non existing k) LDCOYBLGUD
+	===	m.count(k)	=	0
+
+===	upper_bound(existing k) PGRMJMJTZC
+	===	m.upper_bound(k)	=	PZSESYWJOL
+
+===	upper_bound(probably non existing k) XOATGCVUZS
+	===	m.upper_bound(k)	=	YOORHAEBYD
+
+===	lower_bound(existing k) PGRMJMJTZC
+	===	m.lower_bound(k)	=	PGRMJMJTZC
+
+===	lower_bound(probably non existing k) NTPBECMNIS
+	===	m.lower_bound(k)	=	OIFWXDTYXT
+
+===	equal_range(existing k) PGRMJMJTZC
+	===	1 element with key PGRMJMJTZC in map m
+
+===	equal_range(probably non existing k) RTWVKWXVFT
+	===	0 element with key RTWVKWXVFT in map m
+
