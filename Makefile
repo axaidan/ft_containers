@@ -99,4 +99,16 @@ map		:	${HEADERS} srcs/main_map.cpp
 			cat -n outs/ft_map.txt
 			diff outs/std_map.txt outs/ft_map.txt 			
 
+set		:	${HEADERS} srcs/main_set.cpp
+			${CXX} ${CXXFLAGS} -I ${INC_FLD} \
+				srcs/ContainsAlloc.cpp \
+				srcs/main_set.cpp -o ft_set -D${ARG}
+			./ft_set > outs/ft_set.txt
+			${CXX} ${CXXFLAGS} -I ${INC_FLD} -DSTD \
+				srcs/ContainsAlloc.cpp \
+				srcs/main_set.cpp -o std_set -D${ARG}
+			./std_set > outs/std_set.txt
+			cat -n outs/ft_set.txt
+			diff outs/std_set.txt outs/ft_set.txt 			
+
 .PHONY		:	all re clean fclean
