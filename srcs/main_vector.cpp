@@ -7,6 +7,11 @@
 #include <list>
 
 #ifndef STD
+ #define NAMESPACE ft
+ #include "vector.hpp"
+#else
+ #define NAMESPACE std
+ #include <vector>
 #endif
 
 #ifdef CONTAINS_ALLOC
@@ -36,8 +41,8 @@
 #endif
 
 #ifndef N
-# define N 10000		//	NOT 0 OR SEGFAULT
-// #define N 10			//	NOT 0 OR SEGFAULT
+// #define N 10000		//	NOT 0 OR SEGFAULT
+ #define N 100			//	NOT 0 OR SEGFAULT
 						//	NOT < 0	OR LONG
 #endif
 

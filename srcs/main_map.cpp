@@ -86,7 +86,7 @@ K		rand_K(void)
 	while (i < LEN - 1)
 	{
 		//c = (rand() % (126 - 33)) + 33;
-		c = (rand() % ('A' - 'Z')) + 'A';
+		c = (rand() % ('@' - 'Z')) + 'A';
 		k.push_back(c);
 		i++;
 	}
@@ -172,6 +172,22 @@ void	display_relationals(const U & m1,
 	std::cout << FMT2 << "(m1 >= m2)\t=\t" << (m1 >= m2) << std::endl;
 	std::cout << std::endl;
 }
+
+template<class U>
+void	display_it_relationals(const U & m1,
+		const U & m2,
+		std::string context)
+
+{
+	std::cout << std::boolalpha;
+	std::cout << FMT1 << "display_it_relationals() :" << std::endl;
+	std::cout << FMT1 << "CONTEXT : " << context << std::endl;
+	std::cout << FMT2 << "(m1 == m2)\t=\t" << (m1 == m2) << std::endl;
+	std::cout << FMT2 << "(m1 != m2)\t=\t" << (m1 != m2) << std::endl;
+	std::cout << std::endl;
+}
+
+
 
 /*
 void	display_elem_access(const vector<T> & v,
@@ -313,8 +329,10 @@ void	element_access(void)
 	std::cout << "=========================" << std::endl;
 	std::cout << std::endl;
 
-	map<K, T>		m1;
-	K				key1;
+	map<K, T>				m1;
+	map<K, T>::iterator		it;
+	map<K, T>::iterator		ite;
+	K						key1;
 
 	m1[KVAL1] = TVAL1;
 	m1[KVAL2] = TVAL2;
@@ -329,27 +347,29 @@ void	element_access(void)
 	display_capacity(m1, context);
 	display_content(m1, context);
 
-	key1 = m1.begin()->first;
-//	while (it != ite)
-//	{
-	std::cout << FMT1 << "key1 = m1.begin().first;" << std::endl;
-	if (m1[key1] == TVAL1)
+	it = m1.begin();
+	ite = m1.end();
+	while (it != ite)
 	{
-		m1[key1] = TVAL3;
-		std::cout << FMT2 << "m1[key1] = TVAL3;" << std::endl;
+		key1 = it->first;
+		std::cout << FMT1 << "key1 = it->first;" << std::endl;
+		if (m1[key1] == TVAL1)
+		{
+			m1[key1] = TVAL3;
+			std::cout << FMT2 << "m1[key1] = TVAL3;" << std::endl;
+		}
+		else
+		{
+			m1[key1] = TVAL1;
+			std::cout << FMT2 << "m1[key1] = TVAL1;" << std::endl;
+		}
+		it++;
 	}
-	else
-	{
-		m1[key1] = TVAL1;
-		std::cout << FMT2 << "m1[key1] = TVAL1;" << std::endl;
-	}
-//	}
-	context = "replaced existing key with another value";
+	context = "replaced values in existing keys";
 	display_capacity(m1, context);
 	display_content(m1, context);
 }
 
-/*
 void	modifiers(void)
 {
 	std::cout << "=========================" << std::endl;
@@ -357,144 +377,180 @@ void	modifiers(void)
 	std::cout << "=========================" << std::endl;
 	std::cout << std::endl;
 
-	vector<T>					v;
-	vector<T>::iterator			it;
-	vector<T>::const_iterator	cit;
-	std::list<T>				l;
+	std::list<pair<K, T> >				l;
+	map<K, T>							m;
+	map<K, T>							m2;
+	K									k;
+	T									t;
+	map<K, T>::value_type				val;
+	pair<map<K, T>::iterator, bool>		ins_ret;
+	size_t								i;
+	map<K, T>::iterator					it;
+	map<K, T>::iterator					tmp;
+	map<K, T>::const_iterator			cite;
 
-	//	push_back(val);
-	for (int i = 0 ; i < N * 2 ; i++)
-		v.push_back(VAL2);
-	context = "pushed back N * 2 elements";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-
-	//	pop_back();	// undef behavior if v empty
-	for (int i = 0 ; i < N ; i++)
-		v.pop_back();
-	context = "pop_back()ed N last elements";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-
-	//	insert(it pos, val);
-	int							i;
+	//	insert(val);
+	
 	i = 0;
-	for (it = v.begin() ; it != v.end() ; it += 1, i++)
-		if (i % 2 == 0)
-			it = v.insert(it, VAL3); 
-	context = "inserted VAL3 between each element";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-
-	size_t						cpct;
-	cpct = v.capacity();
-	while (v.size() < cpct + N)
-		v.insert(v.begin(), VAL2);
-	context = "inserted VAL3 until reallocation => while (v.size() < cpct + N)";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-
-	//	insert(it pos, n, val);
-	v.insert(v.end(), N, VAL1);
-	v.insert(v.end(), N, VAL2);
-	v.insert(v.end(), N, VAL3);
-	context = "inserted N*VAL1, N*VAL2, N*VAL3 at v.end()";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-
-	//	insert(it pos, first, last);
-	vector<T>		v2(v);
-	v.insert(v.end() - v.size() / 2, v.begin(), v.end());
-	context = "inserted v in the middle of itself";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-
-	for (int i = 1 ; i < N ; i++)
-		l.push_back(VAL1);
-	v.insert(v.end(), l.begin(), l.end());
-	context = "inserted a list l at the end of v";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-
-	//	erase(it pos);
-	v.erase(v.begin());
-	context = "erased v.begin()";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-
-	it = v.begin();
-	i = 0;
-	while (it != v.end())
+	std::cout << FMT1 << "insert(val)" << std::endl;
+	while (i < N)
 	{
-		if (i % 2 == 0)
-			v.erase(it);
+		k = rand_K();
+		ins_ret = m.insert(pair<K, T>(k, TVAL1));
+		if (ins_ret.second == true)
+			std::cout << FMT2 << "insert " << k << " succeeded" << std::endl;
+		else
+			std::cout << FMT2 << "insert " << k << " failed" << std::endl;
 		i++;
+	}
+	std::cout << std::endl;
+	context = "inserted N random keys with VAL1";
+	display_capacity(m, context);
+	display_content(m, context);
+
+	it = m.begin();
+	cite = m.end();
+	while (it != cite)
+	{
+		k = it->first;
+		ins_ret = m.insert(pair<K, T>(k, TVAL3));
+		if (ins_ret.second == true)
+			std::cout << FMT2 << "insert " << k << " succeeded" << std::endl;
+		else
+			std::cout << FMT2 << "insert " << k << " failed" << std::endl;
 		it++;
 	}
-	context = "erased all pair indexes";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-	
-	//	erase(first, last);
-	v.erase(v.begin(), v.begin() + v.size() / 2);
-	context = "erased first half of vector";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
+	std::cout << std::endl;
+	context = "tried to insert existing keys with VAL3";
+	display_capacity(m, context);
+	display_content(m, context);
 
-	vector<T>	copy(v);
+	//	insert(it pos, val);
+	std::cout << FMT1 << "insert(pos, val)" << std::endl;
+	it = m.begin();
+	cite = m.end();
+	i = 0;
+	while (it != cite)
+	{
+		if (i % 2 == 0)
+			m.insert(it, pair<K, T>(rand_K(), TVAL2));
+		it++;
+		i++;
+	}
+	display_content(m, context);
+	display_capacity(m, context);
 	
-	v.erase(v.begin(), v.end());
-	context = "erased all elements";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
+	//	insert(first, last)
+	std::cout << FMT1 << "insert(first, last)" << std::endl;
+	std::cout << FMT1 << "creating a list of N random elems" << std::endl;
+	i = 0;
+	while (i < N)
+	{
+		k = rand_K();
+		if (i % 3 == 0)
+			t = TVAL1;
+		else if (i % 3 == 1)
+			t = TVAL2;
+		else
+			t = TVAL3;
+		l.push_front(pair<K, T>(k, t));
+		i++;
+	}
+	std::cout << FMT2 << "inserting list l in map m" << std::endl << std::endl;
+	m.insert(l.begin(), l.end());
+	display_content(m, context);
+	display_capacity(m, context);
 
-	//	assign(first, last);
-	v.assign(copy.begin(), copy.end());
-	context = "assigned copy to v";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-	display_relationals(v, copy, context);
+	//	erase(it pos);
+	m.erase(m.begin());
+	cite = m.end();
+	cite--;
+	context = "erased m.begin() and last element";
+	display_content(m, context);
+	display_capacity(m, context);
 
-	//	assign(n, val);
-	v.assign(N * 5, VAL1);
-	context = "assigned (N * 5) VAL1";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
+	i = 0;
+	it = m.begin();
+	cite = m.end();
+	while (it != cite)
+	{
+		tmp = it;
+		if (i % 2 == 0)
+		{
+			tmp++;
+			m.erase(it);
+		}
+		else
+			tmp++;
+		it = tmp;
+		i++;
+	}
+	context = "erased one out of two elements";
+	display_content(m, context);
+	display_capacity(m, context);
 
-	//	swap(vector x);
-	v.swap(copy);
-	context = "swapped v and copy";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-	display_relationals(v, copy, context);
-	
-	v.swap(v);
-	context = "v self swap";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-	
-	v.swap(copy);
-	copy.clear();
-	v.swap(copy);
-	context = "swapped v with cleared copy";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
+	it = m.begin();
+	cite = m.end();
+	while (it != cite)
+	{
+		tmp = it;
+		if (it->second == TVAL1)
+		{
+			tmp++;
+			m.erase(it);
+		}
+		else
+			tmp++;
+		it = tmp;
+		i++;
+	}
+	context = "erased all elements with TVAL1 value";
+	display_content(m, context);
+	display_capacity(m, context);
+
+	m2 = m;
+	//	erase(first, last)
+	it = m.begin();
+	i = 0;
+	while (i < m.size() / 2)
+	{
+		it++;
+		i++;
+	}
+	m.erase(it, m.end());
+	context = "erased second half of m";
+	display_content(m, context);
+	display_capacity(m, context);
+
+	//	erase(key)
+	k = m.begin()->first;
+	i = m.erase(k);
+	context = "erased first elem by key";
+	display_content(m, context);
+	display_capacity(m, context);
+	std::cout << FMT2 << "erased " << i << " element" << std::endl;
+ 
+	k = rand_K();
+	i = m.erase(k);
+	context = "erased random key by key";
+	display_content(m, context);
+	display_capacity(m, context);
+	std::cout << FMT2 << "erased " << i << " element" << std::endl;
+
+	//	swap(m)
+	m.swap(m2);
+	context = "swapped m2 and m";
+	display_content(m, context);
+	display_capacity(m, context);
+	display_relationals(m, m2, context);
+
+	// clear()
+	m.clear();
+	m2.clear();
+	context = "cleared m and m2";
+	display_content(m, context);
+	display_capacity(m, context);
+	display_relationals(m, m2, context);
 }
 
 void	iterator_functions(void)
@@ -504,60 +560,56 @@ void	iterator_functions(void)
 	std::cout << "=========================" << std::endl;
 	std::cout << std::endl;
 
-	vector<T>								v;
+	map<K, T>								m;
 	//	CONSTRUCTION
-	vector<T>::iterator						it;
-	vector<T>::iterator						ite(it);
-	vector<T>::const_iterator				cit;
-	vector<T>::const_iterator				cite(cit);
-	vector<T>::reverse_iterator				rit;
-	vector<T>::reverse_iterator				rite(rit);
-	vector<T>::const_reverse_iterator		crit;
-	vector<T>::const_reverse_iterator		crite(crit);
+	map<K, T>::iterator						it;
+	map<K, T>::iterator						ite(it);
+	map<K, T>::const_iterator				cit;
+	map<K, T>::const_iterator				cite(cit);
+	map<K, T>::reverse_iterator				rit;
+	map<K, T>::reverse_iterator				rite(rit);
+	map<K, T>::const_reverse_iterator		crit;
+	map<K, T>::const_reverse_iterator		crite(crit);
 
-	rand_insert(v);
-	v.insert(v.end(), N, VAL1);
-	v.insert(v.end() - v.size() / 2, N, VAL2);
-	context = "created new vector";
-	display_capacity(v, context);
-	display_content(v, context);
-	display_elem_access(v, context);
-	display_iterator_functions(v, context);
+	rand_insert(m);
+	context = "created new map";
+	display_capacity(m, context);
+	display_content(m, context);
 
 	//	ITERATION / DEREFERENCING
 	std::cout << FMT1 << "iterator iteration" << std::endl;
-	it = v.begin();
-	cite = v.end();
+	it = m.begin();
+	cite = m.end();
 	while (it != cite)
 	{
-		std::cout << FMT2 << *it << std::endl;
+		std::cout << FMT2 << it->first << std::endl;
 		it++;
 	}
 	std::cout << std::endl;
 	std::cout << FMT1 << "reverse_iterator iteration" << std::endl;
-	rit = v.rbegin();
-	crite = v.rend();
+	rit = m.rbegin();
+	crite = m.rend();
 	while (rit != crite)
 	{
-		std::cout << FMT2 << *rit << std::endl;
+		std::cout << FMT2 << rit->first << std::endl;
 		rit++;
 	}
 	std::cout << std::endl;
 	std::cout << FMT1 << "const_iterator iteration" << std::endl;
-	cit = v.begin();
-	cite = v.end();
+	cit = m.begin();
+	cite = m.end();
 	while (cit != cite)
 	{
-		std::cout << FMT2 << *cit << std::endl;
+		std::cout << FMT2 << cit->first << std::endl;
 		cit++;
 	}
 	std::cout << std::endl;
 	std::cout << FMT1 << "const_reverse_iterator iteration" << std::endl;
-	crit = v.rbegin();
-	crite = v.rend();
+	crit = m.rbegin();
+	crite = m.rend();
 	while (crit != crite)
 	{
-		std::cout << FMT2 << *crit << std::endl;
+		std::cout << FMT2 << crit->first << std::endl;
 		crit++;
 	}
 	std::cout << std::endl;
@@ -565,46 +617,44 @@ void	iterator_functions(void)
 	//	RELATIONALS
 	ite = it;
 	context = "ite = it; it and ite relationals";
-	display_relationals(it, ite, context);
+	display_it_relationals(it, ite, context);
 	it--;
 	context = "it--; it and ite relationals";
-	display_relationals(it, ite, context);
+	display_it_relationals(it, ite, context);
 	cite = cit;
 	context = "cite = cit; cit and cite relationals";
-	display_relationals(cit, cite, context);
+	display_it_relationals(cit, cite, context);
 	cit--;
 	context = "cit--; cit and cite relationals";
-	display_relationals(cit, cite, context);
+	display_it_relationals(cit, cite, context);
 
 	rite = rit;
 	context = "rite = rit; rit and rite relationals";
-	display_relationals(rit, rite, context);
+	display_it_relationals(rit, rite, context);
 	rit--;
 	context = "rit--; rit and rite relationals";
-	display_relationals(rit, rite, context);
+	display_it_relationals(rit, rite, context);
 	crite = crit;
 	context = "crite = crit; crit and crite relationals";
-	display_relationals(crit, crite, context);
+	display_it_relationals(crit, crite, context);
 	crit--;
 	context = "crit--; crit and crite relationals";
-	display_relationals(crit, crite, context);
+	display_it_relationals(crit, crite, context);
 
 	//	ASSIGNATION
-	it = v.begin();
-	cit = v.begin();
-	rit = v.rbegin();
-	crit = v.rbegin();
+	it = m.begin();
+	cit = m.begin();
+	rit = m.rbegin();
+	crit = m.rbegin();
 
 	ite = it;
-	*it = VAL3;
+	it->second = TVAL3;
 	std::cout << FMT1 << "ite = it; *it = VAL3;" << std::endl;
-	std::cout << FMT1 << "(*ite == VAL3)\t=\t" << (*ite == VAL3) << std::endl;
 	std::cout << FMT1 << "(ite == it)\t=\t" << (ite == it) << std::endl;
 	std::cout << std::endl;
 	rite = rit;
-	*rit = VAL1;
+	rit->second = TVAL1;
 	std::cout << FMT1 << "rite = rit; *rit = VAL1;" << std::endl;
-	std::cout << FMT1 << "(*rite == VAL1)\t=\t" << (*rite == VAL1) << std::endl;
 	std::cout << FMT1 << "(rite == rit)\t=\t" << (rite == rit) << std::endl;
 	std::cout << std::endl;
 	cite = cit;
@@ -620,79 +670,36 @@ void	iterator_functions(void)
 	
 	//	PRE/POST WEIRD ITERATION
 	std::cout << FMT1 << "weird iteration" << std::endl;
-	it = v.begin();
-	ite = v.end();
-	std::cout << FMT2 << "*(it++)\t=\t" << *(it++) << std::endl;
-	std::cout << FMT2 << "*(--it)\t=\t" << *(--it) << std::endl;
-	std::cout << FMT2 << "*(++it)\t=\t" << *(++it) << std::endl;
-	std::cout << FMT2 << "*(it--)\t=\t" << *(it--) << std::endl;
+	it = m.begin();
+	ite = m.end();
+	std::cout << FMT2 << "*(it++)\t=\t" << (it++)->first << std::endl;
+	std::cout << FMT2 << "*(--it)\t=\t" << (--it)->first << std::endl;
+	std::cout << FMT2 << "*(++it)\t=\t" << (++it)->first << std::endl;
+	std::cout << FMT2 << "*(it--)\t=\t" << (it--)->first << std::endl;
 	it++;
 	std::cout << std::endl;
 
 	std::cout << FMT1 << "reverse weird iteration" << std::endl;
-	rit = v.rbegin();
-	rite = v.rend();
-	std::cout << FMT2 << "*(rit++)\t=\t" << *(rit++) << std::endl;
-	std::cout << FMT2 << "*(--rit)\t=\t" << *(--rit) << std::endl;
-	std::cout << FMT2 << "*(++rit)\t=\t" << *(++rit) << std::endl;
-	std::cout << FMT2 << "*(rit--)\t=\t" << *(rit--) << std::endl;
+	rit = m.rbegin();
+	rite = m.rend();
+	std::cout << FMT2 << "*(rit++)\t=\t" << (rit++)->first << std::endl;
+	std::cout << FMT2 << "*(--rit)\t=\t" << (--rit)->first << std::endl;
+	std::cout << FMT2 << "*(++rit)\t=\t" << (++rit)->first << std::endl;
+	std::cout << FMT2 << "*(rit--)\t=\t" << (rit--)->first << std::endl;
 	rit++;
 	std::cout << std::endl;
 
-	//	it + n
-	it = v.begin();
-	std::cout << FMT1 << "it = v.begin();" << std::endl;
-	std::cout << FMT2 << "*(it + size() / 2)\t=\t" << *(it + v.size() / 2) << std::endl;
-	//	it += n
-	it += v.size() / 2;
-	std::cout << FMT1 << "*it += size() / 2;" << std::endl;
-	std::cout << FMT2 << "*it\t\t\t=\t" << *it <<  std::endl;
-	//	it - n
-	std::cout << FMT2 << "*(it - size() / 2)\t=\t" << *(it - v.size() / 2) << std::endl;
-	//	it-= n
-	std::cout << FMT1 << "*it -= size() / 2;" << std::endl;
-	std::cout << FMT2 << "*it\t\t\t=\t" << *it << std::endl;
-	std::cout << std::endl;
-	//	it[]
-	it = v.begin();
-	size_t	i	= 0;
-	while (i < v.size())
-	{
-		if (i % 3 == 0)
-			it[i] = VAL1;
-		else if (i % 3 == 1)
-			it[i] = VAL2;
-		else
-			it[i] = VAL3;
-		std::cout << FMT1 << "it[" << std::setw(8) << i << "]\t=\t" << it[i] << std::endl;
-		i++;
-	}
-}
-*/
-
-void	map_test(void)
-{
-	::map<K, T>		m;
-	::map<K, T>		m2;
-	context = "map_test";
-
-	rand_insert(m);
-	m2 = m;
-	display_capacity(m, context);
-	display_content(m, context);
-	display_relationals(m, m2, context);
 }
 
 int		main(void)
 {
 	srand(N);
-//	map_test();
 	construction();
 	assignation();
 	element_access();
-	/*
 	modifiers();
 	iterator_functions();
+	/*
 	obervers();
 	operations();
 	*/
