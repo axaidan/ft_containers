@@ -23,10 +23,8 @@ bool 	lexicographical_compare (InpIt1 first1, InpIt1 last1,
 {
 	while (first1!=last1)
 	{
-		//if (first2==last2 || *first2<*first1)
 		if (first2==last2 || comp(*first2, *first1))
 			return false;
-		//else if (*first1<*first2)
 		else if (comp(*first1, *first2))
 			return true;
 		++first1; ++first2;

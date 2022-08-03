@@ -10,15 +10,10 @@ namespace ft
 template	<class, class, class, class>
 class 		map;
 
-// IN map.hpp
-// typedef ft::MapIterator<value_type, node>			iterator;
 template<class T, class RBnode>
 class MapIterator	: public ft::iterator_traits<T*>
 {
 
-//	TO BE ABLE TO _get_node() FROM AN iterator 
-//	IN MAP FOR FUNCTIONS RECEIVING iteratorS
-//	AS ARGUMENTS
 template	<class, class, class, class>
 friend		class map;
 
@@ -32,8 +27,8 @@ typedef RBnode	*											node_ptr;
 
 private:
 node_ptr	_node;
-node_ptr	_nil;	//	FOR COMPARISON WITH map'S _nil		
-node_ptr	_root;	//	FOR tree_max() WHEN it = map.end(); it--;
+node_ptr	_nil;
+node_ptr	_root;
 
 /************************************************/
 /*	CONSTRUCTION / DESTRUCTION / ASSIGNATION	*/
@@ -55,14 +50,10 @@ MapIterator(const node_ptr & ptr, const node_ptr & nil,
 	_nil(nil),
 	_root(root)					{}
 
-/*
-MapIterator(node_ptr ptr) :
-	_node(ptr)					{}
-*/
-
 virtual ~MapIterator(void)		{}
 
 pointer			base(void) const		{return (&(_node->_pair));}
+
 /****************/
 /*	OPERATORS	*/
 /****************/
@@ -76,18 +67,13 @@ MapIterator &	operator=(const MapIterator & rhs)
 
 reference		operator*(void) const	{return (_node->_pair);}
 pointer			operator->(void) const	{return (&(this->operator*()));}
+
 //	++it
 MapIterator &	operator++(void)
 {
 	node_ptr	y;
 	node_ptr	x;
 
-	//	MAYBE NOT
-	//	if (_node == _nil)
-	//	{
-	//		_node = tree_min(_root);
-	//		return (*this);
-	//	}
 	if (_node->_r != _nil)
 	{
 		_node = tree_min(_node->_r);
@@ -103,6 +89,7 @@ MapIterator &	operator++(void)
 	_node = y;
 	return (*this);
 }
+
 //	it++
 MapIterator		operator++(int)
 {
@@ -110,6 +97,7 @@ MapIterator		operator++(int)
 	operator++();
 	return (tmp);
 }
+
 //	--it
 MapIterator &	operator--(void)
 {
@@ -136,6 +124,7 @@ MapIterator &	operator--(void)
 	_node = y;
 	return (*this);
 }
+
 //	it--
 MapIterator		operator--(int)
 {
@@ -165,9 +154,6 @@ node_ptr	tree_max(node_ptr x)
     return (x);
 }
 
-/************/
-/*	DEBUG	*/
-/************/
 node_ptr	_get_node(void) const
 {return (_node);}
 

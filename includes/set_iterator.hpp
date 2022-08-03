@@ -10,15 +10,10 @@ namespace ft
 template	<class, class, class>
 class 		set;
 
-// IN set.hpp
-// typedef ft::SetIterator<value_type, node>			iterator;
 template<class T, class RBnode>
 class SetIterator	: public ft::iterator_traits<T*>
 {
 
-//	TO BE ABLE TO _get_node() FROM AN iterator 
-//	IN MAP FOR FUNCTIONS RECEIVING iteratorS
-//	AS ARGUMENTS
 template	<class, class, class>
 friend		class set;
 
@@ -29,12 +24,11 @@ typedef typename ft::iterator_traits<T*>::pointer			pointer;
 typedef typename ft::iterator_traits<T*>::reference			reference;
 typedef typename ft::iterator_traits<T*>::iterator_category	iterator_category;
 typedef RBnode	*											node_ptr;
-//typedef SetIterator<const value_type, node>				const_iterator;
 
 private:
 node_ptr	_node;
-node_ptr	_nil;	//	FOR COMPARISON WITH set'S _nil		
-node_ptr	_root;	//	FOR tree_max() WHEN it = set.end(); it--;
+node_ptr	_nil;
+node_ptr	_root;
 
 /************************************************/
 /*	CONSTRUCTION / DESTRUCTION / ASSIGNATION	*/

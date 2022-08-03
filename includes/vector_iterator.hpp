@@ -16,7 +16,6 @@ class		VectorIterator : public ft::iterator_traits<T*>
 	typedef typename ft::iterator_traits<T*>::pointer				pointer;
 	typedef typename ft::iterator_traits<T*>::reference				reference;
 	typedef typename ft::iterator_traits<T*>::iterator_category		iterator_category;
-//	typedef typename std::random_access_iterator_tag				iterator_category;
 	typedef VectorIterator<const value_type>						const_iterator;
 
 
@@ -124,7 +123,7 @@ class		VectorIterator : public ft::iterator_traits<T*>
 		return (VectorIterator<const T>(this->_ptr));
 	}
 
-}; // class VectorIterator
+};		// class VectorIterator
 
 template<class T, class U>
 bool	operator==(const VectorIterator<T> & lhs,
@@ -169,6 +168,6 @@ VectorIterator<T>	operator+(typename VectorIterator<T>::difference_type n, const
 	return (rhs + n);
 }
 
-} // namespace ft
+}		// namespace ft
 
-#endif // VECTOR_ITERATOR_HPP
+#endif	// VECTOR_ITERATOR_HPP

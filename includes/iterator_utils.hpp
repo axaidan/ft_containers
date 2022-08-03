@@ -76,11 +76,9 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 	Iter	_iterator;
 
 	public:
-	reverse_iterator(void) //:
-//		_iterator(NULL)
+	reverse_iterator(void)
 	{
 	}
-	//explicit reverse_iterator(const Iter & src) :
 	explicit reverse_iterator(Iter src) :
 		_iterator(src)
 	{
@@ -127,7 +125,6 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 	reverse_iterator 	operator++(int)		//post-incr	rit++
 	{
 		reverse_iterator	tmp = *this;
-//		--_iterator;
 		++(*this);
 		return (tmp);
 	}	
@@ -139,7 +136,6 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 	reverse_iterator	operator--(int)		//post-decr	rit--
 	{
 		reverse_iterator	tmp = *this;
-//		++_iterator;
 		--(*this);
 		return (tmp);
 	}	
@@ -157,7 +153,6 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 	}
 	difference_type		operator-(const reverse_iterator & rhs) const
 	{
-//		return (base() - rhs.base());
 		return (rhs.base() - base());
 	}
 	reverse_iterator	operator+=(difference_type n)
@@ -171,45 +166,12 @@ class reverse_iterator : public ft::iterator_traits<Iter>
 		return (*this);
 	}
 
-	/****************************/
-	/*	COMPARISON OPERATORS	*/
-	/****************************/
-/*
-	bool	operator==(const reverse_iterator & rhs) const
-	{
-		return (base() == rhs.base());
-	}
-	bool	operator!=(const reverse_iterator & rhs) const
-	{
-		return (base() != rhs.base());
-	}
-	bool	operator<(const reverse_iterator & rhs) const
-	{
-		return (base() > rhs.base());
-	}
-	bool	operator>(const reverse_iterator & rhs) const
-	{
-		return (base() < rhs.base());
-	}
-	bool	operator<=(const reverse_iterator & rhs) const
-	{
-		return (base() >= rhs.base());
-	}
-	bool	operator>=(const reverse_iterator & rhs) const
-	{
-		return (base() <= rhs.base());
-	}
-*/
-
 	reference	operator[](difference_type n) const
 	{
 		return (_iterator[-n - 1]);
 	}
 	
-
-
-	
-};
+};		// class reverse_iterator
 
 template<class T, class U>
 bool	operator==(const reverse_iterator<T> & lhs, const reverse_iterator<U> & rhs)
@@ -248,25 +210,8 @@ reverse_iterator<T>	operator+(typename reverse_iterator<T>::difference_type n, c
 	return (rit + n);
 }
 
-/*
-template<typename T>
-typename reverse_iterator<T>::difference_type
-operator-(const reverse_iterator<T> & lhs, const reverse_iterator<T> & rhs)
-{
-//	return (lhs.base() - rhs.base());
-//	return (rhs.base() - lhs.base());
-//	std::cerr << "NON MEMBER OPERATOR-() CALLED\n";
-	(void)rhs;
-	(void)lhs;
-	return (1000);
-
-}
-*/
 
 
+}		// namespace ft
 
-
-
-} // namespace ft
-
-# endif // ITERATOR_UTILS_HPP
+# endif	// ITERATOR_UTILS_HPP
