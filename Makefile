@@ -75,6 +75,18 @@ test_map	:	includes/map.hpp includes/rbnode.hpp srcs/main_map.cpp \
 			${CXX} ${CXXFLAGS} -I ${INC_FLD} \
 				srcs/main_map.cpp -o test_map
 
+stack		:	${HEADERS} srcs/main_stack.cpp
+			${CXX} ${CXXFLAGS} -I ${INC_FLD} \
+				srcs/ContainsAlloc.cpp \
+				srcs/main_stack.cpp -o ft_stack -D${ARG}
+			./ft_stack > outs/ft_stack.txt
+			${CXX} ${CXXFLAGS} -I ${INC_FLD} -DSTD \
+				srcs/ContainsAlloc.cpp \
+				srcs/main_stack.cpp -o std_stack -D${ARG}
+			./std_stack > outs/std_stack.txt
+			cat -n outs/ft_stack.txt
+			diff outs/std_stack.txt outs/ft_stack.txt
+
 vector		:	${HEADERS} srcs/main_vector.cpp
 			${CXX} ${CXXFLAGS} -I ${INC_FLD} \
 				srcs/ContainsAlloc.cpp \

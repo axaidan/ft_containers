@@ -1,0 +1,190 @@
+===	display_capacity() :
+===	CONTEXT : created empty stack with default underlying container
+	===	v.empty()	=	true
+	===	v.size()	=	0
+
+===	display_capacity() :
+===	CONTEXT : rand_push()ed N elems
+	===	v.empty()	=	false
+	===	v.size()	=	100
+
+===	top_and_pop() :
+===	CONTEXT : display and pop half
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+
+===	display_capacity() :
+===	CONTEXT : display and pop half
+	===	v.empty()	=	false
+	===	v.size()	=	50
+
+===	display_capacity() :
+===	CONTEXT : created second empty stack with default underlying container
+	===	v.empty()	=	true
+	===	v.size()	=	0
+
+===	display_relationals() :
+===	CONTEXT : created second empty stack with default underlying container
+	===	(v1 == v2)	=	false
+	===	(v1 != v2)	=	true
+	===	(v1 <  v2)	=	false
+	===	(v1 <= v2)	=	false
+	===	(v1 >  v2)	=	true
+	===	(v1 >= v2)	=	true
+
+===	display_capacity() :
+===	CONTEXT : created an std::list, filled it with N elems, and a stack from it
+	===	v.empty()	=	false
+	===	v.size()	=	100
+
+===	top_and_pop() :
+===	CONTEXT : created an std::list, filled it with N elems, and a stack from it
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	42	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+===	s.top()	=	1337	pop()ing
+===	s.top()	=	-1	pop()ing
+

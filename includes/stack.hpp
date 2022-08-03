@@ -7,9 +7,9 @@
 
 namespace ft
 {
-	template<class T, class Container = ft::vector<T> >
-		class stack
-		{
+template<class T, class Container = ft::vector<T> >
+class stack
+{
 			public:
 
 // MEMBER TYPES
@@ -45,48 +45,68 @@ void			pop( void )
 reference		top( void )					{ return (this->c.back()); }
 const_reference	top( void ) const			{ return (this->c.back()); }
 
-//	OPERATORS OVERLOAD
-bool operator==(const stack<T, Container> & rhs ) const
-{
-	if (this == &rhs) return (true);
-	else
-		return (this->c == rhs.c);
-}
-bool operator!=(const stack<T, Container> & rhs ) const
-{
-	if (this == &rhs) return (false);
-	else 
-		return (this->c != rhs.c);
-}
-bool operator<(const stack<T, Container> & rhs ) const
-{
-	if (this == &rhs) return (false);
-	else 
-		return (this->c < rhs.c);
-}	
-bool operator>(const stack<T, Container> & rhs ) const
-{
-	if (this == &rhs) return (false);
-	else 
-		return (this->c > rhs.c);
-}	
-bool operator<=(const stack<T, Container> & rhs ) const
-{
-	if (this == &rhs) return (true);
-	else
-		return (this->c <= rhs.c);
-}	
-bool operator>=(const stack<T, Container> & rhs ) const
-{
-	if (this == &rhs) return (true);
-	else
-		return (this->c >= rhs.c);
-}	
+template<class _T, class _Container>
+friend bool operator==(const stack<_T, _Container>&, const stack<_T, _Container>&);
+template<class _T, class _Container>
+friend bool operator!=(const stack<_T, _Container>&, const stack<_T, _Container>&);
+template<class _T, class _Container>
+friend bool operator<(const stack<_T, _Container>&, const stack<_T, _Container>&);
+template<class _T, class _Container>
+friend bool operator>(const stack<_T, _Container>&, const stack<_T, _Container>&);
+template<class _T, class _Container>
+friend bool operator<=(const stack<_T, _Container>&, const stack<_T, _Container>&);
+template<class _T, class _Container>
+friend bool operator>=(const stack<_T, _Container>&, const stack<_T, _Container>&);
 
 //	MEMBER OBJECTS
 protected:
 Container	c;
-		};
+
+};		// class stack
+
+template	<class T, class Container>
+bool operator==(const stack<T, Container> & lhs, const stack<T, Container> & rhs )
+{
+	if (&lhs == &rhs) return (true);
+	else
+		return (lhs.c == rhs.c);
+}
+template	<class T, class Container>
+bool operator!=(const stack<T, Container> & lhs, const stack<T, Container> & rhs )
+{
+	if (&lhs == &rhs) return (false);
+	else 
+		return (lhs.c != rhs.c);
+}
+template	<class T, class Container>
+bool operator<(const stack<T, Container> & lhs, const stack<T, Container> & rhs )
+{
+	if (&lhs == &rhs) return (false);
+	else 
+		return (lhs.c < rhs.c);
+}	
+template	<class T, class Container>
+bool operator>(const stack<T, Container> & lhs, const stack<T, Container> & rhs )
+{
+	if (&lhs == &rhs) return (false);
+	else 
+		return (lhs.c > rhs.c);
+}	
+template	<class T, class Container>
+bool operator<=(const stack<T, Container> & lhs, const stack<T, Container> & rhs )
+{
+	if (&lhs == &rhs) return (true);
+	else
+		return (lhs.c <= rhs.c);
+}	
+template	<class T, class Container>
+bool operator>=(const stack<T, Container> & lhs, const stack<T, Container> & rhs )
+{
+	if (&lhs == &rhs) return (true);
+	else
+		return (lhs.c >= rhs.c);
 }
 
-#endif // STACK_HPP
+}		// namespace ft
+
+#endif	// STACK_HPP
