@@ -10,56 +10,56 @@
 
 ===	top_and_pop() :
 ===	CONTEXT : display and pop half
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
 
 ===	display_capacity() :
 ===	CONTEXT : display and pop half
@@ -87,104 +87,104 @@
 
 ===	top_and_pop() :
 ===	CONTEXT : created an std::list, filled it with N elems, and a stack from it
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	42	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
-===	s.top()	=	1337	pop()ing
-===	s.top()	=	-1	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	quarante deux	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
+===	s.top()	=	mille trois cent	pop()ing
+===	s.top()	=	moins un	pop()ing
 

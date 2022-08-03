@@ -1,9 +1,7 @@
 #ifndef STACK_HPP
 # define STACK_HPP
 
-//# include <vector>
 # include "vector.hpp"
-# include <iostream>
 
 namespace ft
 {

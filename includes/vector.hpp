@@ -4,12 +4,6 @@
 
 # include <memory>
 # include <stdexcept>
-# include <iomanip>		// !!!
-# include <iostream>	// !!!
-# include <cstdlib>		// !!!
-# include <cstddef>		// !!!
-# include <iterator>	// !!!
-# include <typeinfo>	// !!!
 
 # include "type_utils.hpp"
 # include "cmp_utils.hpp"
@@ -66,13 +60,11 @@ explicit	vector(size_type n, const value_type& val = value_type(),
 	_end(_begin + n),
 	_capacity(_end)
 {
-	//	std::cerr << "VECTOR FILL CONSTRUCTOR" << std::endl;
 	pointer	tmp;
 
 	tmp = _begin;
 	while (tmp < _end)
 	{
-		//*tmp = val;
 		_allocator.construct(tmp, val);
 		tmp++;
 	}
@@ -82,15 +74,10 @@ explicit	vector(size_type n, const value_type& val = value_type(),
 //	range (3)
 template <class InpIt>
 	vector(typename ft::enable_if<!ft::is_integral<InpIt>::value, InpIt>::type first,
-//	vector(typename ft::enable_if<(!false)						, InpIt>::type first,
-//	vector(typename ft::enable_if< true							, InpIt>::type first,
-//	vector(typename type													   first,
-//	vector(typename InpIt													   first,
 		InpIt last,
 		const allocator_type& alloc = allocator_type()) :
 	_allocator(alloc)
 {
-//	std::cerr << "VECTOR RANGE CONSTRUCTOR" << std::endl;
 	pointer		tmp;
 	InpIt		bckpFirst;
 	size_type	size;
@@ -103,12 +90,10 @@ template <class InpIt>
 	size = 0;
 	while (first != last)
 	{
-//		*(tmp + size) = *first;
 		_allocator.construct(tmp + size, *first);
 		size++;
 		first++;
 	}
-//	first = bckpFirst;
 	_begin = tmp;
 	_end = _begin + size;
 	_capacity = _end;
@@ -121,7 +106,6 @@ vector (const vector& src) :
 	_end(_begin + src.size()),
 	_capacity(_end)
 {
-//	std::cerr << "VECTOR COPY CONSTRUCTOR" << std::endl;
 	const_iterator	it;
 	const_iterator	ite;
 	pointer			tmp;
@@ -155,14 +139,14 @@ vector&	operator=(const vector& rhs)
 	{
 		tmpNewBegin = _allocator.allocate(rhs.size());
 		tmpBegin = tmpNewBegin;
-		tmpCapacity = tmpNewBegin + rhs.size();	// !!!
+		tmpCapacity = tmpNewBegin + rhs.size();
 		reallocated = true;
 	}
 	else
 	{
 		tmpNewBegin = _begin;
 		tmpBegin = _begin;
-		tmpCapacity = _capacity;				// !!!
+		tmpCapacity = _capacity;
 	}
 	for (rhsBegin = rhs.begin(), rhsEnd = rhs.end() ;
 			rhsBegin != rhsEnd ;
@@ -316,10 +300,8 @@ const_reference at(size_type n) const
 
 reference		operator[](size_type n)			{return (*(_begin + n));}
 const_reference	operator[](size_type n) const	{return (*(_begin + n));}
-//	UNDEF BEHAV IF V IS EMPTY
 reference		front(void)						{return (*_begin);}
 const_reference	front(void)	const				{return (*_begin);}
-//	UNDEF BEHAV IF V IS EMPTY
 reference		back(void)				{return (*(_begin + size() - 1));}
 const_reference	back(void)	const		{return (*(_begin + size() - 1));}
 
@@ -417,8 +399,7 @@ iterator	insert(iterator position, const value_type& val)
 				to--, from--)
 		{
 			_allocator.construct((_begin + to), *(_begin + from));
-//			_allocator.destroy(_begin + to);
-			_allocator.destroy(_begin + from); //	!!!
+			_allocator.destroy(_begin + from); 
 		}	
 	}
 	else
@@ -428,7 +409,6 @@ iterator	insert(iterator position, const value_type& val)
 	return (begin() + insertIndex);
 }
 
-//	!!! CASE insert(fill) IN EMMPTY VECTOR
 void		insert(iterator position, size_type n, const value_type& val)
 {
 	size_type	newSize;
@@ -539,7 +519,6 @@ iterator		erase(iterator position)
 		_allocator.destroy(_begin + destroyIndex + 1);
 		destroyIndex++;
 	}
-//	_allocator.destroy(_end - 1);	// !!!
 	_end = _end - 1;
 	return (position);
 }
@@ -592,25 +571,6 @@ void	swap(vector &x)
 /*	ALLOCATOR	*/
 /****************/
 allocator_type	get_allocator(void) const	{return (_allocator);}
-
-/************/
-/*	DEBUG	*/
-/************/
-void			print_values(void) const
-{
-	pointer	tmp;
-	
-	tmp = _begin;
-	std::cout << "=== CONTENTS:" << std::endl;
-	while (tmp != _end)
-	{
-		std::cout << "vector[" << std::setw(4)
-			<< tmp - _begin << "] = " 
-			<< *tmp << std::endl;
-		tmp++;
-	}
-	std::cout << std::endl;
-}
 
 private:
 template	<class Iterator>
