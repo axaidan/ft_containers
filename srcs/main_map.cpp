@@ -14,34 +14,6 @@
  #include <map>
 #endif
 
-/*
-#ifdef CONTAINS_ALLOC
- #define T ContainsAlloc
- #define VAL1 ContainsAlloc("quarante deux")
- #define VAL2 ContainsAlloc("mille trois cent trente sept")
- #define VAL3 ContainsAlloc("moins un")
-#else
-	#ifdef STRING
-	 #define T std::string
-	 #define VAL1 std::string("quarante deux")
-	 #define VAL2 std::string("mille trois cent")
-	 #define VAL3 std::string("moins un")
-	#else
-		#ifdef FLOAT
-		 #define T float
-		 #define VAL1 1983.128f
-		 #define VAL2 0.01f
-		 #define VAL3 -3.14152589171f
-		#else
-		 #define T int
-		 #define VAL1 42
-		 #define VAL2 1337
-		 #define VAL3 -1
-		#endif
-	#endif
-#endif
-*/
-
 #ifdef STRING
 # define K std::string
 # define KVAL1 std::string("trois virg quatorze")

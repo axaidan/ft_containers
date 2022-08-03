@@ -6,7 +6,7 @@
 ===	CONTEXT : default constructed empty map m
 	===	m.empty()	=	true
 	===	m.size()	=	0
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : default constructed empty map m
@@ -16,45 +16,45 @@
 ===	CONTEXT : rand_insert()ed values in m
 	===	m.empty()	=	false
 	===	m.size()	=	10
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : rand_insert()ed values in m
-	===	m[DGPBUTKTEB]	=	-1.1
-	===	m[GYXMPHTHFJ]	=	3.14
-	===	m[HFHHQVSXZE]	=	-1.1
-	===	m[HIKGZMOBXX]	=	3.14
-	===	m[LGEAJYOBHX]	=	0
-	===	m[QNLNFIMLOR]	=	-1.1
-	===	m[RDKESODPQA]	=	3.14
-	===	m[RHPFNGXNIG]	=	3.14
-	===	m[ULYZCODSOQ]	=	-1.1
-	===	m[WJRDFYJOLF]	=	3.14
+	===	m[    -89]	=	0
+	===	m[    -86]	=	3.14
+	===	m[    -64]	=	0
+	===	m[    -28]	=	-1.1
+	===	m[    -23]	=	0
+	===	m[     17]	=	-1.1
+	===	m[     35]	=	-1.1
+	===	m[     51]	=	-1.1
+	===	m[     98]	=	-1.1
+	===	m[     99]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : range constructed from m begin/end
 	===	m.empty()	=	false
 	===	m.size()	=	10
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : range constructed from m begin/end
-	===	m[DGPBUTKTEB]	=	-1.1
-	===	m[GYXMPHTHFJ]	=	3.14
-	===	m[HFHHQVSXZE]	=	-1.1
-	===	m[HIKGZMOBXX]	=	3.14
-	===	m[LGEAJYOBHX]	=	0
-	===	m[QNLNFIMLOR]	=	-1.1
-	===	m[RDKESODPQA]	=	3.14
-	===	m[RHPFNGXNIG]	=	3.14
-	===	m[ULYZCODSOQ]	=	-1.1
-	===	m[WJRDFYJOLF]	=	3.14
+	===	m[    -89]	=	0
+	===	m[    -86]	=	3.14
+	===	m[    -64]	=	0
+	===	m[    -28]	=	-1.1
+	===	m[    -23]	=	0
+	===	m[     17]	=	-1.1
+	===	m[     35]	=	-1.1
+	===	m[     51]	=	-1.1
+	===	m[     98]	=	-1.1
+	===	m[     99]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : range constructed from m begin/begin
 	===	m.empty()	=	true
 	===	m.size()	=	0
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : range constructed from m begin/begin
@@ -64,48 +64,48 @@
 ===	CONTEXT : range constructed from m begin/half
 	===	m.empty()	=	false
 	===	m.size()	=	5
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : range constructed from m begin/half
-	===	m[DGPBUTKTEB]	=	-1.1
-	===	m[GYXMPHTHFJ]	=	3.14
-	===	m[HFHHQVSXZE]	=	-1.1
-	===	m[HIKGZMOBXX]	=	3.14
-	===	m[LGEAJYOBHX]	=	0
+	===	m[    -89]	=	0
+	===	m[    -86]	=	3.14
+	===	m[    -64]	=	0
+	===	m[    -28]	=	-1.1
+	===	m[    -23]	=	0
 
 ===	display_capacity() :
 ===	CONTEXT : range constructed from m half/end
 	===	m.empty()	=	false
 	===	m.size()	=	5
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : range constructed from m half/end
-	===	m[QNLNFIMLOR]	=	-1.1
-	===	m[RDKESODPQA]	=	3.14
-	===	m[RHPFNGXNIG]	=	3.14
-	===	m[ULYZCODSOQ]	=	-1.1
-	===	m[WJRDFYJOLF]	=	3.14
+	===	m[     17]	=	-1.1
+	===	m[     35]	=	-1.1
+	===	m[     51]	=	-1.1
+	===	m[     98]	=	-1.1
+	===	m[     99]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : copy constructed from m_range1
 	===	m.empty()	=	false
 	===	m.size()	=	10
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : copy constructed from m_range1
-	===	m[DGPBUTKTEB]	=	-1.1
-	===	m[GYXMPHTHFJ]	=	3.14
-	===	m[HFHHQVSXZE]	=	-1.1
-	===	m[HIKGZMOBXX]	=	3.14
-	===	m[LGEAJYOBHX]	=	0
-	===	m[QNLNFIMLOR]	=	-1.1
-	===	m[RDKESODPQA]	=	3.14
-	===	m[RHPFNGXNIG]	=	3.14
-	===	m[ULYZCODSOQ]	=	-1.1
-	===	m[WJRDFYJOLF]	=	3.14
+	===	m[    -89]	=	0
+	===	m[    -86]	=	3.14
+	===	m[    -64]	=	0
+	===	m[    -28]	=	-1.1
+	===	m[    -23]	=	0
+	===	m[     17]	=	-1.1
+	===	m[     35]	=	-1.1
+	===	m[     51]	=	-1.1
+	===	m[     98]	=	-1.1
+	===	m[     99]	=	-1.1
 
 ===	display_relationals() :
 ===	CONTEXT : copy constructed from m_range1
@@ -124,7 +124,7 @@
 ===	CONTEXT : (rand_insert() * 2) filling m1
 	===	m.empty()	=	true
 	===	m.size()	=	0
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : (rand_insert() * 2) filling m1
@@ -134,20 +134,20 @@
 ===	CONTEXT : map<K, T> m1(N, VAL3); m2 = m1; with m1 bigger than m2
 	===	m.empty()	=	false
 	===	m.size()	=	10
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : map<K, T> m1(N, VAL3); m2 = m1; with m1 bigger than m2
-	===	m[EUNXEHBGES]	=	0
-	===	m[GWTKZSGATG]	=	0
-	===	m[PBWYEECZTZ]	=	3.14
-	===	m[QVVTZQOBFG]	=	0
-	===	m[SKUCKRGMIW]	=	3.14
-	===	m[VZCDWRLCMD]	=	3.14
-	===	m[WVNODNHJSZ]	=	-1.1
-	===	m[YCXPQBBVTA]	=	0
-	===	m[ZLXSRLCPAJ]	=	3.14
-	===	m[ZRXHFKYXCC]	=	0
+	===	m[    -73]	=	0
+	===	m[    -46]	=	3.14
+	===	m[    -38]	=	3.14
+	===	m[    -37]	=	0
+	===	m[    -26]	=	0
+	===	m[     17]	=	3.14
+	===	m[     22]	=	0
+	===	m[     29]	=	3.14
+	===	m[     50]	=	-1.1
+	===	m[     67]	=	0
 
 ===	display_relationals() :
 ===	CONTEXT : map<K, T> m1(N, VAL3); m2 = m1; with m1 bigger than m2
@@ -162,7 +162,7 @@
 ===	CONTEXT : map<K, T> m3; m2 = m3; m2 is empty
 	===	m.empty()	=	true
 	===	m.size()	=	0
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : map<K, T> m3; m2 = m3; m2 is empty
@@ -180,21 +180,19 @@
 ===	display_capacity() :
 ===	CONTEXT : rand_insert(m3);
 	===	m.empty()	=	false
-	===	m.size()	=	10
-	===	m.max_size()	=	128102389400760775
+	===	m.size()	=	8
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : rand_insert(m3);
-	===	m[CGRLYKODEN]	=	3.14
-	===	m[GSOSGJSTCF]	=	-1.1
-	===	m[LBUAIGTKNK]	=	3.14
-	===	m[LULZOWXHBJ]	=	0
-	===	m[MDPVJGHVRL]	=	-1.1
-	===	m[MZLSJGEPMM]	=	0
-	===	m[PVIIJJNQZO]	=	-1.1
-	===	m[XFEFAOULVR]	=	3.14
-	===	m[XSOGFGHVJG]	=	-1.1
-	===	m[YIUMKMMTYK]	=	0
+	===	m[    -92]	=	0
+	===	m[    -71]	=	3.14
+	===	m[    -14]	=	0
+	===	m[     11]	=	3.14
+	===	m[     21]	=	-1.1
+	===	m[     25]	=	-1.1
+	===	m[     31]	=	-1.1
+	===	m[     56]	=	3.14
 
 ===	display_relationals() :
 ===	CONTEXT : rand_insert(m3);
@@ -209,7 +207,7 @@
 ===	CONTEXT : m3 = m2 = m1; multiple assignations test
 	===	m.empty()	=	true
 	===	m.size()	=	0
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : m3 = m2 = m1; multiple assignations test
@@ -232,75 +230,45 @@
 ===	CONTEXT : m1[KVAL1] = VAL1; m1[KVAL2] = VAL2; m1[KVAL3] = VAL3;
 	===	m.empty()	=	false
 	===	m.size()	=	3
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : m1[KVAL1] = VAL1; m1[KVAL2] = VAL2; m1[KVAL3] = VAL3;
-	===	m[moins un virgule un]	=	-1.1
-	===	m[trois virg quatorze]	=	3.14
-	===	m[zero virgule zero]	=	0
+	===	m[     -1]	=	-1.1
+	===	m[      0]	=	0
+	===	m[    314]	=	3.14
 
 ===	display_capacity() :
 ===	CONTEXT : rand_insert() filling m1
 	===	m.empty()	=	false
-	===	m.size()	=	23
-	===	m.max_size()	=	128102389400760775
+	===	m.size()	=	21
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : rand_insert() filling m1
-	===	m[AYSMYEMUFK]	=	-1.1
-	===	m[EHCLELVLSJ]	=	0
-	===	m[EONCLUDUDQ]	=	3.14
-	===	m[GGLCQEXXKB]	=	0
-	===	m[HVKMVKYKYW]	=	-1.1
-	===	m[JYIOXFAALP]	=	0
-	===	m[KVYHZUKRUE]	=	-1.1
-	===	m[LYDVOGCDTN]	=	0
-	===	m[MDWUHZNWXT]	=	0
-	===	m[MWUHJJPJWV]	=	0
-	===	m[OAZZRIVNZF]	=	3.14
-	===	m[OGXOTTNPIX]	=	3.14
-	===	m[OOKZJWSTMG]	=	3.14
-	===	m[TCPXNKRLHK]	=	-1.1
-	===	m[TXODUBCZQK]	=	3.14
-	===	m[UEZZRVGDKB]	=	-1.1
-	===	m[UNJDWFUHIF]	=	3.14
-	===	m[VNEZQGPCCQ]	=	0
-	===	m[WQXUISGRRS]	=	0
-	===	m[XSLQAEJVSX]	=	-1.1
-	===	m[moins un virgule un]	=	-1.1
-	===	m[trois virg quatorze]	=	3.14
-	===	m[zero virgule zero]	=	0
+	===	m[    -86]	=	3.14
+	===	m[    -74]	=	0
+	===	m[    -52]	=	3.14
+	===	m[    -42]	=	0
+	===	m[    -41]	=	-1.1
+	===	m[    -22]	=	-1.1
+	===	m[    -21]	=	3.14
+	===	m[    -17]	=	3.14
+	===	m[     -1]	=	-1.1
+	===	m[      0]	=	0
+	===	m[     13]	=	-1.1
+	===	m[     18]	=	0
+	===	m[     19]	=	-1.1
+	===	m[     20]	=	-1.1
+	===	m[     23]	=	3.14
+	===	m[     35]	=	-1.1
+	===	m[     61]	=	3.14
+	===	m[     64]	=	0
+	===	m[     80]	=	0
+	===	m[     94]	=	-1.1
+	===	m[    314]	=	3.14
 
 ===	key1 = it->first;
-	===	m1[key1] = TVAL1;
-===	key1 = it->first;
-	===	m1[key1] = TVAL1;
-===	key1 = it->first;
-	===	m1[key1] = TVAL3;
-===	key1 = it->first;
-	===	m1[key1] = TVAL1;
-===	key1 = it->first;
-	===	m1[key1] = TVAL1;
-===	key1 = it->first;
-	===	m1[key1] = TVAL1;
-===	key1 = it->first;
-	===	m1[key1] = TVAL1;
-===	key1 = it->first;
-	===	m1[key1] = TVAL1;
-===	key1 = it->first;
-	===	m1[key1] = TVAL1;
-===	key1 = it->first;
-	===	m1[key1] = TVAL1;
-===	key1 = it->first;
-	===	m1[key1] = TVAL3;
-===	key1 = it->first;
-	===	m1[key1] = TVAL3;
-===	key1 = it->first;
-	===	m1[key1] = TVAL3;
-===	key1 = it->first;
-	===	m1[key1] = TVAL1;
-===	key1 = it->first;
 	===	m1[key1] = TVAL3;
 ===	key1 = it->first;
 	===	m1[key1] = TVAL1;
@@ -313,133 +281,155 @@
 ===	key1 = it->first;
 	===	m1[key1] = TVAL1;
 ===	key1 = it->first;
+	===	m1[key1] = TVAL3;
+===	key1 = it->first;
+	===	m1[key1] = TVAL3;
+===	key1 = it->first;
+	===	m1[key1] = TVAL1;
+===	key1 = it->first;
+	===	m1[key1] = TVAL1;
+===	key1 = it->first;
+	===	m1[key1] = TVAL1;
+===	key1 = it->first;
+	===	m1[key1] = TVAL1;
+===	key1 = it->first;
+	===	m1[key1] = TVAL1;
+===	key1 = it->first;
 	===	m1[key1] = TVAL1;
 ===	key1 = it->first;
 	===	m1[key1] = TVAL3;
 ===	key1 = it->first;
 	===	m1[key1] = TVAL1;
+===	key1 = it->first;
+	===	m1[key1] = TVAL3;
+===	key1 = it->first;
+	===	m1[key1] = TVAL1;
+===	key1 = it->first;
+	===	m1[key1] = TVAL1;
+===	key1 = it->first;
+	===	m1[key1] = TVAL1;
+===	key1 = it->first;
+	===	m1[key1] = TVAL3;
 ===	display_capacity() :
 ===	CONTEXT : replaced values in existing keys
 	===	m.empty()	=	false
-	===	m.size()	=	23
-	===	m.max_size()	=	128102389400760775
+	===	m.size()	=	21
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : replaced values in existing keys
-	===	m[AYSMYEMUFK]	=	3.14
-	===	m[EHCLELVLSJ]	=	3.14
-	===	m[EONCLUDUDQ]	=	0
-	===	m[GGLCQEXXKB]	=	3.14
-	===	m[HVKMVKYKYW]	=	3.14
-	===	m[JYIOXFAALP]	=	3.14
-	===	m[KVYHZUKRUE]	=	3.14
-	===	m[LYDVOGCDTN]	=	3.14
-	===	m[MDWUHZNWXT]	=	3.14
-	===	m[MWUHJJPJWV]	=	3.14
-	===	m[OAZZRIVNZF]	=	0
-	===	m[OGXOTTNPIX]	=	0
-	===	m[OOKZJWSTMG]	=	0
-	===	m[TCPXNKRLHK]	=	3.14
-	===	m[TXODUBCZQK]	=	0
-	===	m[UEZZRVGDKB]	=	3.14
-	===	m[UNJDWFUHIF]	=	0
-	===	m[VNEZQGPCCQ]	=	3.14
-	===	m[WQXUISGRRS]	=	3.14
-	===	m[XSLQAEJVSX]	=	3.14
-	===	m[moins un virgule un]	=	3.14
-	===	m[trois virg quatorze]	=	0
-	===	m[zero virgule zero]	=	3.14
+	===	m[    -86]	=	0
+	===	m[    -74]	=	3.14
+	===	m[    -52]	=	0
+	===	m[    -42]	=	3.14
+	===	m[    -41]	=	3.14
+	===	m[    -22]	=	3.14
+	===	m[    -21]	=	0
+	===	m[    -17]	=	0
+	===	m[     -1]	=	3.14
+	===	m[      0]	=	3.14
+	===	m[     13]	=	3.14
+	===	m[     18]	=	3.14
+	===	m[     19]	=	3.14
+	===	m[     20]	=	3.14
+	===	m[     23]	=	0
+	===	m[     35]	=	3.14
+	===	m[     61]	=	0
+	===	m[     64]	=	3.14
+	===	m[     80]	=	3.14
+	===	m[     94]	=	3.14
+	===	m[    314]	=	0
 
 =========================
 =	MODIFIERS	=
 =========================
 
 ===	insert(val)
-	===	insert FBZSLSFSDR succeeded
-	===	insert PSYOKEEOIW succeeded
-	===	insert PFAQGTNOWX succeeded
-	===	insert QDAPYLJDFM succeeded
-	===	insert VVHVJRBPGJ succeeded
-	===	insert NXQQPWJCLG succeeded
-	===	insert CBLCSJOBNT succeeded
-	===	insert QKQXFCQIRY succeeded
-	===	insert RHXKXMGGPR succeeded
-	===	insert ORUAVOJJQY succeeded
+	===	insert -70 succeeded
+	===	insert 1 succeeded
+	===	insert -59 succeeded
+	===	insert 23 succeeded
+	===	insert -1 succeeded
+	===	insert 71 succeeded
+	===	insert -2 succeeded
+	===	insert 83 succeeded
+	===	insert -78 succeeded
+	===	insert 3 succeeded
 
 ===	display_capacity() :
 ===	CONTEXT : inserted N random keys with VAL1
 	===	m.empty()	=	false
 	===	m.size()	=	10
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : inserted N random keys with VAL1
-	===	m[CBLCSJOBNT]	=	3.14
-	===	m[FBZSLSFSDR]	=	3.14
-	===	m[NXQQPWJCLG]	=	3.14
-	===	m[ORUAVOJJQY]	=	3.14
-	===	m[PFAQGTNOWX]	=	3.14
-	===	m[PSYOKEEOIW]	=	3.14
-	===	m[QDAPYLJDFM]	=	3.14
-	===	m[QKQXFCQIRY]	=	3.14
-	===	m[RHXKXMGGPR]	=	3.14
-	===	m[VVHVJRBPGJ]	=	3.14
+	===	m[    -78]	=	3.14
+	===	m[    -70]	=	3.14
+	===	m[    -59]	=	3.14
+	===	m[     -2]	=	3.14
+	===	m[     -1]	=	3.14
+	===	m[      1]	=	3.14
+	===	m[      3]	=	3.14
+	===	m[     23]	=	3.14
+	===	m[     71]	=	3.14
+	===	m[     83]	=	3.14
 
-	===	insert CBLCSJOBNT failed
-	===	insert FBZSLSFSDR failed
-	===	insert NXQQPWJCLG failed
-	===	insert ORUAVOJJQY failed
-	===	insert PFAQGTNOWX failed
-	===	insert PSYOKEEOIW failed
-	===	insert QDAPYLJDFM failed
-	===	insert QKQXFCQIRY failed
-	===	insert RHXKXMGGPR failed
-	===	insert VVHVJRBPGJ failed
+	===	insert -78 failed
+	===	insert -70 failed
+	===	insert -59 failed
+	===	insert -2 failed
+	===	insert -1 failed
+	===	insert 1 failed
+	===	insert 3 failed
+	===	insert 23 failed
+	===	insert 71 failed
+	===	insert 83 failed
 
 ===	display_capacity() :
 ===	CONTEXT : tried to insert existing keys with VAL3
 	===	m.empty()	=	false
 	===	m.size()	=	10
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : tried to insert existing keys with VAL3
-	===	m[CBLCSJOBNT]	=	3.14
-	===	m[FBZSLSFSDR]	=	3.14
-	===	m[NXQQPWJCLG]	=	3.14
-	===	m[ORUAVOJJQY]	=	3.14
-	===	m[PFAQGTNOWX]	=	3.14
-	===	m[PSYOKEEOIW]	=	3.14
-	===	m[QDAPYLJDFM]	=	3.14
-	===	m[QKQXFCQIRY]	=	3.14
-	===	m[RHXKXMGGPR]	=	3.14
-	===	m[VVHVJRBPGJ]	=	3.14
+	===	m[    -78]	=	3.14
+	===	m[    -70]	=	3.14
+	===	m[    -59]	=	3.14
+	===	m[     -2]	=	3.14
+	===	m[     -1]	=	3.14
+	===	m[      1]	=	3.14
+	===	m[      3]	=	3.14
+	===	m[     23]	=	3.14
+	===	m[     71]	=	3.14
+	===	m[     83]	=	3.14
 
 ===	insert(pos, val)
 ===	display_content() :
 ===	CONTEXT : tried to insert existing keys with VAL3
-	===	m[ATAXDZKJFB]	=	-1.1
-	===	m[CBLCSJOBNT]	=	3.14
-	===	m[CYGEWJDIVI]	=	-1.1
-	===	m[DWUZWPOHBG]	=	-1.1
-	===	m[FBZSLSFSDR]	=	3.14
-	===	m[FIKXHRZZZT]	=	-1.1
-	===	m[IIQSFXMHYL]	=	-1.1
-	===	m[LAGFBCWRMX]	=	-1.1
-	===	m[NXQQPWJCLG]	=	3.14
-	===	m[ORUAVOJJQY]	=	3.14
-	===	m[PFAQGTNOWX]	=	3.14
-	===	m[PSYOKEEOIW]	=	3.14
-	===	m[QDAPYLJDFM]	=	3.14
-	===	m[QKQXFCQIRY]	=	3.14
-	===	m[RHXKXMGGPR]	=	3.14
-	===	m[VVHVJRBPGJ]	=	3.14
+	===	m[    -78]	=	3.14
+	===	m[    -74]	=	-1.1
+	===	m[    -70]	=	3.14
+	===	m[    -60]	=	-1.1
+	===	m[    -59]	=	3.14
+	===	m[    -43]	=	-1.1
+	===	m[     -2]	=	3.14
+	===	m[     -1]	=	3.14
+	===	m[      1]	=	3.14
+	===	m[      3]	=	3.14
+	===	m[     17]	=	-1.1
+	===	m[     23]	=	3.14
+	===	m[     56]	=	-1.1
+	===	m[     71]	=	3.14
+	===	m[     83]	=	3.14
+	===	m[     97]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : tried to insert existing keys with VAL3
 	===	m.empty()	=	false
 	===	m.size()	=	16
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	insert(first, last)
 ===	creating a list of N random elems
@@ -447,159 +437,152 @@
 
 ===	display_content() :
 ===	CONTEXT : tried to insert existing keys with VAL3
-	===	m[ATAXDZKJFB]	=	-1.1
-	===	m[CBLCSJOBNT]	=	3.14
-	===	m[CYGEWJDIVI]	=	-1.1
-	===	m[DWUZWPOHBG]	=	-1.1
-	===	m[FBZSLSFSDR]	=	3.14
-	===	m[FIKXHRZZZT]	=	-1.1
-	===	m[FVKPNBEBDA]	=	3.14
-	===	m[HJEHNWNASY]	=	-1.1
-	===	m[IIQSFXMHYL]	=	-1.1
-	===	m[JTBVXBSHEX]	=	0
-	===	m[LAGFBCWRMX]	=	-1.1
-	===	m[NXQQPWJCLG]	=	3.14
-	===	m[ORUAVOJJQY]	=	3.14
-	===	m[OWJSALHHSB]	=	3.14
-	===	m[OYLUCJGFRB]	=	-1.1
-	===	m[PEDWJEAGWO]	=	0
-	===	m[PFAQGTNOWX]	=	3.14
-	===	m[PSYOKEEOIW]	=	3.14
-	===	m[QDAPYLJDFM]	=	3.14
-	===	m[QKQXFCQIRY]	=	3.14
-	===	m[QTACQENWLH]	=	-1.1
-	===	m[RHXKXMGGPR]	=	3.14
-	===	m[RKCEBPFFSK]	=	3.14
-	===	m[VVHVJRBPGJ]	=	3.14
-	===	m[ZCLEYXIBFG]	=	0
-	===	m[ZWHPOPOCWN]	=	3.14
+	===	m[    -98]	=	-1.1
+	===	m[    -78]	=	3.14
+	===	m[    -74]	=	-1.1
+	===	m[    -70]	=	3.14
+	===	m[    -68]	=	3.14
+	===	m[    -60]	=	-1.1
+	===	m[    -59]	=	3.14
+	===	m[    -43]	=	-1.1
+	===	m[    -31]	=	3.14
+	===	m[    -23]	=	0
+	===	m[    -10]	=	-1.1
+	===	m[     -2]	=	3.14
+	===	m[     -1]	=	3.14
+	===	m[      1]	=	3.14
+	===	m[      3]	=	3.14
+	===	m[     16]	=	3.14
+	===	m[     17]	=	-1.1
+	===	m[     23]	=	3.14
+	===	m[     39]	=	0
+	===	m[     56]	=	-1.1
+	===	m[     71]	=	3.14
+	===	m[     77]	=	-1.1
+	===	m[     83]	=	3.14
+	===	m[     94]	=	0
+	===	m[     97]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : tried to insert existing keys with VAL3
 	===	m.empty()	=	false
-	===	m.size()	=	26
-	===	m.max_size()	=	128102389400760775
+	===	m.size()	=	25
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : erased m.begin() and last element
-	===	m[CBLCSJOBNT]	=	3.14
-	===	m[CYGEWJDIVI]	=	-1.1
-	===	m[DWUZWPOHBG]	=	-1.1
-	===	m[FBZSLSFSDR]	=	3.14
-	===	m[FIKXHRZZZT]	=	-1.1
-	===	m[FVKPNBEBDA]	=	3.14
-	===	m[HJEHNWNASY]	=	-1.1
-	===	m[IIQSFXMHYL]	=	-1.1
-	===	m[JTBVXBSHEX]	=	0
-	===	m[LAGFBCWRMX]	=	-1.1
-	===	m[NXQQPWJCLG]	=	3.14
-	===	m[ORUAVOJJQY]	=	3.14
-	===	m[OWJSALHHSB]	=	3.14
-	===	m[OYLUCJGFRB]	=	-1.1
-	===	m[PEDWJEAGWO]	=	0
-	===	m[PFAQGTNOWX]	=	3.14
-	===	m[PSYOKEEOIW]	=	3.14
-	===	m[QDAPYLJDFM]	=	3.14
-	===	m[QKQXFCQIRY]	=	3.14
-	===	m[QTACQENWLH]	=	-1.1
-	===	m[RHXKXMGGPR]	=	3.14
-	===	m[RKCEBPFFSK]	=	3.14
-	===	m[VVHVJRBPGJ]	=	3.14
-	===	m[ZCLEYXIBFG]	=	0
-	===	m[ZWHPOPOCWN]	=	3.14
+	===	m[    -78]	=	3.14
+	===	m[    -74]	=	-1.1
+	===	m[    -70]	=	3.14
+	===	m[    -68]	=	3.14
+	===	m[    -60]	=	-1.1
+	===	m[    -59]	=	3.14
+	===	m[    -43]	=	-1.1
+	===	m[    -31]	=	3.14
+	===	m[    -23]	=	0
+	===	m[    -10]	=	-1.1
+	===	m[     -2]	=	3.14
+	===	m[     -1]	=	3.14
+	===	m[      1]	=	3.14
+	===	m[      3]	=	3.14
+	===	m[     16]	=	3.14
+	===	m[     17]	=	-1.1
+	===	m[     23]	=	3.14
+	===	m[     39]	=	0
+	===	m[     56]	=	-1.1
+	===	m[     71]	=	3.14
+	===	m[     77]	=	-1.1
+	===	m[     83]	=	3.14
+	===	m[     94]	=	0
+	===	m[     97]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : erased m.begin() and last element
 	===	m.empty()	=	false
-	===	m.size()	=	25
-	===	m.max_size()	=	128102389400760775
+	===	m.size()	=	24
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : erased one out of two elements
-	===	m[CYGEWJDIVI]	=	-1.1
-	===	m[FBZSLSFSDR]	=	3.14
-	===	m[FVKPNBEBDA]	=	3.14
-	===	m[IIQSFXMHYL]	=	-1.1
-	===	m[LAGFBCWRMX]	=	-1.1
-	===	m[ORUAVOJJQY]	=	3.14
-	===	m[OYLUCJGFRB]	=	-1.1
-	===	m[PFAQGTNOWX]	=	3.14
-	===	m[QDAPYLJDFM]	=	3.14
-	===	m[QTACQENWLH]	=	-1.1
-	===	m[RKCEBPFFSK]	=	3.14
-	===	m[ZCLEYXIBFG]	=	0
+	===	m[    -74]	=	-1.1
+	===	m[    -68]	=	3.14
+	===	m[    -59]	=	3.14
+	===	m[    -31]	=	3.14
+	===	m[    -10]	=	-1.1
+	===	m[     -1]	=	3.14
+	===	m[      3]	=	3.14
+	===	m[     17]	=	-1.1
+	===	m[     39]	=	0
+	===	m[     71]	=	3.14
+	===	m[     83]	=	3.14
+	===	m[     97]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : erased one out of two elements
 	===	m.empty()	=	false
 	===	m.size()	=	12
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : erased all elements with TVAL1 value
-	===	m[CYGEWJDIVI]	=	-1.1
-	===	m[IIQSFXMHYL]	=	-1.1
-	===	m[LAGFBCWRMX]	=	-1.1
-	===	m[OYLUCJGFRB]	=	-1.1
-	===	m[QTACQENWLH]	=	-1.1
-	===	m[ZCLEYXIBFG]	=	0
+	===	m[    -74]	=	-1.1
+	===	m[    -10]	=	-1.1
+	===	m[     17]	=	-1.1
+	===	m[     39]	=	0
+	===	m[     97]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : erased all elements with TVAL1 value
 	===	m.empty()	=	false
-	===	m.size()	=	6
-	===	m.max_size()	=	128102389400760775
+	===	m.size()	=	5
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : erased second half of m
-	===	m[CYGEWJDIVI]	=	-1.1
-	===	m[IIQSFXMHYL]	=	-1.1
-	===	m[LAGFBCWRMX]	=	-1.1
+	===	m[    -74]	=	-1.1
+	===	m[    -10]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : erased second half of m
-	===	m.empty()	=	false
-	===	m.size()	=	3
-	===	m.max_size()	=	128102389400760775
-
-===	display_content() :
-===	CONTEXT : erased first elem by key
-	===	m[IIQSFXMHYL]	=	-1.1
-	===	m[LAGFBCWRMX]	=	-1.1
-
-===	display_capacity() :
-===	CONTEXT : erased first elem by key
 	===	m.empty()	=	false
 	===	m.size()	=	2
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
+
+===	display_content() :
+===	CONTEXT : erased first elem by key
+	===	m[    -10]	=	-1.1
+
+===	display_capacity() :
+===	CONTEXT : erased first elem by key
+	===	m.empty()	=	false
+	===	m.size()	=	1
+	===	m.max_size()	=	230584300921369395
 
 	===	erased 1 element
 ===	display_content() :
 ===	CONTEXT : erased random key by key
-	===	m[IIQSFXMHYL]	=	-1.1
-	===	m[LAGFBCWRMX]	=	-1.1
+	===	m[    -10]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : erased random key by key
 	===	m.empty()	=	false
-	===	m.size()	=	2
-	===	m.max_size()	=	128102389400760775
+	===	m.size()	=	1
+	===	m.max_size()	=	230584300921369395
 
 	===	erased 0 element
 ===	display_content() :
 ===	CONTEXT : swapped m2 and m
-	===	m[CYGEWJDIVI]	=	-1.1
-	===	m[IIQSFXMHYL]	=	-1.1
-	===	m[LAGFBCWRMX]	=	-1.1
-	===	m[OYLUCJGFRB]	=	-1.1
-	===	m[QTACQENWLH]	=	-1.1
-	===	m[ZCLEYXIBFG]	=	0
+	===	m[    -74]	=	-1.1
+	===	m[    -10]	=	-1.1
+	===	m[     17]	=	-1.1
+	===	m[     39]	=	0
+	===	m[     97]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : swapped m2 and m
 	===	m.empty()	=	false
-	===	m.size()	=	6
-	===	m.max_size()	=	128102389400760775
+	===	m.size()	=	5
+	===	m.max_size()	=	230584300921369395
 
 ===	display_relationals() :
 ===	CONTEXT : swapped m2 and m
@@ -618,7 +601,7 @@
 ===	CONTEXT : cleared m and m2
 	===	m.empty()	=	true
 	===	m.size()	=	0
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_relationals() :
 ===	CONTEXT : cleared m and m2
@@ -637,68 +620,68 @@
 ===	CONTEXT : created new map
 	===	m.empty()	=	false
 	===	m.size()	=	10
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	display_content() :
 ===	CONTEXT : created new map
-	===	m[DAXKLLNSAN]	=	3.14
-	===	m[EJVGWEPQFH]	=	-1.1
-	===	m[HMQGXIJJLT]	=	3.14
-	===	m[HRFKLZLQBK]	=	0
-	===	m[INRHYFIODF]	=	3.14
-	===	m[LIYGFCANGZ]	=	-1.1
-	===	m[SGCRCBTRYF]	=	3.14
-	===	m[WWUAMNGVFY]	=	0
-	===	m[YHZLNWSNZA]	=	0
-	===	m[ZLHBOWJNZQ]	=	3.14
+	===	m[    -71]	=	-1.1
+	===	m[    -65]	=	3.14
+	===	m[    -55]	=	0
+	===	m[    -51]	=	0
+	===	m[    -18]	=	3.14
+	===	m[     13]	=	3.14
+	===	m[     20]	=	0
+	===	m[     26]	=	0
+	===	m[     65]	=	3.14
+	===	m[     70]	=	-1.1
 
 ===	iterator iteration
-	===	DAXKLLNSAN
-	===	EJVGWEPQFH
-	===	HMQGXIJJLT
-	===	HRFKLZLQBK
-	===	INRHYFIODF
-	===	LIYGFCANGZ
-	===	SGCRCBTRYF
-	===	WWUAMNGVFY
-	===	YHZLNWSNZA
-	===	ZLHBOWJNZQ
+	===	-71
+	===	-65
+	===	-55
+	===	-51
+	===	-18
+	===	13
+	===	20
+	===	26
+	===	65
+	===	70
 
 ===	reverse_iterator iteration
-	===	ZLHBOWJNZQ
-	===	YHZLNWSNZA
-	===	WWUAMNGVFY
-	===	SGCRCBTRYF
-	===	LIYGFCANGZ
-	===	INRHYFIODF
-	===	HRFKLZLQBK
-	===	HMQGXIJJLT
-	===	EJVGWEPQFH
-	===	DAXKLLNSAN
+	===	70
+	===	65
+	===	26
+	===	20
+	===	13
+	===	-18
+	===	-51
+	===	-55
+	===	-65
+	===	-71
 
 ===	const_iterator iteration
-	===	DAXKLLNSAN
-	===	EJVGWEPQFH
-	===	HMQGXIJJLT
-	===	HRFKLZLQBK
-	===	INRHYFIODF
-	===	LIYGFCANGZ
-	===	SGCRCBTRYF
-	===	WWUAMNGVFY
-	===	YHZLNWSNZA
-	===	ZLHBOWJNZQ
+	===	-71
+	===	-65
+	===	-55
+	===	-51
+	===	-18
+	===	13
+	===	20
+	===	26
+	===	65
+	===	70
 
 ===	const_reverse_iterator iteration
-	===	ZLHBOWJNZQ
-	===	YHZLNWSNZA
-	===	WWUAMNGVFY
-	===	SGCRCBTRYF
-	===	LIYGFCANGZ
-	===	INRHYFIODF
-	===	HRFKLZLQBK
-	===	HMQGXIJJLT
-	===	EJVGWEPQFH
-	===	DAXKLLNSAN
+	===	70
+	===	65
+	===	26
+	===	20
+	===	13
+	===	-18
+	===	-51
+	===	-55
+	===	-65
+	===	-71
 
 ===	display_it_relationals() :
 ===	CONTEXT : ite = it; it and ite relationals
@@ -753,16 +736,16 @@
 ===	(cite == crit)	=	true
 
 ===	weird iteration
-	===	*(it++)	=	DAXKLLNSAN
-	===	*(--it)	=	DAXKLLNSAN
-	===	*(++it)	=	EJVGWEPQFH
-	===	*(it--)	=	EJVGWEPQFH
+	===	*(it++)	=	-71
+	===	*(--it)	=	-71
+	===	*(++it)	=	-65
+	===	*(it--)	=	-65
 
 ===	reverse weird iteration
-	===	*(rit++)	=	ZLHBOWJNZQ
-	===	*(--rit)	=	ZLHBOWJNZQ
-	===	*(++rit)	=	YHZLNWSNZA
-	===	*(rit--)	=	YHZLNWSNZA
+	===	*(rit++)	=	70
+	===	*(--rit)	=	70
+	===	*(++rit)	=	65
+	===	*(rit--)	=	65
 
 =========================
 =	OBSERVERS	=
@@ -771,32 +754,32 @@
 ===	rand_insert()ed m twice
 ===	display_content() :
 ===	CONTEXT : rand_insert()ed m twice2
-	===	m[AXIDUBLVLQ]	=	3.14
-	===	m[BKWDGXWDBB]	=	-1.1
-	===	m[BZGWACMJGP]	=	0
-	===	m[COVAXHLVDI]	=	0
-	===	m[CZQEOZLDHB]	=	-1.1
-	===	m[DZFNLCQVDR]	=	-1.1
-	===	m[ERULQJZQWD]	=	0
-	===	m[FTFGLHUQHP]	=	-1.1
-	===	m[GHKOCAXTIZ]	=	0
-	===	m[KKEXXWYLVZ]	=	3.14
-	===	m[KXGNUBWAJY]	=	-1.1
-	===	m[OSCSDXDTUV]	=	0
-	===	m[QHLECBRCUD]	=	-1.1
-	===	m[SDIUVFZOOY]	=	3.14
-	===	m[VPVWOVHMLX]	=	3.14
-	===	m[WEYAVCWZRV]	=	0
-	===	m[YBMWBZSAMC]	=	0
-	===	m[ZANVTCXVHE]	=	3.14
-	===	m[ZMFJXOVQNA]	=	-1.1
-	===	m[ZWNZTTAUQH]	=	0
+	===	m[    -99]	=	0
+	===	m[    -96]	=	0
+	===	m[    -51]	=	-1.1
+	===	m[    -50]	=	3.14
+	===	m[    -40]	=	3.14
+	===	m[    -38]	=	0
+	===	m[    -33]	=	-1.1
+	===	m[    -32]	=	0
+	===	m[    -21]	=	0
+	===	m[    -14]	=	0
+	===	m[     13]	=	0
+	===	m[     40]	=	0
+	===	m[     51]	=	0
+	===	m[     61]	=	0
+	===	m[     65]	=	3.14
+	===	m[     79]	=	0
+	===	m[     82]	=	3.14
+	===	m[     86]	=	3.14
+	===	m[     92]	=	3.14
+	===	m[     99]	=	3.14
 
 ===	display_capacity() :
 ===	CONTEXT : rand_insert()ed m twice2
 	===	m.empty()	=	false
 	===	m.size()	=	20
-	===	m.max_size()	=	128102389400760775
+	===	m.max_size()	=	230584300921369395
 
 ===	comparing key with next key
 	===	k_comp(it->first, it2->first)	=	true
@@ -884,151 +867,147 @@
 
 ===	display_content() :
 ===	CONTEXT : rand_insert()ed m twice2
-	===	m[CMKFLPAZBL]	=	0
-	===	m[DELERQLVNW]	=	0
-	===	m[DGIAEILGHO]	=	-1.1
-	===	m[DONNWVJWZN]	=	3.14
-	===	m[JVAIYVDVWH]	=	3.14
-	===	m[KAVXLQYPGD]	=	0
-	===	m[KXBPVRRKMU]	=	0
-	===	m[LUTBUUEFVF]	=	0
-	===	m[NLVORYOUJL]	=	0
-	===	m[OIFWXDTYXT]	=	-1.1
-	===	m[PGRMJMJTZC]	=	3.14
-	===	m[PZSESYWJOL]	=	0
-	===	m[REBZRJGIWA]	=	-1.1
-	===	m[RVCCUVYXLA]	=	3.14
-	===	m[UAFOWNQDQP]	=	-1.1
-	===	m[UUGKHBXDTO]	=	-1.1
-	===	m[XKYRRFOWXZ]	=	3.14
-	===	m[YOORHAEBYD]	=	0
-	===	m[ZHUUSSWHCH]	=	3.14
-	===	m[ZKNPKEYNAP]	=	3.14
+	===	m[    -93]	=	3.14
+	===	m[    -88]	=	3.14
+	===	m[    -82]	=	0
+	===	m[    -80]	=	-1.1
+	===	m[    -74]	=	-1.1
+	===	m[    -62]	=	0
+	===	m[    -18]	=	0
+	===	m[     -3]	=	3.14
+	===	m[     -1]	=	0
+	===	m[      5]	=	3.14
+	===	m[     13]	=	0
+	===	m[     15]	=	-1.1
+	===	m[     35]	=	0
+	===	m[     50]	=	-1.1
+	===	m[     57]	=	0
+	===	m[     81]	=	0
+	===	m[     87]	=	0
+	===	m[     91]	=	-1.1
+	===	m[     96]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : rand_insert()ed m twice2
 	===	m.empty()	=	false
-	===	m.size()	=	20
-	===	m.max_size()	=	128102389400760775
+	===	m.size()	=	19
+	===	m.max_size()	=	230584300921369395
 
 ===	find(existing k) and change value
-	===	CMKFLPAZBL FOUND
-	===	DELERQLVNW FOUND
-	===	DGIAEILGHO FOUND
-	===	DONNWVJWZN FOUND
-	===	JVAIYVDVWH FOUND
-	===	KAVXLQYPGD FOUND
-	===	KXBPVRRKMU FOUND
-	===	LUTBUUEFVF FOUND
-	===	NLVORYOUJL FOUND
-	===	OIFWXDTYXT FOUND
-	===	PGRMJMJTZC FOUND
-	===	PZSESYWJOL FOUND
-	===	REBZRJGIWA FOUND
-	===	RVCCUVYXLA FOUND
-	===	UAFOWNQDQP FOUND
-	===	UUGKHBXDTO FOUND
-	===	XKYRRFOWXZ FOUND
-	===	YOORHAEBYD FOUND
-	===	ZHUUSSWHCH FOUND
-	===	ZKNPKEYNAP FOUND
+	===	-93 FOUND
+	===	-88 FOUND
+	===	-82 FOUND
+	===	-80 FOUND
+	===	-74 FOUND
+	===	-62 FOUND
+	===	-18 FOUND
+	===	-3 FOUND
+	===	-1 FOUND
+	===	5 FOUND
+	===	13 FOUND
+	===	15 FOUND
+	===	35 FOUND
+	===	50 FOUND
+	===	57 FOUND
+	===	81 FOUND
+	===	87 FOUND
+	===	91 FOUND
+	===	96 FOUND
 
 ===	display_content() :
 ===	CONTEXT : changed value while finding
-	===	m[CMKFLPAZBL]	=	-1.1
-	===	m[DELERQLVNW]	=	-1.1
-	===	m[DGIAEILGHO]	=	-1.1
-	===	m[DONNWVJWZN]	=	-1.1
-	===	m[JVAIYVDVWH]	=	-1.1
-	===	m[KAVXLQYPGD]	=	-1.1
-	===	m[KXBPVRRKMU]	=	-1.1
-	===	m[LUTBUUEFVF]	=	-1.1
-	===	m[NLVORYOUJL]	=	-1.1
-	===	m[OIFWXDTYXT]	=	-1.1
-	===	m[PGRMJMJTZC]	=	-1.1
-	===	m[PZSESYWJOL]	=	-1.1
-	===	m[REBZRJGIWA]	=	-1.1
-	===	m[RVCCUVYXLA]	=	-1.1
-	===	m[UAFOWNQDQP]	=	-1.1
-	===	m[UUGKHBXDTO]	=	-1.1
-	===	m[XKYRRFOWXZ]	=	-1.1
-	===	m[YOORHAEBYD]	=	-1.1
-	===	m[ZHUUSSWHCH]	=	-1.1
-	===	m[ZKNPKEYNAP]	=	-1.1
+	===	m[    -93]	=	-1.1
+	===	m[    -88]	=	-1.1
+	===	m[    -82]	=	-1.1
+	===	m[    -80]	=	-1.1
+	===	m[    -74]	=	-1.1
+	===	m[    -62]	=	-1.1
+	===	m[    -18]	=	-1.1
+	===	m[     -3]	=	-1.1
+	===	m[     -1]	=	-1.1
+	===	m[      5]	=	-1.1
+	===	m[     13]	=	-1.1
+	===	m[     15]	=	-1.1
+	===	m[     35]	=	-1.1
+	===	m[     50]	=	-1.1
+	===	m[     57]	=	-1.1
+	===	m[     81]	=	-1.1
+	===	m[     87]	=	-1.1
+	===	m[     91]	=	-1.1
+	===	m[     96]	=	-1.1
 
 ===	display_capacity() :
 ===	CONTEXT : changed value while finding
 	===	m.empty()	=	false
-	===	m.size()	=	20
-	===	m.max_size()	=	128102389400760775
+	===	m.size()	=	19
+	===	m.max_size()	=	230584300921369395
 
 ===	find(probably non existing k)
-	===	SVJRYCRVXF NOT FOUND
-	===	LIABBYRYKC NOT FOUND
-	===	UBEPFYNBHB NOT FOUND
-	===	OBWXUUBLSZ NOT FOUND
-	===	QFJSGLTZJF NOT FOUND
-	===	CFGIUNIJQR NOT FOUND
-	===	KFTIEPFIBX NOT FOUND
-	===	HTESOMDJLO NOT FOUND
-	===	OPWUXQHHCX NOT FOUND
-	===	ZMESXLJCTM NOT FOUND
+	===	-97 NOT FOUND
+	===	19 NOT FOUND
+	===	-87 NOT FOUND
+	===	73 NOT FOUND
+	===	-3 FOUND
+	===	64 NOT FOUND
+	===	-59 NOT FOUND
+	===	76 NOT FOUND
+	===	-45 NOT FOUND
+	===	43 NOT FOUND
 
 ===	const find(existing k)
-	===	CMKFLPAZBL FOUND
-	===	DELERQLVNW FOUND
-	===	DGIAEILGHO FOUND
-	===	DONNWVJWZN FOUND
-	===	JVAIYVDVWH FOUND
-	===	KAVXLQYPGD FOUND
-	===	KXBPVRRKMU FOUND
-	===	LUTBUUEFVF FOUND
-	===	NLVORYOUJL FOUND
-	===	OIFWXDTYXT FOUND
-	===	PGRMJMJTZC FOUND
-	===	PZSESYWJOL FOUND
-	===	REBZRJGIWA FOUND
-	===	RVCCUVYXLA FOUND
-	===	UAFOWNQDQP FOUND
-	===	UUGKHBXDTO FOUND
-	===	XKYRRFOWXZ FOUND
-	===	YOORHAEBYD FOUND
-	===	ZHUUSSWHCH FOUND
-	===	ZKNPKEYNAP FOUND
+	===	-93 FOUND
+	===	-88 FOUND
+	===	-82 FOUND
+	===	-80 FOUND
+	===	-74 FOUND
+	===	-62 FOUND
+	===	-18 FOUND
+	===	-3 FOUND
+	===	-1 FOUND
+	===	5 FOUND
+	===	13 FOUND
+	===	15 FOUND
+	===	35 FOUND
+	===	50 FOUND
+	===	57 FOUND
+	===	81 FOUND
+	===	87 FOUND
+	===	91 FOUND
+	===	96 FOUND
 
 ===	const find(probably non existing k)
-	===	BCGFUWTAFE NOT FOUND
-	===	QTWONTHWDJ NOT FOUND
-	===	VCVAWSNFWI NOT FOUND
-	===	SXKAEGWXID NOT FOUND
-	===	CBWYPLTWJW NOT FOUND
-	===	FEYDEWVTCU NOT FOUND
-	===	BWRNWWUUTC NOT FOUND
-	===	XXDVXVGTRP NOT FOUND
-	===	RXVSACOXVQ NOT FOUND
-	===	RXMLKKHGEC NOT FOUND
+	===	-32 NOT FOUND
+	===	59 NOT FOUND
+	===	-4 NOT FOUND
+	===	20 NOT FOUND
+	===	-76 NOT FOUND
+	===	83 NOT FOUND
+	===	-89 NOT FOUND
+	===	42 NOT FOUND
+	===	-39 NOT FOUND
+	===	88 NOT FOUND
 
-===	count(existing k) CMKFLPAZBL
+===	count(existing k) -93
 	===	m.count(k)	=	1
 
-===	count(probably non existing k) LDCOYBLGUD
+===	count(probably non existing k) -71
 	===	m.count(k)	=	0
 
-===	upper_bound(existing k) PGRMJMJTZC
-	===	m.upper_bound(k)	=	PZSESYWJOL
+===	upper_bound(existing k) 5
+	===	m.upper_bound(k)	=	13
 
-===	upper_bound(probably non existing k) XOATGCVUZS
-	===	m.upper_bound(k)	=	YOORHAEBYD
+===	upper_bound(probably non existing k) 43
+	===	m.upper_bound(k)	=	50
 
-===	lower_bound(existing k) PGRMJMJTZC
-	===	m.lower_bound(k)	=	PGRMJMJTZC
+===	lower_bound(existing k) 5
+	===	m.lower_bound(k)	=	5
 
-===	lower_bound(probably non existing k) NTPBECMNIS
-	===	m.lower_bound(k)	=	OIFWXDTYXT
+===	lower_bound(probably non existing k) -68
+	===	m.lower_bound(k)	=	-62
 
-===	equal_range(existing k) PGRMJMJTZC
-	===	1 element with key PGRMJMJTZC in map m
+===	equal_range(existing k) 5
+	===	1 element with key 5 in map m
 
-===	equal_range(probably non existing k) RTWVKWXVFT
-	===	0 element with key RTWVKWXVFT in map m
+===	equal_range(probably non existing k) 79
+	===	0 element with key 79 in map m
 

@@ -15,11 +15,6 @@
 # define BLK 0
 # define RED 1
 
-//	DEBUG HEADERS
-# include <iostream>
-# include <iomanip>
-# include <cstdlib>
-
 namespace ft
 {
 
@@ -27,7 +22,6 @@ template <
 class Key,											// map::key_type
 class T,											// map::mapped_type
 class Compare = std::less<Key>,						// map::key_compare
-//class Compare = std::greater<Key>,						// map::key_compare
 class Alloc = std::allocator<pair<const Key,T> >	// map::allocator_type
 >
 class map
@@ -41,8 +35,10 @@ typedef	Key											key_type;
 typedef T											mapped_type;
 typedef	ft::pair<const key_type, mapped_type>		value_type;
 typedef	Compare										key_compare;
-typedef RBnode<value_type>							node;			//priv
-typedef std::allocator<node>						node_allocator;	//priv
+private:
+typedef RBnode<value_type>							node;
+typedef std::allocator<node>						node_allocator;
+public:
 typedef	Alloc										allocator_type;
 typedef typename allocator_type::reference			reference;
 typedef typename allocator_type::const_reference	const_reference;
@@ -56,14 +52,11 @@ typedef	size_t										size_type;
 typedef ptrdiff_t									difference_type;
 
 class value_compare
-//: public std::binary_function<value_type, value_type, bool>
 {
-	// in C++98, it is required to inherit binary_function<T, T, bool>
 	friend class map;
 	protected:
 		Compare		comp;
 		value_compare(Compare c) : comp(c) {}
-		// constructed with map's comparison object
 	public:
 		typedef bool			result_type;
 		typedef value_type		first_argument_type;
@@ -111,8 +104,6 @@ map(InputIterator first, InputIterator last,
 	insert(first, last);
 }
 
-//	1 - ALLOCATE NEW _nil
-//	2 - insert(src.begin(), src.end())
 map(const map & src) :
 	_pairAlloc(src._pairAlloc),
 	_nodeAlloc(src._nodeAlloc),
@@ -326,8 +317,6 @@ void		erase(iterator first, iterator last)
 	while (first != last)
 	{
 		next++;
-//		std::cerr << "destroying " << first._get_node()->_pair.first << std::endl;
-//		_destroy_node(first._get_node());
 		erase(first);
 		first = next;
 	}
@@ -524,30 +513,30 @@ void	_erase_fixup(node * x)
 			w = x->_p->_r;
 			if (w->_col == RED)
 			{
-/*1*/			w->_col = BLK;
-/*1*/			x->_p->_col = RED;
-/*1*/			_left_rotate(x->_p);
-/*1*/			w = x->_p->_r;
+				w->_col = BLK;
+				x->_p->_col = RED;
+				_left_rotate(x->_p);
+				w = x->_p->_r;
 			}
 			if (w->_l->_col == BLK && w->_r->_col == BLK)
 			{
-/*2*/			w->_col = RED;
-/*2*/			x = x->_p;
+				w->_col = RED;
+				x = x->_p;
 			}
 			else 
 			{
 				if (w->_r->_col == BLK)
 				{
-/*3*/				w->_l->_col = BLK;
-/*3*/				w->_col = RED;
-/*3*/				_right_rotate(w);
-/*3*/				w = x->_p->_r;
+					w->_l->_col = BLK;
+					w->_col = RED;
+					_right_rotate(w);
+					w = x->_p->_r;
 				}
-/*4*/			w->_col = x->_p->_col;
-/*4*/			x->_p->_col = BLK;
-/*4*/			w->_r->_col = BLK;
-/*4*/			_left_rotate(x->_p);
-/*4*/			x = _root;
+				w->_col = x->_p->_col;
+				x->_p->_col = BLK;
+				w->_r->_col = BLK;
+				_left_rotate(x->_p);
+				x = _root;
 			}
 		}
 		else
@@ -555,30 +544,30 @@ void	_erase_fixup(node * x)
 			w = x->_p->_l;
 			if (w->_col == RED)
 			{
-/*1*/			w->_col = BLK;
-/*1*/			x->_p->_col = RED;
-/*1*/			_right_rotate(x->_p);
-/*1*/			w = x->_p->_l;
+				w->_col = BLK;
+				x->_p->_col = RED;
+				_right_rotate(x->_p);
+				w = x->_p->_l;
 			}
 			if (w->_r->_col == BLK && w->_l->_col == BLK)
 			{
-/*2*/			w->_col = RED;
-/*2*/			x = x->_p;
+				w->_col = RED;
+				x = x->_p;
 			}
 			else 
 			{
 				if (w->_l->_col == BLK)
 				{
-/*3*/				w->_r->_col = BLK;
-/*3*/				w->_col = RED;
-/*3*/				_left_rotate(w);
-/*3*/				w = x->_p->_l;
+					w->_r->_col = BLK;
+					w->_col = RED;
+					_left_rotate(w);
+					w = x->_p->_l;
 				}
-/*4*/			w->_col = x->_p->_col;
-/*4*/			x->_p->_col = BLK;
-/*4*/			w->_l->_col = BLK;
-/*4*/			_right_rotate(x->_p);
-/*4*/			x = _root;
+				w->_col = x->_p->_col;
+				x->_p->_col = BLK;
+				w->_l->_col = BLK;
+				_right_rotate(x->_p);
+				x = _root;
 			}
 		}
 	}
@@ -675,7 +664,6 @@ node *	_new_nil(const value_type & val = value_type())
 	return (n);
 }
 
-public:		//	!!!
 node *	_tree_min(node * x)	const
 {
 	while (x != _nil && x->_l != _nil)
@@ -688,65 +676,6 @@ node *	_tree_max(node * x)	const
 	while (x != _nil && x->_r != _nil)
 		x = x->_r;
 	return (x);
-}
-
-/****************/
-/*	10 DEBUG	*/
-/****************/
-public:
-void	print_node(char role, node * x, int depth)
-{
-	std::cout << "|";
-	while (depth > 0)
-	{
-		if (depth == 1)
-			std::cout << "|---";
-		else
-			std::cout << "\t";
-		depth--;
-	}
-	(void)role;
-	std::cout << role << ":[";
-	if (x->_col == RED)
-		 std::cout << "\033[31m";
-	std::cout << std::setw(10);
-	if (x == _nil)
-		std::cout << "== NIL ==";
-	else
-		std::cout << std::left <<  x->_pair.first;
-	std::cout << "\033[0m";
-	std::cout << "]\t";
-}
-
-void	data_visualization(node * x)
-{
-	if (x != _nil)
-	{
-		data_visualization(x->_l);
-		if (x == _root)
-			print_node('R', x, 0);
-		else
-			print_node('N', x, 0);
-		print_node('L', x->_l, 0);
-		print_node('R', x->_r, 0);
-		print_node('P', x->_p, 0);
-		std::cout << std::endl;
-		data_visualization(x->_r);
-	}
-}
-
-void	graphic_visualization(node * x, int depth)
-{
-	if (x != _nil)
-	{
-		graphic_visualization(x->_r, depth + 1);
-		if (x == _root)
-			print_node('R', x, depth);
-		else
-			print_node(' ', x, depth);
-		std::cout << std::endl;
-		graphic_visualization(x->_l, depth + 1);
-	}
 }
 
 };		// class map
@@ -773,7 +702,6 @@ bool		operator!= (const map<Key, T, Compare, Alloc> & lhs,
 						const map<Key, T, Compare, Alloc> & rhs)
 			{return ((lhs == rhs) == false);}
 
-//	SHOULD USE value_comp() ? 
 template	<class Key, class T, class Compare, class Alloc>
 bool		operator<  (const map<Key, T, Compare, Alloc> & lhs,
 						const map<Key, T, Compare, Alloc> & rhs)
