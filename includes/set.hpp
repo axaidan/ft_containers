@@ -31,7 +31,7 @@ class set
 /****************/
 public:
 typedef	T											key_type;
-typedef	T											value_type;
+typedef	const T										value_type;
 typedef	Compare										key_compare;
 typedef Compare										value_compare;
 private:

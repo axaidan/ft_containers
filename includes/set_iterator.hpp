@@ -2,7 +2,6 @@
 # define SET_ITERATOR_HPP
 
 # include "iterator_utils.hpp"
-# include "pair.hpp"
 
 namespace ft
 {
@@ -50,14 +49,10 @@ SetIterator(const node_ptr & ptr, const node_ptr & nil,
 	_nil(nil),
 	_root(root)					{}
 
-/*
-SetIterator(node_ptr ptr) :
-	_node(ptr)					{}
-*/
-
 virtual ~SetIterator(void)		{}
 
 pointer			base(void) const		{return (&(_node->_pair));}
+
 /****************/
 /*	OPERATORS	*/
 /****************/
@@ -71,18 +66,13 @@ SetIterator &	operator=(const SetIterator & rhs)
 
 reference		operator*(void) const	{return (_node->_pair);}
 pointer			operator->(void) const	{return (&(this->operator*()));}
+
 //	++it
 SetIterator &	operator++(void)
 {
 	node_ptr	y;
 	node_ptr	x;
 
-	//	MAYBE NOT
-	//	if (_node == _nil)
-	//	{
-	//		_node = tree_min(_root);
-	//		return (*this);
-	//	}
 	if (_node->_r != _nil)
 	{
 		_node = tree_min(_node->_r);
@@ -98,6 +88,7 @@ SetIterator &	operator++(void)
 	_node = y;
 	return (*this);
 }
+
 //	it++
 SetIterator		operator++(int)
 {
@@ -105,6 +96,7 @@ SetIterator		operator++(int)
 	operator++();
 	return (tmp);
 }
+
 //	--it
 SetIterator &	operator--(void)
 {
@@ -131,6 +123,7 @@ SetIterator &	operator--(void)
 	_node = y;
 	return (*this);
 }
+
 //	it--
 SetIterator		operator--(int)
 {
@@ -160,9 +153,6 @@ node_ptr	tree_max(node_ptr x)
     return (x);
 }
 
-/************/
-/*	DEBUG	*/
-/************/
 node_ptr	_get_node(void) const
 {return (_node);}
 

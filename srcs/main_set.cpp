@@ -507,6 +507,7 @@ void	iterator_functions(void)
 	cite = m.end();
 	while (it != cite)
 	{
+//		*it = 10923;
 		std::cout << FMT2 << (*it) << std::endl;
 		it++;
 	}
